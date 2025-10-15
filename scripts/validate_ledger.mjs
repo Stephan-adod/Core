@@ -174,15 +174,22 @@ function main() {
 
   const drift = fallback["Policy Drift %"] ?? tableVals["Policy Drift %"]?.value ?? 999;
 
-  console.log("=== System Harmony Ledger Validation (validate-only) ===");
+  console.log("status: running | scope=system_harmony_ledger");
   console.log(`Debug: kpiBlock=${kpiBlock ? "ok" : "missing"}, respBlock=${respBlock ? "ok" : "missing"}, thresholds=${Object.keys(thresholds).length}${usedDefault ? " (defaults)" : ""}`);
   lines.forEach(l => console.log(l));
   console.log(`Health Score: ${health}%  |  Drift: ${isNaN(drift) ? "n/a" : Number(drift).toFixed(2)}%`);
   console.log(`Thresholds: min health ${MIN_HEALTH}%, max drift ${MAX_DRIFT}%`);
 
   const failed = (health < MIN_HEALTH) || (!isNaN(drift) && Number(drift) > MAX_DRIFT);
-  if (failed) { console.error("❌ Validation FAILED"); process.exit(1); }
-  console.log("✅ Validation PASSED");
+  if (failed) {
+    console.error("status: failed | reason=thresholds_not_met");
+    process.exit(1);
+  }
+  console.log(
+    "status: passed | health=%d | drift=%s",
+    health,
+    isNaN(drift) ? "n/a" : Number(drift).toFixed(2)
+  );
 }
 
 main();
