@@ -1,0 +1,14 @@
+name: ledger-validate
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 16 * * 0" # So 16:00 UTC (So 18:00 lokal ~ Beispiel)
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Validate Ledger
+        run: node scripts/validate_ledger.mjs --max-drift=5 --min-health=80
