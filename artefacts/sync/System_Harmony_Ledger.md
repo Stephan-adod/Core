@@ -33,14 +33,14 @@ linked_meta:
 
 | KPI | Beschreibung | Zielwert | Letzter Wert | Status |
 |:--|:--|:--|:--|:--|
-| **Learning Velocity** | geschlossene Loops / Woche | ≥ 2 | – | ⚪ |
-| **Market Validation Rate (MVR)** | validierte Proofs / Total | ≥ 0.25 | – | ⚪ |
-| **Proof-to-Investment Ratio (PIR)** | Proofs / (Time + Cost) | ≥ 0.10 | – | ⚪ |
-| **Energy ROI (eROI)** | SBI Δ / Hours | ≥ 1.0 | – | ⚪ |
+| **Learning Velocity** | geschlossene Loops / Woche | ≥ 2 | 2.0 | ⚪ |
+| **Market Validation Rate (MVR)** | validierte Proofs / Total | ≥ 0.25 | 0.3 | ⚪ |
+| **Proof-to-Investment Ratio (PIR)** | Proofs / (Time + Cost) | ≥ 0.10 | 0.22 | ⚪ |
+| **Energy ROI (eROI)** | SBI Δ / Hours | ≥ 1.0 | 1.0 | ⚪ |
 | **Return on Learning (ROL)** | monetarisierte Proofs / Learning Hours | ≥ 0.5 | – | ⚪ |
-| **Profit per Hour (PPH)** | Profit / Gesamtstunden | ≥ 10 € | – | ⚪ |
+| **Profit per Hour (PPH)** | Profit / Gesamtstunden | ≥ 10 € | 12.5 | ⚪ |
 | **MRR Alignment %** | MRR / Target | ≥ 80 % | – | ⚪ |
-| **Policy Drift %** | abweichende Policies | ≤ 5 % | – | ⚪ |
+| **Policy Drift %** | abweichende Policies | ≤ 5 % | 5 | ⚪ |
 | **Time ROI Alignment %** | Workload vs Plan | ≥ 90 % | – | ⚪ |
 
 ---
