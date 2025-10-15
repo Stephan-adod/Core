@@ -1,0 +1,11 @@
+{
+  "source": "codex_verify_v2.2",
+  "timestamp": "2025-10-15T20:55:50+00:00",
+  "arch_file": "meta/AI_First_System_Architecture_v1_1.md",
+  "arch_version": "v1.1",
+  "horizon_version": "v1.8",
+  "business_version": "v1.8",
+  "governance_note": "v1.8 Bezug",
+  "ledger_last_updated": "2025-10-15",
+  "diagnostic_ref": "artefacts/logs/diagnose_repo_integrity_v2.json"
+}
