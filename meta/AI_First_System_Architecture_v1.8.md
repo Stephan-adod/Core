@@ -2,9 +2,9 @@
 id: architecture-v1.8
 layer: meta
 owner: Governance Maintainer
-status: draft
+status: active
 version: v1.8
-governance: pre-freeze v1.8
+governance: freeze v1.8
 linked_meta:
   - path: meta/Horizon_Map_v1.8.md
     version: v1.8
@@ -14,7 +14,7 @@ linked_meta:
     version: v1.8
 ---
 
-# AI-First System Architecture v1.8 (Draft)
+# AI-First System Architecture v1.8
 
 ## 1. Overview & Context
 Die Architektur v1.8 verbindet Horizon-Strategie und Business-Case, indem sie Automations- und Governance-Bausteine als gemeinsame Referenz implementiert. Sie stellt sicher, dass jede Kernschicht (Strategie, Business, Operative Systeme) auf demselben Policy-Set basiert, wodurch der Ledger automatisiert Harmonie- und Driftwerte messen kann.
@@ -90,7 +90,7 @@ Der Ledger verbindet Horizon v1.8, Business Case v1.8 und die Architektur v1.8 d
 - Ledger-Einträge besitzen initiale Ziel- und Schwellenwerte.
 
 **Definition of Done (DoD):**
-- Draft-Abschnitte enthalten validierte Inhalte ohne offene TODOs.
+- Alle Abschnitte enthalten validierte Inhalte ohne offene TODOs.
 - Policy-Block validiert (≥ 7 Regeln) und im Ledger gespiegelt.
 - Harmony-Check bestätigt Versionsgleichheit von Horizon, Business und Architektur.
 
@@ -98,3 +98,4 @@ Der Ledger verbindet Horizon v1.8, Business Case v1.8 und die Architektur v1.8 d
 | Version | Date | Change | Author |
 | --- | --- | --- | --- |
 | v1.8 | 2025-10-15 | Initial Draft Uplift (v1.1 → v1.8) | Stephan |
+| v1.8 (freeze) | 2025-10-15 | Governance Freeze aktiviert (AT-015) | Governance Maintainer |
