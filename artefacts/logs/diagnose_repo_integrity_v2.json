@@ -1,0 +1,66 @@
+[
+  {
+    "id": "R-001",
+    "area": "core",
+    "path": "meta/AI_First_System_Architecture_v1_1.md",
+    "severity": "medium",
+    "message": "Architecture version v1.1 diverges from Horizon/Business v1.8 (Harmony Warning).",
+    "suggested_fix": "Align architecture frontmatter version/governance with Horizon and Business documents."
+  },
+  {
+    "id": "R-002",
+    "area": "ledger",
+    "path": "artefacts/sync/System_Harmony_Ledger.md",
+    "severity": "high",
+    "message": "Ledger missing required metrics (version_sync, policy_valid, system_harmony_score, drift).",
+    "suggested_fix": "Add the missing metrics and populate values in the Core KPIs table."
+  },
+  {
+    "id": "R-003",
+    "area": "ledger",
+    "path": "artefacts/sync/System_Harmony_Ledger.md",
+    "severity": "medium",
+    "message": "Ledger 'Last Updated' field empty; data older than 7 days cannot be verified.",
+    "suggested_fix": "Update the Last Updated field with the current sync date."
+  },
+  {
+    "id": "R-004",
+    "area": "workflow",
+    "path": ".github/workflows/ledger_validate.yml",
+    "severity": "medium",
+    "message": "Workflow lacks on: [push, pull_request] triggers, so CI never runs on commits.",
+    "suggested_fix": "Add push and pull_request triggers alongside schedule and workflow_dispatch."
+  },
+  {
+    "id": "R-005",
+    "area": "script",
+    "path": "scripts/validate_ledger.mjs",
+    "severity": "medium",
+    "message": "Validation script prints no 'status:' lines, violating logging requirement.",
+    "suggested_fix": "Emit status: running/passed/failed messages in console output."
+  },
+  {
+    "id": "R-006",
+    "area": "cross_ref",
+    "path": "meta/Horizon_Map_v1.8.md",
+    "severity": "medium",
+    "message": "Horizon_Map linked_meta omits artefacts/sync/System_Harmony_Ledger.md (Cross-Ref Drift).",
+    "suggested_fix": "Add the ledger file to the linked_meta list."
+  },
+  {
+    "id": "R-007",
+    "area": "sync",
+    "path": "meta/AI_First_System_Architecture_v1_1.md",
+    "severity": "medium",
+    "message": "Architecture governance label ('pre-freeze v1.8') differs from diagnose_core_v1 recommendation ('v1.8 Bezug').",
+    "suggested_fix": "Update governance label or re-run diagnose_core to match the recorded recommendation."
+  },
+  {
+    "id": "EXIT",
+    "area": "summary",
+    "path": null,
+    "severity": "info",
+    "message": "exit_code=1 (Blocker findings present: ledger invalid).",
+    "suggested_fix": "Resolve blocker findings before proceeding."
+  }
+]
