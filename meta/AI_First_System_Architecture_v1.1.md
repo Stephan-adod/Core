@@ -4,10 +4,10 @@ layer: meta
 owner: Stephan
 status: 🧭 active
 version: v1.1
-governance: pre-freeze v1.7
+governance: pre-freeze v1.8
 linked_meta:
-  - meta/Horizon_Map_v1.7_RC.md
-  - docs/BUSINESS_CASE_Horizon_v1.7.md
+  - meta/Horizon_Map_v1_8.md
+  - docs/BUSINESS_CASE_Horizon_v1_8.md
 ---
 
 # ⚙️ AI-First System Architecture · Refinement v1.1  
@@ -68,6 +68,17 @@ policy:
   metric: "proofs_validated / quarter >= 1"
   rationale: "Umsatz oder Nutzerfeedback ist ein Lernsignal, kein Endziel"
   status: active
+  name: Profit per Hour
+  rule: "profit_per_hour >= 10"
+  metric: "total_profit / total_hours"
+  status: active
+  name: Harmony Check
+  rule: "horizon.version == business.version == architecture.version"
+  status: active
+  name: Ledger Freeze Gate
+  rule: "SHS >= 80 and drift <= 5"
+  status: active
+
 Lifecycle – neue Policy nach großem Learning · monatlicher Review · nur Operator ändert.
 
 ⑤ Factory-Layer
