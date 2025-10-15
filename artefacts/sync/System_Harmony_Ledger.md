@@ -2,14 +2,14 @@
 id: artefacts.sync.system_harmony_ledger_v0_1
 layer: artefacts
 owner: Stephan
-status: draft
+status: active
 version: v1.8
-governance: pre-freeze v1.8
+governance: freeze v1.8
 linked_meta:
   - meta/Horizon_Map_v1.8.md
   - docs/BUSINESS_CASE_Horizon_v1.8.md
-  - meta/AI_First_System_Architecture_v1_1.md
-  - meta/AI_First_System_Architecture_v1.8_draft.md
+  - meta/AI_First_System_Architecture_v1_1_archived.md
+  - meta/AI_First_System_Architecture_v1.8.md
 ---
 
 # 🧩 System Harmony Ledger · Draft v0.1  
@@ -27,6 +27,13 @@ linked_meta:
 | Operator | Stephan |
 | Next Sync Target | artefacts/sync/System_Harmony_Ledger_v1.md |
 | CI Mode | disabled (v0.1) |
+
+### Governance Freeze Records
+
+| Metric | Value | Target | Source | Last Update |
+|:--|:--|:--|:--|:--|
+| Freeze Status | true | – | artefacts/logs/transition_AT-015_v1.md | 2025-10-15 |
+| Architecture Version | v1.8 | target | meta/AI_First_System_Architecture_v1.8.md | 2025-10-15 |
 
 ---
 
@@ -96,7 +103,7 @@ linked_meta:
 ---
 
 ## 🧩 Integration Notes
-- Ledger bindet Horizon v1.8, Business v1.8 sowie Architecture v1.8 (Draft) und hält v1.1 als Referenzhistorie.
+- Ledger bindet Horizon v1.8, Business v1.8 sowie Architecture v1.8 und hält v1.1 als Referenzhistorie.
 - Nach Refinement v1 → Version 1.0 (aktiv für CI).  
 - Harmony Check Policy prüft Versionsgleichheit vor jedem Freeze.
 
