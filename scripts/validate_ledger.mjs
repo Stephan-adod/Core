@@ -1,18 +1,20 @@
 // scripts/validate_ledger.mjs
-// Minimaler Validator: liest Tabellen-Sektionen aus artefacts/sync/System_Harmony_Ledger.md,
-// prüft Ampel-Logik & Drift-Grenzen. validate-only (schreibt nichts).
-
 import { readFileSync } from "fs";
 import path from "path";
 
-const args = Object.fromEntries(process.argv.slice(2).map(a=>{
-  const [k,v] = a.replace(/^--/,'').split('=');
-  return [k, v ?? true];
-}));
+// ---- robust argv parser: --max-drift=5 -> { max_drift: "5" }
+const argv = process.argv.slice(2).reduce((acc, cur) => {
+  const s = cur.startsWith("--") ? cur.slice(2) : cur;
+  const [k, v] = s.split("=");
+  // normalisiere keys: '-' -> '_' damit wir in JS sicher zugreifen können
+  acc[k.replace(/-/g, "_")] = v === undefined ? true : v;
+  return acc;
+}, {});
 
-const MAX_DRIFT = Number(args.max-drift || args["max-drift"] || 5);
-const MIN_HEALTH = Number(args.min-health || args["min-health"] || 80);
-const LEDGER_PATH = args.ledger || "artefacts/sync/System_Harmony_Ledger.md";
+// Defaults
+const MAX_DRIFT  = Number(argv.max_drift  ?? 5);
+const MIN_HEALTH = Number(argv.min_health ?? 80);
+const LEDGER_PATH = argv.ledger ?? "artefacts/sync/System_Harmony_Ledger.md";
 
 function read(file){ return readFileSync(path.resolve(file), "utf8"); }
 
