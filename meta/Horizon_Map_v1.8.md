@@ -7,6 +7,7 @@ version: v1.8
 governance: pre-freeze v1.8
 linked_meta:
   - meta/AI_First_System_Architecture_v1_1.md
+  - meta/AI_First_System_Architecture_v1.8_draft.md
   - docs/BUSINESS_CASE_Horizon_v1.8.md
   - artefacts/sync/System_Harmony_Ledger.md
 ---

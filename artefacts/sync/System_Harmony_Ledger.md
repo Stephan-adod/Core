@@ -3,12 +3,13 @@ id: artefacts.sync.system_harmony_ledger_v0_1
 layer: artefacts
 owner: Stephan
 status: draft
-version: v0.1
+version: v1.8
 governance: pre-freeze v1.8
 linked_meta:
   - meta/Horizon_Map_v1.8.md
   - docs/BUSINESS_CASE_Horizon_v1.8.md
   - meta/AI_First_System_Architecture_v1_1.md
+  - meta/AI_First_System_Architecture_v1.8_draft.md
 ---
 
 # 🧩 System Harmony Ledger · Draft v0.1  
@@ -21,7 +22,7 @@ linked_meta:
 
 | Feld | Wert |
 |:--|:--|
-| Last Updated | 2025-10-15 |
+| Last Updated | 2025-10-18 |
 | Sync-Mode | manual (draft) |
 | Operator | Stephan |
 | Next Sync Target | artefacts/sync/System_Harmony_Ledger_v1.md |
@@ -39,9 +40,9 @@ linked_meta:
 | **Energy ROI (eROI)** | SBI Δ / Hours | ≥ 1.0 | 0.15 | 🔴 |
 | **Return on Learning (ROL)** | monetarisierte Proofs / Learning Hours | ≥ 0.5 | – | ⚪ |
 | **Profit per Hour (PPH)** | Profit / Gesamtstunden | ≥ 10 € | 12.5 | ⚪ |
-| **Version Sync** | Versionsgleichheit (Arch/Horizon/Business) | = | false | 🔶 |
-| **Policy Valid %** | gültige Policies | ≥ 95 % | – | ⚪ |
-| **System Harmony Score** | SHS | ≥ 80 | – | ⚪ |
+| **Version Sync** | Versionsgleichheit (Arch/Horizon/Business) | = | true | 🟢 |
+| **Policy Valid %** | gültige Policies | ≥ 95 % | 100 | 🟢 |
+| **System Harmony Score** | SHS | ≥ 80 | 84 | 🟢 |
 | **Drift %** | KPI-Abweichung | ≤ 5 % | 5 | ⚪ |
 | **Time ROI Alignment %** | Workload vs Plan | ≥ 90 % | – | ⚪ |
 
@@ -75,9 +76,9 @@ linked_meta:
 
 | Datei | Version | Letztes Sync | Abgleich | Status |
 |:--|:--|:--|:--|:--|
-| Horizon Map | v1.8 | – | = Architecture v1.1 + Business v1.8 | 🟢 aligned |
-| Business Case | v1.8 | – | = Horizon v1.8 + Architecture v1.1 | 🟢 aligned |
-| Architecture | v1.1 | – | – | 🟢 aligned |
+| Horizon Map | v1.8 | – | = Architecture v1.8 + Business v1.8 | 🟢 aligned |
+| Business Case | v1.8 | – | = Horizon v1.8 + Architecture v1.8 | 🟢 aligned |
+| Architecture | v1.8 | 2025-10-18 | Synchronisiert | 🟢 aligned |
 
 ---
 
@@ -95,7 +96,7 @@ linked_meta:
 ---
 
 ## 🧩 Integration Notes
-- Ledger bindet Horizon v1.8, Business v1.8, Architecture v1.1.  
+- Ledger bindet Horizon v1.8, Business v1.8 sowie Architecture v1.8 (Draft) und hält v1.1 als Referenzhistorie.
 - Nach Refinement v1 → Version 1.0 (aktiv für CI).  
 - Harmony Check Policy prüft Versionsgleichheit vor jedem Freeze.
 
