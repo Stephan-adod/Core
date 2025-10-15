@@ -30,8 +30,26 @@ let archOK = has(arch,"version: v1.8") && has(arch,"governance: freeze v1.8");
 if(!archOK) add("architecture","high","Architecture not frozen v1.8",ARCH);
 
 // 2) Linked Meta / Freeze Cohesion (Horizon/Business)
-let linkOK = has(horizon, "AI_First_System_Architecture_v1.8.md") && has(horizon, "BUSINESS_CASE_Horizon_v1.8.md");
-if(!linkOK) add("links","medium","Horizon linked_meta missing references",HORIZON);
+//   Prüfe sowohl Body als auch YAML-Frontmatter (ohne echten YAML-Parser).
+const RE_ARCH = /AI_First_System_Architecture_v1\.8\.md/;
+const RE_ARCH_YAML = /path:\s*meta\/AI_First_System_Architecture_v1\.8\.md/;
+const RE_BIZ  = /BUSINESS_CASE_Horizon_v1\.8\.md/;
+const RE_BIZ_YAML  = /path:\s*docs\/BUSINESS_CASE_Horizon_v1\.8\.md/;
+const RE_LEDGER_YAML = /path:\s*artefacts\/sync\/System_Harmony_Ledger\.md/;
+
+const hasArchRef   = RE_ARCH.test(horizon)   || RE_ARCH_YAML.test(horizon);
+const hasBizRef    = RE_BIZ.test(horizon)    || RE_BIZ_YAML.test(horizon);
+const hasLedgerRef = /System_Harmony_Ledger\.md/.test(horizon) || RE_LEDGER_YAML.test(horizon);
+
+let linkOK = hasArchRef && hasBizRef && hasLedgerRef;
+if(!linkOK){
+  const miss = [
+    hasArchRef ? null : "architecture link",
+    hasBizRef ? null : "business link",
+    hasLedgerRef ? null : "ledger link"
+  ].filter(Boolean).join(", ");
+  add("links","medium",`Horizon linked_meta missing: ${miss}`,HORIZON);
+}
 
 // 3) Ledger Validity (25%) – Harmony & required KPIs present
 let ledgerOK = has(ledger,"System Harmony Ledger") &&
@@ -60,8 +78,9 @@ const lessonsOK = lessons && /What Worked|Challenges|Next Iteration/i.test(lesso
 if(!lessonsOK) add("human","medium","Lessons log missing or incomplete",LESSONS);
 
 // 7) Meta-Sync Coherence (20%) – governance freeze reflected in ledger & links
-const metaSyncOK = has(ledger,"governance: freeze v1.8") || /Freeze Status\s*\|\s*true/.test(ledger);
-if(!metaSyncOK) add("meta-sync","medium","Ledger not reflecting freeze v1.8",LEDGER);
+const metaSyncLedger = has(ledger,"governance: freeze v1.8") || /Freeze Status\s*\|\s*true/.test(ledger);
+if(!metaSyncLedger) add("meta-sync","medium","Ledger not reflecting freeze v1.8",LEDGER);
+const metaSyncOK = metaSyncLedger && linkOK;
 
 // Scoreberechnung
 function pct(b){ return b?1:0; }
@@ -71,7 +90,7 @@ const score =
   pct(ledgerOK)*w.ledger +
   pct(ciOK)*w.ci +
   pct(lessonsOK)*w.human +
-  pct(metaSyncOK)*w.meta;
+  pct(metaSyncOK)*w.meta; // Link-Check fließt in metaSyncOK ein
 
 const scorePct = Math.round(score*100);
 
