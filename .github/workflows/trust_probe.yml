@@ -1,0 +1,50 @@
+name: CI · Trust Probe v1.8
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1" # Mo 06:00 UTC (wöchentlich)
+jobs:
+  trust-probe:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Run Trust Probe (tolerate warnings)
+        id: run_probe
+        continue-on-error: true
+        run: node scripts/run_trust_probe_v1_8.mjs
+      - name: Upload Trust Probe Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trust-probe-v1_8-reports
+          path: artefacts/logs/trust_probe_v1.8.*
+      - name: Classify outcome (fail on missing report / non-success run)
+        if: always()
+        env:
+          RUN_OUTCOME: ${{ steps.run_probe.outcome }}
+        run: |
+          echo "run_outcome=$RUN_OUTCOME"
+          REPORT="artefacts/logs/trust_probe_v1.8.json"
+          if [ "$RUN_OUTCOME" != "success" ]; then
+            echo "::error::Trust Probe step did not complete successfully (outcome=$RUN_OUTCOME)."
+            [ -f "$REPORT" ] || exit 1
+          fi
+          if [ ! -f "$REPORT" ]; then
+            echo "::error::Missing report $REPORT – probe likely crashed before writing output."
+            exit 1
+          fi
+          CODE=$(node -e "const fs=require('fs');const p=process.argv[1];let c=0;try{const j=JSON.parse(fs.readFileSync(p,'utf8'));c=(j.exit_code??0);}catch(e){c=1;}process.stdout.write(String(c));" "$REPORT")
+          echo "exit=$CODE"
+          if [ "$CODE" -eq 1 ]; then
+            echo '::error::Trust Probe failed (exit=1).'; exit 1
+          elif [ "$CODE" -eq 2 ]; then
+            echo '::warning::Trust Probe warnings (exit=2).'; exit 0
+          else
+            echo 'Trust Probe passed.'; exit 0
+          fi

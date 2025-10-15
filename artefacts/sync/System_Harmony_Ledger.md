@@ -224,3 +224,4 @@ Code kopieren
 
 ---
 
+| Last Trust Audit | 100% | ≥ 90% | artefacts/logs/trust_probe_v1.8.md | 2025-10-15 |
