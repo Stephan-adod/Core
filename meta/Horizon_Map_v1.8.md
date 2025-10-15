@@ -7,7 +7,7 @@ version: v1.8
 governance: pre-freeze v1.8
 linked_meta:
   - meta/AI_First_System_Architecture_v1_1.md
-  - docs/BUSINESS_CASE_Horizon_v1_8.md
+  - docs/BUSINESS_CASE_Horizon_v1.8.md
 ---
 
 # 🌐 Horizon Map · v1.8  
@@ -100,10 +100,20 @@ Ein selbstlernendes Arbeits- und Lebenssystem, das
 
 ### ZONE 5 — Governance & Rhythm
 - Update: Architecture 6 W · Horizon 3 M · Business 6 M → ✅ stimmig.  
-- Meta-Policy „Harmony Check“ implementieren:  
+- Meta-Policy „Harmony Check“ implementieren:
   ```yaml
   policy:
     name: Harmony Check
     rule: "horizon.version == business.version == architecture.version"
     metric: "version_sync == true"
     status: active
+  ```
+
+## 🔗 Integration Recommendations (System Harmony)
+1. Horizon v1.8 bleibt Master für Richtung & Proof Targets.  
+2. Business v1.8 liefert ROI-Baseline (MRR 3–4 k€, Profit ≥ 10 €/h).  
+3. Architecture v1.1 spiegelt Policies & KPIs  
+   (inkl. Profit per Hour, Harmony Check, Ledger Freeze Gate).  
+4. System Harmony Ledger konsolidiert KPIs;  
+   vor Freeze gilt: SHS ≥ 80 und Drift ≤ 5 %.  
+5. Review-Zyklen: Arch 6 W · Horizon 3 M · Business 6 M · Weekly Proof Review fix.
