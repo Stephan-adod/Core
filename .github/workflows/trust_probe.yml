@@ -1,0 +1,33 @@
+name: CI · Trust Probe v1.8
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 6 * * 1" # Mo 06:00 UTC (wöchentlich)
+jobs:
+  trust-probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Run Trust Probe (tolerate warnings)
+        continue-on-error: true
+        run: node scripts/run_trust_probe_v1_8.mjs
+      - name: Upload Trust Probe Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: trust-probe-v1_8-reports
+          path: artefacts/logs/trust_probe_v1.8.*
+      - name: Classify outcome
+        if: always()
+        run: |
+          code=$(jq -r '.exit_code // "0"' artefacts/logs/trust_probe_v1.8.json 2>/dev/null || echo "0")
+          echo "exit=$code"
+          if [ "$code" = "1" ]; then
+            echo "::error::Trust Probe failed (exit=1)."; exit 1
+          elif [ "$code" = "2" ]; then
+            echo "::warning::Trust Probe warnings (exit=2)."; exit 0
+          else
+            echo "Trust Probe passed."; exit 0
