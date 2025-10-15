@@ -6,7 +6,7 @@ status: active
 version: v1.8
 governance: pre-freeze v1.8
 linked_meta:
-  - meta/Horizon_Map_v1_8.md
+  - meta/Horizon_Map_v1.8.md
   - meta/AI_First_System_Architecture_v1_1.md
 ---
 
