@@ -1,5 +1,7 @@
 name: ledger-validate
 on:
+  push:
+  pull_request:
   workflow_dispatch:
   schedule:
     - cron: "0 16 * * 0" # So 16:00 UTC (So 18:00 lokal ~ Beispiel)

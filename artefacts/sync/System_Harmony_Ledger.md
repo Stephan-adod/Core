@@ -21,7 +21,7 @@ linked_meta:
 
 | Feld | Wert |
 |:--|:--|
-| Last Updated | YYYY-MM-DD |
+| Last Updated | 2025-10-15 |
 | Sync-Mode | manual (draft) |
 | Operator | Stephan |
 | Next Sync Target | artefacts/sync/System_Harmony_Ledger_v1.md |
@@ -39,8 +39,10 @@ linked_meta:
 | **Energy ROI (eROI)** | SBI Δ / Hours | ≥ 1.0 | 1.0 | ⚪ |
 | **Return on Learning (ROL)** | monetarisierte Proofs / Learning Hours | ≥ 0.5 | – | ⚪ |
 | **Profit per Hour (PPH)** | Profit / Gesamtstunden | ≥ 10 € | 12.5 | ⚪ |
-| **MRR Alignment %** | MRR / Target | ≥ 80 % | – | ⚪ |
-| **Policy Drift %** | abweichende Policies | ≤ 5 % | 5 | ⚪ |
+| **Version Sync** | Versionsgleichheit (Arch/Horizon/Business) | = | false | 🔶 |
+| **Policy Valid %** | gültige Policies | ≥ 95 % | – | ⚪ |
+| **System Harmony Score** | SHS | ≥ 80 | – | ⚪ |
+| **Drift %** | KPI-Abweichung | ≤ 5 % | 5 | ⚪ |
 | **Time ROI Alignment %** | Workload vs Plan | ≥ 90 % | – | ⚪ |
 
 ---

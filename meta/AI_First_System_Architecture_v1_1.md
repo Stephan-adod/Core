@@ -4,7 +4,7 @@ layer: meta
 owner: Stephan
 status: 🧭 active
 version: v1.1
-governance: pre-freeze v1.8
+governance: v1.8 Bezug
 linked_meta:
   - meta/Horizon_Map_v1.8.md
   - docs/BUSINESS_CASE_Horizon_v1.8.md

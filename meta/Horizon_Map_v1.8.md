@@ -8,6 +8,7 @@ governance: pre-freeze v1.8
 linked_meta:
   - meta/AI_First_System_Architecture_v1_1.md
   - docs/BUSINESS_CASE_Horizon_v1.8.md
+  - artefacts/sync/System_Harmony_Ledger.md
 ---
 
 # 🌐 Horizon Map · v1.8  
