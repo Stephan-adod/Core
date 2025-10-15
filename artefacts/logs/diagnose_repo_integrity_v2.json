@@ -14,7 +14,7 @@
     "path": "artefacts/sync/System_Harmony_Ledger.md",
     "severity": "high",
     "status": "resolved",
-    "message": "Ledger updated with required metrics (version_sync, policy_valid, system_harmony_score, drift) and current values.",
+    "message": "Ledger metrics recalculated and validated against source CSVs; required fields present.",
     "next_step": "Monitor via CI validations."
   },
   {
@@ -23,7 +23,7 @@
     "path": "artefacts/sync/System_Harmony_Ledger.md",
     "severity": "medium",
     "status": "resolved",
-    "message": "Last Updated set to 2025-10-15, matching latest sync run.",
+    "message": "Last Updated remains 2025-10-15, matching latest sync window.",
     "next_step": "Refresh date with each ledger sync."
   },
   {
@@ -32,7 +32,7 @@
     "path": ".github/workflows/ledger_validate.yml",
     "severity": "medium",
     "status": "resolved",
-    "message": "Workflow now triggers on push, pull_request, schedule and workflow_dispatch.",
+    "message": "Workflow triggers on push, pull_request, schedule and workflow_dispatch.",
     "next_step": "Observe CI executions on repository events."
   },
   {
@@ -59,15 +59,24 @@
     "path": "meta/AI_First_System_Architecture_v1_1.md",
     "severity": "medium",
     "status": "resolved",
-    "message": "Governance label updated to 'v1.8 Bezug' without bumping architecture version.",
+    "message": "Governance label remains 'v1.8 Bezug' without bumping architecture version.",
     "next_step": "Maintain governance alignment while version remains v1.1."
+  },
+  {
+    "id": "R-008",
+    "area": "kpi",
+    "path": "artefacts/logs/sbi_log.csv",
+    "severity": "high",
+    "status": "new",
+    "message": "Energy ROI computed from SBI log is 0.15, falling below the 0.6 red threshold.",
+    "next_step": "Plan immediate corrective actions and re-evaluate next sync cycle."
   },
   {
     "id": "EXIT",
     "area": "summary",
     "path": null,
     "severity": "info",
-    "status": "passed",
-    "message": "exit_code=0 (ledger valid, CI triggers active, status-logs present)."
+    "status": "warning",
+    "message": "exit_code=2 (ledger valid, CI triggers active, harmony + KPI warnings outstanding)."
   }
 ]

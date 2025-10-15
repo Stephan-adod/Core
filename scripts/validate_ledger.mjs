@@ -1,6 +1,16 @@
 // scripts/validate_ledger.mjs
-import { readFileSync, existsSync } from "fs";
+import { readFileSync, existsSync, writeFileSync as fsWriteFileSync } from "fs";
 import path from "path";
+
+const fallbackWrite = (payload) => {
+  try {
+    fsWriteFileSync("artefacts/logs/validator_exit.json", JSON.stringify(payload));
+    return;
+  } catch {}
+  try {
+    require("fs").writeFileSync("artefacts/logs/validator_exit.json", JSON.stringify(payload));
+  } catch {}
+};
 
 // ---------- argv parsing (robust: --max-drift=5 -> max_drift=5)
 const argv = process.argv.slice(2).reduce((acc, cur) => {
@@ -181,15 +191,38 @@ function main() {
   console.log(`Thresholds: min health ${MIN_HEALTH}%, max drift ${MAX_DRIFT}%`);
 
   const failed = (health < MIN_HEALTH) || (!isNaN(drift) && Number(drift) > MAX_DRIFT);
+  // Neue Warning-Heuristik:
+  // - Keine Blocker, aber mindestens eine KPI-Warnung (z.B. Harmony gelb, optionale Schwellen knapp verfehlt)
+  const warnings = [];
+  if (!failed) {
+    if (typeof health === "number" && health < (process.env.MIN_HEALTH_WARN || 90)) {
+      warnings.push("health_below_warn_threshold");
+    }
+    if (!isNaN(drift) && Number(drift) > (process.env.MAX_DRIFT_WARN || 5)) {
+      warnings.push("drift_above_warn_threshold");
+    }
+    // Beispiel: Harmony bleibt gelb (Arch v1.1 vs v1.8)
+    if (process.env.HARMONY_EXPECTED_GREEN !== "true") {
+      warnings.push("harmony_warning");
+    }
+  }
+
   if (failed) {
     console.error("status: failed | reason=thresholds_not_met");
+    fallbackWrite({ exit: 1 });
     process.exit(1);
+  }
+  if (warnings.length) {
+    console.warn("status: warning | details=%j", warnings);
+    fallbackWrite({ exit: 2, warnings });
+    process.exit(2);
   }
   console.log(
     "status: passed | health=%d | drift=%s",
     health,
     isNaN(drift) ? "n/a" : Number(drift).toFixed(2)
   );
+  fallbackWrite({ exit: 0 });
 }
 
 main();
