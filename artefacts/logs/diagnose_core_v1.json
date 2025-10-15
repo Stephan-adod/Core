@@ -1,0 +1,28 @@
+[
+  {
+    "id": "CORE-001",
+    "file": "meta/AI_First_System_Architecture_v1_1.md",
+    "severity": "blocker",
+    "finding": "Frontmatter version/governance mismatch breaks Harmony requirement (v1.1 & 'pre-freeze v1.8' vs expected v1.8 & 'v1.8 Bezug').",
+    "fixability": "high",
+    "suggested_fixes": [
+      {
+        "type": "unified_diff",
+        "diff": "--- a/meta/AI_First_System_Architecture_v1_1.md\n+++ b/meta/AI_First_System_Architecture_v1_1.md\n@@\n-version: v1.1\n-governance: pre-freeze v1.8\n+version: v1.8\n+governance: v1.8 Bezug\n"
+      }
+    ]
+  },
+  {
+    "id": "CORE-002",
+    "file": "meta/AI_First_System_Architecture_v1_1.md",
+    "severity": "blocker",
+    "finding": "Policy YAML uses repeated keys in one object and omits required Energy/Quality/Automation entries, preventing policy validation.",
+    "fixability": "medium",
+    "suggested_fixes": [
+      {
+        "type": "unified_diff",
+        "diff": "@@\n-```yaml\n-policy:\n-  name: Market Validation\n-  rule: \"each quarter >= 1 validated external proof\"\n-  metric: \"proofs_validated / quarter >= 1\"\n-  rationale: \"Umsatz oder Nutzerfeedback ist ein Lernsignal, kein Endziel\"\n-  status: active\n-  name: Profit per Hour\n-  rule: \"profit_per_hour >= 10\"\n-  metric: \"total_profit / total_hours\"\n-  status: active\n-  name: Harmony Check\n-  rule: \"horizon.version == business.version == architecture.version\"\n-  status: active\n-  name: Ledger Freeze Gate\n-  rule: \"SHS >= 80 and drift <= 5\"\n-  status: active\n-``` \n+```yaml\n+policy:\n+  - name: Energy\n+    rule: \"output requires SBI >= 1.0\"\n+    metric: \"sbi_last >= 1.0\"\n+    status: active\n+  - name: Quality\n+    rule: \"each artefact meets DoR & DoD\"\n+    status: active\n+  - name: Automation\n+    rule: \"no manual repetition > 2x\"\n+    status: active\n+  - name: Market Validation\n+    rule: \"each quarter >= 1 validated external proof\"\n+    metric: \"proofs_validated_per_quarter >= 1\"\n+    status: active\n+  - name: Profit per Hour\n+    rule: \"profit_per_hour >= 10\"\n+    metric: \"total_profit / total_hours\"\n+    status: active\n+  - name: Harmony Check\n+    rule: \"horizon.version == business.version == architecture.version\"\n+    metric: \"version_sync == true\"\n+    status: active\n+  - name: Ledger Freeze Gate\n+    rule: \"system_harmony_score >= 80 and drift <= 5\"\n+    status: active\n+```\n"
+      }
+    ]
+  }
+]
