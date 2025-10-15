@@ -1,0 +1,50 @@
+{
+  "findings": [
+    {
+      "id": "D3-001",
+      "area": "crossrefs",
+      "path": "meta/AI_First_System_Architecture_v1.8_draft.md",
+      "status": "ok",
+      "severity": "info",
+      "details": "Frontmatter verlinkt Horizon, Business Case und Ledger (v1.8)",
+      "fixable": false
+    },
+    {
+      "id": "D3-002",
+      "area": "draft_quality",
+      "path": "meta/AI_First_System_Architecture_v1.8_draft.md",
+      "status": "ok",
+      "severity": "info",
+      "details": "Keine offenen TODO-Marker gefunden",
+      "fixable": false
+    },
+    {
+      "id": "D3-003",
+      "area": "policy_validation",
+      "path": "meta/AI_First_System_Architecture_v1.8_draft.md",
+      "status": "ok",
+      "severity": "info",
+      "details": "Policy-Block enthält mindestens sieben Regeln mit name und rule",
+      "fixable": false
+    },
+    {
+      "id": "D3-004",
+      "area": "ledger",
+      "path": "artefacts/sync/System_Harmony_Ledger.md",
+      "status": "ok",
+      "severity": "info",
+      "details": "Ledger verfügbar; Version Sync, System Harmony Score und Policy Valid % sind grün",
+      "fixable": false
+    },
+    {
+      "id": "D3-005",
+      "area": "harmony",
+      "path": "meta/AI_First_System_Architecture_v1.8_draft.md",
+      "status": "ok",
+      "severity": "info",
+      "details": "Harmony Check bestätigt Versionsgleichheit von Architektur, Horizon und Business",
+      "fixable": false
+    }
+  ],
+  "exit_code": 0
+}
