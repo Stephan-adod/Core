@@ -1,34 +1,35 @@
 ---
 id: AT-021
 status: backlog
-# archive: true   # ← wenn gesetzt, wird das Ticket archiviert/entfernt
-# priority: 8.5   # ← Zahl 0–10; "–" lässt Platzhalter bestehen (kein Apply)
-# reviewer: Stephan
+priority: 8.8
+reviewer: Stephan
 ---
 
 # AT-021 · Refinement
 
 ## Summary
-<kurz und prägnant – 1–2 Sätze>
+Automatisiere den wöchentlichen Backlog-Hygiene-Check (Platzhalter erkennen, Liste erzeugen, Artefakt anhängen) als GitHub Action.
 
 ## Goal (Outcome & KPI)
-- Outcome:
+- Outcome: Verbindlicher, leichter Hygiene-Loop ohne manuelle Ausführung.
 - KPI/Target:
+  - <= 14 Tage alte Platzhalter: **0**
+  - Anteil Tickets mit numerischer Prio: **≥ 80 %**
+  - Wöchentlicher Report-Artefakt vorhanden: **100 %**
 
 ## Impact (Why now)
-- Business Impact (1–2 Bullet Points):
-- Risiko bei Nicht-Umsetzung:
+- Stellt sicher, dass Platzhalter nicht liegen bleiben.
+- Entlastet dich operativ; hält den Backlog „wertvoll“.
 
 ## Definition of Ready (DoR)
-- [ ] Problem/Scope klar
-- [ ] Lösungsskizze vorhanden
-- [ ] Abhängigkeiten geklärt
-- [ ] Aufwand grob geschätzt (S/M/L)
+- [x] Problem/Scope klar
+- [x] Lösungsskizze vorhanden (Action + Script)
+- [ ] Abhängigkeiten geklärt (Repo-Token, Pfade)
+- [ ] Aufwand grob geschätzt (S)
 
 ## Next Step (1 konkrete Aktion)
-- Schritt:
-- Verantwortlich:
+- Schritt: `backlog_hygiene.yml` unter `.github/workflows/` anlegen (weekly, artefact upload).
+- Verantwortlich: ChatGPT + Stephan
 
 ## Notes
-- Kontext/Links:
-
+- Nutzt `scripts/backlog_hygiene.mjs` (bereits im Repo).
