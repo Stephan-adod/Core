@@ -1,34 +1,34 @@
 ---
 id: AT-015
 status: backlog
-# archive: true   # ← wenn gesetzt, wird das Ticket archiviert/entfernt
-# priority: 8.5   # ← Zahl 0–10; "–" lässt Platzhalter bestehen (kein Apply)
-# reviewer: Stephan
+priority: 8.0
+reviewer: Stephan
 ---
 
 # AT-015 · Refinement
 
 ## Summary
-<kurz und prägnant – 1–2 Sätze>
+Verknüpfe `cost_time.csv` mit Tickets/Matrix und rendere eine einfache Übersicht (Budget, Ist-Zeit, Abweichung) im Dashboard.
 
 ## Goal (Outcome & KPI)
-- Outcome:
+- Outcome: Sichtbarkeit von Aufwand/Kosten pro Ticket.
 - KPI/Target:
+  - Abdeckung (Tickets mit Eintrag in cost_time.csv): **≥ 60 %**
+  - Fehlermeldungen/Parsingfehler: **0**
+  - Neue Dashboard-Sektion „Cost/Time“ vorhanden
 
 ## Impact (Why now)
-- Business Impact (1–2 Bullet Points):
-- Risiko bei Nicht-Umsetzung:
+- Bessere Entscheidungsgrundlage bei Priorisierung (Nutzen/Aufwand).
 
 ## Definition of Ready (DoR)
-- [ ] Problem/Scope klar
-- [ ] Lösungsskizze vorhanden
-- [ ] Abhängigkeiten geklärt
-- [ ] Aufwand grob geschätzt (S/M/L)
+- [x] Problem/Scope klar
+- [x] Lösungsskizze (CSV→map→merge→render)
+- [ ] Abhängigkeiten (CSV-Schema) geklärt
+- [ ] Aufwand (M)
 
 ## Next Step (1 konkrete Aktion)
-- Schritt:
-- Verantwortlich:
+- Schritt: kleines Parser-Modul + Merge in Dashboard; minimaler CSV-Validator.
+- Verantwortlich: ChatGPT + Stephan
 
 ## Notes
-- Kontext/Links:
-
+- Datei liegt bereits unter `logs/cost_time.csv`.
