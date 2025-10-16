@@ -21,3 +21,15 @@ linked_meta:
 | GOV-003 | Meta | Archive Policy | Erarbeitung und Implementierung einer konsistenten Archivierungs-Policy. | planned | 8.6 | Stephan / ChatGPT | C2 (Dez 2025 – Jan 2026) | Governance Freeze Vorbereitung. |
 | OPS-001 | Foundation | Probe Parameterization | Standardisierung der Probe-Parameter und Automatisierung der Auswertung. | backlog | 8.6 | Stephan / ChatGPT | C2 (Dez 2025 – Jan 2026) | Teil des Governance-Stabilisierungszyklus. |
 | DOC-001 | Meta | Docs & Badges | Konsolidierung der Dokumentation & Badge-System für Governance-Artefakte. | backlog | 9.0 | Stephan / ChatGPT | C3 (Feb – Mär 2026) | Meta-Upgrade & Badge-Einführung. |
+
+| AT-015 | – | – | Placeholder (Refinement erforderlich) | backlog | – | Stephan / ChatGPT | C? | Stub via stabilization 2025-10-16T19-41-22 |
+| AT-018 | – | – | Placeholder (Refinement erforderlich) | backlog | – | Stephan / ChatGPT | C? | Stub via stabilization 2025-10-16T19-41-22 |
+| AT-019 | – | – | Placeholder (Refinement erforderlich) | backlog | – | Stephan / ChatGPT | C? | Stub via stabilization 2025-10-16T19-41-22 |
+| AT-020 | – | – | Placeholder (Refinement erforderlich) | backlog | – | Stephan / ChatGPT | C? | Stub via stabilization 2025-10-16T19-41-22 |
+| AT-021 | – | – | Placeholder (Refinement erforderlich) | backlog | – | Stephan / ChatGPT | C? | Stub via stabilization 2025-10-16T19-41-22 |
+| AT-022 | – | – | Placeholder (Refinement erforderlich) | backlog | – | Stephan / ChatGPT | C? | Stub via stabilization 2025-10-16T19-41-22 |
+| AT-023 | – | – | Placeholder (Refinement erforderlich) | backlog | – | Stephan / ChatGPT | C? | Stub via stabilization 2025-10-16T19-41-22 |
+| AT-024 | – | – | Placeholder (Refinement erforderlich) | backlog | – | Stephan / ChatGPT | C? | Stub via stabilization 2025-10-16T19-41-22 |
+| AT-025 | – | – | Placeholder (Refinement erforderlich) | backlog | – | Stephan / ChatGPT | C? | Stub via stabilization 2025-10-16T19-41-22 |
+| AT-026 | – | – | Placeholder (Refinement erforderlich) | backlog | – | Stephan / ChatGPT | C? | Stub via stabilization 2025-10-16T19-41-22 |
+| AT-027 | – | – | Placeholder (Refinement erforderlich) | backlog | – | Stephan / ChatGPT | C? | Stub via stabilization 2025-10-16T19-41-22 |
