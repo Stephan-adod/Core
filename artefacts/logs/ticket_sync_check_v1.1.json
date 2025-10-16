@@ -1,0 +1,125 @@
+{
+  "exit": 2,
+  "findings": [
+    {
+      "id": "AT-015",
+      "area": "backlog",
+      "msg": "Fehlt in Backlog"
+    },
+    {
+      "id": "AT-015",
+      "area": "dashboard",
+      "msg": "Fehlt im Dashboard"
+    },
+    {
+      "id": "AT-016",
+      "area": "backlog",
+      "msg": "Fehlt in Backlog"
+    },
+    {
+      "id": "AT-017",
+      "area": "backlog",
+      "msg": "Fehlt in Backlog"
+    },
+    {
+      "id": "AT-018",
+      "area": "backlog",
+      "msg": "Fehlt in Backlog"
+    },
+    {
+      "id": "AT-018",
+      "area": "dashboard",
+      "msg": "Fehlt im Dashboard"
+    },
+    {
+      "id": "AT-019",
+      "area": "backlog",
+      "msg": "Fehlt in Backlog"
+    },
+    {
+      "id": "AT-019",
+      "area": "dashboard",
+      "msg": "Fehlt im Dashboard"
+    },
+    {
+      "id": "AT-020",
+      "area": "backlog",
+      "msg": "Fehlt in Backlog"
+    },
+    {
+      "id": "AT-020",
+      "area": "dashboard",
+      "msg": "Fehlt im Dashboard"
+    },
+    {
+      "id": "AT-021",
+      "area": "backlog",
+      "msg": "Fehlt in Backlog"
+    },
+    {
+      "id": "AT-021",
+      "area": "dashboard",
+      "msg": "Fehlt im Dashboard"
+    },
+    {
+      "id": "AT-022",
+      "area": "backlog",
+      "msg": "Fehlt in Backlog"
+    },
+    {
+      "id": "AT-022",
+      "area": "dashboard",
+      "msg": "Fehlt im Dashboard"
+    },
+    {
+      "id": "AT-023",
+      "area": "backlog",
+      "msg": "Fehlt in Backlog"
+    },
+    {
+      "id": "AT-023",
+      "area": "dashboard",
+      "msg": "Fehlt im Dashboard"
+    },
+    {
+      "id": "AT-024",
+      "area": "backlog",
+      "msg": "Fehlt in Backlog"
+    },
+    {
+      "id": "AT-024",
+      "area": "dashboard",
+      "msg": "Fehlt im Dashboard"
+    },
+    {
+      "id": "AT-025",
+      "area": "backlog",
+      "msg": "Fehlt in Backlog"
+    },
+    {
+      "id": "AT-025",
+      "area": "dashboard",
+      "msg": "Fehlt im Dashboard"
+    },
+    {
+      "id": "AT-026",
+      "area": "backlog",
+      "msg": "Fehlt in Backlog"
+    },
+    {
+      "id": "AT-026",
+      "area": "dashboard",
+      "msg": "Fehlt im Dashboard"
+    },
+    {
+      "id": "AT-027",
+      "area": "backlog",
+      "msg": "Fehlt in Backlog"
+    },
+    {
+      "id": "AT-027",
+      "area": "dashboard",
+      "msg": "Fehlt im Dashboard"
+    }
+  ]
+}
