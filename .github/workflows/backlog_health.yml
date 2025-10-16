@@ -1,0 +1,56 @@
+name: CI · Backlog Health v1.0
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 8 * * 1"
+jobs:
+  backlog-health:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Generate Backlog Summary (tolerate warnings)
+        id: gen
+        continue-on-error: true
+        run: node scripts/generate_backlog_summary.mjs
+      - name: Upload Backlog Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: backlog-health-v1_0-reports
+          path: |
+            artefacts/logs/meta/diagnose_backlog_v1.0.md
+            artefacts/logs/meta/diagnose_backlog_v1.0.json
+      - name: Classify outcome (fail on missing report / non-success run)
+        if: always()
+        env:
+          RUN_OUTCOME: ${{ steps.gen.outcome }}
+        run: |
+          echo "run_outcome=$RUN_OUTCOME"
+          REPORT="artefacts/logs/meta/diagnose_backlog_v1.0.json"
+          if [ "$RUN_OUTCOME" != "success" ]; then
+            echo "::error::Backlog generator step did not complete successfully (outcome=$RUN_OUTCOME)."
+            [ -f "$REPORT" ] || exit 1
+          fi
+          if [ ! -f "$REPORT" ]; then
+            echo "::error::Missing report $REPORT – generator likely crashed."
+            exit 1
+          fi
+          CODE=$(node -e "const fs=require('fs');let c=0;try{const j=JSON.parse(fs.readFileSync('artefacts/logs/meta/diagnose_backlog_v1.0.json','utf8'));c=(j.exit_code??0);}catch(e){c=1;}process.stdout.write(String(c));")
+          echo "exit=$CODE"
+          if [ "$CODE" -eq 1 ]; then
+            echo '::error::Backlog Health failed (exit=1).'
+            exit 1
+          elif [ "$CODE" -eq 2 ]; then
+            echo '::warning::Backlog Health warnings (exit=2).'
+            exit 0
+          else
+            echo 'Backlog Health passed.'
+            exit 0
+          fi

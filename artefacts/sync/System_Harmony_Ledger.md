@@ -232,3 +232,10 @@ Code kopieren
 | Metric | Value | Target | Source | Last Update |
 |---|---|---|---|---|
 | Last Meta Diagnosis | 60% | ≥ 95% | artefacts/logs/meta/diagnose_meta_v1.8.md | 2025-10-16 |
+
+
+## Backlog Health Records
+
+| Metric | Value | Target | Source | Last Update |
+|---|---|---|---|---|
+| Last Backlog Health | 8.88 | ≥ 8.5 | artefacts/logs/meta/diagnose_backlog_v1.0.md | 2025-10-16 |
