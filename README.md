@@ -72,9 +72,16 @@ Code kopieren
 ---
 
 ## 🧩 Versionierung
-- Aktuelle Freeze-Version: **v1.8**  
-- Letzte Trust Probe: **artefacts/logs/trust_probe_v1.8.md**  
+- Aktuelle Freeze-Version: **v1.8**
+- Letzte Trust Probe: **artefacts/logs/trust_probe_v1.8.md**
 - Ledger-Status: **freeze v1.8 / trust_score ≥ 95 %**
+
+### 🧩 Governance Freeze v1.1 (Backlog & Roadmap)
+- Baseline : AT-020 · Backlog & Roadmap Governance v1.0  
+- Status   : freeze v1.1 (2025-10-16)  
+- Health   : 8.9 (green)  
+- Lessons  : artefacts/logs/lessons_AT-020_v1.md  
+- Transition: artefacts/logs/transition_AT-020_v1.md
 
 ---
 

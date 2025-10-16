@@ -2,14 +2,14 @@
 id: roadmap-v1_0
 layer: meta
 owner: Governance Maintainer
-status: active
-version: v1.0
+status: freeze
+version: v1.1
 governance: freeze v1.8
 linked_meta:
   - artefacts/logs/backlog_matrix_v1.0.md
 ---
 
-# Roadmap · v1.0 (12 Wochen)
+# Roadmap · v1.1 (12 Wochen)
 
 | Cycle | Zeitraum | Fokus | Ziele | Tickets | Status |
 |---|---|---|---|---|---|
