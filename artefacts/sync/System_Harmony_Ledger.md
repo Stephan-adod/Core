@@ -238,4 +238,4 @@ Code kopieren
 
 | Metric | Value | Target | Source | Last Update |
 |---|---|---|---|---|
-| Last Backlog Health | 6.06 | ≥ 8.5 | artefacts/logs/meta/diagnose_backlog_v1.0.md | 2025-10-16 |
+| Last Backlog Health | 8.88 | ≥ 8.5 | artefacts/logs/meta/diagnose_backlog_v1.0.md | 2025-10-16 |

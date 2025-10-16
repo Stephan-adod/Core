@@ -77,6 +77,8 @@ const items = dataLines
       .map((cell) => cell.trim());
     const ticket = cols[1];
     if (!ticket) return null;
+    const priorityCell = cols[9];
+    const priority = priorityCell ? Number(priorityCell) : NaN;
     return {
       ticket,
       layer: cols[2] || "",
@@ -86,6 +88,7 @@ const items = dataLines
       effort: Number(cols[6] || 0),
       harmony: Number(cols[7] || 0),
       learning: Number(cols[8] || 0),
+      priority,
       status: cols[10] || "backlog",
       owner: cols[11] || "-",
     };
@@ -103,7 +106,9 @@ function score(item) {
 }
 
 items.forEach((item) => {
-  item.priority = score(item);
+  if (!Number.isFinite(item.priority)) {
+    item.priority = score(item);
+  }
 });
 
 const avg =

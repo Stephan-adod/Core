@@ -1,8 +1,8 @@
 {
   "timestamp": "2025-10-16",
-  "avg_priority": 6.06,
-  "badge": "red",
-  "exit_code": 1,
+  "avg_priority": 8.88,
+  "badge": "green",
+  "exit_code": 0,
   "thresholds": {
     "green": 8.5,
     "yellow": 7,
@@ -21,39 +21,39 @@
       "layer": "Meta",
       "category": "Proof Mechanism",
       "impact": 10,
-      "trust": 8,
-      "effort": 7,
+      "trust": 9,
+      "effort": 6,
       "harmony": 9,
       "learning": 9,
-      "status": "planned",
-      "owner": "–",
-      "priority": 6.7
+      "priority": 9.3,
+      "status": "running",
+      "owner": "Stephan"
     },
     {
       "ticket": "AT-017",
       "layer": "Product",
       "category": "Action Plan Automation",
       "impact": 9,
-      "trust": 8,
+      "trust": 9,
       "effort": 6,
       "harmony": 8,
-      "learning": 9,
-      "status": "planned",
-      "owner": "–",
-      "priority": 6.3
+      "learning": 8,
+      "priority": 8.9,
+      "status": "running",
+      "owner": "Stephan"
     },
     {
       "ticket": "GOV-003",
       "layer": "Meta",
       "category": "Archive Policy",
-      "impact": 7,
-      "trust": 7,
+      "impact": 8,
+      "trust": 8,
       "effort": 5,
-      "harmony": 8,
-      "learning": 6,
-      "status": "backlog",
-      "owner": "–",
-      "priority": 5.3
+      "harmony": 9,
+      "learning": 7,
+      "priority": 8.6,
+      "status": "planned",
+      "owner": "Stephan"
     },
     {
       "ticket": "OPS-001",
@@ -61,32 +61,26 @@
       "category": "Probe Parameterization",
       "impact": 8,
       "trust": 8,
-      "effort": 6,
+      "effort": 5,
       "harmony": 8,
       "learning": 8,
+      "priority": 8.6,
       "status": "backlog",
-      "owner": "–",
-      "priority": 5.9
+      "owner": "Stephan"
     },
     {
       "ticket": "DOC-001",
       "layer": "Meta",
       "category": "Docs & Badges",
-      "impact": 7,
+      "impact": 8,
       "trust": 9,
       "effort": 5,
       "harmony": 9,
-      "learning": 7,
+      "learning": 8,
+      "priority": 9,
       "status": "backlog",
-      "owner": "–",
-      "priority": 6.1
+      "owner": "Stephan"
     }
   ],
-  "findings": [
-    {
-      "area": "health",
-      "severity": "high",
-      "message": "Backlog health below threshold (avg=6.06)"
-    }
-  ]
+  "findings": []
 }
