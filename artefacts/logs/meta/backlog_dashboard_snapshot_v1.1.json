@@ -1,0 +1,44 @@
+{
+  "generated_at": "2025-10-16T09:45:47.569Z",
+  "health": 8.88,
+  "badge": "🟢",
+  "kpi": {
+    "impact": 8.6,
+    "trust": 8.6,
+    "effort": 5.4,
+    "harmony": 8.6,
+    "learning": 8
+  },
+  "statusCounts": {
+    "running": 2,
+    "planned": 1,
+    "backlog": 2
+  },
+  "items": [
+    {
+      "ticket": "AT-016",
+      "priority": 9.3,
+      "status": "running"
+    },
+    {
+      "ticket": "AT-017",
+      "priority": 8.9,
+      "status": "running"
+    },
+    {
+      "ticket": "GOV-003",
+      "priority": 8.6,
+      "status": "planned"
+    },
+    {
+      "ticket": "OPS-001",
+      "priority": 8.6,
+      "status": "backlog"
+    },
+    {
+      "ticket": "DOC-001",
+      "priority": 9,
+      "status": "backlog"
+    }
+  ]
+}

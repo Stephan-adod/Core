@@ -27,6 +27,19 @@ jobs:
           path: |
             artefacts/logs/meta/diagnose_backlog_v1.0.md
             artefacts/logs/meta/diagnose_backlog_v1.0.json
+
+      - name: Render Backlog Dashboard (informational)
+        if: always()
+        run: node scripts/update_backlog_dashboard.mjs
+
+      - name: Upload Backlog Dashboard
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: backlog-dashboard-v1_1
+          path: |
+            artefacts/dashboards/backlog_dashboard_v1.1.md
+            artefacts/logs/meta/backlog_dashboard_snapshot_v1.1.json
       - name: Classify outcome (fail on missing report / non-success run)
         if: always()
         env:
