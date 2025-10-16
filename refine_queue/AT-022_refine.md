@@ -1,34 +1,33 @@
 ---
 id: AT-022
 status: backlog
-# archive: true   # ← wenn gesetzt, wird das Ticket archiviert/entfernt
-# priority: 8.5   # ← Zahl 0–10; "–" lässt Platzhalter bestehen (kein Apply)
-# reviewer: Stephan
+priority: 8.6
+reviewer: Stephan
 ---
 
 # AT-022 · Refinement
 
 ## Summary
-<kurz und prägnant – 1–2 Sätze>
+Filter im Backlog-Dashboard, damit Zeilen mit Priorität „–/-“ oder Beschreibung „Placeholder“ **nicht** in aktive Metriken einfließen.
 
 ## Goal (Outcome & KPI)
-- Outcome:
+- Outcome: Dashboard reflektiert nur aktiv priorisierte Arbeit.
 - KPI/Target:
+  - Abweichung „Active Backlog Size“ vs. Diagnose-Filtered-Snapshot: **0**
+  - Tests vorhanden (Unit auf Filterfunktion)
 
 ## Impact (Why now)
-- Business Impact (1–2 Bullet Points):
-- Risiko bei Nicht-Umsetzung:
+- Verhindert verzerrte Velocity/Score – wichtige Voraussetzung für saubere Planung.
 
 ## Definition of Ready (DoR)
-- [ ] Problem/Scope klar
-- [ ] Lösungsskizze vorhanden
-- [ ] Abhängigkeiten geklärt
-- [ ] Aufwand grob geschätzt (S/M/L)
+- [x] Problem/Scope klar
+- [x] Lösungsskizze (Filter + Test)
+- [ ] Abhängigkeiten (Renderer-Datei) geklärt
+- [ ] Aufwand (S)
 
 ## Next Step (1 konkrete Aktion)
-- Schritt:
-- Verantwortlich:
+- Schritt: Filter-Utility ergänzen und in `dashboards/*` anwenden; Testdatei hinzufügen.
+- Verantwortlich: ChatGPT + Stephan
 
 ## Notes
-- Kontext/Links:
-
+- Kann `artefacts/logs/snapshots/v1.1_filtered_*.json` als Erwartungswert nutzen.
