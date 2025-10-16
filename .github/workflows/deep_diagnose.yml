@@ -1,3 +1,8 @@
+# Legacy Notice:
+# Dieser Workflow bleibt für historische Diagnosezwecke erhalten,
+# wird jedoch ab AT-028 durch den konsolidierten CI-Layer (Meta Diagnose) ersetzt.
+# Status: legacy (nicht aktiv mergen)
+
 name: CI · Deep Diagnose v1.1
 on:
   push:
