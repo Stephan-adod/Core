@@ -225,3 +225,10 @@ Code kopieren
 ---
 
 | Last Trust Audit | 100% | ≥ 90% | artefacts/logs/trust_probe_v1.8.md | 2025-10-15 |
+
+
+## Meta Diagnostics Records
+
+| Metric | Value | Target | Source | Last Update |
+|---|---|---|---|---|
+| Last Meta Diagnosis | 60% | ≥ 95% | artefacts/logs/meta/diagnose_meta_v1.8.md | 2025-10-16 |
