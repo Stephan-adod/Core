@@ -2,8 +2,8 @@
 id: backlog-matrix-v1_0
 layer: meta
 owner: Governance Maintainer
-status: active
-version: v1.0
+status: freeze
+version: v1.1
 governance: freeze v1.8
 linked_meta:
   - artefacts/logs/prioritization_rules_v1.0.md
@@ -11,7 +11,7 @@ linked_meta:
   - artefacts/logs/meta/diagnose_meta_v1.8.json
 ---
 
-# Backlog Matrix · v1.0
+# Backlog Matrix · v1.1
 
 | Ticket | Layer | Category | Impact | Trust | Effort | Harmony | Learning | Priority | Status | Owner |
 |---|---|---|---:|---:|---:|---:|---:|---:|---|---|

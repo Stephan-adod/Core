@@ -2,12 +2,12 @@
 id: prioritization-rules-v1_0
 layer: meta
 owner: Governance Maintainer
-status: active
-version: v1.0
+status: freeze
+version: v1.1
 governance: freeze v1.8
 ---
 
-# Prioritization Rules · v1.0
+# Prioritization Rules · v1.1
 
 ```yaml
 weights:
