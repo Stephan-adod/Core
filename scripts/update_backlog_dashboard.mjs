@@ -10,9 +10,12 @@
 
 import fs from "fs";
 
-const prefer = (p1, p2) => require("fs").existsSync(p1) ? p1 : p2;
+const prefer = (p1, p2) => (fs.existsSync(p1) ? p1 : p2);
 const PATHS = {
-  matrix: prefer("artefacts/logs/backlog_matrix_v1.1.md","artefacts/logs/backlog_matrix_v1.0.md"),
+  matrix: prefer(
+    "artefacts/logs/backlog_matrix_v1.1.md",
+    "artefacts/logs/backlog_matrix_v1.0.md"
+  ),
   roadmap: "artefacts/logs/roadmap_v1.0.md",
   diag: "artefacts/logs/meta/diagnose_backlog_v1.0.json",
   outMd: "artefacts/dashboards/backlog_dashboard_v1.1.md",
@@ -80,7 +83,7 @@ function mermaidPieFromStatus(counts) {
 }
 
 // --- Main
-(function main(){
+async function main() {
   console.log("status: running | scope=backlog_dashboard_v1_1");
 
   try {
@@ -205,5 +208,15 @@ ${pie}
     console.log("status: error | message=" + message);
   }
 
-  process.exit(0);
-})();
+}
+
+// Run renderer; treat as informational (do not fail CI)
+Promise.resolve()
+  .then(() => main())
+  .then(() => {
+    process.exit(0);
+  })
+  .catch((e) => {
+    console.error("dashboard render warning:", e?.message || e);
+    process.exit(0);
+  });

@@ -30,7 +30,7 @@ jobs:
 
       - name: Render Backlog Dashboard (informational)
         if: always()
-        run: node scripts/update_backlog_dashboard.mjs
+        run: node scripts/update_backlog_dashboard.mjs || true
 
       - name: Upload Backlog Dashboard
         if: always()
