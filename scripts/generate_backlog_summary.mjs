@@ -69,6 +69,21 @@ const tableLines = matrix
   .filter((line) => line.trim().startsWith("|"));
 const dataLines = tableLines.filter((_, idx) => idx >= 2);
 
+const findings = [];
+
+// helper: validate numeric fields
+function validateNumeric(v, label, ticket, findings) {
+  if (!Number.isFinite(v)) {
+    findings.push({
+      area: "data",
+      severity: "high",
+      message: `Non-numeric value detected in '${label}' for ${ticket} (${v})`,
+    });
+    return 0;
+  }
+  return v;
+}
+
 const items = dataLines
   .map((line) => {
     if (line.includes("---")) return null;
@@ -79,15 +94,20 @@ const items = dataLines
     if (!ticket) return null;
     const priorityCell = cols[9];
     const priority = priorityCell ? Number(priorityCell) : NaN;
+    const impact = validateNumeric(Number(cols[4]), "impact", ticket, findings);
+    const trust = validateNumeric(Number(cols[5]), "trust", ticket, findings);
+    const effort = validateNumeric(Number(cols[6]), "effort", ticket, findings);
+    const harmony = validateNumeric(Number(cols[7]), "harmony", ticket, findings);
+    const learning = validateNumeric(Number(cols[8]), "learning", ticket, findings);
     return {
       ticket,
       layer: cols[2] || "",
       category: cols[3] || "",
-      impact: Number(cols[4] || 0),
-      trust: Number(cols[5] || 0),
-      effort: Number(cols[6] || 0),
-      harmony: Number(cols[7] || 0),
-      learning: Number(cols[8] || 0),
+      impact,
+      trust,
+      effort,
+      harmony,
+      learning,
       priority,
       status: cols[10] || "backlog",
       owner: cols[11] || "-",
@@ -121,7 +141,6 @@ const avg =
 const badge =
   avg >= TH.green ? "green" : avg >= TH.yellow ? "yellow" : "red";
 
-const findings = [];
 if (!exists(MATRIX)) {
   findings.push({
     area: "matrix",
