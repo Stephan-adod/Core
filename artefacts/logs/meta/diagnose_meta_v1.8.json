@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-10-16",
+  "score": 60,
+  "exit_code": 2,
+  "checks": {
+    "freeze_integrity": true,
+    "diagnostics_coverage": true,
+    "trust_probe_ok": false,
+    "lessons_fresh": true,
+    "meta_links_ok": false,
+    "trust_score": 100,
+    "lessons_age_days": 0
+  },
+  "findings": [
+    {
+      "area": "trust",
+      "severity": "medium",
+      "message": "Trust Probe below threshold (score=100 / exit=2)",
+      "path": "artefacts/logs/trust_probe_v1.8.json"
+    },
+    {
+      "area": "meta-links",
+      "severity": "medium",
+      "message": "Horizon linked_meta incomplete (arch/business/ledger)",
+      "path": "meta/Horizon_Map_v1.8.md"
+    }
+  ]
+}

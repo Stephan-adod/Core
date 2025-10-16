@@ -6,10 +6,15 @@ status: 🧭 active
 version: v1.8
 governance: pre-freeze v1.8
 linked_meta:
-  - meta/AI_First_System_Architecture_v1_1.md
-  - meta/AI_First_System_Architecture_v1.8_draft.md
-  - docs/BUSINESS_CASE_Horizon_v1.8.md
-  - artefacts/sync/System_Harmony_Ledger.md
+  # Architektur v1.8 (aktuelle Freeze-Version)
+  - path: meta/AI_First_System_Architecture_v1.8.md
+    version: v1.8
+  # Business Case v1.8
+  - path: docs/BUSINESS_CASE_Horizon_v1.8.md
+    version: v1.8
+  # System Harmony Ledger (für Governance-/KPI-Abgleich)
+  - path: artefacts/sync/System_Harmony_Ledger.md
+    version: v1.8
 ---
 
 # 🌐 Horizon Map · v1.8  
