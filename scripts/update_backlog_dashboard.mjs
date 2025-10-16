@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Renders artefacts/dashboards/backlog_dashboard_v1.1.md from:
- *  - artefacts/logs/backlog_matrix_v1.0.md
+ *  - artefacts/logs/backlog_matrix_v1.1.md
  *  - artefacts/logs/roadmap_v1.0.md
  *  - artefacts/logs/meta/diagnose_backlog_v1.0.json
  * Also writes a JSON snapshot for diff-friendly consumption.
@@ -11,7 +11,8 @@
 import fs from "fs";
 
 const PATHS = {
-  matrix: "artefacts/logs/backlog_matrix_v1.0.md",
+  matrix: "artefacts/logs/backlog_matrix_v1.1.md",
+  legacyMatrix: "artefacts/logs/backlog_matrix_v1.0.md",
   roadmap: "artefacts/logs/roadmap_v1.0.md",
   diag: "artefacts/logs/meta/diagnose_backlog_v1.0.json",
   outMd: "artefacts/dashboards/backlog_dashboard_v1.1.md",
@@ -26,7 +27,7 @@ function ensureDirOf(file) {
 }
 
 // --- Parse helpers (markdown tables, simple & robust)
-function parseMatrix(md) {
+function parseLegacyMatrix(md) {
   if (!md) return { items: [], warnings: ["matrix missing"] };
   const lines = md.split("\n").filter(l => /^\|/.test(l));
   if (lines.length < 3) return { items: [], warnings: ["matrix table not found"] };
@@ -47,13 +48,63 @@ function parseMatrix(md) {
       harmony: getNum(7,"harmony"),
       learning: getNum(8,"learning"),
       priority: Number(cols[9]) || 0,
-      status: cols[10] || "backlog"
+      priorityLabel: cols[9] || "",
+      status: cols[10] || "backlog",
+      owner: cols[11] || "",
     };
   }).filter(it => it.ticket && /^[A-Z]+-\d+/.test(it.ticket));
   return { items, warnings };
 }
 
-function avg(arr) { return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0; }
+function parseMatrix(md) {
+  if (!md) return { items: [], warnings: ["matrix missing"] };
+  const lines = md.split("\n").filter((l) => /^\|/.test(l));
+  if (lines.length < 3) return { items: [], warnings: ["matrix table not found"] };
+  const rows = lines.slice(2);
+  const warnings = [];
+
+  const items = rows
+    .map((line) => {
+      const cols = line.split("|").map((s) => s.trim());
+      const ticket = cols[1];
+      if (!ticket || !/^[A-Z]+-\d+/.test(ticket)) return null;
+
+      const priorityRaw = cols[6] ?? "";
+      const normalizedPriority = priorityRaw
+        .replace(/[^0-9,\.\-]/g, "")
+        .replace(",", ".");
+      const numericPriority = normalizedPriority
+        ? Number(normalizedPriority)
+        : Number.NaN;
+      const hasNumericPriority = Number.isFinite(numericPriority);
+
+      return {
+        ticket,
+        layer: cols[2] || "",
+        category: cols[3] || "",
+        description: cols[4] || "",
+        status: cols[5] || "backlog",
+        priority: hasNumericPriority ? numericPriority : 0,
+        priorityLabel: priorityRaw || (hasNumericPriority ? String(numericPriority) : "—"),
+        owner: cols[7] || "",
+        cycle: cols[8] || "",
+        notes: cols[9] || "",
+        impact: null,
+        trust: null,
+        effort: null,
+        harmony: null,
+        learning: null,
+      };
+    })
+    .filter(Boolean);
+
+  return { items, warnings };
+}
+
+function avg(arr) {
+  const finite = arr.filter(Number.isFinite);
+  return finite.length ? finite.reduce((a, b) => a + b, 0) / finite.length : 0;
+}
 
 function parseDiag(json) {
   if (!json) return null;
@@ -84,52 +135,72 @@ function mermaidPieFromStatus(counts) {
 
   try {
     const mTxt = read(PATHS.matrix);
+    const legacyTxt = read(PATHS.legacyMatrix);
     const rTxt = read(PATHS.roadmap);
     const dTxt = read(PATHS.diag);
 
     const { items, warnings } = parseMatrix(mTxt);
+    const {
+      items: legacyItems,
+      warnings: legacyWarnings,
+    } = parseLegacyMatrix(legacyTxt);
     const diag = parseDiag(dTxt);
     const roadmap = parseRoadmap(rTxt);
 
+    const kpiSource = legacyItems.length ? legacyItems : items;
     const kpi = {
-      impact: Number(avg(items.map((i) => i.impact)).toFixed(1)),
-      trust: Number(avg(items.map((i) => i.trust)).toFixed(1)),
-      effort: Number(avg(items.map((i) => i.effort)).toFixed(1)),
-      harmony: Number(avg(items.map((i) => i.harmony)).toFixed(1)),
-      learning: Number(avg(items.map((i) => i.learning)).toFixed(1)),
+      impact: Number(avg(kpiSource.map((i) => i.impact)).toFixed(1)),
+      trust: Number(avg(kpiSource.map((i) => i.trust)).toFixed(1)),
+      effort: Number(avg(kpiSource.map((i) => i.effort)).toFixed(1)),
+      harmony: Number(avg(kpiSource.map((i) => i.harmony)).toFixed(1)),
+      learning: Number(avg(kpiSource.map((i) => i.learning)).toFixed(1)),
     };
 
     // health: prefer diagnose JSON, fallback to items average priority
-    const avgPriority = Number(avg(items.map((i) => i.priority)).toFixed(2)) || 0;
+    const prioritySource = legacyItems.length ? legacyItems : items;
+    const avgPriority = Number(avg(prioritySource.map((i) => i.priority)).toFixed(2)) || 0;
     const health = diag?.avg_priority ?? avgPriority;
     const badge = health >= 8.5 ? "🟢" : health >= 7 ? "🟡" : "🔴";
 
-    const statusCounts = items.reduce((acc, i) => {
+    const statusSource = items.length ? items : legacyItems;
+    const statusCounts = statusSource.reduce((acc, i) => {
       acc[i.status] = (acc[i.status] || 0) + 1;
       return acc;
     }, {});
     const pie = mermaidPieFromStatus(statusCounts);
 
-    const warningsBlock = warnings.length
-      ? `> ⚠️ Data warnings:\n> - ${warnings.join("\n> - ")}\n\n`
+    const combinedWarnings = [
+      ...warnings,
+      ...(legacyWarnings ?? []).map((w) => `legacy: ${w}`),
+    ];
+
+    const warningsBlock = combinedWarnings.length
+      ? `> ⚠️ Data warnings:\n> - ${combinedWarnings.join("\n> - ")}\n\n`
       : "";
 
-    const prioritiesTable = (items.length
+    const tableSource = items.length
       ? [...items]
+      : legacyItems.length
+      ? [...legacyItems]
       : [
           {
             ticket: "–",
             layer: "–",
             category: "No entries",
             priority: 0,
+            priorityLabel: "—",
             status: "n/a",
           },
-        ])
-      .sort((a, b) => b.priority - a.priority)
+        ];
+
+    const prioritiesTable = tableSource
+      .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))
       .slice(0, 5)
       .map(
         (i) =>
-          `| ${i.ticket} | ${i.layer} | ${i.category} | ${i.priority.toFixed(1)} | ${i.status} |`
+          `| ${i.ticket} | ${i.layer} | ${i.category} | ${
+            i.priorityLabel ?? (Number.isFinite(i.priority) ? i.priority.toFixed(1) : "—")
+          } | ${i.status} |`
       )
       .join("\n");
 
@@ -143,7 +214,7 @@ function mermaidPieFromStatus(counts) {
       )
       .join("\n");
 
-    const frontMatter = `---\nid: backlog-dashboard-v1.1\nlayer: operational\nowner: Governance Maintainer\nstatus: active\nversion: v1.1\ngovernance: freeze v1.8\nlinked_meta:\n  - artefacts/logs/backlog_matrix_v1.0.md\n  - artefacts/logs/roadmap_v1.0.md\n  - artefacts/logs/meta/diagnose_backlog_v1.0.json\n  - artefacts/sync/System_Harmony_Ledger.md\n---`;
+    const frontMatter = `---\nid: backlog-dashboard-v1.1\nlayer: operational\nowner: Governance Maintainer\nstatus: active\nversion: v1.1\ngovernance: freeze v1.8\nlinked_meta:\n  - artefacts/logs/backlog_matrix_v1.1.md\n  - artefacts/logs/roadmap_v1.0.md\n  - artefacts/logs/meta/diagnose_backlog_v1.0.json\n  - artefacts/sync/System_Harmony_Ledger.md\n---`;
 
     const md = `${frontMatter}
 
@@ -154,9 +225,9 @@ function mermaidPieFromStatus(counts) {
 | Kategorie | Wert | Quelle |
 |---|---|---|
 | **Backlog Health (avg)** | ${health.toFixed(2)} / 10 ${badge} | diagnose_backlog_v1.0.json |
-| **Impact-Score (avg)** | ${kpi.impact} | backlog_matrix_v1.0.md |
-| **Trust-Score (avg)** | ${kpi.trust} | backlog_matrix_v1.0.md |
-| **Effort-Load (avg)** | ${kpi.effort} | backlog_matrix_v1.0.md |
+| **Impact-Score (avg)** | ${kpi.impact} | backlog_matrix_v1.1.md |
+| **Trust-Score (avg)** | ${kpi.trust} | backlog_matrix_v1.1.md |
+| **Effort-Load (avg)** | ${kpi.effort} | backlog_matrix_v1.1.md |
 
 ${warningsBlock}## 2️⃣ Prioritäten-Matrix (Top 5)
 | Ticket | Layer | Category | Priority | Status |
@@ -190,7 +261,13 @@ ${pie}
           badge,
           kpi,
           statusCounts,
-          items: items.map((i) => ({ ticket: i.ticket, priority: i.priority, status: i.status })),
+          items: statusSource.map((i) => ({
+            ticket: i.ticket,
+            priority: i.priority,
+            priority_label:
+              i.priorityLabel ?? (Number.isFinite(i.priority) ? i.priority.toFixed(1) : null),
+            status: i.status,
+          })),
         },
         null,
         2

@@ -34,7 +34,7 @@ linked_meta:
 |:--|:--|:--|:--|:--|
 | Freeze Status | true | – | artefacts/logs/transition_AT-015_v1.md | 2025-10-15 |
 | Architecture Version | v1.8 | target | meta/AI_First_System_Architecture_v1.8.md | 2025-10-15 |
-| Backlog Governance Version | v1.1 | target | artefacts/logs/backlog_matrix_v1.0.md | 2025-10-16 |
+| Backlog Governance Version | v1.1 | target | artefacts/logs/backlog_matrix_v1.1.md | 2025-10-16 |
 | Backlog Health Score | 8.9 | ≥ 8.5 | artefacts/logs/meta/diagnose_backlog_v1.0.json | 2025-10-16 |
 | Lessons Reference | artefacts/logs/lessons_AT-020_v1.md | – | – | 2025-10-16 |
 
