@@ -25,8 +25,8 @@ jobs:
         with:
           name: backlog-health-v1_0-reports
           path: |
-            artefacts/logs/meta/diagnose_backlog_v1.0.md
-            artefacts/logs/meta/diagnose_backlog_v1.0.json
+            artefacts/logs/meta/diagnose_backlog_v1.1.md
+            artefacts/logs/meta/diagnose_backlog_v1.1.json
 
       - name: Render Backlog Dashboard (informational)
         if: always()
@@ -46,7 +46,7 @@ jobs:
           RUN_OUTCOME: ${{ steps.gen.outcome }}
         run: |
           echo "run_outcome=$RUN_OUTCOME"
-          REPORT="artefacts/logs/meta/diagnose_backlog_v1.0.json"
+          REPORT="artefacts/logs/meta/diagnose_backlog_v1.1.json"
           if [ "$RUN_OUTCOME" != "success" ]; then
             echo "::error::Backlog generator step did not complete successfully (outcome=$RUN_OUTCOME)."
             [ -f "$REPORT" ] || exit 1
