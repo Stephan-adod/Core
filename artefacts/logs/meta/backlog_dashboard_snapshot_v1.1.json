@@ -1,43 +1,54 @@
 {
-  "generated_at": "2025-10-16T09:45:47.569Z",
+  "generated_at": "2025-10-16T14:55:26.117Z",
   "health": 8.88,
   "badge": "🟢",
   "kpi": {
-    "impact": 8.6,
-    "trust": 8.6,
-    "effort": 5.4,
-    "harmony": 8.6,
+    "impact": 8.7,
+    "trust": 8.7,
+    "effort": 5.5,
+    "harmony": 8.5,
     "learning": 8
   },
   "statusCounts": {
     "running": 2,
-    "planned": 1,
-    "backlog": 2
+    "backlog": 3,
+    "planned": 1
   },
   "items": [
     {
       "ticket": "AT-016",
       "priority": 9.3,
+      "priority_label": "9.3",
       "status": "running"
     },
     {
       "ticket": "AT-017",
       "priority": 8.9,
+      "priority_label": "8.9",
       "status": "running"
+    },
+    {
+      "ticket": "AT-028",
+      "priority": 0,
+      "priority_label": "🔴 hoch",
+      "status": "backlog"
     },
     {
       "ticket": "GOV-003",
       "priority": 8.6,
+      "priority_label": "8.6",
       "status": "planned"
     },
     {
       "ticket": "OPS-001",
       "priority": 8.6,
+      "priority_label": "8.6",
       "status": "backlog"
     },
     {
       "ticket": "DOC-001",
       "priority": 9,
+      "priority_label": "9.0",
       "status": "backlog"
     }
   ]

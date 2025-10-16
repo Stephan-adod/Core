@@ -63,6 +63,12 @@ function parseMatrix(md) {
       learning: Number.isFinite(byIdx.learning) ? byIdx.learning : (nums[4] ?? NaN),
       priority: Number.isFinite(byIdx.priority) ? byIdx.priority : NaN,
     };
+    const statusMatch = cols.find((c) =>
+      /^(backlog|running|planned|ready|doing|done|blocked|review|hold|archived|paused|stalled|in progress)$/i.test(
+        c.toLowerCase()
+      )
+    );
+
     tickets.set(id, {
       id,
       row: r,
@@ -72,7 +78,7 @@ function parseMatrix(md) {
       harmony: guess.harmony,
       learning: guess.learning,
       priority: guess.priority,
-      status: byIdx.status || "",
+      status: (byIdx.status || statusMatch || "").trim(),
     });
   });
   return { rows, tickets };

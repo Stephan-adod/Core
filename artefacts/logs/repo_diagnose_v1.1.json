@@ -1,0 +1,88 @@
+{
+  "exit_code": 2,
+  "matrices": {
+    "has_v1_0": true,
+    "has_v1_1": true,
+    "size_v1_0": 3,
+    "size_v1_1": 3
+  },
+  "only10": [],
+  "only11": [],
+  "status_diffs": [],
+  "priority_issues": {
+    "v1_0": [],
+    "v1_1": []
+  },
+  "registry": {
+    "present": true,
+    "tickets": 14,
+    "registry_only": [
+      "AT-015",
+      "AT-018",
+      "AT-019",
+      "AT-020",
+      "AT-021",
+      "AT-022",
+      "AT-023",
+      "AT-024",
+      "AT-025",
+      "AT-026",
+      "AT-027"
+    ],
+    "matrix_only": []
+  },
+  "renderer": "prefers v1.1",
+  "workflows": [
+    {
+      "file": ".github/workflows/backlog_health.yml",
+      "push": true,
+      "pull_request": true,
+      "schedule": true
+    },
+    {
+      "file": ".github/workflows/deep_diagnose.yml",
+      "push": true,
+      "pull_request": true,
+      "schedule": true
+    },
+    {
+      "file": ".github/workflows/ledger_validate.yml",
+      "push": true,
+      "pull_request": true,
+      "schedule": true
+    },
+    {
+      "file": ".github/workflows/meta_diagnose.yml",
+      "push": true,
+      "pull_request": true,
+      "schedule": true
+    },
+    {
+      "file": ".github/workflows/trust_probe.yml",
+      "push": true,
+      "pull_request": true,
+      "schedule": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "R-002",
+      "area": "registry",
+      "msg": "Registry contains tickets missing in matrix",
+      "severity": "medium",
+      "details": [
+        "AT-015",
+        "AT-018",
+        "AT-019",
+        "AT-020",
+        "AT-021",
+        "AT-022",
+        "AT-023",
+        "AT-024",
+        "AT-025",
+        "AT-026",
+        "AT-027"
+      ]
+    }
+  ]
+}
