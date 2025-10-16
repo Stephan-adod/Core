@@ -1,10 +1,10 @@
 {
-  "exit_code": 2,
+  "exit_code": 0,
   "matrices": {
     "has_v1_0": true,
     "has_v1_1": true,
-    "size_v1_0": 3,
-    "size_v1_1": 3
+    "size_v1_0": 14,
+    "size_v1_1": 14
   },
   "only10": [],
   "only11": [],
@@ -16,19 +16,7 @@
   "registry": {
     "present": true,
     "tickets": 14,
-    "registry_only": [
-      "AT-015",
-      "AT-018",
-      "AT-019",
-      "AT-020",
-      "AT-021",
-      "AT-022",
-      "AT-023",
-      "AT-024",
-      "AT-025",
-      "AT-026",
-      "AT-027"
-    ],
+    "registry_only": [],
     "matrix_only": []
   },
   "renderer": "prefers v1.1",
@@ -64,25 +52,5 @@
       "schedule": true
     }
   ],
-  "findings": [
-    {
-      "id": "R-002",
-      "area": "registry",
-      "msg": "Registry contains tickets missing in matrix",
-      "severity": "medium",
-      "details": [
-        "AT-015",
-        "AT-018",
-        "AT-019",
-        "AT-020",
-        "AT-021",
-        "AT-022",
-        "AT-023",
-        "AT-024",
-        "AT-025",
-        "AT-026",
-        "AT-027"
-      ]
-    }
-  ]
+  "findings": []
 }

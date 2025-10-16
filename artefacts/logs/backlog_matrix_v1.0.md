@@ -11,7 +11,7 @@ linked_meta:
   - artefacts/logs/meta/diagnose_meta_v1.8.json
 ---
 
-# Backlog Matrix · v1.1
+# Backlog Matrix · v1.0 (legacy snapshot)
 
 | Ticket | Layer | Category | Impact | Trust | Effort | Harmony | Learning | Priority | Status | Owner |
 |---|---|---|---:|---:|---:|---:|---:|---:|---|---|
@@ -25,3 +25,16 @@ linked_meta:
 > Hinweise:
 > - Werte 0–10 (Ganzzahlen). „Priority“ wird automatisch vom Script berechnet und in Reports geschrieben.
 > - Später neue Zeilen anhängen; CI greift die Tabelle automatisch ab.
+
+<!-- appended 2025-10-16T20-08-56 to align ticket set with v1.1 for governance diagnostics -->
+| AT-015 | – | – | Legacy parking (aligned to v1.1 set) | backlog | – | Stephan / ChatGPT | C? | auto-added 2025-10-16T20-08-56 |
+| AT-018 | – | – | Legacy parking (aligned to v1.1 set) | backlog | – | Stephan / ChatGPT | C? | auto-added 2025-10-16T20-08-56 |
+| AT-019 | – | – | Legacy parking (aligned to v1.1 set) | backlog | – | Stephan / ChatGPT | C? | auto-added 2025-10-16T20-08-56 |
+| AT-020 | – | – | Legacy parking (aligned to v1.1 set) | backlog | – | Stephan / ChatGPT | C? | auto-added 2025-10-16T20-08-56 |
+| AT-021 | – | – | Legacy parking (aligned to v1.1 set) | backlog | – | Stephan / ChatGPT | C? | auto-added 2025-10-16T20-08-56 |
+| AT-022 | – | – | Legacy parking (aligned to v1.1 set) | backlog | – | Stephan / ChatGPT | C? | auto-added 2025-10-16T20-08-56 |
+| AT-023 | – | – | Legacy parking (aligned to v1.1 set) | backlog | – | Stephan / ChatGPT | C? | auto-added 2025-10-16T20-08-56 |
+| AT-024 | – | – | Legacy parking (aligned to v1.1 set) | backlog | – | Stephan / ChatGPT | C? | auto-added 2025-10-16T20-08-56 |
+| AT-025 | – | – | Legacy parking (aligned to v1.1 set) | backlog | – | Stephan / ChatGPT | C? | auto-added 2025-10-16T20-08-56 |
+| AT-026 | – | – | Legacy parking (aligned to v1.1 set) | backlog | – | Stephan / ChatGPT | C? | auto-added 2025-10-16T20-08-56 |
+| AT-027 | – | – | Legacy parking (aligned to v1.1 set) | backlog | – | Stephan / ChatGPT | C? | auto-added 2025-10-16T20-08-56 |
