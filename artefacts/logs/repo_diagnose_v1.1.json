@@ -4,10 +4,22 @@
     "has_v1_0": true,
     "has_v1_1": true,
     "size_v1_0": 3,
-    "size_v1_1": 3
+    "size_v1_1": 14
   },
   "only10": [],
-  "only11": [],
+  "only11": [
+    "AT-015",
+    "AT-018",
+    "AT-019",
+    "AT-020",
+    "AT-021",
+    "AT-022",
+    "AT-023",
+    "AT-024",
+    "AT-025",
+    "AT-026",
+    "AT-027"
+  ],
   "status_diffs": [],
   "priority_issues": {
     "v1_0": [],
@@ -16,19 +28,7 @@
   "registry": {
     "present": true,
     "tickets": 14,
-    "registry_only": [
-      "AT-015",
-      "AT-018",
-      "AT-019",
-      "AT-020",
-      "AT-021",
-      "AT-022",
-      "AT-023",
-      "AT-024",
-      "AT-025",
-      "AT-026",
-      "AT-027"
-    ],
+    "registry_only": [],
     "matrix_only": []
   },
   "renderer": "prefers v1.1",
@@ -66,23 +66,26 @@
   ],
   "findings": [
     {
-      "id": "R-002",
-      "area": "registry",
-      "msg": "Registry contains tickets missing in matrix",
+      "id": "M-002",
+      "area": "matrix",
+      "msg": "Ticket set differs between v1.0 and v1.1",
       "severity": "medium",
-      "details": [
-        "AT-015",
-        "AT-018",
-        "AT-019",
-        "AT-020",
-        "AT-021",
-        "AT-022",
-        "AT-023",
-        "AT-024",
-        "AT-025",
-        "AT-026",
-        "AT-027"
-      ]
+      "details": {
+        "only10": [],
+        "only11": [
+          "AT-015",
+          "AT-018",
+          "AT-019",
+          "AT-020",
+          "AT-021",
+          "AT-022",
+          "AT-023",
+          "AT-024",
+          "AT-025",
+          "AT-026",
+          "AT-027"
+        ]
+      }
     }
   ]
 }

@@ -37,3 +37,4 @@
 - For identical score vectors, harmonize the priority values (or move to computed priority in renderer later).
 - Ensure the dashboard renderer points to the intended matrix (prefer v1.1 with v1.0 fallback).
 - Align registry tickets with matrix (add missing or prune placeholders).
+

@@ -1,0 +1,7 @@
+{
+  "freeze": "v1.2",
+  "timestamp": "2025-10-16T19-15-05",
+  "source": "scripts/diagnose_repo_state_v1_1.mjs",
+  "note": "Use the MD file for full human-readable details.",
+  "md_report": "logs/repo_diagnose_pre_v1.2.md"
+}
