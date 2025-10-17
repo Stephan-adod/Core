@@ -12,7 +12,7 @@ meta/AI_First_System_Architecture_v1.8.md,
 meta/Horizon_Map_v1.8.md,
 docs/BUSINESS_CASE_Horizon_v1.8.md.
 
-Ergänze Metrics-Snapshot (Placeholders ok) + Changelog.
+Ergänze Metrics-Snapshot (temporary notes allowed) + Changelog.
 
 Notiere Validatoren (Freeze/Loop/Proof) + Status.
 
