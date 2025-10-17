@@ -8,8 +8,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
-      - name: Install deps
-        run: npm ci || npm i
+      - name: Install deps (skipped – no package.json needed)
+        run: echo "skip npm install – scripts use only Node stdlib"
       - name: Trust Probe (optional)
         run: |
           node -e "const fs=require('fs'),cp=require('child_process'); \
