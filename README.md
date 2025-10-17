@@ -76,6 +76,42 @@ Code kopieren
 - Letzte Trust Probe: **artefacts/logs/trust_probe_v1.8.md**
 - Ledger-Status: **freeze v1.8 / trust_score ≥ 95 %**
 
+<!-- ──────────────────────────────────────────────────────────────
+     Governance Status · Freeze v1.9 & Trust Probe v1.9.1
+     Werte: aus artefacts/logs/*_report_v1.9(.1).md
+     ────────────────────────────────────────────────────────────── -->
+
+<p align="left">
+  <a href="https://github.com/Stephan-adod/Core/releases/tag/v1.9">
+    <img alt="Freeze v1.9" src="https://img.shields.io/badge/Freeze-v1.9-2ea44f?logo=git&logoColor=white">
+  </a>
+</p>
+
+**Trust Probe v1.9 (Freeze Baseline)**  
+<!-- Targets: SHS ≥ 80 · Drift ≤ 5 · Policy ≥ 95 · Proof ≥ 90 · eROI ≥ 1.0 -->
+<img alt="SHS ≥80"    src="https://img.shields.io/badge/SHS-84-2ea44f">
+<img alt="Drift ≤5"   src="https://img.shields.io/badge/Drift-5-2ea44f">
+<img alt="Policy ≥95" src="https://img.shields.io/badge/Policy-95-2ea44f">
+<img alt="Proof ≥90"  src="https://img.shields.io/badge/Proof-100-2ea44f">
+<img alt="eROI ≥1.0"  src="https://img.shields.io/badge/eROI-1.20-2ea44f">
+
+**Trust Probe v1.9.1 (Stabilization)**  
+<!-- Targets: SHS ≥ 85 · Drift ≤ 5 · Policy ≥ 95 · Proof ≥ 95 · eROI ≥ 1.1 -->
+<img alt="SHS ≥85"    src="https://img.shields.io/badge/SHS-84-ffcc00">
+<img alt="Drift ≤5"   src="https://img.shields.io/badge/Drift-5-2ea44f">
+<img alt="Policy ≥95" src="https://img.shields.io/badge/Policy-95-2ea44f">
+<img alt="Proof ≥95"  src="https://img.shields.io/badge/Proof-100-2ea44f">
+<img alt="eROI ≥1.1"  src="https://img.shields.io/badge/eROI-1.20-2ea44f">
+
+<sub>
+Quellen: 
+<a href="artefacts/logs/trust_probe_report_v1.9.md">Trust Probe v1.9</a> ·
+<a href="artefacts/logs/trust_probe_report_v1.9.1.md">Trust Probe v1.9.1</a> ·
+<a href="artefacts/logs/proof_coverage_report_v1.9.md">Proof Coverage</a> ·
+<a href="artefacts/logs/energy_validation_report_v1.9.md">Energy</a>
+</sub>
+
+
 ### 🧩 Governance Freeze v1.1 (Backlog & Roadmap)
 - Baseline : AT-020 · Backlog & Roadmap Governance v1.0  
 - Status   : freeze v1.1 (2025-10-16)  
