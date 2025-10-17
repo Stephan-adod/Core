@@ -7,27 +7,21 @@
  */
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { execSync } from "node:child_process";
-import { fileURLToPath } from "node:url";
-import { dirname } from "node:path";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 const JSON_PATH = "artefacts/data/time_sessions.json";
 const LEDGER = "artefacts/sync/System_Harmony_Ledger.md";
 const BEGIN = "<!-- TIME_SESSIONS:BEGIN -->";
 const END = "<!-- TIME_SESSIONS:END -->";
+const SCRIPT_NAME = new URL(import.meta.url).pathname.split("/").pop();
 
 function findLatestReport() {
   try {
-    const list = execSync("ls -1t artefacts/logs/time_sessions_*.md", {
+    const list = execSync('ls -1t artefacts/logs/time_sessions_*.md', {
       encoding: "utf8",
-      stdio: ["ignore", "pipe", "ignore"],
     })
       .trim()
-      .split("\n")
-      .filter(Boolean);
-    return list[0] ?? null;
+      .split("\n");
+    return list[0] || null;
   } catch {
     return null;
   }
@@ -39,19 +33,19 @@ if (!existsSync(JSON_PATH)) {
 }
 
 const data = JSON.parse(readFileSync(JSON_PATH, "utf8"));
-const sessions = Array.isArray(data.sessions) ? data.sessions : [];
+const s = data.sessions ?? [];
 const totals = data.totals ?? {};
 const latestReport = findLatestReport();
 
 function fmtMin(min = 0) {
-  const m = Math.max(0, Math.round(Number.isFinite(min) ? min : 0));
+  const m = Math.max(0, Math.round(min));
   const h = Math.floor(m / 60);
   const mm = String(m % 60).padStart(2, "0");
   return `${h}h ${mm}m`;
 }
 
-const startISO = sessions.length ? sessions[0].start : null;
-const endISO = sessions.length ? sessions[sessions.length - 1].end : null;
+const startISO = s.length ? s[0].start : null;
+const endISO = s.length ? s[s.length - 1].end : null;
 
 let block = "";
 block += `${BEGIN}\n`;
@@ -66,18 +60,18 @@ block += `| Active time | ${fmtMin(totals.minutes)} |\n`;
 block += `| Avg session | ${fmtMin(totals.avgSessionMin)} |\n`;
 block += `| Cycle start | ${startISO ?? "–"} |\n`;
 block += `| Cycle end | ${endISO ?? "–"} |\n`;
-block += `\n> Telemetry only. No policy/freeze changes. Updated by \`${
-  __filename.slice(__dirname.length + 1) || __filename
-}\`.\n`;
+block += `\n> Telemetry only. No policy/freeze changes. Updated by \`${SCRIPT_NAME}\`.\n`;
 block += `${END}\n`;
 
 let ledger = "";
 if (existsSync(LEDGER)) {
   ledger = readFileSync(LEDGER, "utf8");
   if (ledger.includes(BEGIN) && ledger.includes(END)) {
+    // replace existing block
     const pattern = new RegExp(`${BEGIN}[\\s\\S]*?${END}`);
     ledger = ledger.replace(pattern, block);
   } else {
+    // append block at end
     ledger = ledger.replace(/\s*$/, "");
     ledger += `\n\n${block}`;
   }
