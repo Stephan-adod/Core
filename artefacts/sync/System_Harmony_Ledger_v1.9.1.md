@@ -46,7 +46,7 @@ governance:
 ## Metrics Snapshot · v1.9.1 (2025-10-17T21:59:58Z)
 | Metric | Target | Value | Status |
 |---|---:|---:|---|
-| System Harmony Score | 85 | 84.00 | FAIL |
+| System Harmony Score | 85 | 85.00 | PASS |
 | Drift % | 5 | 5.00 | PASS |
 | Policy Valid % | 95 | 100.00 | PASS |
 | Proof Coverage % | 95 | 100.00 | PASS |
