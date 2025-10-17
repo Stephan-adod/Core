@@ -101,7 +101,13 @@ Der Ledger verbindet Horizon v1.8, Business Case v1.8 und die Architektur v1.8 d
 | v1.8 (freeze) | 2025-10-15 | Governance Freeze aktiviert (AT-015) | Governance Maintainer |
 
 ## 11. Lessons & Appendix
-
-- Lessons aus Proof-of-Value/-Learning fließen nach jedem Freeze in Handbook & Policies.
-- Appendix referenziert System Harmony Ledger, Governance Scripts (`freeze_validator.yml`, `validate_loop_state.mjs`).
-- Offene Fragen oder Pending-Policies werden als Tickets (`AT-DOC-###`) im Refinement erfasst.
+### Lessons Learned (v1.8 Cycle)
+1. Policy-Sync: Automatisierte Drift-Checks erhöhen Qualität, erfordern aber manuelle Rebrief-Phasen zur Kontextprüfung.
+2. Proof-Mechanik: Ledger-Einträge sollten konsistent „Proof of Learning“ und „Proof of Value“ enthalten.
+3. Automation Scope: Nicht alle Aufgaben eignen sich für Codex-Automatisierung – Human-in-the-Loop bleibt zentral.
+4. Harmony Loop: Versionsgleichheit ist entscheidend für Vertrauen; Ledger-Score als Freeze-Gate bewährt.
+5. Energy KPI: Fokussierte Deep-Work-Zeit muss als Audit-Metrik stärker berücksichtigt werden.
+### Appendix
+- Linked Proof Logs: artefacts/logs/proof_cycle_v1.8.md
+- CI Reports: artefacts/logs/freeze_validator_v1.8.md
+- Ledger KPIs: SHS ≥ 80 · Drift ≤ 5 · Policy Valid ≥ 95 %

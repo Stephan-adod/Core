@@ -132,3 +132,12 @@ Jeder abgeschlossene Loop erzeugt ein **Proof-of-Value**, bestehend aus :
 | Version | Date | Change | Owner |
 | --- | --- | --- | --- |
 | v1.8 | 2025-10-16 | Frontmatter ergänzt, Governance-Verknüpfungen synchronisiert, Changelog hinzugefügt. | Stephan |
+## Proof & Audit Status (v1.8)
+Aktive Validatoren:
+- freeze_validator.yml → CI-Gate aktiv
+- validate_loop_state.mjs → Loop-Check aktiv
+- Ledger Sync: SHS ≥ 80 | Drift ≤ 5 | Policy Valid ≥ 95 %
+## Changelog
+| Version | Date | Change | Author |
+|----------|------|---------|--------|
+| v1.8 | 2025-10-17 | Frontmatter und Changelog hinzugefügt | Stephan |
