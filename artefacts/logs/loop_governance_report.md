@@ -2,12 +2,12 @@
 
 | Ticket | Phase | Gate | Missing Sections |
 |--------|--------|------|------------------|
-| AT-000.md | unknown | defined | — |
-| AT-001.md | unknown | defined | — |
-| AT-002.md | unknown | defined | — |
-| AT-003.md | unknown | defined | — |
-| AT-004.md | unknown | defined | — |
-| AT-005.md | unknown | defined | — |
-| AT-006.md | unknown | defined | — |
-| AT-007.md | unknown | defined | — |
+| AT-000.md | done | defined | — |
+| AT-001.md | done | defined | — |
+| AT-002.md | ready | defined | — |
+| AT-003.md | ready | defined | — |
+| AT-004.md | ready | defined | — |
+| AT-005.md | ready | defined | — |
+| AT-006.md | ready | defined | — |
+| AT-007.md | ready | defined | — |
 | AT-008.md | ready | defined | — |
