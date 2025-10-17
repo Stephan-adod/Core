@@ -1,0 +1,129 @@
+{
+  "generatedAt": "2025-10-17T18:31:46.123Z",
+  "window": null,
+  "totals": {
+    "sessions": 5,
+    "minutes": 1454,
+    "avgSessionMin": 291
+  },
+  "velocity": {
+    "activeDays": 3,
+    "hoursPerDay": 8.08
+  },
+  "tickets": [
+    {
+      "id": "AT-015",
+      "minutes": 363,
+      "sessions": 3,
+      "commits": 104,
+      "focusRatio": 0.24965612104539203,
+      "status": "unknown",
+      "layer": "",
+      "title": ""
+    },
+    {
+      "id": "AT-020",
+      "minutes": 262,
+      "sessions": 1,
+      "commits": 41,
+      "focusRatio": 0.18019257221458046,
+      "status": "unknown",
+      "layer": "",
+      "title": ""
+    },
+    {
+      "id": "AT-008",
+      "minutes": 254,
+      "sessions": 1,
+      "commits": 49,
+      "focusRatio": 0.1746905089408528,
+      "status": "done",
+      "layer": "Meta",
+      "title": "Meta"
+    },
+    {
+      "id": "AT-028",
+      "minutes": 150,
+      "sessions": 1,
+      "commits": 41,
+      "focusRatio": 0.1031636863823934,
+      "status": "unknown",
+      "layer": "",
+      "title": ""
+    },
+    {
+      "id": "AT-001",
+      "minutes": 141,
+      "sessions": 1,
+      "commits": 49,
+      "focusRatio": 0.0969738651994498,
+      "status": "done",
+      "layer": "Meta",
+      "title": "Meta"
+    },
+    {
+      "id": "AT-009",
+      "minutes": 85,
+      "sessions": 1,
+      "commits": 49,
+      "focusRatio": 0.05845942228335626,
+      "status": "done",
+      "layer": "Meta / Governance",
+      "title": "Meta / Governance"
+    },
+    {
+      "id": "GOV-004",
+      "minutes": 56,
+      "sessions": 1,
+      "commits": 49,
+      "focusRatio": 0.03851444291609354,
+      "status": "unknown",
+      "layer": "",
+      "title": ""
+    },
+    {
+      "id": "AT-022",
+      "minutes": 39,
+      "sessions": 1,
+      "commits": 11,
+      "focusRatio": 0.026822558459422285,
+      "status": "unknown",
+      "layer": "",
+      "title": ""
+    },
+    {
+      "id": "AT-017",
+      "minutes": 37,
+      "sessions": 1,
+      "commits": 41,
+      "focusRatio": 0.02544704264099037,
+      "status": "unknown",
+      "layer": "",
+      "title": ""
+    },
+    {
+      "id": "AT-000",
+      "minutes": 28,
+      "sessions": 1,
+      "commits": 49,
+      "focusRatio": 0.01925722145804677,
+      "status": "done",
+      "layer": "Meta",
+      "title": "Meta"
+    },
+    {
+      "id": "AT-007",
+      "minutes": 28,
+      "sessions": 1,
+      "commits": 49,
+      "focusRatio": 0.01925722145804677,
+      "status": "unknown",
+      "layer": "Meta-Sync Fixes (v1.6 → v1.7)",
+      "title": "Legacy"
+    }
+  ],
+  "unassigned": {
+    "minutes": 11,
+    "sessions": 0
+  }
+}
