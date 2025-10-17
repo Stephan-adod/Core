@@ -1,0 +1,74 @@
+# Codex Prompt · Architecture v1.9 Draft (AT-DOC-008)
+task: "Create Architecture v1.9 draft from v1.8 and apply policy refinements"
+context:
+  ticket: AT-DOC-008
+input:
+  source_file: meta/AI_First_System_Architecture_v1.8.md
+  target_file: meta/AI_First_System_Architecture_v1.9.md
+  reports:
+    - artefacts/logs/rebrief_v1.9.md
+    - artefacts/logs/policy_challenge_v1.9.md
+actions:
+  - copy_file:
+      from: ${source_file}
+      to: ${target_file}
+  - edit:
+      file: ${target_file}
+      replace:
+        - find: "^version:\\s*v1\\.8$"
+          with: "version: v1.9"
+        - find: "^status:\\s*active$"
+          with: "status: draft"
+  - patch_section:
+      file: ${target_file}
+      heading: "## Policies"
+      mode: replace
+      content: |
+        ## Policies
+        - **Energy**: Energy Index ist offizieller KPI. Wöchentlicher SBI/eROI-Sync mit Operator-Review. Kennzahlen fließen als Pflichtfelder in den Ledger ein.
+        - **Quality**: Definitions of Done verlangen Dual-Proof (Learning & Value) je Artefakt; beide Nachweise sind vor Abschluss im Ledger zu verlinken.
+        - **Automation**: Max-Automationsquote 70 %. Human-Override-Gate aktiv. Vierteljährlicher Scope-Review mit Checkliste.
+        - **Market Validation**: Stages = Discovery, Signal, Confirmed. Pro Quartal mindestens ein bestätigter Proof. Zählung und Report per Script.
+        - **Profit per Hour**: Regel bindet `revenue_report.csv` und `cost_time.csv` als Datenquellen. Monatliche CI-Validierung.
+        - **Harmony Check**: `validate_ledger --version-sync` ist verpflichtendes CI-Gate. Bei Versions-Mismatch oder Drift < 5 wird automatisch ein Ticket erzeugt.
+        - **Ledger Freeze Gate**: Freeze nur bei SHS ≥ 80, Drift ≤ 5 und grünen KPIs. Pre-Merge-Report ist Pflicht.
+  - patch_section:
+      file: ${target_file}
+      heading: "## Proof"
+      mode: replace
+      content: |
+        ## Proof
+        **Ziel:** Evidenz ist eindeutig typisiert und auditierbar.
+        - Feld `proof_type`: `learning` oder `value` (Pflicht).
+        - Reports verlinken beide Proof-Arten. 
+        - Validatoren prüfen auf Vorhandensein beider Nachweise und korrekter Verlinkung in den Ledger.
+  - patch_section:
+      file: ${target_file}
+      heading: "## DoR / DoD"
+      mode: replace
+      content: |
+        ## DoR / DoD
+        **Ready:** Ziele, Datenquellen und Proof-Schema klar; CI-Gates referenziert.
+        **Done:** Dual-Proof verlinkt; Energy-Audit eingetragen; Harmony-Check und Freeze-Report grün.
+  - ensure_section:
+      file: ${target_file}
+      heading: "## Changelog"
+  - append_after:
+      file: ${target_file}
+      heading: "## Changelog"
+      content: |
+        | Version | Date | Change | Author |
+        |---|---|---|---|
+        | v1.9 | 2025-10-17 | Draft created from v1.8; policies refined (Energy, Quality, Automation, Harmony, Freeze, Market Validation, Profit/h) | Stephan |
+  - ensure_section:
+      file: ${target_file}
+      heading: "## Lessons & Appendix"
+  - append_after:
+      file: ${target_file}
+      heading: "## Lessons & Appendix"
+      content: |
+        **Evolution v1.9:** Lessons aus v1.8 übertragen und für laufende Iteration markiert. Review-Zyklus aktiv.
+post:
+  - run: "npx markdownlint-cli2 ${target_file} || true"
+  - run: "git add ${target_file}"
+  - run: "git commit -m 'docs: add Architecture v1.9 draft with refined policies (AT-DOC-008)'"
