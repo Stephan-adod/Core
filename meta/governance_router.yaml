@@ -1,0 +1,11 @@
+# Governance Router v1.1
+version: v1.1
+routes:
+  backlog:
+    source: artefacts/logs/backlog_matrix_v1.1.md
+    validator: scripts/validate_ticket_quality.mjs
+    policy_check: scripts/check_policy_alignment.mjs
+    promote_on_pass: true
+  ideas:
+    target: tickets/
+    promote_script: scripts/promote_idea_to_ticket.mjs

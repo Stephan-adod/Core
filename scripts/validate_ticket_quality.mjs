@@ -1,28 +1,23 @@
-import fs from "fs";
+import fs from 'fs';
 
-const file = process.argv[2];
-if (!file) { console.error("usage: node scripts/validate_ticket_quality.mjs <idea.md>"); process.exit(2); }
-const s = fs.readFileSync(file, "utf8");
+const matrixPath = 'artefacts/logs/backlog_matrix_v1.1.md';
+const rows = fs.readFileSync(matrixPath, 'utf8').split('\n').filter(l => l.startsWith('| AT-'));
+const invalid = [];
 
-// sehr einfache Abschnitts-Checks
-function has(h) { return new RegExp(`^##\\s*${h}\\b`, "im").test(s); }
-function section(h) {
-  const m = s.match(new RegExp(`^##\\s*${h}\\b[\\s\\S]*?(?=^##\\s|$)`, "im"));
-  return m ? m[0] : "";
+rows.forEach(r => {
+  const cols = r
+    .split('|')
+    .map(c => c.trim())
+    .filter(Boolean);
+  const [id, layer, title, focus, clarity, consistency, feasibility, impact, aiSupport, score, status, owner] = cols;
+  const numeric = [focus, clarity, consistency, feasibility, impact, aiSupport].map(Number);
+  const avg = numeric.reduce((a,b)=>a+b,0)/numeric.length;
+  if (avg < 7 || status.includes('draft')) invalid.push(id);
+});
+
+if (invalid.length) {
+  console.error('❌ Failed Quality Gate for tickets:', invalid);
+  process.exit(1);
+} else {
+  console.log('✅ All tickets pass Quality Gate');
 }
-
-const clarity = (has("Summary") && section("Summary").trim().split(/\n/).filter(Boolean).length >= 2) ? 1 : 0;
-const goal    = (has("Goal") && /KPI|Target|Outcome/i.test(section("Goal"))) ? 1 : 0;
-const impact  = (has("Impact") && section("Impact").trim().split(/\n/).length >= 2) ? 1 : 0;
-const dorSec  = section("Definition of Ready");
-const dor     = (has("Definition of Ready") && (dorSec.match(/\[x\]/gi)||[]).length >= 3) ? 1 : 0;
-const owner   = /Owner\s*:\s*\S+/i.test(s) || /Verantwortlich\s*:\s*\S+/i.test(s) ? 1 : 0;
-const step    = (has("Next Step") && /- |\d\)/.test(section("Next Step"))) ? 1 : 0;
-
-const score = Math.round(
-  clarity*30 + goal*15 + impact*20 + dor*20 + owner*10 + step*5
-);
-
-const result = { file, score, pass: score>=70, checks: {clarity,goal,impact,dor,owner,step} };
-console.log(JSON.stringify(result, null, 2));
-process.exit(result.pass ? 0 : 1);
