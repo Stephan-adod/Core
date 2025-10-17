@@ -8,3 +8,4 @@
 - tickets/AT-005.md: 100
 - tickets/AT-006.md: 100
 - tickets/AT-007.md: 100
+- tickets/AT-008.md: 100
