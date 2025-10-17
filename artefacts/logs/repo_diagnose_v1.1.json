@@ -4,9 +4,13 @@
     "has_v1_0": true,
     "has_v1_1": true,
     "size_v1_0": 3,
-    "size_v1_1": 3
+    "size_v1_1": 0
   },
-  "only10": [],
+  "only10": [
+    "AT-016",
+    "AT-017",
+    "AT-028"
+  ],
   "only11": [],
   "status_diffs": [],
   "priority_issues": {
@@ -37,7 +41,7 @@
       "file": ".github/workflows/backlog_health.yml",
       "push": true,
       "pull_request": true,
-      "schedule": true
+      "schedule": false
     },
     {
       "file": ".github/workflows/deep_diagnose.yml",
@@ -65,6 +69,20 @@
     }
   ],
   "findings": [
+    {
+      "id": "M-002",
+      "area": "matrix",
+      "msg": "Ticket set differs between v1.0 and v1.1",
+      "severity": "medium",
+      "details": {
+        "only10": [
+          "AT-016",
+          "AT-017",
+          "AT-028"
+        ],
+        "only11": []
+      }
+    },
     {
       "id": "R-002",
       "area": "registry",
