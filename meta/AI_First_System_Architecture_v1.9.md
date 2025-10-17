@@ -90,3 +90,7 @@ Der Ledger verbindet Horizon v1.8, Business Case v1.8 und die Architektur v1.8 d
 - CI Reports: artefacts/logs/freeze_validator_v1.8.md
 - Ledger KPIs: SHS ≥ 80 · Drift ≤ 5 · Policy Valid ≥ 95 %
 **Evolution v1.9:** Lessons aus v1.8 übertragen und für laufende Iteration markiert. Review-Zyklus aktiv.
+# Governance Integration (v1.9.1)
+- Linked Meta: [System Harmony Ledger v1.9.1](../artefacts/sync/System_Harmony_Ledger_v1.9.1.md)
+- Linked Handbook: [AI_First_Handbook_v1.9.1](AI_First_Handbook_v1.9.1.md)
+- CI Validators: `validate_energy.mjs`, `run_trust_probe_v1_9_1.mjs`

@@ -52,3 +52,9 @@ governance:
 | Proof Coverage % | 95 | 100.00 | PASS |
 | Energy Index (eROI) | 1.1 | 1.20 | PASS |
 
+## Proof Audit Summary
+| Proof Type | Last Check | Owner | Result |
+|-------------|-------------|--------|---------|
+| learning | 2025-10-17 | Stephan | ✅ |
+| value | 2025-10-17 | Stephan | ✅ |
+| energy | 2025-10-17 | CI | ✅ |
