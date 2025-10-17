@@ -22,6 +22,9 @@ jobs:
         run: |
           if [ -f scripts/harmonize_backlog_headers.mjs ]; then node scripts/harmonize_backlog_headers.mjs; fi
           if [ -f scripts/harmonize_tickets.mjs ]; then node scripts/harmonize_tickets.mjs; fi
+      - name: Policy-as-Code Sync (check & ensure ledger rows)
+        run: |
+          node scripts/policy_sync.mjs --fix
       - name: Deep Diagnose
         run: node scripts/diagnose_repo_state_v1_2.mjs || true
       - name: Upload Diagnose
