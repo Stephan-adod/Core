@@ -10,7 +10,7 @@ async function listBacklog(){
   const dir='artefacts/logs';
   try{
     const items = await fs.readdir(dir);
-    return items.filter(f=>/^backlog_matrix_v.*\\.md$/i.test(f)).map(f=>path.join(dir,f));
+    return items.filter(f=>/^backlog_matrix_v.*\.md$/i.test(f)).map(f=>path.join(dir,f));
   }catch{ return []; }
 }
 async function checkBacklog(){

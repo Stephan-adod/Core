@@ -16,6 +16,12 @@ jobs:
           if(fs.existsSync('scripts/run_trust_probe_v1_8.mjs')){ \
             cp.execSync('node scripts/run_trust_probe_v1_8.mjs',{stdio:'inherit'}) \
           } else { console.log('Trust Probe not found, skip'); }"
+      - name: Bootstrap (backlog v1.8 + seed ticket)
+        run: node scripts/bootstrap_backlog_v1_8.mjs
+      - name: Harmonize backlog & tickets
+        run: |
+          if [ -f scripts/harmonize_backlog_headers.mjs ]; then node scripts/harmonize_backlog_headers.mjs; fi
+          if [ -f scripts/harmonize_tickets.mjs ]; then node scripts/harmonize_tickets.mjs; fi
       - name: Deep Diagnose
         run: node scripts/diagnose_repo_state_v1_2.mjs || true
       - name: Upload Diagnose
