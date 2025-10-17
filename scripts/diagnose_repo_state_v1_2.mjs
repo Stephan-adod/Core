@@ -3,7 +3,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {read,write} from './lib/md_utils.mjs';
 const enforce = process.argv.includes('--enforce-freeze');
-const hdr='| ID | Layer | Workstream | Title | Effort | Impact | Confidence | Priority | Status | Owner | Notes |';
+const hdr='| ID | Layer | Workstream | Title | Effort | Impact | Confidence | Priority | Status | Owner | Notes | Policy-Bezug | Phase | Proof-Artefakt |';
 const findings=[];
 function add(id,severity,desc,fix){ findings.push({id,severity,desc,fix}); }
 async function listBacklog(){

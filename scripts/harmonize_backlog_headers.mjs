@@ -2,8 +2,8 @@
 import {read,write,backup} from './lib/md_utils.mjs';
 import fs from 'node:fs/promises';
 import path from 'node:path';
-const HEADER='| ID | Layer | Workstream | Title | Effort | Impact | Confidence | Priority | Status | Owner | Notes |';
-const SEP='|---|---|---|---|---|---|---|---|---|---|---|';
+const HEADER='| ID | Layer | Workstream | Title | Effort | Impact | Confidence | Priority | Status | Owner | Notes | Policy-Bezug | Phase | Proof-Artefakt |';
+const SEP='|---|---|---|---|---|---|---|---|---|---|---|---|---|---|';
 async function listBacklogFiles(){
   const dir='artefacts/logs';
   try{
