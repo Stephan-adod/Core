@@ -3,9 +3,9 @@ import fs from "fs";
 import path from "path";
 
 const ARCH_PATH = "meta/AI_First_System_Architecture_v1.9.md";
-const LEDGER_PATH = "artefacts/sync/System_Harmony_Ledger.md";
+const LEDGER_PATH = "artefacts/sync/System_Harmony_Ledger_v1.9.1.md";
 const PROOF_LOG = "artefacts/logs/proof_log.csv";
-const REPORT_PATH = "artefacts/logs/trust_probe_report_v1.9.md";
+const REPORT_PATH = "artefacts/logs/trust_probe_report_v1.9.1.md";
 
 const thresholds = {
   SHS: 85,
@@ -31,7 +31,7 @@ function parseTableValue(markdown, metric) {
     if (cells.length < 5) continue;
     const name = cells[1].replace(/\*\*/g, "");
     if (name.toLowerCase() === metric.toLowerCase()) {
-      const valueCell = cells[4] ?? "";
+      const valueCell = cells[3] ?? "";
       const numeric = Number(String(valueCell).replace(/[^0-9.\-]/g, ""));
       return isNaN(numeric) ? null : numeric;
     }
@@ -40,9 +40,15 @@ function parseTableValue(markdown, metric) {
 }
 
 function extractCoreKpiBlock(md) {
-  const sectionRegex = /##\s+2️⃣ Core KPIs[^#]+/;
-  const match = md.match(sectionRegex);
-  return match ? match[0] : "";
+  const sectionRegexes = [
+    /##\s+2️⃣ Core KPIs[^#]+/,
+    /##\s+Metrics Snapshot[^#]+/,
+  ];
+  for (const regex of sectionRegexes) {
+    const match = md.match(regex);
+    if (match) return match[0];
+  }
+  return "";
 }
 
 function parseProofCoverage(csv) {
@@ -90,7 +96,7 @@ function runProbe() {
 
   const proofCoverage =
     proofCoverageReport ?? parseProofCoverage(proofCsv);
-  const energyRoi = energyRoiReport ?? parseTableValue(kpiBlock, "Energy ROI (eROI)");
+  const energyRoi = energyRoiReport ?? parseTableValue(kpiBlock, "Energy Index (eROI)");
 
   const results = {
     SHS: {
@@ -125,7 +131,7 @@ function runProbe() {
     },
   };
 
-  const ledgerValid = ledgerVersionOk(ledger, "v1.9", true);
+  const ledgerValid = ledgerVersionOk(ledger, "v1.9.1", true);
   const proofDual = /Proof/.test(architecture) && /Dual-Proof/i.test(architecture);
   const energyPolicy = /Energy Index.*Pflichtfelder/i.test(architecture);
   const policySync = /Policy Valid %/.test(ledger) && /Policy/.test(architecture);
@@ -136,10 +142,10 @@ function runProbe() {
     validationFindings.push({
       check: "validate_ledger",
       status: "fail",
-      detail: "Ledger version does not match expected v1.9",
+      detail: "Ledger version does not match expected v1.9.1",
     });
   } else {
-    validationFindings.push({ check: "validate_ledger", status: "pass", detail: "Ledger version matches v1.9" });
+    validationFindings.push({ check: "validate_ledger", status: "pass", detail: "Ledger version matches v1.9.1" });
   }
 
   if (results.Proof.pass && proofDual) {
@@ -164,7 +170,7 @@ function runProbe() {
   const status = failing.length === 0 && validationFindings.every((c) => c.status === "pass") ? "🟢 PASS" : "🔴 FAIL";
 
   const lines = [];
-  lines.push("# Trust Probe Report · v1.9 (GOV-005)");
+  lines.push("# Trust Probe Report · v1.9.1 (GOV-006)");
   lines.push(`Date: ${new Date().toISOString().slice(0, 10)}`);
   lines.push("");
   lines.push(`**Overall Status:** ${status}`);
@@ -191,11 +197,11 @@ function runProbe() {
   lines.push("## Next Governance Actions");
   if (failing.length > 0) {
     lines.push("1. Investigate failing metrics and update ledger data sources.");
-    lines.push("2. Align architecture v1.9 with ledger versioning before freeze.");
-    lines.push("3. Re-run Trust Probe after metrics meet thresholds.");
+    lines.push("2. Align architecture v1.9 handbook references with ledger v1.9.1 before freeze.");
+    lines.push("3. Re-run Trust Probe v1.9.1 after metrics meet thresholds.");
   } else {
     lines.push("1. Proceed with governance freeze preparations.");
-    lines.push("2. Confirm CI automation reflects v1.9 thresholds.");
+    lines.push("2. Confirm CI automation reflects v1.9.1 thresholds.");
     lines.push("3. Schedule governance review for final approval.");
   }
   lines.push("");
@@ -203,7 +209,7 @@ function runProbe() {
   fs.mkdirSync(path.dirname(REPORT_PATH), { recursive: true });
   fs.writeFileSync(REPORT_PATH, lines.join("\n"));
 
-  console.log("status: completed | trust_probe_v1_9");
+  console.log("status: completed | trust_probe_v1_9_1");
   Object.entries(results).forEach(([key, info]) => {
     console.log(`${key}=${info.value == null ? "n/a" : info.value.toFixed(2)} | pass=${info.pass}`);
   });
@@ -232,11 +238,11 @@ const PROOF_REPORT = "artefacts/logs/proof_coverage_report_v1.9.md";
 
 // Parse proof coverage percentage (e.g. "Coverage: 92.5%")
 const __proofCoverage = parseMetricFromMarkdown(PROOF_REPORT, /Coverage:\s*([\d.]+)/);
-const __proofOk = __proofCoverage !== null && __proofCoverage >= 90;
+const __proofOk = __proofCoverage !== null && __proofCoverage >= thresholds.Proof;
 
 // Parse energy index (e.g. "eROI: 1.03")
 const __energyIndex = parseMetricFromMarkdown(ENERGY_REPORT, /eROI:\s*([\d.]+)/);
-const __energyOk = __energyIndex !== null && __energyIndex >= 1.0;
+const __energyOk = __energyIndex !== null && __energyIndex >= thresholds.Energy;
 
 // Expect global results/overallStatus exist; fallbacks if not
 globalThis.results = globalThis.results || [];
@@ -245,13 +251,13 @@ globalThis.overallStatus = globalThis.overallStatus || "PASS";
 globalThis.results.push({
   name: "Proof Coverage %",
   value: __proofCoverage ?? 0,
-  target: 90,
+  target: thresholds.Proof,
   ok: __proofOk,
 });
 globalThis.results.push({
   name: "Energy Index (eROI)",
   value: __energyIndex ?? 0,
-  target: 1.0,
+  target: thresholds.Energy,
   ok: __energyOk,
 });
 
