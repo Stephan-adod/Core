@@ -265,3 +265,19 @@ Code kopieren
 | Ledger Freeze Gate | meta/AI_First_System_Architecture_v1.8.md | active |
 
 <!-- AT-001 acceptance 2025-10-17: Policy Valid 100% -->
+
+<!-- TIME_SESSIONS:BEGIN -->
+### ⏱️ Time Sessions Telemetry (non-blocking)
+
+**Source:** `artefacts/data/time_sessions.json` · Latest report: `artefacts/logs/time_sessions_2025-10-17.md`
+
+| Metric | Value |
+|:--|:--|
+| Sessions | 5 |
+| Active time | 24h 14m |
+| Avg session | 4h 51m |
+| Cycle start | 2025-10-15T12:02:18.000Z |
+| Cycle end | 2025-10-17T15:40:11.000Z |
+
+> Telemetry only. No policy/freeze changes. Updated by `sync_time_sessions_to_ledger.mjs`.
+<!-- TIME_SESSIONS:END -->

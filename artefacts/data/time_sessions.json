@@ -1,0 +1,1198 @@
+{
+  "generatedAt": "2025-10-17T17:51:50.934Z",
+  "params": {
+    "thresholdMin": 120,
+    "minSessionMin": 10,
+    "since": null,
+    "until": null
+  },
+  "totals": {
+    "sessions": 5,
+    "minutes": 1454,
+    "avgSessionMin": 291
+  },
+  "sessions": [
+    {
+      "index": 1,
+      "start": "2025-10-15T12:02:18.000Z",
+      "end": "2025-10-15T12:04:36.000Z",
+      "durationMin": 10,
+      "commits": [
+        {
+          "hash": "47894a58295f1d48d915c3b8753ababb0fc50384",
+          "date": "2025-10-15T14:02:18+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Create AI_First_System_Architecture_v1.md"
+        },
+        {
+          "hash": "ef750eac8b9f5947d2c07f512c13d3566a50e3c8",
+          "date": "2025-10-15T14:04:36+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Update AI_First_System_Architecture_v1.md"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "start": "2025-10-15T17:42:44.000Z",
+      "end": "2025-10-15T22:29:21.000Z",
+      "durationMin": 287,
+      "commits": [
+        {
+          "hash": "adfc2cf32c344ed6c20f6ed6d71870341d19bcf8",
+          "date": "2025-10-15T19:42:44+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Create AI-First System Canvas v1 document"
+        },
+        {
+          "hash": "d3a72da18eba9c78bf7a1e4f90eeb002492536bc",
+          "date": "2025-10-15T19:42:58+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #1 from Stephan-adod/Create-AI-First-System-Canvas-v1-document"
+        },
+        {
+          "hash": "b12547ac58a895d343c2f65ed5142b139e77ba15",
+          "date": "2025-10-15T20:18:26+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add Horizon Map v1.8 with strategic themes and metrics"
+        },
+        {
+          "hash": "bdc60af05c40bf5e5aace0cd0fa557e920c1f820",
+          "date": "2025-10-15T20:18:35+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #2 from Stephan-adod/Add-Horizon-Map-v1.8-with-strategic-themes-and-metrics"
+        },
+        {
+          "hash": "4b1b4fb56c2bf706052971a86ad0fa29a9b579dd",
+          "date": "2025-10-15T20:19:31+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add Business Case document for Horizon v1.8"
+        },
+        {
+          "hash": "4c7e8bbc2ea8cb33fec5eec420875a5fcc1ab4b2",
+          "date": "2025-10-15T20:19:40+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #3 from Stephan-adod/Add-Business-Case-document-for-Horizon-v1.8"
+        },
+        {
+          "hash": "c8ea2cee6f3d4a15d3ea626080558061211a8d32",
+          "date": "2025-10-15T20:25:38+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add draft for System Harmony Ledger v0.1"
+        },
+        {
+          "hash": "76a94437c73dafa9e0c7f949d363f51458293aba",
+          "date": "2025-10-15T20:25:57+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #4 from Stephan-adod/Add-draft-for-System-Harmony-Ledger-v0.1"
+        },
+        {
+          "hash": "74bbefdf24cb21a64a8e935555861ac4ee01e316",
+          "date": "2025-10-15T20:53:01+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Revise BUSINESS_CASE_Horizon_v1.8 for clarity"
+        },
+        {
+          "hash": "ffdeea4c7683a63c4c7378f4c2ef9b24024c2b53",
+          "date": "2025-10-15T20:57:33+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Rename AI_First_System_Architecture_v1 to v1.1"
+        },
+        {
+          "hash": "2b48bcaa476b04ce131e0af4e71b0422220f9527",
+          "date": "2025-10-15T21:00:44+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Update governance and linked metadata to v1.8"
+        },
+        {
+          "hash": "bb109f4dd5acffe76b1260e871b58061beebb2cc",
+          "date": "2025-10-15T21:04:08+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Rename AI_First_System_Architecture_v1.1.md to AI_First_System_Architecture_v1_1.md"
+        },
+        {
+          "hash": "cf2eb3f6400619797afd7e7198ca132bf973241f",
+          "date": "2025-10-15T21:13:11+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "chore(harmony): fix linked_meta paths, close yaml block, add integration section to Horizon Map v1.8"
+        },
+        {
+          "hash": "35e6b28124c5cf26e34541e3201323db83eaaab9",
+          "date": "2025-10-15T21:13:39+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #5 from Stephan-adod/codex/prufe-repo-diagnose-kriterien"
+        },
+        {
+          "hash": "bf82d54834477eb7a204d76f9f21064d74f1cb2d",
+          "date": "2025-10-15T21:19:20+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "chore(harmony): align linked_meta references with underscore variants"
+        },
+        {
+          "hash": "83a840f2988969c0bbaee4c0bf18cd5ffded45b4",
+          "date": "2025-10-15T21:21:04+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #6 from Stephan-adod/codex/prufe-repo-diagnose-kriterien"
+        },
+        {
+          "hash": "95dae2e1c26c9b1e4875da8280f117938f526f91",
+          "date": "2025-10-15T21:26:53+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add loop summary CSV for closed loops"
+        },
+        {
+          "hash": "8069d7cd353c8d7510f72ffe90d3d4ff632f38b4",
+          "date": "2025-10-15T21:27:39+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add proof_log.csv with valid and total proofs"
+        },
+        {
+          "hash": "c5ca08135c78a640c860e15f2fa41e4043b66438",
+          "date": "2025-10-15T21:27:57+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add cost_time.csv with initial data"
+        },
+        {
+          "hash": "38baca7c89effa1b2ac897742fb3fe67daf16b87",
+          "date": "2025-10-15T21:28:23+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add initial sbi_log.csv with sample data"
+        },
+        {
+          "hash": "5d437de07741ae102e523cc4a44401af671f7f1f",
+          "date": "2025-10-15T21:28:44+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add revenue report CSV with profit and hours data"
+        },
+        {
+          "hash": "ba67be474ec5ebc0c6228202e42a207a306b9558",
+          "date": "2025-10-15T21:29:12+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add policy audit log with drifted policies"
+        },
+        {
+          "hash": "0ce1cd54a34c3e099936a4a982ed39e8a8739144",
+          "date": "2025-10-15T21:30:51+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add ledger validation script"
+        },
+        {
+          "hash": "e9f737d981a6ea4da0f0aba8efa95ce359901a4f",
+          "date": "2025-10-15T21:31:19+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add GitHub Actions workflow for ledger validation"
+        },
+        {
+          "hash": "ef1dda3b4bf4f9554a82c146fefd6bbeb0d763b9",
+          "date": "2025-10-15T21:31:45+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #7 from Stephan-adod/staging/harmony-v1_8"
+        },
+        {
+          "hash": "cf476a7da179ce83a8732d6dd6a7823a463f611d",
+          "date": "2025-10-15T21:37:57+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Refactor argument parsing in validate_ledger.mjs"
+        },
+        {
+          "hash": "1d53db52d3da06eff294f098e08a422ae371d085",
+          "date": "2025-10-15T21:41:54+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "chore(harmony): unify v1.8 filenames and fix linked_meta refs"
+        },
+        {
+          "hash": "0e63dffc2a724226c0706e6650ef9157d76e598a",
+          "date": "2025-10-15T21:42:43+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #8 from Stephan-adod/codex/harmonize-v1.8-filename-scheme"
+        },
+        {
+          "hash": "c28caa50f1aa55b41265fbefbeaf441e19e6bc3c",
+          "date": "2025-10-15T22:01:06+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "chore(ledger): fill KPI snapshot values from logs for validate-only run"
+        },
+        {
+          "hash": "13737d04f296357e16c642e5b5c13e15c04889af",
+          "date": "2025-10-15T22:01:34+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #9 from Stephan-adod/codex/fill-kpi-values-in-system_harmony_ledger.md"
+        },
+        {
+          "hash": "b78ff9ebb4274db77cc5a7a13c69312ea3402b62",
+          "date": "2025-10-15T22:13:33+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Refactor validate_ledger.mjs for clarity and efficiency"
+        },
+        {
+          "hash": "6a1c272245bff7955653dcc479b8dcc9e0c80ee4",
+          "date": "2025-10-15T22:28:52+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add core file diagnostic reports"
+        },
+        {
+          "hash": "87de852cc0bdc534469f56f3e6c2289e7dcd40eb",
+          "date": "2025-10-15T22:30:00+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #10 from Stephan-adod/codex/diagnose-core-files-and-generate-reports"
+        },
+        {
+          "hash": "a9e15ed4c837bd0f8ef12a1ebbdab9ac3cc71589",
+          "date": "2025-10-15T22:40:54+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add repo integrity v2 diagnostics"
+        },
+        {
+          "hash": "e377a831070f743ecabb28f96e78281bb18b8211",
+          "date": "2025-10-15T22:41:13+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #11 from Stephan-adod/codex/add-repository-integrity-check-reports"
+        },
+        {
+          "hash": "173a1880d9da79bf5aac8b48f1245fbf298fe091",
+          "date": "2025-10-15T22:51:12+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Align ledger automation diagnostics"
+        },
+        {
+          "hash": "dc08b046ecd4d992e3b9f61ba6ca0bca13ffb68c",
+          "date": "2025-10-15T22:52:32+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #12 from Stephan-adod/codex/fix-ledger-and-ci/logs-issues"
+        },
+        {
+          "hash": "5b08161b79a560fd69cdfce5c581ef42e3bedd6f",
+          "date": "2025-10-15T22:57:54+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "chore: refresh repo integrity diagnostics"
+        },
+        {
+          "hash": "e109d6a992b035ff8275556321c79224b2b2499e",
+          "date": "2025-10-15T23:20:09+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add rebriefing document for architecture uplift AT-015"
+        },
+        {
+          "hash": "6fab3c7b628c3d3a30e174cafd3d2a2e7a6aa43b",
+          "date": "2025-10-15T23:20:37+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #14 from Stephan-adod/Add-rebriefing-document-for-architecture-uplift-AT-015"
+        },
+        {
+          "hash": "ae3024a56f992e8ea7a98f21cb6b47723f98e3a2",
+          "date": "2025-10-15T23:21:03+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "feat: surface ledger validator warnings"
+        },
+        {
+          "hash": "a6f96130bfd5d3dd2682a2ea25e16317a974e8a1",
+          "date": "2025-10-15T23:21:24+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #13 from Stephan-adod/codex/run-diagnosis-and-update-sync-stamp"
+        },
+        {
+          "hash": "35888eb745fc7bfdd78c80ebd64913fe9bd1fdb5",
+          "date": "2025-10-15T23:26:23+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add architecture delta analysis and v1.8 draft skeleton"
+        },
+        {
+          "hash": "0d4a9cfd07d9bdcf38a2359ad2c5e47c22a61b75",
+          "date": "2025-10-15T23:31:46+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #15 from Stephan-adod/codex/document-architecture-changes-from-v1.1-to-v1.8"
+        },
+        {
+          "hash": "ec0f94d661e658d48fdbd2aaddece63c56dbaea8",
+          "date": "2025-10-15T23:39:25+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "feat(meta): AT-015 Architecture Uplift v1.8 validated (Harmony green)"
+        },
+        {
+          "hash": "d98129701ddf25798dbc4790669dbace87f2b032",
+          "date": "2025-10-15T23:40:43+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #16 from Stephan-adod/codex/validate-draft-architecture-v1.8"
+        },
+        {
+          "hash": "1af845270c56b7ffc243a8fcd04336cb1b3ac2e2",
+          "date": "2025-10-15T23:49:17+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "feat(meta): freeze architecture v1.8 · AT-015 transition complete"
+        },
+        {
+          "hash": "a6db2de85541361b2be29a13aa23a9febdad6fd0",
+          "date": "2025-10-15T23:49:46+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #17 from Stephan-adod/codex/transition-architecture-to-freeze-state"
+        },
+        {
+          "hash": "737a1d4e1f97f4235b29f315e6d15ee9734c567d",
+          "date": "2025-10-16T00:11:38+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add trust probe v1.8 audit tooling"
+        },
+        {
+          "hash": "936cab528b74698aa2aa972031d9f8a6d7f50150",
+          "date": "2025-10-16T00:19:33+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Fix trust probe outcome classification"
+        },
+        {
+          "hash": "a6995fada5ff218fce02dba65a80d39aafc3ecfa",
+          "date": "2025-10-16T00:26:46+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Harden trust probe workflow and link checks"
+        },
+        {
+          "hash": "6c513cdee5a5c2cfadb1dae92f7d853e67121d71",
+          "date": "2025-10-16T00:29:21+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #18 from Stephan-adod/codex/run-trust-probe-v1.8-and-save-reports"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "start": "2025-10-16T06:55:17.000Z",
+      "end": "2025-10-16T15:02:24.000Z",
+      "durationMin": 487,
+      "commits": [
+        {
+          "hash": "1e8529153b954be8e8f868f08cc4c7e944f158f0",
+          "date": "2025-10-16T08:55:17+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add repository overview README"
+        },
+        {
+          "hash": "c982bfcb2e00d4ba067681baab7a54b0935074a2",
+          "date": "2025-10-16T08:56:03+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #19 from Stephan-adod/codex/create-meta-diagnose-prompt-v1.8"
+        },
+        {
+          "hash": "2b9dc174529871235b91e04c581681589d88f880",
+          "date": "2025-10-16T09:04:30+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add meta diagnose v1.8 script and workflow"
+        },
+        {
+          "hash": "8cc6d2380f2ce1d8c6f2ed77a4af24274840ce36",
+          "date": "2025-10-16T09:10:22+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Update Horizon v1.8 linked meta references"
+        },
+        {
+          "hash": "5c94a0f6fa05a4049c418e4f7396f1c8aff12c3e",
+          "date": "2025-10-16T09:10:51+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #20 from Stephan-adod/codex/create-meta-diagnosis-script"
+        },
+        {
+          "hash": "32755544d7cded5c08ffbe69449edd791608ded8",
+          "date": "2025-10-16T10:12:59+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add readiness log for AT-020 governance check"
+        },
+        {
+          "hash": "f502cde31dca0e0bb34a651af6655887b1ee977a",
+          "date": "2025-10-16T10:18:49+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Create rebriefing document for AT-020 project"
+        },
+        {
+          "hash": "ebd1d2b09b90ef43de6d4301795d6a3671ab75b1",
+          "date": "2025-10-16T10:19:15+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #22 from Stephan-adod/Create-rebriefing-document-for-AT-020-project"
+        },
+        {
+          "hash": "84210d1baa158e9dc5c0ce3877cd924d011fd5dd",
+          "date": "2025-10-16T10:21:22+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add refinement documentation for AT-020"
+        },
+        {
+          "hash": "8f169c89271ca921b41a2c0d49e3fc14604c9dee",
+          "date": "2025-10-16T10:21:55+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #23 from Stephan-adod/Add-refinement-documentation-for-AT-020"
+        },
+        {
+          "hash": "64aab377d96681257657f5ec6150e9423578a955",
+          "date": "2025-10-16T10:22:16+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #21 from Stephan-adod/codex/create-readiness-check-log-file"
+        },
+        {
+          "hash": "ec4a44faa40095cef4d443a74afd5121c045aa6d",
+          "date": "2025-10-16T10:29:45+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add backlog governance assets and health automation"
+        },
+        {
+          "hash": "4357a432bf35eb1c76bd36e73744a2e5f7b79d50",
+          "date": "2025-10-16T10:34:11+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Align backlog baseline with healthy priorities"
+        },
+        {
+          "hash": "0f61d0c5ba7dca07296772f2d5dc5de409090bc1",
+          "date": "2025-10-16T10:37:52+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #24 from Stephan-adod/codex/execute-backlog-and-roadmap-governance"
+        },
+        {
+          "hash": "e3a4827b1a5131d24dc82992df2b112b74a17ec6",
+          "date": "2025-10-16T10:40:25+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Fix numeric validation for backlog scoring"
+        },
+        {
+          "hash": "503d86c661367767a95fbb50f2015ea8044d4e06",
+          "date": "2025-10-16T10:41:20+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #25 from Stephan-adod/codex/fix-nan-validation-for-backlog-scoring"
+        },
+        {
+          "hash": "358eee9331ad29b85ca773d51961c049de9cd08c",
+          "date": "2025-10-16T10:44:06+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Create lessons log for AT-020 governance insights"
+        },
+        {
+          "hash": "a45ed2867cb8bf887814223d6c49ef8a026970e6",
+          "date": "2025-10-16T10:45:01+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #26 from Stephan-adod/Create-lessons-log-for-AT-020-governance-insights"
+        },
+        {
+          "hash": "e4d6018fd004d83a6d536a091c188719daa63f81",
+          "date": "2025-10-16T10:56:41+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Freeze backlog governance to v1.1"
+        },
+        {
+          "hash": "3afac058b29b4959ad0452f00f974c36943407ae",
+          "date": "2025-10-16T10:57:14+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #27 from Stephan-adod/codex/freeze-backlog-governance-to-v1.1"
+        },
+        {
+          "hash": "adf1d9a9e6d834a5c29af74309987b7935f8d519",
+          "date": "2025-10-16T11:00:11+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add governance overview from v1.8 to v1.9"
+        },
+        {
+          "hash": "0eab2307f9a56af5329016bbb810f9fef7ad9c55",
+          "date": "2025-10-16T11:00:54+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #28 from Stephan-adod/Add-governance-overview-from-v1.8-to-v1.9"
+        },
+        {
+          "hash": "9b3d4163924fb9466e8dcdee45eb326a6f68bc54",
+          "date": "2025-10-16T11:49:01+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Automate backlog dashboard rendering"
+        },
+        {
+          "hash": "23d3b32c4c9bbf8ef9c829cdccc1132f427171af",
+          "date": "2025-10-16T11:49:33+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #29 from Stephan-adod/codex/create-operational-backlog-dashboard-v1.1"
+        },
+        {
+          "hash": "3ac6411314c561017fa5d9270966b65683694652",
+          "date": "2025-10-16T12:01:19+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add deep diagnose v1.1 tooling and CI"
+        },
+        {
+          "hash": "7425f509561b8eef3199293b9bc5d2974d09dab4",
+          "date": "2025-10-16T12:41:37+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #30 from Stephan-adod/codex/implement-deep-diagnose-v1.1-checks"
+        },
+        {
+          "hash": "1505451a5cc29a5d45749db8bff87bc92e5b5b0d",
+          "date": "2025-10-16T12:52:40+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "✳️ AT-028 · Governance Loop Stabilisierung & CI Konsolidierung"
+        },
+        {
+          "hash": "33bb609983fb75c7974f5f26a26e7622500040a3",
+          "date": "2025-10-16T12:53:08+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #31 from Stephan-adod/codex/add-governance-loop-stabilization-and-ci-consolidation"
+        },
+        {
+          "hash": "3bec107d685749825aa655cffc3fd28f65505b74",
+          "date": "2025-10-16T12:55:54+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "🧩 Ticket Registry Sync v1.1 ----------------------------------------- - Erstellt artefacts/logs/ticket_registry_v1.1.md - Vereinheitlicht Ticketnummern (AT-015–AT-028) - Markiert Lücken & temporäre Prompts - Synchronisiert Backlog & Dashboard - Keine Governance-Änderungen · reiner Struktur-Reset"
+        },
+        {
+          "hash": "9c70113386a7631273ae9d4cd325e37980cad693",
+          "date": "2025-10-16T12:56:26+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #32 from Stephan-adod/codex/sync-ticket-registry-to-v1.1"
+        },
+        {
+          "hash": "9e1d39c23598116edef70b4147ec8a2d79bad1d3",
+          "date": "2025-10-16T13:03:24+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add ticket sync check script v1.1"
+        },
+        {
+          "hash": "83209a8c8d2db3650903bf5e989701098f995a09",
+          "date": "2025-10-16T13:03:45+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #33 from Stephan-adod/codex/add-ticket-sync-check-script"
+        },
+        {
+          "hash": "e8bf154fb96e9f4840860091bfab42d3dfd81e4f",
+          "date": "2025-10-16T11:10:05+00:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "chore(meta): add ticket sync check v1.1 report (registry↔backlog↔dashboard)"
+        },
+        {
+          "hash": "04757ff473c102a36c65a92ac1619b1aec80431c",
+          "date": "2025-10-16T13:11:03+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #34 from Stephan-adod/chore/ticket-sync-report-v1.1"
+        },
+        {
+          "hash": "f5e858cde578d687fa3026e6a92ed048d066c2af",
+          "date": "2025-10-16T13:35:45+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add AT-028 to backlog_matrix_v1.0.md so the dashboard can surface it in Top-5."
+        },
+        {
+          "hash": "e555d03a5e36af98f7a59446d6ee83e060e47bda",
+          "date": "2025-10-16T14:53:46+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Align AT-028 priority with AT-017 (identical scoring: 9/9/6/8/8 → 8.9)."
+        },
+        {
+          "hash": "455c39207443acc3c6196824f844eb373eb4cd97",
+          "date": "2025-10-16T14:54:21+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #36 from Stephan-adod/codex/add-at-028-to-backlog-matrix"
+        },
+        {
+          "hash": "a6d4cf0f6760c18efaffcad89da816f6b4d255db",
+          "date": "2025-10-16T16:33:15+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add scripts/diagnose_repo_state_v1_1.mjs to analyze repo health (read-only): - backlog matrix v1.0 vs v1.1 consistency - identical score vectors should share identical priority - registry presence and ticket set deltas - dashboard renderer path preference - workflow metadata inventory Writes artefacts/logs/repo_diagnose_v1.1.(md|json). No side effects."
+        },
+        {
+          "hash": "5e624c41d344d24903f3dd3b00bfceac1c5072c6",
+          "date": "2025-10-16T16:33:43+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #37 from Stephan-adod/codex/add-repo-state-diagnosis-script-v1.1"
+        },
+        {
+          "hash": "f5ddf91fa555a76ac6e899599f749e089a530bb7",
+          "date": "2025-10-16T16:58:47+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Backlog Stabilisierung v1.1"
+        },
+        {
+          "hash": "f85183ef20138f91f1b72c7310422e131d4c8460",
+          "date": "2025-10-16T17:02:24+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #38 from Stephan-adod/codex/stabilize-backlog-for-v1.1"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "start": "2025-10-16T19:04:11.000Z",
+      "end": "2025-10-16T20:20:56.000Z",
+      "durationMin": 77,
+      "commits": [
+        {
+          "hash": "bca76da4e1cf4af3c9ef75d355aea5c4b05b25bf",
+          "date": "2025-10-16T21:04:11+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Registry synchronization v1.1: completed missing ticket stubs (2025-10-16T19-02-16)"
+        },
+        {
+          "hash": "027a521f4d4adf04b7865da7b81ddecef28dd843",
+          "date": "2025-10-16T21:04:45+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #39 from Stephan-adod/codex/add-ticket-stubs-for-missing-ids"
+        },
+        {
+          "hash": "1bbe1262e4f3e0fc0dd5579a6dd531fcfce4a723",
+          "date": "2025-10-16T21:45:38+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Backlog stabilization: Matrix<=Registry sync (parking rows), hygiene script, placeholder-safe snapshot (2025-10-16T19-41-22)"
+        },
+        {
+          "hash": "2c48a744a5c9f3593ab7e477ebfd83aec77f4d34",
+          "date": "2025-10-16T21:48:42+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #41 from Stephan-adod/codex/run-backlog-stabilization-script"
+        },
+        {
+          "hash": "871a0b1bd9fa99bdab8bcd221072c1c8dcacc0ec",
+          "date": "2025-10-16T22:01:58+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add refinement queue scripts and placeholders"
+        },
+        {
+          "hash": "b4554bf4091c07fb02d48e4dd4bad81bed746ac4",
+          "date": "2025-10-16T22:02:38+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #42 from Stephan-adod/codex/create-refine-queue-scripts"
+        },
+        {
+          "hash": "3f45ce379e8be552689efdbddc0a7eb58d91f3cf",
+          "date": "2025-10-16T22:03:17+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Refine backlog hygiene check automation details"
+        },
+        {
+          "hash": "9bebd7e10d02bded2c6ec376a3f08dcf4ed7d982",
+          "date": "2025-10-16T22:03:43+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Refine AT-022 document with updated details"
+        },
+        {
+          "hash": "5383f4ed2daebdc38a61341d90add5911b5f89e6",
+          "date": "2025-10-16T22:03:57+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Refine AT-015 ticket details and update priority"
+        },
+        {
+          "hash": "9b6e30528d51ca7f97c5d7fe8b62614a220e274f",
+          "date": "2025-10-16T22:04:29+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #43 from Stephan-adod/Refine-backlog-hygiene-check-automation-details"
+        },
+        {
+          "hash": "bb0858e6de82c9097869a6dd8ef1535b258d7df0",
+          "date": "2025-10-16T22:20:56+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Update backlog health workflow to version 1.1"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "start": "2025-10-17T05:47:21.000Z",
+      "end": "2025-10-17T15:40:11.000Z",
+      "durationMin": 593,
+      "commits": [
+        {
+          "hash": "e2f26145648d498b7f168a8490624a0a65d24690",
+          "date": "2025-10-17T07:47:21+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Reset: Curated-only backlog v1.0 · ideas pool + quality gate + promotion tool · no placeholders"
+        },
+        {
+          "hash": "4a32c985a190b3c4328e3dca7b1497928750765e",
+          "date": "2025-10-17T07:52:03+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Fix: normalize backlog matrix header and CI check"
+        },
+        {
+          "hash": "e87100da97180afd0fb8ca1a353d93419a233fae",
+          "date": "2025-10-17T07:52:29+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #45 from Stephan-adod/codex/reset-backlog-to-curated-only-version"
+        },
+        {
+          "hash": "0b19192dcdc1d2137e47dc21bb09fe710dbe64ea",
+          "date": "2025-10-17T09:30:41+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "chore: Backlog & Ticket Stabilization v1.8 (one-click)"
+        },
+        {
+          "hash": "89716f6bc413b29dd47ae906319f9d2f5304aa90",
+          "date": "2025-10-17T09:58:13+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "chore: drop glob dependency from freeze validator scripts"
+        },
+        {
+          "hash": "d37cd406896b3992a04655e140ef6653990893f7",
+          "date": "2025-10-17T10:11:08+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "fix(ci): bootstrap backlog v1.8 + seed ticket; run harmonize before enforce"
+        },
+        {
+          "hash": "d3e9e7adcbc820eb4edc3ddb107b24dbbf7169c9",
+          "date": "2025-10-17T10:27:22+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #47 from Stephan-adod/codex/create-one-click-stabilization-script"
+        },
+        {
+          "hash": "9ab4fc8dfd6b0408ff8736593459eec94ed643a8",
+          "date": "2025-10-17T10:47:11+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "feat(curate): phase 1 – AT-000 reframed, ideas cleaned, 5 curated backlog rows (v1.8)"
+        },
+        {
+          "hash": "ecdd762376f99e64fed78629fb7b8afa0a9072ed",
+          "date": "2025-10-17T10:55:01+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #48 from Stephan-adod/codex/add-curation-phase-1-helper-script"
+        },
+        {
+          "hash": "659ade6bccb1d9acf25b200637d41604f74d821d",
+          "date": "2025-10-17T11:31:08+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "fix(backlog): correct table rows v1.8 and generate AT-001..AT-007 tickets"
+        },
+        {
+          "hash": "e38e454fa600458104a7da6e046c33914ad4beec",
+          "date": "2025-10-17T11:31:43+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #49 from Stephan-adod/codex/fix-backlog-matrix-for-v1.8"
+        },
+        {
+          "hash": "411ed2a30ef795c6abbaf016e4b7381ed8f46161",
+          "date": "2025-10-17T11:50:57+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Revise ticket AT-001 with detailed specifications"
+        },
+        {
+          "hash": "0dcb29bebf789cf4615d629319cf7d9a24b413a7",
+          "date": "2025-10-17T11:51:21+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #50 from Stephan-adod/Revise-ticket-AT-001-with-detailed-specifications"
+        },
+        {
+          "hash": "eebd26b8580fe9a819bf7111bc06be1faa32d0f9",
+          "date": "2025-10-17T11:59:16+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "feat(AT-001): add policy sync automation"
+        },
+        {
+          "hash": "3f49ca2c35d1d568279d8a16a5e2a9ad029dbe9b",
+          "date": "2025-10-17T12:00:10+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #51 from Stephan-adod/codex/add-policy-sync-script-and-ci-step"
+        },
+        {
+          "hash": "29fecbed589a3e96b1b36fb943f1d5eb13acea9d",
+          "date": "2025-10-17T12:55:40+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "feat(AT-001): acceptance – enable CI enforce; ticket proof updated (Policy Valid 100%)"
+        },
+        {
+          "hash": "8b3ed9ce7e5dfdb67edbb7ce0f8f87fd52e4027d",
+          "date": "2025-10-17T13:03:46+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #52 from Stephan-adod/codex/add-acceptance-process-script"
+        },
+        {
+          "hash": "26ca4b420f7752950c8e42d85cdb8643d78336d7",
+          "date": "2025-10-17T13:04:49+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add AI-First Loop Governance entry to backlog"
+        },
+        {
+          "hash": "7b480f06a67ec3801583e76332700203481f8623",
+          "date": "2025-10-17T13:05:17+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #53 from Stephan-adod/Add-AI-First-Loop-Governance-entry-to-backlog"
+        },
+        {
+          "hash": "d9c33bb03b833646338da6f4c5f67280795f98df",
+          "date": "2025-10-17T13:17:41+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "feat(AT-008): add backlog row and generate ticket (matrix filename fix if needed)"
+        },
+        {
+          "hash": "a5c571c86bb54f23fd88e0099268d43ac67b29ef",
+          "date": "2025-10-17T13:19:06+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #54 from Stephan-adod/codex/fix-backlog-matrix-filename-and-add-row"
+        },
+        {
+          "hash": "bcd2bf864d96dd0b5e50e6d0919f8bd3c168a3fe",
+          "date": "2025-10-17T13:23:45+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Upgrade Ticket AT-008 to AI-First Handbook v1.8"
+        },
+        {
+          "hash": "26277df987665f29c69a1a331784a96c9a0d3041",
+          "date": "2025-10-17T13:25:04+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #55 from Stephan-adod/docs(AT-008)-rebrief-v1.8-–-AI-First-Loop-Governance-&-Handbook"
+        },
+        {
+          "hash": "06135537fab8f1cc93a3ee098b48e8f77efb08a9",
+          "date": "2025-10-17T13:42:28+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "feat(AT-008): refinement – add validate_loop_state (check-only) + prepare CI step (commented)"
+        },
+        {
+          "hash": "22acae0553d5d3eb79d19b62c4f0047cbb810165",
+          "date": "2025-10-17T13:42:59+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #56 from Stephan-adod/codex/add-validate_loop_state-script-for-refinement"
+        },
+        {
+          "hash": "41da61db393419e44b97b52aa9924266654a2966",
+          "date": "2025-10-17T13:49:18+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "chore(AT-008): execution – loop validator run + proof link (no enforce)"
+        },
+        {
+          "hash": "df6c938fd8e9e24b8a0e169852e898e75a676ee0",
+          "date": "2025-10-17T13:59:05+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "fix(AT-008): sync ticket phases from backlog + validator matrix fallback; regen loop report"
+        },
+        {
+          "hash": "350fcc493d309c5fd35cebed8058d87b329e82a8",
+          "date": "2025-10-17T13:59:33+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #57 from Stephan-adod/codex/add-ticket-proof-link-in-report"
+        },
+        {
+          "hash": "bba9c87f2719542ce43c7ab16a0b3175cdc977a9",
+          "date": "2025-10-17T14:07:10+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add AI-First Handbook v1.8 with governance details"
+        },
+        {
+          "hash": "eb626fd138354d6dfd9a115ed0ef3df0b70f310f",
+          "date": "2025-10-17T14:07:48+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #58 from Stephan-adod/Add-AI-First-Handbook-v1.8-with-governance-details"
+        },
+        {
+          "hash": "3a98a1a0e99a8a81927fd5aa2422c91a3317e96c",
+          "date": "2025-10-17T14:09:22+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "docs(AT-008): handbook refinement v1.8.1 – proof cycle, audit frequency, lesson pipeline, recovery path"
+        },
+        {
+          "hash": "d16b001fd52d809bfdfc6b48cc6ff3309b5a790b",
+          "date": "2025-10-17T14:10:13+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #59 from Stephan-adod/codex/refine-handbook-from-v1.8-to-v1.8.1"
+        },
+        {
+          "hash": "be57891d3972583a662e499f501d32aa230fedf5",
+          "date": "2025-10-17T14:16:29+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "feat(AT-008): acceptance – enable Governance Loop Check + add AI-First Loop Governance table + finalize freeze"
+        },
+        {
+          "hash": "cddace3df42d60eb358618787f3657d917d65bbb",
+          "date": "2025-10-17T14:17:08+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #60 from Stephan-adod/codex/add-governance-loop-check-to-ci"
+        },
+        {
+          "hash": "ba5fb7456734681308de7c119c33e1cc760a5e2f",
+          "date": "2025-10-17T14:34:35+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "docs(AT-008): add lessons learned (v1.8→v1.8.1) and set phase to done"
+        },
+        {
+          "hash": "e2b613216d3ef1efcdf89065b05b56d3b3830e77",
+          "date": "2025-10-17T14:35:58+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #61 from Stephan-adod/codex/add-lessons-learned-to-ticket-at-008"
+        },
+        {
+          "hash": "84eed301fb216ae5434f0c9c0d79ff365d708383",
+          "date": "2025-10-17T15:24:21+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Stage backlog matrix governance schema update"
+        },
+        {
+          "hash": "d8ecff36bc10f29c669e9b2c0826da5c1a294e40",
+          "date": "2025-10-17T15:25:46+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #62 from Stephan-adod/codex/create-staged-proposed-backlog-matrix-v1.8"
+        },
+        {
+          "hash": "d5c9db274ea9822bfc72d4bcc081d9ef2640d047",
+          "date": "2025-10-17T15:34:41+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Expand backlog matrix with new governance columns"
+        },
+        {
+          "hash": "5d2874692fa39fe28435557bf640272e2fcfc2f1",
+          "date": "2025-10-17T15:35:14+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #63 from Stephan-adod/Expand-backlog-matrix-with-new-governance-columns"
+        },
+        {
+          "hash": "1ce4cbd6f43db8c9867f115a421408edfca335ca",
+          "date": "2025-10-17T16:48:17+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add freeze validator and proof report for AT-009"
+        },
+        {
+          "hash": "eb501eda7b127e276033e1147630ad01886fe9cb",
+          "date": "2025-10-17T16:51:55+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Append 2025-10-17 lessons log"
+        },
+        {
+          "hash": "a6724b84f9293ae45bc506f809a70694a9768fe6",
+          "date": "2025-10-17T17:15:40+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Align backlog header diagnostics with schema v1.8"
+        },
+        {
+          "hash": "600c295af2091d65c858cf8717ad9bcf042ef1ea",
+          "date": "2025-10-17T17:16:10+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #64 from Stephan-adod/codex/create-at-009-rebrief-v1.8"
+        },
+        {
+          "hash": "b1e1a88f2e3cbc0c8aa428ff21922b829ba685ef",
+          "date": "2025-10-17T17:29:32+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Update GOV-004 with status and new structure"
+        },
+        {
+          "hash": "f00e873abf2413c50790aa1f82795eef58b24f49",
+          "date": "2025-10-17T17:30:06+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #65 from Stephan-adod/Update-GOV-004-with-status-and-new-structure"
+        },
+        {
+          "hash": "e91c7cc0feb34504cec5fc998afba2ef3eb63b1a",
+          "date": "2025-10-17T17:35:42+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Add validation result for AT-009"
+        },
+        {
+          "hash": "c669696e9dbd50e0513ed1092d6afff46aee939b",
+          "date": "2025-10-17T17:39:41+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Close AT-009 after acceptance"
+        },
+        {
+          "hash": "4d0febd1cd4255f68a498a932605d91d2a39dbca",
+          "date": "2025-10-17T17:40:11+02:00",
+          "author": "Stephan-adod",
+          "email": "stephan@adod.tech",
+          "subject": "Merge pull request #66 from Stephan-adod/codex/run-minimal-freeze-validator-and-update-ticket"
+        }
+      ]
+    }
+  ],
+  "ticketRollup": {
+    "AT-015": {
+      "minutes": 363,
+      "sessions": 3,
+      "commits": 104
+    },
+    "AT-020": {
+      "minutes": 262,
+      "sessions": 1,
+      "commits": 41
+    },
+    "AT-028": {
+      "minutes": 150,
+      "sessions": 1,
+      "commits": 41
+    },
+    "AT-017": {
+      "minutes": 37,
+      "sessions": 1,
+      "commits": 41
+    },
+    "AT-022": {
+      "minutes": 39,
+      "sessions": 1,
+      "commits": 11
+    },
+    "AT-000": {
+      "minutes": 28,
+      "sessions": 1,
+      "commits": 49
+    },
+    "AT-001": {
+      "minutes": 141,
+      "sessions": 1,
+      "commits": 49
+    },
+    "AT-007": {
+      "minutes": 28,
+      "sessions": 1,
+      "commits": 49
+    },
+    "AT-008": {
+      "minutes": 254,
+      "sessions": 1,
+      "commits": 49
+    },
+    "AT-009": {
+      "minutes": 85,
+      "sessions": 1,
+      "commits": 49
+    },
+    "GOV-004": {
+      "minutes": 56,
+      "sessions": 1,
+      "commits": 49
+    }
+  }
+}
