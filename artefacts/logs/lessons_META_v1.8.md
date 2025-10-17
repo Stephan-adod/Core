@@ -3,3 +3,7 @@
 - GOV-004: Backlog-Schema via Gate approved & promoted.
 - Minimaler Freeze-Validator v1.8 eingeführt (nur Version/Existenz-Check, erweiterbar).
 - Nächster Schritt: Schwellen (SHS ≥ 80, Drift ≤ 5, Policy Valid ≥ 95) in Validator integrieren.
+# Lessons · 2025-10-17
+- AT-009 completed: Ledger Validation & Freeze-Prep v1.8 → PASS.
+- Freeze-Validator confirmed Harmony (v1.8 aligned).
+- Focus next: extend validator thresholds + automate Proof-Logging (AT-010).

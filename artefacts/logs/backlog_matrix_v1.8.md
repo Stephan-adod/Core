@@ -11,4 +11,4 @@
 | AT-006 | Foundation | Repository Ops | Repository Cleanup & Deletion Concept v1.9 | 3 | 4 | 4 | 4 | ready | Stephan | Remove legacy artefacts + rules | — | — | — |
 | AT-007 | Legacy | Governance | Meta-Sync Fixes (v1.6 → v1.7) | 3 | 5 | 3 | none | archived | Stephan | Per-layer pipelines; reduce runs | — | — | — |
 | AT-008 | Meta | Governance | AI-First Loop Governance & Handbook | 3 | 5 | 4 | 5 | done | Stephan | Define loop-based gates (ChatGPT / Codex / Operator) + create AI-First Handbook for consistent operation | — | — | — |
-| AT-009 | Meta / Governance | Governance | Ledger Validation & Freeze-Prep v1.8 | — | — | — | High | next | Stephan + Codex App | — | Harmony · Ledger Freeze Gate · Quality | Rebrief → Stabilization | artefacts/logs/system_harmony_report_v1.8.md |
+| AT-009 | Meta / Governance | Governance | Ledger Validation & Freeze-Prep v1.8 | — | — | — | High | done | Stephan + Codex App | — | Harmony · Ledger Freeze Gate · Quality | Rebrief → Stabilization | artefacts/logs/system_harmony_report_v1.8.md |
