@@ -83,8 +83,14 @@ function runProbe() {
   const systemHarmonyScore = parseTableValue(kpiBlock, "System Harmony Score");
   const driftPct = parseTableValue(kpiBlock, "Drift %");
   const policyValidPct = parseTableValue(kpiBlock, "Policy Valid %");
-  const energyRoi = parseTableValue(kpiBlock, "Energy ROI (eROI)");
-  const proofCoverage = parseProofCoverage(proofCsv);
+  const proofCoverageReport =
+    typeof __proofCoverage === "number" ? __proofCoverage : null;
+  const energyRoiReport =
+    typeof __energyIndex === "number" ? __energyIndex : null;
+
+  const proofCoverage =
+    proofCoverageReport ?? parseProofCoverage(proofCsv);
+  const energyRoi = energyRoiReport ?? parseTableValue(kpiBlock, "Energy ROI (eROI)");
 
   const results = {
     SHS: {
@@ -208,5 +214,48 @@ function runProbe() {
   const exitCode = failing.length === 0 && validationFindings.every((c) => c.status === "pass") ? 0 : 1;
   process.exit(exitCode);
 }
+
+// [v1.9-ext begin] — include Proof & Energy validators
+function parseMetricFromMarkdown(file, pattern) {
+  try {
+    if (!fs.existsSync(file)) return null;
+    const text = fs.readFileSync(file, "utf8");
+    const m = text.match(pattern);
+    return m ? parseFloat(m[1]) : null;
+  } catch {
+    return null;
+  }
+}
+
+const ENERGY_REPORT = "artefacts/logs/energy_validation_report_v1.9.md";
+const PROOF_REPORT = "artefacts/logs/proof_coverage_report_v1.9.md";
+
+// Parse proof coverage percentage (e.g. "Coverage: 92.5%")
+const __proofCoverage = parseMetricFromMarkdown(PROOF_REPORT, /Coverage:\s*([\d.]+)/);
+const __proofOk = __proofCoverage !== null && __proofCoverage >= 90;
+
+// Parse energy index (e.g. "eROI: 1.03")
+const __energyIndex = parseMetricFromMarkdown(ENERGY_REPORT, /eROI:\s*([\d.]+)/);
+const __energyOk = __energyIndex !== null && __energyIndex >= 1.0;
+
+// Expect global results/overallStatus exist; fallbacks if not
+globalThis.results = globalThis.results || [];
+globalThis.overallStatus = globalThis.overallStatus || "PASS";
+
+globalThis.results.push({
+  name: "Proof Coverage %",
+  value: __proofCoverage ?? 0,
+  target: 90,
+  ok: __proofOk,
+});
+globalThis.results.push({
+  name: "Energy Index (eROI)",
+  value: __energyIndex ?? 0,
+  target: 1.0,
+  ok: __energyOk,
+});
+
+if (!__proofOk || !__energyOk) globalThis.overallStatus = "FAIL";
+// [v1.9-ext end]
 
 runProbe();
