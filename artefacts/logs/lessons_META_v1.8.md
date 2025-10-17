@@ -1,0 +1,1 @@
+- GOV-004: Schema erweitert; Merge erst nach Validation & Approval → korrekt.
