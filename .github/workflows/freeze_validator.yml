@@ -1,0 +1,28 @@
+name: Freeze · Validator (v1.8)
+on: [pull_request, workflow_dispatch]
+jobs:
+  freeze-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Install deps
+        run: npm ci || npm i
+      - name: Trust Probe (optional)
+        run: |
+          node -e "const fs=require('fs'),cp=require('child_process'); \
+          if(fs.existsSync('scripts/run_trust_probe_v1_8.mjs')){ \
+            cp.execSync('node scripts/run_trust_probe_v1_8.mjs',{stdio:'inherit'}) \
+          } else { console.log('Trust Probe not found, skip'); }"
+      - name: Deep Diagnose
+        run: node scripts/diagnose_repo_state_v1_2.mjs || true
+      - name: Upload Diagnose
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deep-diagnose-v1_2
+          path: artefacts/logs/deep_diagnose_*.*
+      - name: Enforce Freeze Gate
+        run: node scripts/diagnose_repo_state_v1_2.mjs --enforce-freeze
