@@ -15,14 +15,15 @@ jobs:
         with: { node-version: '20' }
       - name: Check curated tickets (no placeholders, quality ≥ 70 before promotion)
         run: |
-          if ls tickets/*.md >/dev/null 2>&1; then
-            echo "Found curated tickets:"
-            ls -1 tickets/*.md
-          else
-            echo "No curated tickets yet (ok)."
+          set -e
+          echo "Scanning tickets for literal 'Placeholder' (case-insensitive)…"
+          MATCHES=$(grep -Rni "Placeholder" tickets || true)
+          if [ -n "$MATCHES" ]; then
+            echo "$MATCHES"
+            echo "::error::Placeholder found in curated tickets"
+            exit 1
           fi
-          # einfache Prüfung: keine 'Placeholder' Strings
-          ! grep -Rqi "Placeholder" tickets || (echo "::error::Placeholder found in curated tickets" && exit 1)
+          echo "OK: no 'Placeholder' matches."
       - name: Matrix basic sanity
         run: |
           set -e
