@@ -253,3 +253,5 @@ Code kopieren
 | Profit per Hour | docs/BUSINESS_CASE_Horizon_v1.8.md | active |
 | Harmony Check | meta/Horizon_Map_v1.8.md | active |
 | Ledger Freeze Gate | meta/AI_First_System_Architecture_v1.8.md | active |
+
+<!-- AT-001 acceptance 2025-10-17: Policy Valid 100% -->
