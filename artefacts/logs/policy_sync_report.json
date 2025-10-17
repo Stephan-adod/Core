@@ -1,0 +1,76 @@
+{
+  "policyValidPct": 100,
+  "results": [
+    {
+      "policy": "Energy",
+      "coverageCount": 4,
+      "coverage": {
+        "architecture": true,
+        "horizon": true,
+        "business": true,
+        "ledger": true
+      }
+    },
+    {
+      "policy": "Quality",
+      "coverageCount": 4,
+      "coverage": {
+        "architecture": true,
+        "horizon": true,
+        "business": true,
+        "ledger": true
+      }
+    },
+    {
+      "policy": "Automation",
+      "coverageCount": 4,
+      "coverage": {
+        "architecture": true,
+        "horizon": true,
+        "business": true,
+        "ledger": true
+      }
+    },
+    {
+      "policy": "Market Validation",
+      "coverageCount": 4,
+      "coverage": {
+        "architecture": true,
+        "horizon": true,
+        "business": true,
+        "ledger": true
+      }
+    },
+    {
+      "policy": "Profit per Hour",
+      "coverageCount": 4,
+      "coverage": {
+        "architecture": true,
+        "horizon": true,
+        "business": true,
+        "ledger": true
+      }
+    },
+    {
+      "policy": "Harmony Check",
+      "coverageCount": 4,
+      "coverage": {
+        "architecture": true,
+        "horizon": true,
+        "business": true,
+        "ledger": true
+      }
+    },
+    {
+      "policy": "Ledger Freeze Gate",
+      "coverageCount": 4,
+      "coverage": {
+        "architecture": true,
+        "horizon": true,
+        "business": true,
+        "ledger": true
+      }
+    }
+  ],
+  "stamp": "2025-10-17T09:56:58.576Z"
+}
