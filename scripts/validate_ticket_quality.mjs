@@ -1,28 +1,38 @@
-import fs from "fs";
-
-const file = process.argv[2];
-if (!file) { console.error("usage: node scripts/validate_ticket_quality.mjs <idea.md>"); process.exit(2); }
-const s = fs.readFileSync(file, "utf8");
-
-// sehr einfache Abschnitts-Checks
-function has(h) { return new RegExp(`^##\\s*${h}\\b`, "im").test(s); }
-function section(h) {
-  const m = s.match(new RegExp(`^##\\s*${h}\\b[\\s\\S]*?(?=^##\\s|$)`, "im"));
-  return m ? m[0] : "";
+#!/usr/bin/env node
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {read,write} from './lib/md_utils.mjs';
+const min = parseInt((process.argv.find(a=>a.startsWith('--minScore='))||'--minScore=70').split('=')[1],10);
+async function listTickets(){
+  try{
+    const items = await fs.readdir('tickets');
+    return items.filter(f=>f.endsWith('.md')).map(f=>path.join('tickets',f));
+  }catch{ return []; }
 }
-
-const clarity = (has("Summary") && section("Summary").trim().split(/\n/).filter(Boolean).length >= 2) ? 1 : 0;
-const goal    = (has("Goal") && /KPI|Target|Outcome/i.test(section("Goal"))) ? 1 : 0;
-const impact  = (has("Impact") && section("Impact").trim().split(/\n/).length >= 2) ? 1 : 0;
-const dorSec  = section("Definition of Ready");
-const dor     = (has("Definition of Ready") && (dorSec.match(/\[x\]/gi)||[]).length >= 3) ? 1 : 0;
-const owner   = /Owner\s*:\s*\S+/i.test(s) || /Verantwortlich\s*:\s*\S+/i.test(s) ? 1 : 0;
-const step    = (has("Next Step") && /- |\d\)/.test(section("Next Step"))) ? 1 : 0;
-
-const score = Math.round(
-  clarity*30 + goal*15 + impact*20 + dor*20 + owner*10 + step*5
-);
-
-const result = { file, score, pass: score>=70, checks: {clarity,goal,impact,dor,owner,step} };
-console.log(JSON.stringify(result, null, 2));
-process.exit(result.pass ? 0 : 1);
+function score(md){
+  let s=0;
+  if(/^#\s*Ticket\s+[A-Z]+-\d+:/m.test(md)) s+=15;
+  if(/##\s*Definition of Ready/i.test(md)) s+=15;
+  if(/##\s*Definition of Done/i.test(md)) s+=15;
+  if(/##\s*Proof of Learning/i.test(md) && /KPI|Messpunkt|KPI\/Messpunkte/i.test(md)) s+=20;
+  if(/##\s*Policy References/i.test(md) && /POL:/i.test(md)) s+=20;
+  if(/##\s*Transitions/i.test(md)) s+=15;
+  return s;
+}
+const files = await listTickets();
+let fails=[];
+let report=['# Ticket Quality Report',''];
+for(const f of files){
+  const md = await read(f)||'';
+  const sc=score(md);
+  report.push(`- ${f}: ${sc}`);
+  if(sc<min) fails.push(f);
+}
+await write('artefacts/logs/ticket_quality_report.md',report.join('\n'));
+if(fails.length){
+  console.error('Tickets below threshold:',fails);
+  process.exit(1);
+}else{
+  console.log('All tickets >=',min);
+  process.exit(0);
+}

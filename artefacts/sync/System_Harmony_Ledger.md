@@ -242,3 +242,14 @@ Code kopieren
 | Metric | Value | Target | Source | Last Update |
 |---|---|---|---|---|
 | Last Backlog Health | 8.88 | ≥ 8.5 | artefacts/logs/meta/diagnose_backlog_v1.0.md | 2025-10-16 |
+
+## Policies (active)
+| Policy | Source | Status |
+|---|---|---|
+| Energy | meta/AI_First_System_Architecture_v1.8.md | active |
+| Quality | meta/AI_First_System_Architecture_v1.8.md | active |
+| Automation | meta/AI_First_System_Architecture_v1.8.md | active |
+| Market Validation | meta/AI_First_System_Architecture_v1.8.md | active |
+| Profit per Hour | docs/BUSINESS_CASE_Horizon_v1.8.md | active |
+| Harmony Check | meta/Horizon_Map_v1.8.md | active |
+| Ledger Freeze Gate | meta/AI_First_System_Architecture_v1.8.md | active |

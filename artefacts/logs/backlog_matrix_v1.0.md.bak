@@ -13,8 +13,8 @@ linked_meta:
 
 # Backlog Matrix · v1.1
 
-| ID | Layer | Workstream | Title | Effort | Impact | Confidence | Priority | Status | Owner | Notes |
-|---|---|---|---|---|---|---|---|---|---|---|
+| Ticket | Layer | Category | Impact | Trust | Effort | Harmony | Learning | Priority | Status | Owner |
+|---|---|---|---:|---:|---:|---:|---:|---:|---|---|
 | AT-016 | Meta | Proof Mechanism | 10 | 9 | 6 | 9 | 9 | 9.3 | running | Stephan |
 | AT-017 | Product | Action Plan Automation | 9 | 9 | 6 | 8 | 8 | 8.9 | running | Stephan |
 | AT-028 | Meta | Governance Loop Stabilisierung & CI Konsolidierung | 9 | 9 | 6 | 8 | 8 | 8.9 | backlog | Stephan |
