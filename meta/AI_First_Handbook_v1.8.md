@@ -11,6 +11,16 @@ Es operationalisiert die drei Kerndokumente (Horizon Map, Business Case, System 
 - Mensch in der Schleife („Human-in-the-Loop“) bleibt Entscheidungsträger
 - Jede Aktion muss erklärbar sein
 
+### Proof-Mechanik & Audit Cycle
+Jeder abgeschlossene Loop erzeugt ein **Proof-of-Value**, bestehend aus :
+- validiertem Report (`artefacts/logs/...`)
+- Eintrag im **System Harmony Ledger**
+- ggf. aktualisierter Policy oder Lesson.
+
+**Audit-Zyklus:**  
+– bei jedem Pull Request (CI) und monatlich automatisch über `freeze_validator.yml`  
+– Operator reviewt Lessons, ChatGPT synchronisiert Policies.
+
 ---
 
 ## 2️⃣ Roles & Responsibilities
@@ -57,6 +67,8 @@ Es operationalisiert die drei Kerndokumente (Horizon Map, Business Case, System 
 **System Harmony Ledger**
 - Enthält Metriken: SHS ≥ 80, Drift ≤ 5 %, Policy Valid ≥ 95 %.
 
+**Audit Frequency:** Per Pull Request + monatlicher Governance-Cron Check (`loop_governance_report` + `freeze_validator`).
+
 ---
 
 ## 6️⃣ Learning & Evolution
@@ -65,6 +77,11 @@ Es operationalisiert die drei Kerndokumente (Horizon Map, Business Case, System 
 - Versionierung:  
   - v1.8 = initial Governance Integration  
   - v1.9 = Feedback & Loop Refinement  
+
+### Lesson-Feedback Pipeline
+1️⃣ ChatGPT analysiert Lessons & Loop Reports  
+2️⃣ Operator entscheidet, ob eine Lesson eine Policy- oder Handbook-Änderung wird  
+3️⃣ Policy Sync (Script / Manual) führt die Änderung ein und aktualisiert Ledger.
 
 ---
 
@@ -75,6 +92,11 @@ Es operationalisiert die drei Kerndokumente (Horizon Map, Business Case, System 
 3. Wird Codex im richtigen Modus genutzt (kein Codespaces)?  
 4. Ist der Proof-Report vorhanden?  
 5. Ist der Freeze erst nach Dokumentation aktiv?
+
+### Recovery-Pfad bei Fehlern
+- **Validator Fail:** ChatGPT führt Rebrief aus → Codex Fix → Operator Review.  
+- **CI Block:** Operator analysiert Report → Handbook/Policy Update → erneute Execution.  
+- **Drift:** Validator öffnet automatisch ein Ticket (`AT-auto-fix-####`) mit Empfehlung.
 
 **Prompt Standards (ChatGPT)**
 - Jede Antwort nennt Phase & Gate (z. B. *Refinement → Execution Gate pending*).  
