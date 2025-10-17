@@ -10,3 +10,4 @@
 | AT-005 | Meta | Governance | Freeze Audit Report v1.9 | 2 | 3 | 3 | 3 | ready | Stephan | Quarterly freeze summary |
 | AT-006 | Foundation | Repository Ops | Repository Cleanup & Deletion Concept v1.9 | 3 | 4 | 4 | 4 | ready | Stephan | Remove legacy artefacts + rules |
 | AT-007 | Meta | Governance | Governance Simplification & Run Consolidation | 3 | 5 | 3 | 5 | ready | Stephan | Per-layer pipelines; reduce runs |
+| AT-008 | Meta | Governance | AI-First Loop Governance & Handbook | 3 | 5 | 4 | 5 | ready | Stephan | Define loop-based gates (ChatGPT / Codex / Operator) + create AI-First Handbook for consistent operation |
