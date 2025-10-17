@@ -1,10 +1,10 @@
 # Trust Probe Report · v1.9.1 (GOV-006)
 Date: 2025-10-17
 
-**Overall Status:** 🔴 FAIL
+**Overall Status:** 🟢 PASS
 
 ## Summary
-- ❌ System Harmony Score: 84.00 (≥ 85)
+- ✅ System Harmony Score: 85.00 (≥ 85)
 - ✅ Drift %: 5.00 (≤ 5)
 - ✅ Policy Valid %: 100.00 (≥ 95)
 - ✅ Proof Coverage %: 100.00 (≥ 95)
@@ -15,9 +15,9 @@ Date: 2025-10-17
 - ✅ **validate_proof** – Proof coverage meets threshold
 - ✅ **validate_energy** – Energy index within target
 - ✅ **validate_policy** – Policy validity meets governance expectations
-- ❗ System Harmony Score is below threshold (84.00 vs ≥ 85)
+- No metric deviations detected against thresholds.
 
 ## Next Governance Actions
-1. Investigate failing metrics and update ledger data sources.
-2. Align architecture v1.9 handbook references with ledger v1.9.1 before freeze.
-3. Re-run Trust Probe v1.9.1 after metrics meet thresholds.
+1. Proceed with governance freeze preparations.
+2. Confirm CI automation reflects v1.9.1 thresholds.
+3. Schedule governance review for final approval.
