@@ -1,6 +1,6 @@
 {
   "version": "v1.8",
-  "timestamp": "2025-10-17T11:56:58.611Z",
+  "timestamp": "2025-10-17T14:40:24.906Z",
   "findings": [
     {
       "ticket": "AT-000.md",
@@ -52,9 +52,21 @@
     },
     {
       "ticket": "AT-008.md",
-      "phase": "ready",
+      "phase": "done",
       "gate": "defined",
       "missingSections": []
+    },
+    {
+      "ticket": "AT-009.md",
+      "phase": "unknown",
+      "gate": "missing",
+      "missingSections": [
+        "/^## Context/m",
+        "/^## Outcome Target/m",
+        "/^## Definition of Ready/m",
+        "/^## Definition of Done/m",
+        "/^## Proof of Learning/m"
+      ]
     }
   ]
 }
