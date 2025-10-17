@@ -1,0 +1,44 @@
+# Codex Prompt · Trust Probe v1.9 Execution (GOV-005)
+task: "Run Trust Probe v1.9 based on Architecture and Ledger criteria"
+context:
+  ticket: GOV-005
+  source_files:
+    - meta/AI_First_System_Architecture_v1.9.md
+    - artefacts/sync/System_Harmony_Ledger.md
+  output: artefacts/logs/trust_probe_report_v1.9.md
+
+actions:
+  - run_validation:
+      checks:
+        - name: "validate_ledger"
+          args: ["--expect", "v1.9", "--strict"]
+        - name: "validate_proof"
+          args: ["--min-proof-coverage", "0.9"]
+        - name: "validate_energy"
+          args: ["--min-erio", "1.0"]
+        - name: "validate_policy"
+          args: ["--min-valid", "0.95"]
+  - aggregate_results:
+      file: artefacts/logs/trust_probe_report_v1.9.md
+      include:
+        - "System Harmony Score"
+        - "Drift %"
+        - "Policy Valid %"
+        - "Proof Coverage %"
+        - "Energy Index (eROI)"
+  - summarize:
+      file: artefacts/logs/trust_probe_report_v1.9.md
+      sections:
+        - "Summary"
+        - "Findings & Thresholds"
+        - "Next Governance Actions"
+  - status_check:
+      thresholds:
+        SHS: 80
+        Drift: 5
+        Policy: 95
+        Proof: 90
+        Energy: 1.0
+post:
+  - run: "git add artefacts/logs/trust_probe_report_v1.9.md"
+  - run: "git commit -m 'logs: add Trust Probe Report v1.9 (GOV-005)'"
