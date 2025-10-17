@@ -6,9 +6,10 @@ status: active
 version: v1.8
 governance: pre-freeze v1.8
 linked_meta:
-  - meta/Horizon_Map_v1.8.md
-  - meta/AI_First_System_Architecture_v1_1.md
-  - meta/AI_First_System_Architecture_v1.8_draft.md
+  - path: meta/Horizon_Map_v1.8.md
+    version: v1.8
+  - path: meta/AI_First_System_Architecture_v1.8.md
+    version: v1.8
 ---
 
 # 💼 Business Case · Horizon v1.8
@@ -52,7 +53,7 @@ Fokusverlust → WIP=1 + Stop-Loss.
 ## 💰 Refinement v2 Responses (Harmonized 2025-10-16)
 
 ### ZONE 1 — Strategic Alignment
-KPI ↔ Themes 1:1; Proofs Q-basiert; Profit/ROL/ROI an Architecture v1.1 gekoppelt.
+KPI ↔ Themes 1:1; Proofs Q-basiert; Profit/ROL/ROI an Architecture v1.8 gekoppelt.
 
 ### ZONE 2 — ROI & MRR Calibration
 MRR 3–4 k€ ambitioniert aber tragfähig; Profit ≥ 10 €/h; ROL KPI aktiv.
@@ -68,3 +69,27 @@ Hauptgefahr: Kontroll-Overhead; Skalierung über Lizenz, Affiliate, Automation.
 Review halbjährlich; Harmony Check aktiv; Changelog unter `artefacts/logs/Governance_Changelog.md`.
 
 ---
+
+## DoR / DoD
+
+**Definition of Ready (DoR)**
+- Rebrief bestätigt Scope, Zielmetriken und verlinkte Meta-Dokumente.
+- Policies & ROI-Annahmen sind mit Horizon Map v1.8 und Architektur v1.8 synchronisiert.
+- Budget- und Energieannahmen liegen mit Quellen im Ledger vor.
+
+**Definition of Done (DoD)**
+- Proof-Reports (Value, Energy, ROI) sind dokumentiert und referenzieren Ledger-Einträge.
+- Governance-Gates (Harmony Check, Freeze) wurden bestätigt.
+- Lessons und Policy-Updates wurden eingepflegt.
+
+## Proof & Lessons
+
+- Proof-of-Value: Referenzen im System Harmony Ledger und in Refinement Reports.
+- Lessons Learned: Nach jedem Proof in Handbook oder Policies spiegeln.
+- Automation Sync: CI-Validator bestätigt Version & Policy-Drift ≤ 5 %.
+
+## Changelog
+
+| Version | Date | Change | Owner |
+| --- | --- | --- | --- |
+| v1.8 | 2025-10-16 | Governance-Abschnitte (DoR/DoD, Proof & Lessons, Changelog) ergänzt; linked_meta synchronisiert. | Stephan |

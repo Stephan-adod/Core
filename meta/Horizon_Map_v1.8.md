@@ -114,13 +114,49 @@ Ein selbstlernendes Arbeits- und Lebenssystem, das
     rule: "horizon.version == business.version == architecture.version"
     metric: "version_sync == true"
     status: active
-  ```
+ ```
 
 ## 🔗 Integration Recommendations (System Harmony)
-1. Horizon v1.8 bleibt Master für Richtung & Proof Targets.  
-2. Business v1.8 liefert ROI-Baseline (MRR 3–4 k€, Profit ≥ 10 €/h).  
-3. Architecture v1.1 spiegelt Policies & KPIs  
-   (inkl. Profit per Hour, Harmony Check, Ledger Freeze Gate).  
-4. System Harmony Ledger konsolidiert KPIs;  
-   vor Freeze gilt: SHS ≥ 80 und Drift ≤ 5 %.  
+1. Horizon v1.8 bleibt Master für Richtung & Proof Targets.
+2. Business v1.8 liefert ROI-Baseline (MRR 3–4 k€, Profit ≥ 10 €/h).
+3. Architecture v1.8 spiegelt Policies & KPIs
+   (inkl. Profit per Hour, Harmony Check, Ledger Freeze Gate).
+4. System Harmony Ledger konsolidiert KPIs;
+   vor Freeze gilt: SHS ≥ 80 und Drift ≤ 5 %.
 5. Review-Zyklen: Arch 6 W · Horizon 3 M · Business 6 M · Weekly Proof Review fix.
+
+## Overview & Governance
+
+- Horizon Map definiert strategische Leitplanken und Governance-Zyklen für 2025–2026.
+- Owner: Stephan · Governance Status: pre-freeze v1.8 · Review-Rhythmus: vierteljährlich.
+- Verknüpfte Artefakte: Business Case v1.8, Architecture v1.8, System Harmony Ledger.
+
+## Policies (link to Architecture)
+
+- Policy-Namen & Regeln spiegeln `meta/AI_First_System_Architecture_v1.8.md`.
+- Harmony Check erzwingt Version Sync (`horizon.version == business.version == architecture.version`).
+- Ledger Freeze Gate überwacht SHS ≥ 80 und Drift ≤ 5 % vor Releases.
+
+## Proof (Cycle & Triggers)
+
+- Proof-Zyklus: Quartalsweise Validierung von Market, Automation & Energy Proofs.
+- Trigger: Commit, Proof Review, SBI Log → aktualisieren System Harmony Ledger.
+- Proof Reports verlinken nach `artefacts/logs/` und CI-Diagnostik.
+
+## DoR / DoD
+
+**Definition of Ready (DoR)**
+- Strategische Themes, KPIs und Policies abgestimmt mit Architecture & Business Case v1.8.
+- Proof Targets & Ledger-Kennzahlen für laufenden Zyklus dokumentiert.
+- Governance Rhythmus bestätigt (Review-Kalender aktiv).
+
+**Definition of Done (DoD)**
+- Proof-Events protokolliert, Ledger aktualisiert und Drift ≤ 5 %.
+- Lessons & Policy-Updates in Handbook/Architecture gespiegelt.
+- Changelog-Eintrag erstellt und Operator hat Governance-Review freigegeben.
+
+## Changelog
+
+| Version | Date | Change | Owner |
+| --- | --- | --- | --- |
+| v1.8 | 2025-10-16 | Governance-Abschnitte (Overview, Policies, Proof, DoR/DoD, Changelog) ergänzt. | Stephan |
