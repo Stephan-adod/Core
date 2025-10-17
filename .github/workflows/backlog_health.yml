@@ -25,6 +25,14 @@ jobs:
           ! grep -Rqi "Placeholder" tickets || (echo "::error::Placeholder found in curated tickets" && exit 1)
       - name: Matrix basic sanity
         run: |
-          test -f artefacts/logs/backlog_matrix_v1.1.md || (echo "::error::missing v1.1 matrix" && exit 1)
-          cols=$(awk -F"|" '/^\|/ && NR==3 {print NF}' artefacts/logs/backlog_matrix_v1.1.md)
-          [ "$cols" -ge 11 ] || (echo "::error::matrix header/trenner malformed" && exit 1)
+          set -e
+          FILE="artefacts/logs/backlog_matrix_v1.1.md"
+          test -f "$FILE" || (echo "::error::missing v1.1 matrix" && exit 1)
+          cols=$(awk -F"|" '
+            BEGIN{h=0}
+            /^\|/{h++; if(h==1){print NF-2; exit}}
+          ' "$FILE")
+          if [ -z "${cols:-}" ]; then
+            echo "::error::no table header found"; exit 1
+          fi
+          [ "$cols" -ge 11 ] || (echo "::error::matrix header has <11 columns (got=$cols)" && exit 1)
