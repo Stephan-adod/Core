@@ -1,3 +1,19 @@
+---
+id: meta.ai_first_handbook_v1_8
+layer: meta
+owner: Stephan
+status: active
+version: v1.8
+governance: pre-freeze v1.8
+linked_meta:
+  - path: meta/Horizon_Map_v1.8.md
+    version: v1.8
+  - path: docs/BUSINESS_CASE_Horizon_v1.8.md
+    version: v1.8
+  - path: meta/AI_First_System_Architecture_v1.8.md
+    version: v1.8
+---
+
 # AI-First Handbook · v1.8
 
 ## 1️⃣ Purpose & Principles
@@ -106,7 +122,13 @@ Jeder abgeschlossene Loop erzeugt ein **Proof-of-Value**, bestehend aus :
 
 ---
 
-**Version:** v1.8  
-**Author:** Stephan (Operator)  
-**Reviewed by:** ChatGPT (Governance Layer)  
+**Version:** v1.8
+**Author:** Stephan (Operator)
+**Reviewed by:** ChatGPT (Governance Layer)
 **Last Updated:** <auto filled during Acceptance>
+
+## Changelog
+
+| Version | Date | Change | Owner |
+| --- | --- | --- | --- |
+| v1.8 | 2025-10-16 | Frontmatter ergänzt, Governance-Verknüpfungen synchronisiert, Changelog hinzugefügt. | Stephan |

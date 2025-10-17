@@ -99,3 +99,9 @@ Der Ledger verbindet Horizon v1.8, Business Case v1.8 und die Architektur v1.8 d
 | --- | --- | --- | --- |
 | v1.8 | 2025-10-15 | Initial Draft Uplift (v1.1 → v1.8) | Stephan |
 | v1.8 (freeze) | 2025-10-15 | Governance Freeze aktiviert (AT-015) | Governance Maintainer |
+
+## 11. Lessons & Appendix
+
+- Lessons aus Proof-of-Value/-Learning fließen nach jedem Freeze in Handbook & Policies.
+- Appendix referenziert System Harmony Ledger, Governance Scripts (`freeze_validator.yml`, `validate_loop_state.mjs`).
+- Offene Fragen oder Pending-Policies werden als Tickets (`AT-DOC-###`) im Refinement erfasst.
