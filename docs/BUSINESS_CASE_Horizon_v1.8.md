@@ -8,7 +8,7 @@ governance: pre-freeze v1.8
 linked_meta:
   - path: meta/Horizon_Map_v1.8.md
     version: v1.8
-  - path: meta/AI_First_System_Architecture_v1.8.md
+  - path: meta/AI_First_System_Architecture_v1.9.md
     version: v1.8
 ---
 

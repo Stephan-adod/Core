@@ -7,7 +7,7 @@ version: v1.8
 governance: pre-freeze v1.8
 linked_meta:
   # Architektur v1.8 (aktuelle Freeze-Version)
-  - path: meta/AI_First_System_Architecture_v1.8.md
+  - path: meta/AI_First_System_Architecture_v1.9.md
     version: v1.8
   # Business Case v1.8
   - path: docs/BUSINESS_CASE_Horizon_v1.8.md
@@ -133,7 +133,7 @@ Ein selbstlernendes Arbeits- und Lebenssystem, das
 
 ## Policies (link to Architecture)
 
-- Policy-Namen & Regeln spiegeln `meta/AI_First_System_Architecture_v1.8.md`.
+- Policy-Namen & Regeln spiegeln `meta/AI_First_System_Architecture_v1.9.md`.
 - Harmony Check erzwingt Version Sync (`horizon.version == business.version == architecture.version`).
 - Ledger Freeze Gate überwacht SHS ≥ 80 und Drift ≤ 5 % vor Releases.
 
@@ -163,7 +163,7 @@ Ein selbstlernendes Arbeits- und Lebenssystem, das
 ## Overview & Governance
 Horizon Map v1.8 dient als strategischer Layer …
 ## Policies (link to Architecture)
-Siehe `meta/AI_First_System_Architecture_v1.8.md`, …
+Siehe `meta/AI_First_System_Architecture_v1.9.md`, …
 ## Proof (Cycle & Triggers)
 - Trigger: Commit · Proof Review · SBI Log
 - Frequenz: Quartalsweise (Q1–Q4)

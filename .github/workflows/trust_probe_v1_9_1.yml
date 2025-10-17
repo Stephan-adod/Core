@@ -1,0 +1,16 @@
+name: CI · Trust Probe v1.9.1
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: "17 3 * * *"
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - run: node scripts/proof_log_agg.mjs --min-coverage 0.95 --log artefacts/logs/proofs/proof_log.csv
+      - run: node scripts/validate_energy.mjs --min-erio 1.1 --feed artefacts/data/sbi/sbi_energy.csv
+      - run: node scripts/run_trust_probe_v1_9_1.mjs
