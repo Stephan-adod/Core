@@ -1,0 +1,11 @@
+{
+  "name": "core-backlog-governance",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "backlog:prepare": "node scripts/update_backlog_matrix.mjs --proposed artefacts/staging/backlog_matrix_v1.8.proposed.md --write",
+    "backlog:accept": "node scripts/update_backlog_matrix.mjs --accept",
+    "governance:validate": "node scripts/validate_loop_state.mjs --schema backlog || echo \"(stub) governance validator not present yet\""
+  }
+}
