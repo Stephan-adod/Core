@@ -236,6 +236,16 @@ Code kopieren
 |---|---|---|---|---|
 | Last Meta Diagnosis | 60% | ≥ 95% | artefacts/logs/meta/diagnose_meta_v1.8.md | 2025-10-16 |
 
+## AI-First Loop Governance (v1.8.1)
+| Phase | Owner | Gate | Evidence | Last Update |
+|--------|--------|------|-----------|--------------|
+| Rebrief | ChatGPT | Scope OK | Ticket Rebrief (`AT-008.md`) | 2025-10-17 |
+| Refinement | Codex | Structure OK | `scripts/validate_loop_state.mjs` | 2025-10-17 |
+| Execution | Codex | Proof OK | `artefacts/logs/loop_governance_report.md` | 2025-10-17 |
+| Documentation | ChatGPT + Operator | Doc OK | `meta/AI_First_Handbook_v1.8.md` | 2025-10-17 |
+| Acceptance | CI / Governance | Freeze OK | `.github/workflows/freeze_validator.yml` | 2025-10-17 |
+| Evolution | Operator + ChatGPT | Lessons OK | Lessons section (AT-008) | pending |
+
 
 ## Backlog Health Records
 

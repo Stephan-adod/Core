@@ -33,8 +33,9 @@ jobs:
           name: deep-diagnose-v1_2
           path: artefacts/logs/deep_diagnose_*.*
 
-      # AT-008 Governance Loop Check (Refinement Preview)
-      # - name: Governance Loop Check
-      #   run: node scripts/validate_loop_state.mjs
+      - name: Governance Loop Check
+        run: node scripts/validate_loop_state.mjs --strict
+        continue-on-error: false
+        timeout-minutes: 5
       - name: Enforce Freeze Gate
         run: node scripts/diagnose_repo_state_v1_2.mjs --enforce-freeze
