@@ -40,3 +40,6 @@ Freeze v1.9 bestätigt. v1.9.1 beschreibt Proof-, Energy- und CI-Integration im 
 | Version | Date | Change | Author |
 |---|---|---|---|
 | v1.9.1 | $(date -u +"%Y-%m-%d") | Handbook CI/Proof/Energy Abschnitte | Stephan |
+## Governance Appendix (v1.9.1)
+Governance Tools: `validate_energy.mjs`, `run_trust_probe_v1_9_1.mjs`
+Freeze Gate Validation: automatic in CI → triggers on `System Harmony Ledger` update.
