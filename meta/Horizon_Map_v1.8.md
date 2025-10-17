@@ -160,3 +160,19 @@ Ein selbstlernendes Arbeits- und Lebenssystem, das
 | Version | Date | Change | Owner |
 | --- | --- | --- | --- |
 | v1.8 | 2025-10-16 | Governance-Abschnitte (Overview, Policies, Proof, DoR/DoD, Changelog) ergänzt. | Stephan |
+## Overview & Governance
+Horizon Map v1.8 dient als strategischer Layer …
+## Policies (link to Architecture)
+Siehe `meta/AI_First_System_Architecture_v1.8.md`, …
+## Proof (Cycle & Triggers)
+- Trigger: Commit · Proof Review · SBI Log
+- Frequenz: Quartalsweise (Q1–Q4)
+- Output: Proof Report + Ledger Entry
+- Validator: validate_proof_cycle.mjs
+## DoR / DoD
+Ready: Ziel + Proof-Zyklus …
+Done: Proof Review abgeschlossen …
+## Changelog
+| Version | Date | Change | Author |
+|----------|------|---------|--------|
+| v1.8 | 2025-10-17 | Governance-Blöcke ergänzt | Stephan |

@@ -93,3 +93,19 @@ Review halbjährlich; Harmony Check aktiv; Changelog unter `artefacts/logs/Gover
 | Version | Date | Change | Owner |
 | --- | --- | --- | --- |
 | v1.8 | 2025-10-16 | Governance-Abschnitte (DoR/DoD, Proof & Lessons, Changelog) ergänzt; linked_meta synchronisiert. | Stephan |
+## DoR / DoD
+Ready: Ziele (ROI, Profit per Hour) + verlinkte Meta-Docs v1.8
+Done: Proof & Lessons dokumentiert …
+## Proof & Lessons
+### Proofs of Value
+| Quartal | Proof | Ergebnis | Status |
+|----------|--------|-----------|--------|
+| Q1 | MVP Factory Automation | ROI > 1.2 | ✅ |
+| Q2 | Ledger Validation | SHS = 82 | 🟢 |
+### Lessons
+- Proof Zyklus Q1 zeigt Effizienzgewinn …
+- Business Policies müssen regelmäßig …
+## Changelog
+| Version | Date | Change | Author |
+|----------|------|---------|--------|
+| v1.8 | 2025-10-17 | Governance Blöcke + linked_meta Fix | Stephan |
