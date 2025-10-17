@@ -8,5 +8,20 @@ function parseCsv(p){const t=fs.readFileSync(p,"utf8");const r=t.split(/\r?\n/).
 function ensureDir(p){fs.mkdirSync(path.dirname(p),{recursive:true})}
 function writeReport({out,inn,eroi}){ensureDir(REPORT);const ok=eroi>=MIN;fs.writeFileSync(REPORT,
   `# Energy Validation Report v1.9\n\n- Feed: \`${FEED}\`\n- Sum Out: ${out.toFixed(2)}\n- Sum In: ${inn.toFixed(2)}\n- eROI: ${eroi.toFixed(3)} (min ${MIN.toFixed(2)})\n\n**Status:** ${ok?"PASS":"FAIL"}\n`,"utf8");return ok}
+// v1.9.1: drift alert (optional)
+const STATE = "artefacts/logs/energy_state.json";
+function readState(){ try { return JSON.parse(fs.readFileSync(STATE,"utf8")); } catch { return { last_eroi:null }; } }
+function writeState(obj){ fs.mkdirSync(path.dirname(STATE), { recursive:true }); fs.writeFileSync(STATE, JSON.stringify(obj,null,2),"utf8"); }
 (function(){ if(!fs.existsSync(FEED)){console.error(`Energy feed not found: ${FEED}`);process.exit(1)}
-  const res=parseCsv(FEED); const ok=writeReport(res); if(!ok)process.exit(2)})();
+  const res=parseCsv(FEED); const ok=writeReport(res);
+  (function driftAlert(){
+    try {
+      const st = readState();
+      if (st.last_eroi != null) {
+        const drop = (st.last_eroi - res.eroi) / Math.max(st.last_eroi, 1e-9);
+        if (drop > 0.05) console.warn(`::warning::Energy eROI drift ${(drop*100).toFixed(1)}%`);
+      }
+      writeState({ last_eroi: res.eroi });
+    } catch {}
+  })();
+  if(!ok)process.exit(2)})();

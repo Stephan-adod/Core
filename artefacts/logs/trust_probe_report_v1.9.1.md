@@ -1,4 +1,4 @@
-# Trust Probe Report · v1.9 (GOV-005)
+# Trust Probe Report · v1.9.1 (GOV-006)
 Date: 2025-10-17
 
 **Overall Status:** 🔴 FAIL
@@ -11,7 +11,7 @@ Date: 2025-10-17
 - ✅ Energy Index (eROI): 1.20 (≥ 1.1)
 
 ## Findings & Thresholds
-- ❌ **validate_ledger** – Ledger version does not match expected v1.9
+- ✅ **validate_ledger** – Ledger version matches v1.9.1
 - ✅ **validate_proof** – Proof coverage meets threshold
 - ✅ **validate_energy** – Energy index within target
 - ✅ **validate_policy** – Policy validity meets governance expectations
@@ -19,5 +19,5 @@ Date: 2025-10-17
 
 ## Next Governance Actions
 1. Investigate failing metrics and update ledger data sources.
-2. Align architecture v1.9 with ledger versioning before freeze.
-3. Re-run Trust Probe after metrics meet thresholds.
+2. Align architecture v1.9 handbook references with ledger v1.9.1 before freeze.
+3. Re-run Trust Probe v1.9.1 after metrics meet thresholds.
