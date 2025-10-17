@@ -1,1 +1,60 @@
-{"version":"v1.8","status":"placeholder"}
+{
+  "version": "v1.8",
+  "timestamp": "2025-10-17T11:45:24.118Z",
+  "findings": [
+    {
+      "ticket": "AT-000.md",
+      "phase": "unknown",
+      "gate": "defined",
+      "missingSections": []
+    },
+    {
+      "ticket": "AT-001.md",
+      "phase": "unknown",
+      "gate": "defined",
+      "missingSections": []
+    },
+    {
+      "ticket": "AT-002.md",
+      "phase": "unknown",
+      "gate": "defined",
+      "missingSections": []
+    },
+    {
+      "ticket": "AT-003.md",
+      "phase": "unknown",
+      "gate": "defined",
+      "missingSections": []
+    },
+    {
+      "ticket": "AT-004.md",
+      "phase": "unknown",
+      "gate": "defined",
+      "missingSections": []
+    },
+    {
+      "ticket": "AT-005.md",
+      "phase": "unknown",
+      "gate": "defined",
+      "missingSections": []
+    },
+    {
+      "ticket": "AT-006.md",
+      "phase": "unknown",
+      "gate": "defined",
+      "missingSections": []
+    },
+    {
+      "ticket": "AT-007.md",
+      "phase": "unknown",
+      "gate": "defined",
+      "missingSections": []
+    },
+    {
+      "ticket": "AT-008.md",
+      "phase": "ready",
+      "gate": "defined",
+      "missingSections": []
+    }
+  ]
+}
