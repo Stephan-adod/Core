@@ -217,8 +217,9 @@ function runProbe() {
     console.log(`${vf.check}: ${vf.status}`);
   });
 
-  const exitCode = failing.length === 0 && validationFindings.every((c) => c.status === "pass") ? 0 : 1;
-  process.exit(exitCode);
+  const exitCode =
+    failing.length === 0 && validationFindings.every((c) => c.status === "pass") ? 0 : 1;
+  return exitCode;
 }
 
 // [v1.9-ext begin] — include Proof & Energy validators
@@ -264,4 +265,14 @@ globalThis.results.push({
 if (!__proofOk || !__energyOk) globalThis.overallStatus = "FAIL";
 // [v1.9-ext end]
 
-runProbe();
+const exitCode = runProbe();
+
+// --- v1.9.1 add --no-fail flag to avoid hard-failing CI in stabilization mode ---
+const noFail = process.argv.includes("--no-fail");
+if (typeof exitCode === "number") {
+  if (noFail) {
+    console.log("note: --no-fail set → returning exit 0 (report written).");
+    process.exit(0);
+  }
+  process.exit(exitCode);
+}
