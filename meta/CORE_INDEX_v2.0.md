@@ -1,12 +1,20 @@
 # Core Documentation Index · v2.0
 
-| Document | Owner | Rhythm | Notes |
-| --- | --- | --- | --- |
-| AI_First_System_Architecture_v2.0.md | Architecture Lead | Bi-weekly | Maintain system diagrams & decisions. |
-| AI_First_Roadmap_v2.0.md | Program Lead | Weekly | Track sequencing and horizon shifts. |
-| AI_First_Handbook_v2.0.md | Operations | Monthly | Update team agreements and rituals. |
-| Human_in_the_Loop_Playbook_v2.0.md | Governance | Monthly | Validate oversight loops and checkpoints. |
-| AI_First_Business_Case_v2.0.md | Strategy | Quarterly | Refresh value thesis and investment view. |
+## Intent State
+- Intent State: draft
 
-All documents are currently in draft form and will evolve as v2.0 planning progresses.
+## Summary Table
+| Document | Owner | Updated | Rhythm | Notes |
+| --- | --- | --- | --- | --- |
+| meta/AI_First_System_Architecture_v2.0.md | Stephan | 2025-10-19 | Monthly review | Layers, roles, interfaces. |
+| meta/AI_First_Roadmap_v2.0.md | Stephan | 2025-10-19 | Bi-weekly cadence (light) | Phases & decision gates (draft intent). |
+| meta/AI_First_Handbook_v2.0.md | Stephan | 2025-10-19 | Quarterly | Operating rules and prompts. |
+| meta/Human_in_the_Loop_Playbook_v2.0.md | Stephan | 2025-10-19 | Weekly reflection (15 min) | Human oversight loop. |
+| docs/AI_First_Business_Case_v2.0.md | Stephan | 2025-10-19 | Monthly checkpoint | Value thesis and metrics seed. |
 
+## Navigation
+- Architecture: meta/AI_First_System_Architecture_v2.0.md
+- Roadmap: meta/AI_First_Roadmap_v2.0.md
+- Handbook: meta/AI_First_Handbook_v2.0.md
+- Human-in-the-Loop: meta/Human_in_the_Loop_Playbook_v2.0.md
+- Business Case: docs/AI_First_Business_Case_v2.0.md
