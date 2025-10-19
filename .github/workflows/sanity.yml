@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Validate v2.0 skeleton
+        shell: bash
         run: |
           set -e
           for f in \
@@ -18,6 +19,7 @@ jobs:
             meta/AI_First_Handbook_v2.0.md \
             meta/Human_in_the_Loop_Playbook_v2.0.md \
             docs/AI_First_Business_Case_v2.0.md; do
-            test -f $f || (echo "❌ Missing: $f" && exit 1)
+            test -f "$f" || (echo "❌ Missing: $f" && exit 1)
           done
-          echo "✅ v2.0 skeleton verified (intent: $(grep -oE 'intent_state:\s*\w+' meta/AI_First_Roadmap_v2.0.md || echo 'n/a'))."
+          INTENT=$(grep -oE 'intent_state:\s*\w+' meta/AI_First_Roadmap_v2.0.md || echo 'intent_state: n/a')
+          echo "✅ v2.0 skeleton verified ($INTENT)."
