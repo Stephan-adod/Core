@@ -42,6 +42,8 @@ linked_docs:
 
 ## Learning Rhythm Governance
 
+Changelog 2025-10-19: Lesson L-004 integriert; Weekly Reflection Run 2025-W42 abgeschlossen.
+
 ### 🌀 Lesson Integration – L-004 · Weekly Reflection (System Stability & Focus)
 **Quelle:** OP-001 Weekly Reflection (2025-W42)  
 **Phase:** v2.1 Refined  
