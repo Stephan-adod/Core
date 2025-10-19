@@ -13,6 +13,7 @@ Dieses Inventory listet nur aktive, minimal notwendige Prompts für den Reflexio
 ## A. Governance & Reflection
 | ID | Name | Zweck | Status | Notes |
 |----|------|-------|--------|-------|
+| RS-001 | Review Synthesis (v2.2) | Aggregiert Lessons (L-001 – L-004) zu Meta-Learnings und erstellt S-001 | 🟢 active | |
 | P-009 | Lesson Collector (refined) | Erzeugt Lesson-Snippets + Logeintrag, verlinkt Core-Docs | 🟢 active | L-004 integrated (Playbook · Learning Rhythm Governance) |
 
 ## B. Operator Prompts

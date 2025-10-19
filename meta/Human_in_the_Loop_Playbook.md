@@ -44,9 +44,14 @@ linked_docs:
 
 Changelog 2025-10-19: Lesson L-004 integriert; Weekly Reflection Run 2025-W42 abgeschlossen.
 
+#### Intent-Based Learning Loop (v2.2)
+Anstatt zeitbasiert (weekly/monthly) werden Lessons nach Intents (P-00X) erzeugt.
+Nach 3–5 Lessons oder einem Governance-Change wird automatisch eine Review Synthesis (RS-001) ausgeführt.
+Ziel: Meta-Lernen und Governance-Anpassung in Echtzeit.
+
 ### 🌀 Lesson Integration – L-004 · Weekly Reflection (System Stability & Focus)
-**Quelle:** OP-001 Weekly Reflection (2025-W42)  
-**Phase:** v2.1 Refined  
+**Quelle:** OP-001 Weekly Reflection (2025-W42)
+**Phase:** v2.1 Refined
 **Status:** 🟢 active  
 **Verantwortlich:** Stephan  
 
