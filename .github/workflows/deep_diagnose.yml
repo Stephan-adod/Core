@@ -6,11 +6,37 @@
 name: CI · Deep Diagnose v1.1
 on:
   push:
+    paths-ignore:
+      - 'archive/**'
   pull_request:
+    paths-ignore:
+      - 'archive/**'
   schedule:
     - cron: "0 6 * * 1"   # Mo 06:00 UTC
 jobs:
+  mode:
+    runs-on: ubuntu-latest
+    outputs:
+      v2: ${{ steps.detect.outputs.v2 }}
+      intent: ${{ steps.detect.outputs.intent }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: detect
+        shell: bash
+        run: |
+          set -e
+          if [[ -f meta/CORE_INDEX_v2.0.md ]]; then echo "v2=true" >> $GITHUB_OUTPUT; else echo "v2=false" >> $GITHUB_OUTPUT; fi
+          intent=unknown
+          if [[ -f meta/AI_First_Roadmap_v2.0.md ]]; then
+            if grep -qE 'intent_state:\s*confirmed' meta/AI_First_Roadmap_v2.0.md; then intent=confirmed
+            elif grep -qE 'intent_state:\s*draft' meta/AI_First_Roadmap_v2.0.md; then intent=draft
+            fi
+          fi
+          echo "intent=$intent" >> $GITHUB_OUTPUT
+
   deep-diagnose:
+    needs: mode
+    if: needs.mode.outputs.v2 == 'false'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -40,3 +66,20 @@ jobs:
           else
             echo 'Deep Diagnose passed.'; exit 0
           fi
+
+  health-v2:
+    needs: mode
+    if: needs.mode.outputs.v2 == 'true' && needs.mode.outputs.intent == 'confirmed'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: v2 skeleton sanity
+        shell: bash
+        run: |
+          set -e
+          test -f meta/AI_First_System_Architecture_v2.0.md
+          test -f meta/AI_First_Roadmap_v2.0.md
+          test -f meta/AI_First_Handbook_v2.0.md
+          test -f meta/Human_in_the_Loop_Playbook_v2.0.md
+          test -f docs/AI_First_Business_Case_v2.0.md
+          echo "v2 skeleton ok (intent confirmed)"
