@@ -1,6 +1,6 @@
 ---
 title: AI-First Business Case
-version: v2.0
+version: v2.1
 status: active
 updated: 2025-10-19
 owner: Stephan
@@ -11,10 +11,10 @@ outputs:
 boundaries:
   - Avoid premature precision; track deltas not absolutes
 linked_docs:
-  - meta/AI_First_System_Architecture_v2.0.md
-  - meta/AI_First_Roadmap_v2.0.md
-  - meta/AI_First_Handbook_v2.0.md
-  - meta/Human_in_the_Loop_Playbook_v2.0.md
+  - meta/AI_First_System_Architecture.md
+  - meta/AI_First_Roadmap.md
+  - meta/AI_First_Handbook.md
+  - meta/Human_in_the_Loop_Playbook.md
 ---
 
 ## Value Hypothesis

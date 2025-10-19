@@ -1,6 +1,6 @@
 ---
 title: AI-First Handbook
-version: v2.0
+version: v2.1
 status: active
 updated: 2025-10-19
 owner: Stephan
@@ -11,10 +11,10 @@ outputs:
 boundaries:
   - Keep below 150 lines per section
 linked_docs:
-  - meta/AI_First_System_Architecture_v2.0.md
-  - meta/Human_in_the_Loop_Playbook_v2.0.md
-  - meta/AI_First_Roadmap_v2.0.md
-  - docs/AI_First_Business_Case_v2.0.md
+  - meta/AI_First_System_Architecture.md
+  - meta/Human_in_the_Loop_Playbook.md
+  - meta/AI_First_Roadmap.md
+  - docs/AI_First_Business_Case.md
 ---
 
 ## Operating Principles

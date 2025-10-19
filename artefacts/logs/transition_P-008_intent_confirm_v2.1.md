@@ -4,7 +4,7 @@ date: 2025-10-19
 author: Stephan
 scope: roadmap confirm · bootstrap archive · operational handoff
 links:
-  roadmap: meta/AI_First_Roadmap_v2.0.md
+  roadmap: meta/AI_First_Roadmap.md
   archive_bootstrap: archive/v2.0_bootstrap/AI_First_System_Bootstrap_v2.0.md
 ---
 

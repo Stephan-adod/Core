@@ -1,0 +1,12 @@
+{
+  "target_version": "v2.1",
+  "core_docs": [
+    "docs/AI_First_Business_Case.md",
+    "meta/AI_First_Handbook.md",
+    "meta/AI_First_Roadmap.md",
+    "meta/AI_First_System_Architecture.md",
+    "meta/Human_in_the_Loop_Playbook.md",
+    "meta/Prompt_Inventory.md",
+    "meta/CORE_INDEX.md"
+  ]
+}
