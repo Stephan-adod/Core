@@ -1,6 +1,6 @@
 ---
 title: Human-in-the-Loop Playbook
-version: v2.0
+version: v2.1
 status: active
 updated: 2025-10-19
 owner: Stephan
@@ -11,10 +11,10 @@ outputs:
 boundaries:
   - Human decides intent state & merges
 linked_docs:
-  - meta/AI_First_System_Architecture_v2.0.md
-  - meta/AI_First_Roadmap_v2.0.md
-  - meta/AI_First_Handbook_v2.0.md
-  - docs/AI_First_Business_Case_v2.0.md
+  - meta/AI_First_System_Architecture.md
+  - meta/AI_First_Roadmap.md
+  - meta/AI_First_Handbook.md
+  - docs/AI_First_Business_Case.md
 ---
 
 ## Operational Rhythm (v2.1)

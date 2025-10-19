@@ -1,6 +1,6 @@
 ---
 title: AI-First System Architecture
-version: v2.0
+version: v2.1
 status: active
 updated: 2025-10-19
 owner: Stephan (System Owner & Mentor)
@@ -12,10 +12,10 @@ boundaries:
   - No operational task tracking (moved to feature repos)
   - Archive is read-only context
 linked_docs:
-  - meta/AI_First_Roadmap_v2.0.md
-  - meta/AI_First_Handbook_v2.0.md
-  - meta/Human_in_the_Loop_Playbook_v2.0.md
-  - docs/AI_First_Business_Case_v2.0.md
+  - meta/AI_First_Roadmap.md
+  - meta/AI_First_Handbook.md
+  - meta/Human_in_the_Loop_Playbook.md
+  - docs/AI_First_Business_Case.md
 ---
 
 ## Purpose

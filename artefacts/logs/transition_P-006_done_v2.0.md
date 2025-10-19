@@ -4,7 +4,7 @@ date: 2025-10-19
 author: Stephan
 scope: core-docs seed · inventory sync · bootstrap expiry pending
 links:
-  inventory: meta/Prompt_Inventory_v2.0.md
+  inventory: meta/Prompt_Inventory.md
 ---
 
 ## Summary

@@ -1,5 +1,5 @@
 ---
-version: v2.0
+version: v2.1
 status: active
 phase: operational
 updated: 2025-10-19
@@ -9,7 +9,7 @@ related_logs:
   - artefacts/logs/transition_P-008_5_playbook_update.md
 ---
 
-# Prompt Inventory v2.0
+# Prompt Inventory v2.1
 
 ## Metadata
 related_logs:
