@@ -40,4 +40,28 @@ linked_docs:
 3. Decide: keep, simplify, or drop
 ---
 
+## Learning Rhythm Governance
+
+### 🌀 Lesson Integration – L-004 · Weekly Reflection (System Stability & Focus)
+**Quelle:** OP-001 Weekly Reflection (2025-W42)  
+**Phase:** v2.1 Refined  
+**Status:** 🟢 active  
+**Verantwortlich:** Stephan  
+
+**Kernaussage:**  
+Stabilität entsteht durch bewusste Reduktion und fokussierte, lernfähige Feedback-Schleifen.  
+Nicht mehr Automatisierung, sondern kleinere, klarere Loops erhöhen Governance-Reife.
+
+**Handlungsimpulse:**  
+- Wöchentliche Reflection-Runs verbindlich im Teamkalender verankern.  
+- Bei neuen Automatisierungen immer „Scope-Check“ ausführen (Verhindert das Over-Engineering?).  
+- CI-Erweiterungen nur nach dokumentiertem Lerngewinn zulassen.  
+
+**Verknüpfte Dokumente:**  
+`docs/AI_First_Business_Case.md`,  
+`meta/AI_First_Handbook.md`,  
+`meta/Prompt_Inventory.md`
+
+---
+
 ## Loop Templates
