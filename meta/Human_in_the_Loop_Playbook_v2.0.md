@@ -17,8 +17,26 @@ linked_docs:
   - docs/AI_First_Business_Case_v2.0.md
 ---
 
+## Operational Rhythm (v2.1)
+- Weekly Reflection Loop (Friday):
+  - Review Prompt Inventory changes
+  - Write short “Lesson Snippet” (P-009 trigger)
+  - Update Core-Docs if necessary
+- Monthly Governance Sync (first Monday):
+  - Check CI, Archive State, and active phase
+  - Compare Roadmap vs. Actuals
+
 ## Weekly Loop
 1. Review Prompt Inventory (changes vs. plan)
 2. Note 1–2 lessons learned
 3. Decide: keep, simplify, or drop
 ---
+
+## Loop Templates
+
+### Lesson Snippet Template (seed)
+| Field | Example |
+|--------|----------|
+| Insight | "Micro-SaaS Use Case validated via market scan" |
+| Impact | "Confirms roadmap hypothesis 1A" |
+| Next | "Integrate into Business Case v2.2" |
