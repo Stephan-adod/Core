@@ -6,6 +6,7 @@ updated: 2025-10-19
 related_logs:
   - artefacts/logs/transition_P-006_done_v2.0.md
   - artefacts/logs/transition_P-008_intent_confirm_v2.1.md
+  - artefacts/logs/transition_P-008_5_playbook_update.md
 ---
 
 # Prompt Inventory v2.0
@@ -14,6 +15,7 @@ related_logs:
 related_logs:
   - artefacts/logs/transition_P-006_done_v2.0.md
   - artefacts/logs/transition_P-008_intent_confirm_v2.1.md
+  - artefacts/logs/transition_P-008_5_playbook_update.md
 
 | Key   | Category       | Prompt Name                | Purpose (Kurz)                               | Impact (Wert)                        | Trigger            | Output                         | Status    | Owner   |
 |-------|----------------|----------------------------|----------------------------------------------|--------------------------------------|--------------------|--------------------------------|-----------|---------|
