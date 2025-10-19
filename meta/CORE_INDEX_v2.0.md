@@ -1,7 +1,9 @@
 # Core Documentation Index · v2.0
 
 ## Intent State
-- Intent State: draft
+- Intent State: confirmed
+- Phase: operational (since 2025-10-19)
+- Intent: confirmed
 
 ## Summary Table
 | Document | Owner | Updated | Rhythm | Notes |

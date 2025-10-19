@@ -32,3 +32,9 @@ linked_docs:
 - Reversible
 - Logged (artefacts/logs/**)
 ---
+
+## Archiving Policy (v2.1 seed)
+- Each Core-Doc can be archived when a new major version is created.
+- Archive creation is automated through Mini-Prompt `Archive Transition`.
+- The Human confirms expiry condition via Roadmap Decision Gate (DG-4).
+- Archived files live under `archive/<version>_bootstrap/` or `archive/<version>/`.

@@ -1,7 +1,7 @@
 ---
 title: AI-First Roadmap
 version: v2.0
-intent_state: draft
+intent_state: confirmed
 status: active
 updated: 2025-10-19
 owner: Stephan
@@ -27,5 +27,10 @@ linked_docs:
 ## Decision Gates
 - DG-1: Core docs seeded
 - DG-2: Intent confirmed
+- DG-2 (Intent Confirmed) – All Core-Docs active and sanity green.
 - DG-3: First path accepted
 ---
+
+## Intent Confirmation Note
+Intent confirmed on 2025-10-19.  
+Bootstrap expiry triggered; system transitions to v2.1 operational phase.

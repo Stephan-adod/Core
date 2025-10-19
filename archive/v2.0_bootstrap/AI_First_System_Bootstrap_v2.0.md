@@ -69,3 +69,8 @@ If it exceeds 100 lines → it’s time to archive it.
 # ✅ 6️⃣ Acknowledgement
 Created 2025-10-20 by Stephan (adod) as temporary governance frame.  
 Expires automatically on first Roadmap Confirmation.
+---
+# 🏁 Archived
+Archived on 2025-10-19 after intent confirmation (P-008).
+System entered operational phase (v2.1).
+---
