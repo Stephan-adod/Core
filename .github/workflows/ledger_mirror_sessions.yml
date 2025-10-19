@@ -4,6 +4,26 @@ on:
     - cron: "23 4 * * *"
   workflow_dispatch:
 jobs:
+  mode:
+    runs-on: ubuntu-latest
+    outputs:
+      v2: ${{ steps.detect.outputs.v2 }}
+      intent: ${{ steps.detect.outputs.intent }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: detect
+        shell: bash
+        run: |
+          set -e
+          if [[ -f meta/CORE_INDEX_v2.0.md ]]; then echo "v2=true" >> $GITHUB_OUTPUT; else echo "v2=false" >> $GITHUB_OUTPUT; fi
+          intent=unknown
+          if [[ -f meta/AI_First_Roadmap_v2.0.md ]]; then
+            if grep -qE 'intent_state:\s*confirmed' meta/AI_First_Roadmap_v2.0.md; then intent=confirmed
+            elif grep -qE 'intent_state:\s*draft' meta/AI_First_Roadmap_v2.0.md; then intent=draft
+            fi
+          fi
+          echo "intent=$intent" >> $GITHUB_OUTPUT
+
   mirror:
     runs-on: ubuntu-latest
     env:
