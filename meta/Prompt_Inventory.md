@@ -1,6 +1,6 @@
 ---
-version: v2.1
-phase: operational_refined
+version: v2.2
+phase: adaptive_governance
 owner: Stephan
 updated: 2025-10-19
 linked_lessons: [L-001, L-002, L-003, L-004]
@@ -15,6 +15,7 @@ Dieses Inventory listet nur aktive, minimal notwendige Prompts für den Reflexio
 |----|------|-------|--------|-------|
 | RS-001 | Review Synthesis (v2.2) | Aggregiert Lessons (L-001 – L-004) zu Meta-Learnings und erstellt S-001 | 🟢 active | |
 | P-009 | Lesson Collector (refined) | Erzeugt Lesson-Snippets + Logeintrag, verlinkt Core-Docs | 🟢 active | L-004 integrated (Playbook · Learning Rhythm Governance) |
+| P-010 | Governance KPI Collector (v2.2) | Erstellt Governance KPI Reports aus lessons_log & Synthesen (JSON/MD) | 🟢 active | |
 
 ## B. Operator Prompts
 | ID | Name | Zweck | Triggert | Status | Status Note |
