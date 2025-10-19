@@ -1,0 +1,12 @@
+{
+  "name": "core-systemaufbau",
+  "version": "2.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate:lessons": "node scripts/validate_lessons_v1.mjs"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

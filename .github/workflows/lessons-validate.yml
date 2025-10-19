@@ -1,0 +1,31 @@
+name: Lessons · Validate
+
+on:
+  pull_request:
+    paths:
+      - "artefacts/lessons/**"
+      - "artefacts/logs/lesson_log.csv"
+      - "scripts/validate_lessons_v1.mjs"
+      - "artefacts/prompts/P-009_Lesson_Collector_Prompt_v2.1.md"
+      - "docs/PLAYBOOK_v2.1.md"
+  push:
+    paths:
+      - "artefacts/lessons/**"
+      - "artefacts/logs/lesson_log.csv"
+      - "scripts/validate_lessons_v1.mjs"
+
+jobs:
+  validate-lessons:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+      - name: Install deps
+        run: npm ci || npm i
+      - name: Validate Lessons
+        run: npm run validate:lessons
