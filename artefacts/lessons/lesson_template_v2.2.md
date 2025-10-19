@@ -2,6 +2,8 @@
 lesson_id: L-XXX
 status: draft
 created: 2025-10-19
+version: v2.2
+phase: adaptive_governance
 related_docs:
   - docs/AI_First_Business_Case.md
   - meta/Human_in_the_Loop_Playbook.md

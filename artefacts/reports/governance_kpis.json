@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-10-19T22:05:26.610Z",
+  "generated_at": "2025-10-19T22:15:01.222Z",
   "target_version": "v2.2",
   "totals": {
     "total_lessons": 4,
@@ -16,16 +16,15 @@
   },
   "coverage": {
     "category_coverage": {
-      "\"Governance": 3,
-      "Process\"": 1,
+      "Governance": 3,
+      "Process": 2,
       "Quality": 1,
-      "Engineering\"": 1,
-      "Process": 1,
-      "Reflection\"": 1
+      "Engineering": 1,
+      "Reflection": 1
     },
     "impact_mix": {
       "High": 2,
-      "undefined": 1,
+      "": 1,
       "Medium-High": 1
     }
   },

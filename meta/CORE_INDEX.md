@@ -1,6 +1,7 @@
 ---
 title: Core Documentation Index
-version: v2.1
+version: v2.2
+phase: adaptive_governance
 status: active
 updated: 2025-10-19
 ---

@@ -1,6 +1,6 @@
 ---
 title: Governance KPIs (v2.2)
-generated: 2025-10-19T22:05:26.610Z
+generated: 2025-10-19T22:15:01.222Z
 ---
 
 # Governance KPI Report (v2.2)
@@ -26,16 +26,15 @@ generated: 2025-10-19T22:05:26.610Z
 ```json
 {
   "category_coverage": {
-    "\"Governance": 3,
-    "Process\"": 1,
+    "Governance": 3,
+    "Process": 2,
     "Quality": 1,
-    "Engineering\"": 1,
-    "Process": 1,
-    "Reflection\"": 1
+    "Engineering": 1,
+    "Reflection": 1
   },
   "impact_mix": {
     "High": 2,
-    "undefined": 1,
+    "": 1,
     "Medium-High": 1
   }
 }

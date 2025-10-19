@@ -1,6 +1,6 @@
 ---
-version: v2.1
-phase: operational_refined
+version: v2.2
+phase: adaptive_governance
 owner: Stephan
 updated: 2025-10-19
 linked_lessons: [L-001, L-002, L-003, L-004]

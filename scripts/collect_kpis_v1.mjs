@@ -48,11 +48,17 @@ if (!exists(LOG)) {
 const rows = read(LOG).trim().split(/\r?\n/).slice(1).filter(Boolean);
 const log = rows.map(line => {
   const parts = line.split(",");
-  const id = parts[0]?.trim();
-  const date = parts[7]?.trim();
-  const relatedDocs = (parts[6]||"").split(";").map(s=>s.trim()).filter(Boolean);
-  const impact = parts[4]?.trim();
-  const cats = (parts[3]||"").split(";").map(s=>s.trim()).filter(Boolean);
+  const id = (parts[0]||"").trim().replace(/^['"]|['"]$/g, "");
+  const date = (parts[7]||"").trim().replace(/^['"]|['"]$/g, "");
+  const impact = (parts[4]||"").trim().replace(/^['"]|['"]$/g, "");
+  const rawCats = (parts[3]||"").replace(/^['"]|['"]$/g, "");
+  const cats = rawCats.split(";")
+    .map(s => s.trim().replace(/^['"]|['"]$/g, ""))
+    .filter(Boolean);
+  const rawRel = (parts[6]||"");
+  const relatedDocs = rawRel.split(";")
+    .map(s => s.trim().replace(/^['"]|['"]$/g, ""))
+    .filter(Boolean);
   return { id, date, relatedDocs, impact, categories: cats };
 });
 
