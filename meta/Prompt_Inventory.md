@@ -1,31 +1,27 @@
 ---
 version: v2.1
-status: active
-phase: operational
+phase: operational_refined
+owner: Stephan
 updated: 2025-10-19
-related_logs:
-  - artefacts/logs/transition_P-006_done_v2.0.md
-  - artefacts/logs/transition_P-008_intent_confirm_v2.1.md
-  - artefacts/logs/transition_P-008_5_playbook_update.md
+linked_lessons: [L-001, L-002, L-003]
 ---
 
-# Prompt Inventory v2.1
+# AI-First Prompt Inventory · v2.1 Refined
 
-## Metadata
-related_logs:
-  - artefacts/logs/transition_P-006_done_v2.0.md
-  - artefacts/logs/transition_P-008_intent_confirm_v2.1.md
-  - artefacts/logs/transition_P-008_5_playbook_update.md
+Dieses Inventory listet nur aktive, minimal notwendige Prompts für den Reflexions-Loop.
 
-| Key   | Category       | Prompt Name                | Purpose (Kurz)                               | Impact (Wert)                        | Trigger            | Output                         | Status    | Owner   |
-|-------|----------------|----------------------------|----------------------------------------------|--------------------------------------|--------------------|--------------------------------|-----------|---------|
-| P-001 | Archive        | Archive v1.9              | Freeze v1.9 zur Referenz                     | Nachvollziehbarkeit, Risikoreduktion | Manual             | archive/v1.9/**                | ✅ done   | Stephan |
-| P-002 | Archive        | Linked Meta Fix           | linked_meta auf Archivpfade umschreiben      | Tote Links entfernt, Tools stabil    | Manual             | fix_report.json                | ✅ done   | Stephan |
-| P-003 | CI Governance  | Mode-Gate Patch           | v2-Erkennung + archive/** ignorieren         | CI-Noise eliminiert                  | Manual             | grüne CI-Basis                 | ✅ done   | Stephan |
-| P-004 | Repo Structure | Prune to v2.0 Skeleton    | Altlasten weg, Core-Docs angelegt            | Klarheit, geringe Pflege             | Manual             | v2.0-Skeleton                  | ✅ done   | Stephan |
-| P-005 | Repo Structure | Simplification PR         | Tickets/Workflows bereinigt, sanity eingeführt | schnelle Wartung                    | Manual             | leichtes Repo + sanity.yml     | ✅ done   | Stephan |
-| P-006 | Core Docs      | Seed Content Prompt       | 5 Core-Docs mit Basisinhalt füllen           | System ready for intent confirmation | Nach P-005         | 5 Core-Docs populated (intent_state=draft) | ✅ done   | Stephan |
-| P-007 | Governance     | Prompt Inventory Generator| Dieses Sheet aktualisieren                   | Single Source of Truth               | Manual/Scheduled   | aktualisiertes Inventory       | ✅ active | System  |
-| P-008 | Reflection     | Lesson Collector Prompt   | Consolidate lessons → Playbook               | Learning Loop established      | After intent confirm | Intent confirmed, Bootstrap archived, phase=operational | ✅ done   | System  |
-| P-009 | Diagnostics    | Archive Link Sanity Check | Verify archive references resolve            | Archive integrity verified     | Manual/CI          | diagnostics/report.json        | 🔜 planned | System  |
-| P-010 | Energy         | eROI Monitor Prompt       | Compute effort ↔ impact ratio                | Energy awareness loop          | Weekly/Manual      | artefacts/eROI_log.csv         | 🔜 planned | Stephan |
+## A. Governance & Reflection
+| ID | Name | Zweck | Status |
+|----|------|-------|--------|
+| P-009 | Lesson Collector (refined) | Erzeugt Lesson-Snippets + Logeintrag, verlinkt Core-Docs | 🟢 active |
+
+## B. Operator Prompts
+| ID | Name | Zweck | Triggert | Status |
+|----|------|-------|---------|--------|
+| OP-001 | Weekly Reflection | Wöchentlicher Input → ruft P-009 zur Lesson-Erzeugung | P-009 | 🟢 active |
+| OP-002 | Monthly Synthesis (Stub) | Aggregiert Lessons des Monats zu 3–5 Insights + TODOs | — | 🟡 ready |
+
+## C. Hinweise
+- Inline-Versionierung: Versionen stehen im YAML der Core-Docs (version: v2.1).
+- Lessons-Referenzen: stabile Pfade (keine *_v2.x.md).
+- CI: bestehende Validierungen (lessons + drift) bleiben unverändert.
