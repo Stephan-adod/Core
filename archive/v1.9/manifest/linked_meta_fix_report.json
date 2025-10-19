@@ -1,0 +1,11 @@
+{
+  "total_files_scanned": 85,
+  "files_updated": 19,
+  "links_rewritten": 35,
+  "missing_targets": [
+    "archive/v1.9/meta/AI_First_Handbook_v1.8.md",
+    "archive/v1.9/meta/AI_First_System_Architecture_v1.8.md",
+    "archive/v1.9/meta/AI_First_System_Architecture_v1_1.md"
+  ],
+  "timestamp": "2025-10-19T13:33:38.907818Z"
+}

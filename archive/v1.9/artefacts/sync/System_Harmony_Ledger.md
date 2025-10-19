@@ -10,6 +10,8 @@ linked_meta:
   - docs/BUSINESS_CASE_Horizon_v1.8.md
   - meta/AI_First_System_Architecture_v1_1_archived.md
   - meta/AI_First_System_Architecture_v1.8.md
+archived: true
+archive_base: archive/v1.9/
 ---
 
 # 🧩 System Harmony Ledger · Draft v0.1  

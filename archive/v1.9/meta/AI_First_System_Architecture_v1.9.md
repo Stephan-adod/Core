@@ -6,12 +6,14 @@ status: draft
 version: v1.9
 governance: draft v1.9
 linked_meta:
-  - path: meta/Horizon_Map_v1.8.md
+  - path: archive/v1.9/meta/Horizon_Map_v1.8.md
     version: v1.8
-  - path: docs/BUSINESS_CASE_Horizon_v1.8.md
+  - path: archive/v1.9/docs/BUSINESS_CASE_Horizon_v1.8.md
     version: v1.8
-  - path: artefacts/sync/System_Harmony_Ledger.md
+  - path: archive/v1.9/artefacts/sync/System_Harmony_Ledger.md
     version: v1.8
+archived: true
+archive_base: archive/v1.9/
 ---
 
 # AI-First System Architecture v1.9

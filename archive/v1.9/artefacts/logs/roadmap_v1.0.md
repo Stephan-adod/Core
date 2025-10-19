@@ -7,6 +7,8 @@ version: v1.1
 governance: freeze v1.8
 linked_meta:
   - artefacts/logs/backlog_matrix_v1.0.md
+archived: true
+archive_base: archive/v1.9/
 ---
 
 # Roadmap · v1.1 (12 Wochen)

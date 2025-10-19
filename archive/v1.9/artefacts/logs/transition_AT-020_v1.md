@@ -11,6 +11,8 @@ linked_meta:
   - artefacts/logs/prioritization_rules_v1.0.md
   - artefacts/logs/lessons_AT-020_v1.md
   - artefacts/sync/System_Harmony_Ledger.md
+archived: true
+archive_base: archive/v1.9/
 ---
 
 # Transition Log · AT-020 · Backlog & Roadmap Governance Freeze v1.1
