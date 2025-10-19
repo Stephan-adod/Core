@@ -3,6 +3,11 @@
 This repository now hosts the lightweight scaffolding for the AI-First v2.0 planning cycle.
 The operational history of v1.9 has been preserved intact inside [`archive/v1.9`](archive/v1.9/README.md).
 
+## v2.0 Baseline (Clarity-First)
+This repository was simplified to a lightweight v2.0 skeleton (Core Docs only).
+Historical materials are preserved under [archive/v1.9/](archive/v1.9/).
+Active intent state: read `meta/AI_First_Roadmap_v2.0.md`.
+
 ---
 
 ## v2.0 (Current)
