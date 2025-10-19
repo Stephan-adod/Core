@@ -18,13 +18,21 @@ linked_docs:
 ---
 
 ## Operational Rhythm (v2.1)
-- Weekly Reflection Loop (Friday):
-  - Review Prompt Inventory changes
-  - Write short “Lesson Snippet” (P-009 trigger)
-  - Update Core-Docs if necessary
-- Monthly Governance Sync (first Monday):
-  - Check CI, Archive State, and active phase
-  - Compare Roadmap vs. Actuals
+- **Weekly Reflection (Fr):**  
+  1) Prompt Inventory auf Änderungen prüfen  
+  2) 1–3 „Lesson Snippets“ erfassen (triggert P-009)  
+  3) Relevante Core-Docs minimal aktualisieren (Purpose/Boundaries bleiben schlank)
+- **Monthly Governance (1. Mo):**  
+  - Sanity-Status prüfen, Phase/Intent im CORE_INDEX abgleichen  
+  - Roadmap vs. Actuals (DG-Gates) kurz notieren  
+  - Archiv-/Policy-Änderungen aus Handbook bestätigen
+
+### Lesson Snippet Template (seed)
+| Field   | Example                                                             |
+|--------|----------------------------------------------------------------------|
+| Insight | “Micro-SaaS Use Case A zeigte Pull-Signale in Marktsegment X.”      |
+| Impact  | “Bestätigt Roadmap-Hypothese 1A; Business Case: Annahme #2 stärkt.” |
+| Next    | “In Business Case v2.2 integrieren; Pricing-Exploration anstoßen.”  |
 
 ## Weekly Loop
 1. Review Prompt Inventory (changes vs. plan)
@@ -33,10 +41,3 @@ linked_docs:
 ---
 
 ## Loop Templates
-
-### Lesson Snippet Template (seed)
-| Field | Example |
-|--------|----------|
-| Insight | "Micro-SaaS Use Case validated via market scan" |
-| Impact | "Confirms roadmap hypothesis 1A" |
-| Next | "Integrate into Business Case v2.2" |
