@@ -4,7 +4,7 @@ date: 2025-10-19
 author: Stephan
 scope: Activate reflection rhythm · prepare P-009 Lesson Collector
 links:
-  playbook: meta/Human_in_the_Loop_Playbook_v2.0.md
+  playbook: meta/Human_in_the_Loop_Playbook_v2.1.md
 ---
 
 ## Summary

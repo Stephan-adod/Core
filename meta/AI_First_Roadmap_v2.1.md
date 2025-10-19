@@ -1,6 +1,6 @@
 ---
 title: AI-First Roadmap
-version: v2.0
+version: v2.1
 intent_state: confirmed
 status: active
 updated: 2025-10-19
@@ -12,10 +12,10 @@ outputs:
 boundaries:
   - No ticket backlog; only phases and decision gates
 linked_docs:
-  - meta/AI_First_System_Architecture_v2.0.md
-  - meta/AI_First_Handbook_v2.0.md
-  - meta/Human_in_the_Loop_Playbook_v2.0.md
-  - docs/AI_First_Business_Case_v2.0.md
+  - meta/AI_First_System_Architecture_v2.1.md
+  - meta/AI_First_Handbook_v2.1.md
+  - meta/Human_in_the_Loop_Playbook_v2.1.md
+  - docs/AI_First_Business_Case_v2.1.md
 ---
 
 ## Phases (skeleton)

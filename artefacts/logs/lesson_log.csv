@@ -1,1 +1,2 @@
 id,phase,source,category,impact,tags,related_docs,created,author
+L-001,v2.1,"P-008;P-008.5;PR-109","Process;Governance",High,"learning;reflection;ai-first;system;bootstrap;governance","docs/AI_First_Business_Case_v2.1.md;meta/Human_in_the_Loop_Playbook_v2.1.md;meta/AI_First_System_Architecture_v2.1.md;meta/Prompt_Inventory_v2.1.md;meta/AI_First_Roadmap_v2.1.md",2025-10-19,Stephan

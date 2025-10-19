@@ -1,6 +1,6 @@
 ---
 title: AI-First System Architecture
-version: v2.0
+version: v2.1
 status: active
 updated: 2025-10-19
 owner: Stephan (System Owner & Mentor)
@@ -12,14 +12,14 @@ boundaries:
   - No operational task tracking (moved to feature repos)
   - Archive is read-only context
 linked_docs:
-  - meta/AI_First_Roadmap_v2.0.md
-  - meta/AI_First_Handbook_v2.0.md
-  - meta/Human_in_the_Loop_Playbook_v2.0.md
-  - docs/AI_First_Business_Case_v2.0.md
+  - meta/AI_First_Roadmap_v2.1.md
+  - meta/AI_First_Handbook_v2.1.md
+  - meta/Human_in_the_Loop_Playbook_v2.1.md
+  - docs/AI_First_Business_Case_v2.1.md
 ---
 
 ## Purpose
-Defines layers, roles, and constraints of the v2.0 operating model (clarity-first).
+Defines layers, roles, and constraints of the v2.1 operating model (clarity-first).
 
 ## Layers
 - **Meta:** Governance, principles, prompts

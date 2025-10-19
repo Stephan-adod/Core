@@ -36,6 +36,12 @@ for (const f of files) {
   // ID & filename convention
   if (!/^L-\d{3}$/.test(meta.id)) errors.push(`${f}: id must match L-###`);
   if (!/^L-\d{3}_.+\.md$/.test(f)) errors.push(`${f}: filename must be L-###_<topic>.md`);
+  const prefix = f.split("_")[0]; // e.g. L-001_topic.md → 'L-001'
+  if (prefix !== meta.id) errors.push(`${f}: filename prefix (${prefix}) must equal YAML id (${meta.id})`);
+
+  // CSV duplicate check for IDs
+  const idCount = (log.match(new RegExp(`^${meta.id},`, "gm")) || []).length;
+  if (idCount !== 1) errors.push(`${f}: id ${meta.id} occurs ${idCount} times in lesson_log.csv (must be exactly 1)`);
 
   // log presence
   if (!log.includes(meta.id + ",")) errors.push(`${f}: id ${meta.id} not found in lesson_log.csv`);

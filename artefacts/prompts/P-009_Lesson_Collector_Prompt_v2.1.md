@@ -15,11 +15,11 @@ Reflexionen/Erkenntnisse in gültige Lesson-Snippets transformieren und im Lesso
    - `impact`: [Low|Medium|High].
    - `tags`: mind. [learning, reflection] + kontextuelle Tags.
    - `related_docs`: existierende Core-Docs (sofern relevant), z. B.:
-     - docs/BUSINESS_CASE_v2.1.md
+     - docs/AI_First_Business_Case_v2.1.md
      - docs/PLAYBOOK_v2.1.md
-     - docs/ARCHITECTURE_v2.1.md
-     - docs/HANDBOOK_v2.1.md
-     - docs/ROADMAP_v2.1.md
+     - meta/AI_First_System_Architecture_v2.1.md
+     - meta/AI_First_Handbook_v2.1.md
+     - meta/AI_First_Roadmap_v2.1.md
 
 2) Speichere als Datei:
    `artefacts/lessons/lesson_snippets/L-XXX_<kebab-topic>.md`
