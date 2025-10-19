@@ -6,10 +6,12 @@ status: in-progress
 owner: Operator (Stephan)
 created: 2025-10-17
 linked_meta:
-  - path: artefacts/sync/System_Harmony_Ledger.md
+  - path: archive/v1.9/artefacts/sync/System_Harmony_Ledger.md
     version: v1.8
-  - path: meta/AI_First_System_Architecture_v1.9.md
+  - path: archive/v1.9/meta/AI_First_System_Architecture_v1.9.md
     version: v1.9
+archived: true
+archive_base: archive/v1.9/
 governance:
   phase: Fix Loop
   gate: Pre-Probe v1.9.1

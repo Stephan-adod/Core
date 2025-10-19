@@ -8,14 +8,16 @@ created: 2025-10-17
 linked_meta:
   - path: meta/AI_First_System_Architecture_v1.8.md
     version: v1.8
-  - path: meta/Horizon_Map_v1.8.md
+  - path: archive/v1.9/meta/Horizon_Map_v1.8.md
     version: v1.8
-  - path: docs/BUSINESS_CASE_Horizon_v1.8.md
+  - path: archive/v1.9/docs/BUSINESS_CASE_Horizon_v1.8.md
     version: v1.8
   - path: meta/AI_First_Handbook_v1.8.md
     version: v1.8
-  - path: artefacts/sync/System_Harmony_Ledger.md
+  - path: archive/v1.9/artefacts/sync/System_Harmony_Ledger.md
     version: v1.8
+archived: true
+archive_base: archive/v1.9/
 governance:
   phase: Rebrief
   gate: Evolution Prep

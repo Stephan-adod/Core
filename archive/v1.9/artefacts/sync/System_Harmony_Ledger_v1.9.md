@@ -1,16 +1,18 @@
---- 
+---
 id: system_harmony_ledger_v1_9
 layer: artefacts
 owner: Governance Maintainer
 status: active
 version: v1.9
 linked_meta:
-  - path: meta/AI_First_System_Architecture_v1.9.md
+  - path: archive/v1.9/meta/AI_First_System_Architecture_v1.9.md
     version: v1.9
-  - path: meta/Horizon_Map_v1.8.md
+  - path: archive/v1.9/meta/Horizon_Map_v1.8.md
     version: v1.8
-  - path: docs/BUSINESS_CASE_Horizon_v1.8.md
+  - path: archive/v1.9/docs/BUSINESS_CASE_Horizon_v1.8.md
     version: v1.8
+archived: true
+archive_base: archive/v1.9/
 governance:
   freeze_gate: true
   trust_probe: v1.9

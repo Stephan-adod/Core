@@ -9,6 +9,8 @@ linked_meta:
   - artefacts/logs/prioritization_rules_v1.0.md
   - artefacts/logs/roadmap_v1.0.md
   - artefacts/logs/meta/diagnose_meta_v1.8.json
+archived: true
+archive_base: archive/v1.9/
 ---
 
 # Backlog Matrix · v1.1

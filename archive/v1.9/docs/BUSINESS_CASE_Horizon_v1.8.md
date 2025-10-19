@@ -6,10 +6,12 @@ status: active
 version: v1.8
 governance: pre-freeze v1.8
 linked_meta:
-  - path: meta/Horizon_Map_v1.8.md
+  - path: archive/v1.9/meta/Horizon_Map_v1.8.md
     version: v1.8
-  - path: meta/AI_First_System_Architecture_v1.9.md
+  - path: archive/v1.9/meta/AI_First_System_Architecture_v1.9.md
     version: v1.8
+archived: true
+archive_base: archive/v1.9/
 ---
 
 # 💼 Business Case · Horizon v1.8

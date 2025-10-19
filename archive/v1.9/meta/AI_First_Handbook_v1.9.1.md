@@ -4,10 +4,12 @@ layer: meta
 status: draft
 version: v1.9.1
 linked_meta:
-  - path: meta/AI_First_System_Architecture_v1.9.md
+  - path: archive/v1.9/meta/AI_First_System_Architecture_v1.9.md
     version: v1.9
-  - path: artefacts/sync/System_Harmony_Ledger_v1.9.md
+  - path: archive/v1.9/artefacts/sync/System_Harmony_Ledger_v1.9.md
     version: v1.9
+archived: true
+archive_base: archive/v1.9/
 governance:
   prev_freeze: v1.9
   next_probe: GOV-006

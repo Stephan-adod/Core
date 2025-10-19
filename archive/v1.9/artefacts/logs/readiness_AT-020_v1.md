@@ -10,6 +10,8 @@ linked_meta:
   - artefacts/logs/refinement_AT-020_v1.md
   - artefacts/logs/meta/diagnose_meta_v1.8.json
   - artefacts/logs/trust_probe_v1.8.json
+archived: true
+archive_base: archive/v1.9/
 ---
 
 # Readiness Check · AT-020 · AI-First Backlog & Roadmap Governance v1.0

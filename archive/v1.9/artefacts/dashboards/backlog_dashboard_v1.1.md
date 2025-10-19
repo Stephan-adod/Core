@@ -10,6 +10,8 @@ linked_meta:
   - artefacts/logs/roadmap_v1.0.md
   - artefacts/logs/meta/diagnose_backlog_v1.0.json
   - artefacts/sync/System_Harmony_Ledger.md
+archived: true
+archive_base: archive/v1.9/
 ---
 
 # 📊 Backlog Dashboard · v1.1 (AI-First Operational View)

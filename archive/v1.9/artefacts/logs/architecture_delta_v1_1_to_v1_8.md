@@ -8,10 +8,12 @@ governance: pre-freeze v1.8
 linked_meta:
   - path: meta/AI_First_System_Architecture_v1_1.md
     version: v1.1
-  - path: meta/Horizon_Map_v1.8.md
+  - path: archive/v1.9/meta/Horizon_Map_v1.8.md
     version: v1.8
-  - path: docs/BUSINESS_CASE_Horizon_v1.8.md
+  - path: archive/v1.9/docs/BUSINESS_CASE_Horizon_v1.8.md
     version: v1.8
+archived: true
+archive_base: archive/v1.9/
 Inhalt:
   - Tabelle mit Delta-Analyse.
   - Summary Insights.
