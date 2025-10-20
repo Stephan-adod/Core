@@ -53,3 +53,10 @@ links:
 - Pricing Uplift **+3.4 %**, Forecast MAPE **–2.1** (mit Context API).
 - Collaboration: Working Agreements greifen; Review < 48 h anstreben.
 - Next: **Week 1 (Real Cycle)** mit Partner-Feedback & Model-Card Validation.
+
+## Week 1 · Real Cycle Learnings
+- Freeze-Candidate Check ✅ (bestanden).  
+- Context Adoption ≥ 0.90 → Ziel erreicht.  
+- Model Card validiert (AI Act Konformität).  
+- mROI +2 %, Pricing Uplift +4 %.  
+- Nächster Fokus: Forecast-Drift Detection (Week 2 Preparation).
