@@ -79,5 +79,6 @@ kpis:
 ## 6) Change Log (v2.3)
 - 2025-10-20: Roadmap v2.3 erstellt; Links auf Blueprint, Loops, Matrix, Lessons, Reports.
 - 2025-10-20: KPI-Set geklärt (Context Adoption aufgenommen).
+- 2025-10-20: Lessons zentralisiert → aktive Lessons unter `docs/lessons/`, Legacy unter `artefacts/lessons/` (read-only).
 
 > ℹ️ **Governance Note:** Strukturelle Änderungen nur via **Mini-Prompt + PR**; dokumentiert im Transition-Log.
