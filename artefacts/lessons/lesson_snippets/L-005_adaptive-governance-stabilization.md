@@ -8,7 +8,7 @@ tags: [ learning, reflection, governance, ai-first, meta-synthesis, feedback-loo
 related_docs:
   - meta/system_version.json
   - meta/Prompt_Inventory.md
-  - artefacts/reports/governance_kpis.json
+  - meta/snapshots/system_state_v2.2.5.json
   - meta/Human_in_the_Loop_Playbook.md
   - meta/AI_First_Handbook.md
 created: 2025-10-20

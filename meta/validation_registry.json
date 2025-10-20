@@ -1,0 +1,11 @@
+{
+  "related_docs_allowed_prefixes": [
+    "meta/",
+    "docs/"
+  ],
+  "notes": [
+    "Keep only stable, auditable sources here.",
+    "Add more prefixes in future phases, e.g. meta/snapshots/ or docs/dataspecs/."
+  ],
+  "version": "v2.2.5"
+}
