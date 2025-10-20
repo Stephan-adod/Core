@@ -61,8 +61,8 @@ kpis:
 | M1 | Blueprint promoted to Master | `meta/AI_First_System_Architecture.md` | 2025-10-20 | ✅ |
 | M2 | Loops refined & linked | `docs/prompts/P-011_loops_v2.3.mjs` | 2025-10-20 | ✅ |
 | M3 | Roadmap v2.3 veröffentlicht | `meta/AI_First_Roadmap_v2.3.md` | 2025-10-20 | ✅ |
-| M4 | **Loop Week 0** (Dry-Run) | `docs/reports/weekly_business_loop_v2.3.md` | +3d | ⬜ |
-| M5 | Reflection Summary erzeugt | `docs/reports/reflection_summary_v2.3.md` | +5d | ⬜ |
+| M4 | **Loop Week 0** (Dry-Run) | `docs/reports/weekly_business_loop_v2.3.md` | +3d | ✅ |
+| M5 | Reflection Summary erzeugt | `docs/reports/reflection_summary_v2.3.md` | +5d | ✅ |
 | M6 | L-011 Lessons Update | `docs/lessons/L-011_synthesis_v2.3.md` | +6d | ⬜ |
 | M7 | Freeze Candidate Check | transition log + sanity | +7d | ⬜ |
 
@@ -80,5 +80,6 @@ kpis:
 - 2025-10-20: Roadmap v2.3 erstellt; Links auf Blueprint, Loops, Matrix, Lessons, Reports.
 - 2025-10-20: KPI-Set geklärt (Context Adoption aufgenommen).
 - 2025-10-20: Lessons zentralisiert → aktive Lessons unter `docs/lessons/`, Legacy unter `artefacts/lessons/` (read-only).
+- 2025-10-20: Week 0 Dry-Run dokumentiert (Business & Reflection Reports); Freeze-Check Datei erstellt.
 
 > ℹ️ **Governance Note:** Strukturelle Änderungen nur via **Mini-Prompt + PR**; dokumentiert im Transition-Log.
