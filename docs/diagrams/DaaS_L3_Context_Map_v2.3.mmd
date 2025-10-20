@@ -1,0 +1,60 @@
+%% DaaS L3 Context Map (v2.3) – Mermaid
+flowchart LR
+  subgraph S[Data Sources]
+    ERP[ERP / Orders]
+    CRM[CRM]
+    TRACK[Tracking (Consent-aware)]
+    WAPI[Weather API]
+    EAPI[Event/Holiday API]
+  end
+
+  subgraph I[Ingestion & Context (L1)]
+    U1[Unify & Consent Filter]
+    U2[Schema Mapping]
+  end
+
+  subgraph P[Processing & Modeling (L2)]
+    FE[Feature Engineering]
+    PREP[Pre-Processor / QC]
+  end
+
+  subgraph L3[L3 Data Value Streams]
+    PRC[Pricing Stream]
+    ATTR[Attribution Stream]
+    CTX[Context Enrichment (Weather+Events)]
+  end
+
+  subgraph APP[Business Applications (L4)]
+    DASH[Marketing BI / Dashboards]
+    PRICER[Dynamic Pricing Engine]
+    CAUSAL[Causal/Forecast Models]
+  end
+
+  subgraph GOV[Meta Learning & Governance (L5/L0)]
+    VAL[Sanity Validator & Guardrails]
+    TP[Trust Probes (Context age < 7d)]
+    POL[Policy Registry]
+  end
+
+  %% Flows
+  S --> I
+  I --> P
+  P --> PRC
+  P --> ATTR
+  P --> CTX
+  CTX --> PRC
+  CTX --> ATTR
+  PRC --> PRICER
+  ATTR --> DASH
+  ATTR --> CAUSAL
+  PRC --> DASH
+  CAUSAL --> DASH
+
+  %% Governance feedback
+  PRC --> VAL
+  ATTR --> VAL
+  CTX --> TP
+  VAL --> POL
+  POL -.-> I
+  POL -.-> P
+  POL -.-> L3
