@@ -14,6 +14,7 @@ Dieses Inventory listet nur aktive, minimal notwendige Prompts für den Reflexio
 | ID | Name | Zweck | Status | Notes |
 |----|------|-------|--------|-------|
 | RS-001 | Review Synthesis (v2.2) | Aggregiert Lessons (L-001 – L-004) zu Meta-Learnings und erstellt S-001 | 🟢 active | |
+| S-002 | Adaptive Governance Meta-Synthesis (v2.3 Readiness) | Konsolidiert Lessons L-001–L-005 und bereitet v2.3 Strategic Factory Planning vor | 🟢 active | |
 | P-009 | Lesson Collector (refined) | Erzeugt Lesson-Snippets + Logeintrag, verlinkt Core-Docs | 🟢 active | L-004 integrated (Playbook · Learning Rhythm Governance) |
 | P-010 | Governance KPI Collector (v2.2) | Erstellt Governance KPI Reports aus lessons_log & Synthesen (JSON/MD) | 🟢 active | |
 
