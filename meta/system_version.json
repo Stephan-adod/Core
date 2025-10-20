@@ -1,7 +1,7 @@
 {
-  "target_version": "v2.2",
-  "phase": "adaptive_governance",
-  "governance": "P-010 KPI Collector",
+  "target_version": "v2.2.5",
+  "phase": "daas_factory_transition",
+  "governance": "P-011 DaaS Factory Planning",
   "core_docs": [
     "docs/AI_First_Business_Case.md",
     "meta/AI_First_Handbook.md",
@@ -12,5 +12,6 @@
     "meta/CORE_INDEX.md"
   ],
   "maintainer": "Stephan",
-  "generated_at": "2025-10-19T23:00:00Z"
+  "generated_at": "2025-10-22T00:00:00Z",
+  "factory_type": "daas"
 }

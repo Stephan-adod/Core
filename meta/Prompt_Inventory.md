@@ -1,8 +1,8 @@
 ---
-version: v2.2
-phase: adaptive_governance
+version: v2.2.5
+phase: daas_factory_transition
 owner: Stephan
-updated: 2025-10-19
+updated: 2025-10-22
 linked_lessons: [L-001, L-002, L-003, L-004]
 ---
 
