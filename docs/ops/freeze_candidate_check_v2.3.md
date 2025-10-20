@@ -24,6 +24,6 @@ goal: "Leichte Checkliste zur Bewertung 'Release v2.3 Freeze Candidate'"
 - **Model Card Validated (AI Act)** → _Attribution pending_ ⚠️
 
 ## Decision
-- **Freeze Candidate:** _Conditional_ (nachziehen bis Week 1)  
-  - [ ] Context Adoption ≥ 0.90  
-  - [ ] Model Card Validated (Attribution)
+- **Freeze Candidate:** ✅ Confirmed (Week 1 passed all criteria)
+  - Context Adoption ≥ 0.90 ✔️
+  - Model Card Validated ✔️

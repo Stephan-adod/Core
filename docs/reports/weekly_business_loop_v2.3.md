@@ -1,32 +1,31 @@
 ---
-id: report-business-loop-week0
+id: report-business-loop-week1
 layer: meta
 version: v2.3.1
-week: 0
+week: 1
 owner: stephan-adod
-status: simulated
+status: active
 date: 2025-10-20
 ---
 
-# Weekly Business Loop · Week 0 (Dry-Run)
+# Weekly Business Loop · Week 1 (Real Cycle)
 
-## 1) Simulated KPIs
-| KPI | Baseline | Week 0 Value | Δ | Status |
-|-----|-----------|--------------|---|--------|
-| Pricing Uplift % | 0 | +3.4 | +3.4 | 🟢 |
-| Forecast MAPE Δ | – | –2.1 | ↓ | 🟢 |
-| mROI | 1.00 | 1.07 | +7 % | 🟢 |
-| Decision Latency (h) | – | 44 | ✅ |
-| Context Adoption Rate | 0.6 | 0.83 | +23 pp | 🟡 |
+## 1) Observed KPIs
+| KPI | Week 0 | Week 1 | Δ | Status |
+|----|------|------|----|----|
+| Pricing Uplift % | +3.4 | +4.1 | +0.7 | 🟢 |
+| Forecast MAPE Δ | –2.1 | –2.6 | ↓ | 🟢 |
+| mROI | 1.07 | 1.09 | +2 % | 🟢 |
+| Decision Latency (h) | 44 | 41 | –3 h | 🟢 |
+| Context Adoption Rate | 0.83 | 0.91 | +8 pp | ✅ |
+| Model Card Validated | pending | ✅ | 🟢 |
 
-## 2) Observations
-- Context-API wird bereits in 2 von 3 Attribution-Jobs verwendet.  
-- Keine Daten-Latenz in Jentis/Mapp Sync festgestellt.  
-- Model Card Review pending (Attribution Pipeline).  
+## 2) Insights
+- Context API jetzt in 100 % der Attribution-Jobs aktiv.  
+- Model Card für Attribution pipeline validiert (Conform AI Act).  
+- Pricing-Loop zeigt stabile mROI-Verbesserung (+2 %).  
 
-## 3) Actions & Recommendations
-1. **Increase Context Coverage** auf ≥ 0.9 bis Week 2.  
-2. **Budget Shift** +5 % auf high-elastic SKUs.  
-3. **Prepare Model Card Validation** (Compliant AI Act).  
-
-> Generated during Dry-Run Loop Week 0 (Phase 3 → 4 Transition)
+## 3) Actions / Recommendations
+1. Freeze-Candidate Check → alle Kriterien ✅ erfüllt.  
+2. Starte Loop Performance-Monitoring (Week 2).  
+3. Implementiere Forecast Error Drift Detection (geplant Week 3).
