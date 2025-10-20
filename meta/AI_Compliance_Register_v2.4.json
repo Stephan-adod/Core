@@ -1,0 +1,25 @@
+{
+  "version": "v2.4.0",
+  "owner": "stephan-adod",
+  "models": [
+    {
+      "id": "attribution_pipeline_v1",
+      "use_case": "Marketing Attribution / MMM",
+      "risk_tier": "low",
+      "model_card_validated": true,
+      "validation_date": "2025-10-20",
+      "evidence": [
+        "docs/reports/reflection_summary_v2.3.md",
+        "docs/prompts/P-011_loops_v2.3.mjs"
+      ]
+    },
+    {
+      "id": "pricing_forecast_v1",
+      "use_case": "Pricing Optimization (forecast)",
+      "risk_tier": "low",
+      "model_card_validated": false,
+      "validation_date": null,
+      "evidence": []
+    }
+  ]
+}

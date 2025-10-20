@@ -1,0 +1,4 @@
+[
+  { "cycle": 0, "timestamp": "2025-10-10", "context_adoption_rate": 0.83, "event": "Cycle 0 · Dry-Run" },
+  { "cycle": 1, "timestamp": "2025-10-17", "context_adoption_rate": 0.91, "event": "Cycle 1 · Real Feedback" }
+]

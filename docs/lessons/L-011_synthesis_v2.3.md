@@ -47,16 +47,16 @@ links:
 - Phase 3 starten: `artefacts/prompts/P-011_loops_v2.3.mjs` (Design & Betrieb der Loops).
 - Sanity-Script umsetzen (post-freeze) und Stub archivieren.
 
-## Week 0 · Dry-Run Learnings
+## Cycle 0 · Dry-Run Learnings
 - System Harmony ≈ 0.92, **Policy Valid 96 %** (Stub-Sanity pass).
-- Context Adoption **0.83** → Ziel ≥ 0.90 bis Week 2.
+- Context Adoption **0.83** → Ziel ≥ 0.90 bis Cycle 2.
 - Pricing Uplift **+3.4 %**, Forecast MAPE **–2.1** (mit Context API).
 - Collaboration: Working Agreements greifen; Review < 48 h anstreben.
-- Next: **Week 1 (Real Cycle)** mit Partner-Feedback & Model-Card Validation.
+- Next: **Cycle 1 (Real Feedback)** mit Partner-Feedback & Model-Card Validation.
 
-## Week 1 · Real Cycle Learnings
+## Cycle 1 · Real Feedback Learnings
 - Freeze-Candidate Check ✅ (bestanden).  
 - Context Adoption ≥ 0.90 → Ziel erreicht.  
 - Model Card validiert (AI Act Konformität).  
 - mROI +2 %, Pricing Uplift +4 %.  
-- Nächster Fokus: Forecast-Drift Detection (Week 2 Preparation).
+- Nächster Fokus: Forecast-Drift Detection (Cycle 2 Preparation).

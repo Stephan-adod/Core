@@ -18,12 +18,12 @@ goal: "Leichte Checkliste zur Bewertung 'Release v2.3 Freeze Candidate'"
 - [x] Sanity v2.3 Stub → `docs/ops/sanity_v2_3_stub.md`
 
 ## Probes (targets)
-- **Policy Valid %** ≥ 95 → _Week 0: 96_ ✅
-- **Sanity %** ≥ 90 (Stub) → _Week 0: pass_ ✅
-- **Context Adoption** ≥ 0.90 → _Week 0: 0.83_ ⚠️
+- **Policy Valid %** ≥ 95 → _Cycle 0: 96_ ✅
+- **Sanity %** ≥ 90 (Stub) → _Cycle 0: pass_ ✅
+- **Context Adoption** ≥ 0.90 → _Cycle 0: 0.83_ ⚠️
 - **Model Card Validated (AI Act)** → _Attribution pending_ ⚠️
 
 ## Decision
-- **Freeze Candidate:** ✅ Confirmed (Week 1 passed all criteria)
+- **Freeze Candidate:** ✅ Confirmed (Cycle-basiert geprüft)
   - Context Adoption ≥ 0.90 ✔️
   - Model Card Validated ✔️
