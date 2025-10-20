@@ -55,7 +55,7 @@ export const loops_v23 = {
 
   // ────────────────────────────────────────────────────────────────────────────
   business_loop: {
-    cadence: { type: "weekly", weekday: "Mon", hour: 9 },
+    cadence: { type: "signal", triggers: ["drift_event", "release", "adoption_change"] },
     scope: ["L3.1 Pricing", "L3.2 Attribution", "L3.3 Context Enrichment"],
     inputs: {
       pricing_api: "/daas/pricing/v1/*",
@@ -76,7 +76,7 @@ export const loops_v23 = {
       "recommend:context_rollout where MAPE improves",
     ],
     outputs: {
-      weekly_brief: "docs/reports/weekly_business_loop_v2.3.md",
+      cycles_report: "docs/reports/business_loop_cycles_v2.4.md",
       change_log: "docs/reports/business_actions_log.md",
     },
     visible_kpis: ["mroi", "pricing_uplift_pct", "context_adoption_rate"],
@@ -89,7 +89,7 @@ export const loops_v23 = {
       lessons_L011: "docs/lessons/L-011_synthesis_v2.3.md",
       collab_L012: "docs/lessons/L-012_collaboration_optimization_v2.3.md",
       governance_report: "generated:governance_report.md",
-      business_brief: "docs/reports/weekly_business_loop_v2.3.md",
+      business_brief: "docs/reports/business_loop_cycles_v2.4.md",
     },
     prompts: [
       "What changed in the system since last review?",
@@ -100,7 +100,7 @@ export const loops_v23 = {
     actions: [
       "append:docs/lessons/L-011_synthesis_v2.3.md",
       "open:mini_prompt for any change requiring structural modification",
-      "emit:docs/reports/reflection_summary_v2.3.md",
+      "emit:docs/reports/reflection_cycles_v2.4.md",
     ],
     kpis: {
       harmony_score: ">0.9",

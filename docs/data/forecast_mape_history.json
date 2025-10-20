@@ -1,0 +1,4 @@
+[
+  { "cycle": 0, "timestamp": "2025-10-10", "model": "pricing_forecast", "baseline_mape": 0.00, "observed_mape": 0.021, "delta_mape": -0.021, "event": "Cycle 0 · Simulation" },
+  { "cycle": 1, "timestamp": "2025-10-17", "model": "pricing_forecast", "baseline_mape": 0.021, "observed_mape": 0.026, "delta_mape": 0.005,  "event": "Cycle 1 · Real Observation" }
+]

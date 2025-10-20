@@ -1,3 +1,5 @@
+🟨 **Deprecated:** Week-based reporting is superseded by cycle-based reporting → see `docs/reports/business_loop_cycles_v2.4.md`.
+
 ---
 id: report-business-loop-week1
 layer: meta
@@ -21,11 +23,11 @@ date: 2025-10-20
 | Model Card Validated | pending | ✅ | 🟢 |
 
 ## 2) Insights
-- Context API jetzt in 100 % der Attribution-Jobs aktiv.  
-- Model Card für Attribution pipeline validiert (Conform AI Act).  
-- Pricing-Loop zeigt stabile mROI-Verbesserung (+2 %).  
+- Context API jetzt in 100 % der Attribution-Jobs aktiv.
+- Model Card für Attribution pipeline validiert (Conform AI Act).
+- Pricing-Loop zeigt stabile mROI-Verbesserung (+2 %).
 
 ## 3) Actions / Recommendations
-1. Freeze-Candidate Check → alle Kriterien ✅ erfüllt.  
-2. Starte Loop Performance-Monitoring (Week 2).  
+1. Freeze-Candidate Check → alle Kriterien ✅ erfüllt.
+2. Starte Loop Performance-Monitoring (Week 2).
 3. Implementiere Forecast Error Drift Detection (geplant Week 3).

@@ -16,8 +16,8 @@ links:
   lessons_L012: docs/lessons/L-012_collaboration_optimization_v2.3.md
   sanity_stub: docs/ops/sanity_v2_3_stub.md
   transition_log: docs/logs/transition_META_v2.2.5_to_v2.3.1.md
-  weekly_brief: docs/reports/weekly_business_loop_v2.3.md
-  reflection_summary: docs/reports/reflection_summary_v2.3.md
+  weekly_brief: docs/reports/business_loop_cycles_v2.4.md
+  reflection_summary: docs/reports/reflection_cycles_v2.4.md
 north_star: "TTIC ≤ 7 Tage @ Policy Valid ≥ 95 %"
 kpis:
   - Policy Valid % ≥ 95
@@ -53,7 +53,7 @@ kpis:
 
 ### Phase 5 · Synthesis & Transition ⏳
 - **Deliverables:** L-011 Update, Reflection Summary, Freeze-Candidate Check
-- **Output (Ziel):** *CI-Green Candidate* + „Week 1“ echter Feedback-Cycle
+- **Output (Ziel):** *CI-Green Candidate* + „Cycle 1“ echter Feedback-Loop
 
 ## 3) Meilensteine (Targets)
 | # | Meilenstein | Artefakt | Zieltermin | Status |
@@ -61,15 +61,15 @@ kpis:
 | M1 | Blueprint promoted to Master | `meta/AI_First_System_Architecture.md` | 2025-10-20 | ✅ |
 | M2 | Loops refined & linked | `docs/prompts/P-011_loops_v2.3.mjs` | 2025-10-20 | ✅ |
 | M3 | Roadmap v2.3 veröffentlicht | `meta/AI_First_Roadmap_v2.3.md` | 2025-10-20 | ✅ |
-| M4 | **Loop Week 0** (Dry-Run) | `docs/reports/weekly_business_loop_v2.3.md` | +3d | ✅ |
-| M5 | Reflection Summary erzeugt | `docs/reports/reflection_summary_v2.3.md` | +5d | ✅ |
+| M4 | **Cycle 0** (Dry-Run) | `docs/reports/business_loop_cycles_v2.4.md` | +3d | ✅ |
+| M5 | Reflection (Cycle 1) erzeugt | `docs/reports/reflection_cycles_v2.4.md` | +5d | ✅ |
 | M6 | L-011 Lessons Update | `docs/lessons/L-011_synthesis_v2.3.md` | +6d | ⬜ |
 | M7 | Freeze Candidate Check | transition log + sanity | +7d | ⬜ |
 
 ## 4) Operating Cadence
 - **Governance:** kontinuierlich (min 24h) — Probes: Policy Valid, Sanity, Model Card, Context-Age.
-- **Business:** wöchentlich Mo 09:00 — KPIs: mROI, Pricing Uplift, **Context Adoption**.
-- **Reflexion:** zweiwöchentlich Fr 15:00 — Outputs: L-011 Update, **Reflection Summary**.
+- **Business:** signal-basiert (Cycle Trigger: Drift, Release, Adoption Change) — KPIs: mROI, Pricing Uplift, **Context Adoption**.
+- **Reflexion:** signal-basiert nach Business-Cycle — Outputs: L-011 Update, **Reflection Cycles Report**.
 
 ## 5) Risiken & Gegenmaßnahmen
 - **Sanity Script fehlt noch:** Stub aktiv; echtes Script nach Freeze implementieren.
@@ -80,6 +80,8 @@ kpis:
 - 2025-10-20: Roadmap v2.3 erstellt; Links auf Blueprint, Loops, Matrix, Lessons, Reports.
 - 2025-10-20: KPI-Set geklärt (Context Adoption aufgenommen).
 - 2025-10-20: Lessons zentralisiert → aktive Lessons unter `docs/lessons/`, Legacy unter `artefacts/lessons/` (read-only).
-- 2025-10-20: Week 0 Dry-Run dokumentiert (Business & Reflection Reports); Freeze-Check Datei erstellt.
+- 2025-10-20: Cycle 0 Dry-Run dokumentiert (Business & Reflection Reports); Freeze-Check Datei erstellt.
+- 2025-10-20: v2.4 Init gestartet (P-012 Forecast Drift & Automation). Siehe: `meta/AI_First_Loop_Automation_v2.4_plan.md`.
+- {{today}}: Reporting auf **Cycle-based** umgestellt (P-012-b). Weekly-Reports als deprecated markiert.
 
 > ℹ️ **Governance Note:** Strukturelle Änderungen nur via **Mini-Prompt + PR**; dokumentiert im Transition-Log.

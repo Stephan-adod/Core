@@ -1,0 +1,3 @@
+cycle,timestamp,model,baseline_mape,observed_mape,delta_mape,event
+0,2025-10-10,pricing_forecast,0.00,0.021,-0.021,"Cycle 0 · Simulation"
+1,2025-10-17,pricing_forecast,0.021,0.026,0.005,"Cycle 1 · Real Observation"
