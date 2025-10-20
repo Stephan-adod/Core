@@ -1,9 +1,9 @@
 ---
 title: AI-First System Architecture
-version: v2.2
-phase: adaptive_governance
+version: v2.2.5
+phase: daas_factory_transition
 status: active
-updated: 2025-10-19
+updated: 2025-10-22
 owner: Stephan (System Owner & Mentor)
 rhythm: monthly review
 outputs:
