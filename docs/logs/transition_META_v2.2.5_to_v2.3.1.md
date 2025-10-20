@@ -34,3 +34,6 @@ impacted_files:
 
 ## Next
 - Phase 3: Loop-Integration (`artefacts/prompts/P-011_loops_v2.3.mjs`)
+
+### Version Alignment
+- Updated `meta/system_version.json` → `target_version: v2.3.1` (phase: `daas_factory_planning`) to prevent version drift in CI checks.

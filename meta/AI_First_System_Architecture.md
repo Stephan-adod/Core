@@ -2,6 +2,7 @@
 id: AI-FIRST-SYSTEM-ARCHITECTURE
 layer: meta
 version: v2.3.1
+phase: daas_factory_planning
 status: active
 owner: stephan-adod
 updated: 2025-10-24
