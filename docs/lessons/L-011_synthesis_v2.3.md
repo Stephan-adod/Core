@@ -46,3 +46,9 @@ links:
 ## 7) Nächste Schritte
 - Phase 3 starten: `artefacts/prompts/P-011_loops_v2.3.mjs` (Design & Betrieb der Loops).
 - Sanity-Script umsetzen (post-freeze) und Stub archivieren.
+
+## Week 0 · Dry-Run Learnings
+- System Harmony 0.92, Policy Valid 96 %.
+- Context Adoption 0.83 zeigt brauchbare API Signalqualität.
+- Review Flow funktioniert (keine CI-Blocker).
+- Next: Real Loop Week 1 mit echten Daten und Partner-Feedback.
