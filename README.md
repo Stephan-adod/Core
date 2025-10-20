@@ -1,34 +1,34 @@
 # Core · AI-First Governance Repository
 
-This repository now hosts the lightweight scaffolding for the AI-First v2.1 planning cycle.
-The operational history of v1.9 has been preserved intact inside [`archive/v1.9`](archive/v1.9/README.md).
+## 🧭 Current Phase
+- **Version:** v2.2.5 — DaaS Factory Transition  
+- **Target:** v2.3 — DaaS Factory Planning (P-011)  
+- **Governance Health:** 🟢 Stable  
+- **Last Sanity:** see `scripts/sanity_v22_check.mjs` (run locally)  
+- **Snapshot:** `meta/snapshots/system_state_v2.2.5.json`
 
-## v2.1 Baseline (Clarity-First)
-This repository was simplified to a lightweight v2.1 skeleton (Core Docs only).
-Historical materials are preserved under [archive/v1.9/](archive/v1.9/).
-Active intent state: read `meta/AI_First_Roadmap.md`.
+## 🧱 Core Docs
+| Area        | File                                   | Purpose                           |
+|-------------|----------------------------------------|-----------------------------------|
+| Business    | `docs/AI_First_Business_Case.md`       | Strategic Direction               |
+| Architecture| `meta/AI_First_System_Architecture.md` | System & Data Blueprint           |
+| Playbook    | `meta/Human_in_the_Loop_Playbook.md`   | Operational Guidance              |
+| Governance  | `meta/Prompt_Inventory.md`             | Active Prompts & Cycles           |
+| Roadmap     | `meta/AI_First_Roadmap.md`             | Phasen, Milestones                |
 
----
+## 🧩 Learnings & Syntheses
+- **Lessons:** L-001 … L-006 (siehe `artefacts/lessons/lesson_snippets/`)  
+- **Syntheses:** S-001 (RS-001), S-002 (Adaptive Governance Meta-Synthesis)
 
-## v2.1 (Current)
-- **Purpose:** Provide a clean surface for clarity-first planning and documentation updates.
-- **Core docs:**
-  - `meta/AI_First_System_Architecture.md`
-  - `meta/AI_First_Roadmap.md`
-  - `meta/AI_First_Handbook.md`
-  - `meta/Human_in_the_Loop_Playbook.md`
-  - `docs/AI_First_Business_Case.md`
-- **Status:** Draft scaffolds awaiting refreshed content.
-- **Working agreement:** Keep changes focused on v2.1 initiatives; reference v1.9 materials from the archive when needed.
+## 📊 Governance KPIs
+- Report: `artefacts/reports/governance_kpis.md`  
+- Kernmetriken: Total Lessons, Integration Rate, Velocity, Coverage, Reflection Depth
 
-## v1.9 Archive
-- The full freeze snapshot, including artefacts, diagnostics, and tickets, lives under [`archive/v1.9`](archive/v1.9/README.md).
-- Changes in this branch do not modify the archive; refer to the manifest for provenance and integrity guarantees.
+## 🛠 Operator & Validation
+- **Sanity (Quick Rebase v2.2):** `node scripts/sanity_v22_check.mjs`  
+- **Lessons Validation:** `npm run validate:lessons`  
+- **Version Drift:** `npm run validate:drift`
 
----
-
-## Contribution Notes
-- Maintainers can evolve the v2.1 core docs directly in this repo.
-- Historical context should be sourced from the archive to avoid regressions.
-- Automation and scripts will be reintroduced as the v2.1 roadmap solidifies.
-
+## 🚀 Next Step
+- **P-011 — DaaS Factory Planning:** Definiere Data Product Types, Data Value Flow, Data KPIs.  
+- Optional: OP-010-a (weekly governance pulse automation).

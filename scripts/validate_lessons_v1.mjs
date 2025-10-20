@@ -3,6 +3,16 @@ import fs from "fs";
 import yaml from "js-yaml";
 import { glob } from "glob";
 
+const readJSON = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
+const regPath = "meta/validation_registry.json";
+const REG = fs.existsSync(regPath)
+  ? readJSON(regPath)
+  : { related_docs_allowed_prefixes: ["meta/", "docs/"] };
+
+function isAllowedRelatedDocPath(p) {
+  return REG.related_docs_allowed_prefixes.some((pref) => p.startsWith(pref));
+}
+
 const sysCfg = JSON.parse(fs.readFileSync("meta/system_version.json", "utf8"));
 const TARGET = sysCfg.target_version || "v2.1";
 const coreDocs = new Set(sysCfg.core_docs || []);
@@ -30,37 +40,34 @@ async function main() {
       continue;
     }
 
-    if (!Array.isArray(meta.related_docs) || meta.related_docs.length === 0) {
-      errors.push(`${f}: related_docs missing or empty`);
-      continue;
-    }
+    checkRelatedDocs(meta, f, errors);
 
-    for (const pth of meta.related_docs) {
-      if (typeof pth !== "string" || pth.trim() === "") {
-        errors.push(`${f}: related_docs entry invalid -> ${pth}`);
-        continue;
-      }
-
-      if (!fs.existsSync(pth)) {
-        errors.push(`${f}: related_docs path missing -> ${pth}`);
-        continue;
-      }
-
-      try {
-        if (coreDocs.has(pth)) {
-          const body = fs.readFileSync(pth, "utf8");
-          const docMatch = body.match(/^---\n([\s\S]*?)\n---/);
-          if (!docMatch) {
-            errors.push(`${f}: ${pth} missing YAML header with version`);
-            continue;
-          }
-          const docMeta = yaml.load(docMatch[1]) || {};
-          if ((docMeta?.version || "") !== TARGET) {
-            errors.push(`${f}: ${pth} has version ${docMeta?.version || "n/a"} but target is ${TARGET}`);
-          }
+    if (Array.isArray(meta.related_docs)) {
+      for (const pth of meta.related_docs) {
+        if (typeof pth !== "string" || pth.trim() === "") {
+          continue;
         }
-      } catch (err) {
-        errors.push(`${f}: failed to read ${pth} → ${err.message}`);
+
+        if (!fs.existsSync(pth)) {
+          continue;
+        }
+
+        try {
+          if (coreDocs.has(pth)) {
+            const body = fs.readFileSync(pth, "utf8");
+            const docMatch = body.match(/^---\n([\s\S]*?)\n---/);
+            if (!docMatch) {
+              errors.push(`${f}: ${pth} missing YAML header with version`);
+              continue;
+            }
+            const docMeta = yaml.load(docMatch[1]) || {};
+            if ((docMeta?.version || "") !== TARGET) {
+              errors.push(`${f}: ${pth} has version ${docMeta?.version || "n/a"} but target is ${TARGET}`);
+            }
+          }
+        } catch (err) {
+          errors.push(`${f}: failed to read ${pth} → ${err.message}`);
+        }
       }
     }
   }
@@ -79,3 +86,25 @@ main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
+
+function checkRelatedDocs(meta, file, errors) {
+  if (!meta.related_docs) return;
+  if (!Array.isArray(meta.related_docs)) {
+    errors.push(`${file}: related_docs must be an array of paths`);
+    return;
+  }
+  meta.related_docs.forEach((p) => {
+    if (typeof p !== "string" || p.trim() === "") {
+      errors.push(`${file}: related_docs contains empty or non-string item`);
+      return;
+    }
+    if (!isAllowedRelatedDocPath(p)) {
+      errors.push(
+        `${file}: related_docs must use stable paths -> ${p} (allowed: ${REG.related_docs_allowed_prefixes.join(", ")})`,
+      );
+    }
+    if (!fs.existsSync(p)) {
+      errors.push(`${file}: related_docs path does not exist -> ${p}`);
+    }
+  });
+}
