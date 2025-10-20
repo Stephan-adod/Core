@@ -1,6 +1,6 @@
 use_case,impact,readiness,gov_risk,ai_leverage,effort,composite,recommendation
-Pricing Optimization,5,4,3,4,4,18,High Potential (Iterative Start)
-Marketing Attribution / MMM,5,3,4,5,3,20,Strategic, Complex
-Context Enrichment (Weather + Events),4,5,2,4,2,21,Quick Win (Context API)
-Inventory Forecasting / Demand,4,4,3,4,4,17,Mid-Term
-Identity / Consent Graph,4,2,5,5,5,13,Long-Term (Governance Asset)
+Pricing Optimization,5,4,3,4,4,18,"High Potential (Iterative Start)"
+Marketing Attribution / MMM,5,3,4,5,3,20,"Strategic, Complex"
+Context Enrichment (Weather + Events),4,5,2,4,2,21,"Quick Win (Context API)"
+Inventory Forecasting / Demand,4,4,3,4,4,17,"Mid-Term"
+Identity / Consent Graph,4,2,5,5,5,13,"Long-Term (Governance Asset)"
