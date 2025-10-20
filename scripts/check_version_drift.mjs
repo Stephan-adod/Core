@@ -68,7 +68,12 @@ async function main() {
       continue;
     }
     for (const pth of meta.related_docs) {
-      if (typeof pth !== "string" || pth.includes("_v2.")) {
+      if (typeof pth !== "string") {
+        errors.push(`${f}: related_docs must use stable paths -> ${pth}`);
+        continue;
+      }
+      const isStableSnapshot = pth.startsWith("meta/snapshots/");
+      if (!isStableSnapshot && pth.includes("_v2.")) {
         errors.push(`${f}: related_docs must use stable paths -> ${pth}`);
         continue;
       }

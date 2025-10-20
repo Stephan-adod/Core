@@ -7,7 +7,7 @@ impact: High
 tags: [ pivot, daas, ai-first, strategy, system-transition ]
 related_docs:
   - meta/system_version.json
-  - artefacts/snapshots/system_state_v2.2.5.json
+  - meta/snapshots/system_state_v2.2.5.json
   - meta/AI_First_System_Architecture.md
   - meta/AI_First_Roadmap.md
 created: 2025-10-22
