@@ -6,3 +6,10 @@
 - Motivation:
 - Risiken/Rollback:
 - Akzeptanzkriterien:
+
+## AI-First Handbook Compliance
+- [ ] One PR = One Intent
+- [ ] Clarity over Coverage
+- [ ] Logged (artefacts/logs/**)
+- [ ] Bounded Mini-Prompt
+Policy Source: meta/AI_First_Handbook.md (active: v2.4.7)

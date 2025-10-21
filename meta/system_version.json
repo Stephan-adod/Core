@@ -12,5 +12,11 @@
       "meta/AI_First_Roadmap.md",
       "meta/CORE_INDEX.md"
     ]
+  },
+  "policy_source": "meta/AI_First_Handbook.md",
+  "features": {
+    "context_pack": false,
+    "pr_synthesizer": false,
+    "drift_sentry": false
   }
 }
