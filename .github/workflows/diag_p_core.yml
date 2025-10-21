@@ -1,0 +1,32 @@
+name: diag_p_core (read-only)
+
+on:
+  workflow_dispatch: {}
+  # optional: schedule:
+  #   - cron: "15 6 * * 1-5"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: npm ci | npm i
+        run: npm ci || npm i
+
+      - name: Run screening (read-only)
+        run: node scripts/diag_p_core.mjs
+
+      - name: Upload JSON artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: diag_p_core_snapshot
+          path: docs/reports/meta_inventory_v2.4.json
+
+      - name: Summary
+        run: node scripts/diag_p_core_usage.mjs
