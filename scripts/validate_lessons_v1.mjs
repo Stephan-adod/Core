@@ -67,12 +67,13 @@ function readFrontmatter(markdown) {
 const lessons = listLessonFiles();
 const errors = [];
 
-for (const relativePath of lessons) {
-  const absPath = path.join(ROOT, relativePath);
+for (const fp of lessons) {
+  const absPath = path.join(ROOT, fp);
   const raw = fs.readFileSync(absPath, "utf8");
   const frontmatter = readFrontmatter(raw);
   const version = frontmatter.version || "";
-  const status = (frontmatter.status || "unknown").toLowerCase();
+  const status = frontmatter.status || "";
+  const relativePath = fp;
 
   if (!version) {
     errors.push(`${relativePath}: missing version in YAML front matter (target ${TARGET_VERSION})`);
@@ -80,8 +81,8 @@ for (const relativePath of lessons) {
     errors.push(`${relativePath}: has version ${version} but target is ${TARGET_VERSION}`);
   }
 
-  if (status === "draft" || status === "unknown") {
-    errors.push(`${relativePath}: status=${status} (expected active)`);
+  if (!status || status.trim() !== "active") {
+    errors.push(`${relativePath}: status=${status || "missing"} (expected active)`);
   }
 }
 
