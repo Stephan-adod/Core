@@ -1,43 +1,43 @@
-name: Handbook · Enforcement (Auto-Synthesis → Auto-Body → Enforce)
-
+name: Handbook · Enforcement (Unified)
 on:
   pull_request:
-    types: [opened, edited, synchronize]
+    types: [opened, edited, synchronize, reopened]
     paths:
       - '**'
-      - '!.github/**'  # Guard: reine .github PRs nicht prüfen
+      - '!.github/**'   # guard: keine reinen CI/Template PRs prüfen
 
 permissions:
   contents: read
-  pull-requests: write   # zum Aktualisieren des PR-Body
+  pull-requests: write   # nötig, um PR-Body zu setzen
+
+concurrency:
+  group: handbook-enforce-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
-  synthesize:
-    name: Synthesize PR Body (AI-First)
+  unified:
+    name: AI-First Enforcement Pipeline
     runs-on: ubuntu-latest
-    outputs:
-      body: ${{ steps.out.outputs.body }}
+    timeout-minutes: 5
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: '20' }
-      - name: Generate body from policy + context
-        id: out
+        with:
+          node-version: '20'
+
+      # 1) PR-Body synthetisieren (mit aktiven Häkchen)
+      - name: 🧠 Synthesize PR Body (AI-First)
+        id: synth
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          node scripts/synthesize_pr_body.mjs > body.out
-          echo "body<<EOF" >> $GITHUB_OUTPUT
-          cat body.out >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
+          node scripts/synthesize_pr_body.mjs > pr_body.out
+          echo "len=$(wc -c < pr_body.out)" >> $GITHUB_OUTPUT
+          head -n 20 pr_body.out || true
 
-  autobody:
-    name: Ensure PR Body (inject if missing)
-    runs-on: ubuntu-latest
-    needs: synthesize
-    steps:
-      - uses: actions/checkout@v4
-      - name: Inspect original PR body
+      # 2) Prüfen, ob Original-Body bereits Compliance enthält
+      - name: 🔎 Inspect original PR body
         id: get
         uses: actions/github-script@v7
         with:
@@ -45,43 +45,29 @@ jobs:
             const body = context.payload.pull_request.body || '';
             const hasComp = /##\s*AI-First Handbook Compliance/i.test(body);
             core.setOutput('has_comp_original', hasComp ? 'yes' : 'no');
-      - name: Update PR body (only if original missing compliance)
+
+      # 3) Falls nicht vorhanden: Body in den PR schreiben
+      - name: 💬 Inject synthesized body (if missing)
         if: steps.get.outputs.has_comp_original == 'no'
         uses: actions/github-script@v7
         with:
           script: |
-            const body = `${{ toJSON(needs.synthesize.outputs.body) }}`;
+            const fs = require('fs');
+            const body = fs.readFileSync('pr_body.out','utf8');
             await github.rest.pulls.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.payload.pull_request.number,
               body
             });
-            core.info('PR body set by Auto-Synthesis.');
-      - name: Comment (audit trail)
-        if: steps.get.outputs.has_comp_original == 'no'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.payload.pull_request.number,
-              body: "🧠 Auto-Synthesis hat den PR-Body gemäß AI-First Handbook generiert."
-            });
+            core.info('PR body set by Unified Enforcement.');
 
-  enforce:
-    name: Validate Handbook Compliance
-    runs-on: ubuntu-latest
-    needs: autobody
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: '20' }
-      - name: Wait for PR body sync
-        run: |
-          echo "⏳ waiting for PR body cache…" && sleep 8
-      - name: Reload PR body from GitHub API
+      # 4) Kurz warten & realen Body laden (API → Datei)
+      - name: ⏳ Wait for API sync
+        if: steps.get.outputs.has_comp_original == 'no'
+        run: sleep 6
+
+      - name: 🔄 Reload PR body from API
         id: reload
         uses: actions/github-script@v7
         with:
@@ -93,6 +79,13 @@ jobs:
             });
             const body = pr.data.body || '';
             require('fs').writeFileSync('pr_body_latest.txt', body);
-            core.info('✅ Reloaded PR body, length=' + body.length);
-      - name: Run validator (strict) against ACTUAL body
-        run: node scripts/validate_handbook.mjs < pr_body_latest.txt
+            core.setOutput('len', String(body.length));
+
+      # 5) Strikte Validierung gegen den tatsächlichen Body
+      - name: ✅ Validate Handbook Compliance (strict)
+        run: |
+          if [ -f pr_body_latest.txt ]; then
+            node scripts/validate_handbook.mjs < pr_body_latest.txt
+          else
+            node scripts/validate_handbook.mjs < pr_body.out
+          fi
