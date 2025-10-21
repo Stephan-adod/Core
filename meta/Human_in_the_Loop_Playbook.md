@@ -1,9 +1,10 @@
 ---
 title: Human-in-the-Loop Playbook
 version: v2.4.6
-phase: cycle_mode
 status: active
 updated: 2025-10-21
+layer: operations
+owner: (assign)
 ---
 
 ## Cycle Mode (v2.4)
@@ -23,7 +24,7 @@ updated: 2025-10-21
 ## Decision Boundaries
 - Menschlicher Operator bestätigt Freeze-Status & Promotions.
 - Automation wird nur aktiviert, wenn Lessons & Reports synchron sind.
-- Archive (`docs/archive/weekly_v2.3/`) bleibt read-only.
+- Archive (`docs/reports/business_loop_cycles_v2.4.md`) bleibt read-only.
 
 ## Linked References
 - `meta/AI_First_Roadmap.md`

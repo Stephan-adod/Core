@@ -1,18 +1,10 @@
 ---
-id: AI-FIRST-SYSTEM-ARCHITECTURE
-layer: meta
+title: AI-First System Architecture
 version: v2.4.6
-phase: daas_factory_planning
 status: active
-owner: stephan-adod
 updated: 2025-10-24
-path: meta/AI_First_System_Architecture.md
-rhythm: quarterly architecture sync
-linked_docs:
-  - meta/AI_First_Roadmap.md
-  - meta/AI_First_Handbook.md
-  - meta/Human_in_the_Loop_Playbook.md
-  - docs/frameworks/DaaS_UseCase_Decision_Matrix_v2.4.md
+layer: architecture
+owner: stephan-adod
 ---
 
 # AI-First System Architecture Blueprint (v2.4.6)
@@ -35,8 +27,8 @@ linked_docs:
 | L4 | Delivery & Experience | Pricing/Attribution Apps, BI, Partner APIs | Microfrontends, External Integrations |
 | L5 | Observability & Trust | Monitoring, KPIs, Compliance Telemetry | Trust Probes, Audit Log, Policy Alerts |
 
-> **Visualisierung:** Siehe **DaaS L3 Context Map (v2.3)** unter
-> `docs/diagrams/DaaS_L3_Context_Map_v2.3.mmd`
+> **Visualisierung:** Siehe **DaaS L3 Context Map (v2.4)** unter
+> `docs/diagrams/DaaS_L3_Context_Map_v2.4.mmd`
 
 ### 🏗️ L3 — Data Value Streams (v2.4.6)
 
