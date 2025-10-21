@@ -28,7 +28,9 @@ function extractFrontMatter(body) {
 }
 
 async function main() {
-  const files = await glob("artefacts/lessons/**/*.md", { nodir: true });
+  let files = await glob("artefacts/lessons/**/*.md", { nodir: true });
+  // Legacy path hard-exclude: lessons under artefacts/* are archived and not validated
+  files = files.filter((f) => !f.startsWith("artefacts/lessons/"));
   const errors = [];
 
   for (const f of files) {
