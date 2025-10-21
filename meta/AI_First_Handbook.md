@@ -1,28 +1,25 @@
 ---
-title: AI-First Handbook
-version: v2.2.5
-phase: daas_factory_transition
+layer: meta
+version: v2.4.6
 status: active
-updated: 2025-10-22
-owner: Stephan
-rhythm: quarterly
-outputs:
-  - Operating rules (handbook/*.md)
-  - Prompt guidelines (handbook/prompts.md)
-boundaries:
-  - Keep below 150 lines per section
+updated: 2025-10-21
+owner: stephan-adod
 linked_docs:
-  - meta/AI_First_System_Architecture.md
-  - meta/Human_in_the_Loop_Playbook.md
   - meta/AI_First_Roadmap.md
+  - meta/Human_in_the_Loop_Playbook.md
+  - meta/AI_First_System_Architecture.md
   - docs/AI_First_Business_Case.md
 ---
+
+# AI-First Handbook
 
 ## Operating Principles
 - Clarity over coverage
 - Intent before execution
 - Bounded Mini-Prompts
 - One PR = One intent
+
+> Governance Loops: Align principles with `docs/prompts/P-011_loops_v2.3.mjs`, `docs/ops/loop_runbook_v2.3.md`, and transition logs to keep loop triggers, prompts, and reviews in sync.
 
 ## Minimal CI
 - Only `sanity.yml` during bootstrap
