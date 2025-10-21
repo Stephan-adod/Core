@@ -90,13 +90,14 @@ Risiko: gering (reiner Meta/Template/Validator-Flow)`;
 }
 
 function synthesizeBody({ intent, logPath }) {
-  // Da Synthesizer die Felder selbst erzeugt, können alle Häkchen aktiv gesetzt werden
+  const marker = "<!-- AI-SYNTH v2.5b -->";
   return [
-    `## AI-First Handbook Compliance
-- [x] One PR = One Intent
-- [x] Clarity over Coverage
-- [x] Logged (${logPath})
-- [x] Bounded Mini-Prompt
+    `${marker}
+## AI-First Handbook Compliance
+- One PR = One Intent
+- Clarity over Coverage
+- Logged (${logPath})
+- Bounded Mini-Prompt
 
 ### Intent
 ${intent}
