@@ -1,3 +1,4 @@
+throw new Error("Deprecated: use scripts/validators/lessons_v2_4_6.mjs");
 // === Lessons Validator (authoritative) ===
 import fs from "fs";
 import path from "path";
