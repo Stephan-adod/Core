@@ -4,7 +4,7 @@ version: v2.4.7
 status: active
 updated: 2025-10-24
 layer: meta
-owner: Stephan-adod (System Owner & Mentor)
+owner: Stephan (System Owner & Mentor)
 ---
 
 # CORE INDEX · Cycle Mode (v2.4.7)

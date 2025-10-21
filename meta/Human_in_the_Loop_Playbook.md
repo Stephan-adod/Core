@@ -4,7 +4,7 @@ version: v2.4.7
 status: active
 updated: 2025-10-24
 layer: operations
-owner: Stephan-adod (System Owner & Mentor)
+owner: Stephan (System Owner & Mentor)
 ---
 
 ## Cycle Mode (v2.4.7)

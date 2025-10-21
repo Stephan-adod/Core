@@ -4,7 +4,7 @@ version: v2.4.7
 status: active
 updated: 2025-10-24
 layer: strategy
-owner: Stephan-adod (System Owner & Mentor)
+owner: Stephan (System Owner & Mentor)
 ---
 
 # Roadmap (Canonical · v2.4.7)
