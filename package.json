@@ -2,7 +2,9 @@
   "scripts": {
     "validate:lessons": "node scripts/validate_lessons_v1.mjs",
     "validate:drift": "node scripts/check_version_drift.mjs",
-    "validate:guardrails": "node scripts/test_guardrails_v1.mjs"
+    "validate:guardrails": "node scripts/test_guardrails_v1.mjs",
+    "diag": "node scripts/DIAG-P-CORE.mjs",
+    "diag:json": "node scripts/DIAG-P-CORE.mjs --json"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",

@@ -1,0 +1,64 @@
+name: DIAG · Read-Only Repo Snapshot
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "23 6 * * 1-5" # optional: Werktags 06:23 UTC
+
+permissions:
+  contents: read
+
+concurrency:
+  group: diag-readonly
+  cancel-in-progress: false
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (read-only)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install (skip if no deps)
+        run: |
+          if [ -f package-lock.json ] || [ -f pnpm-lock.yaml ] || [ -f yarn.lock ]; then
+            npm ci || true
+          else
+            echo "No lockfile detected; skipping install."
+          fi
+
+      - name: Run DIAG (Markdown)
+        id: diag_md
+        run: |
+          node scripts/DIAG-P-CORE.mjs > diag.md
+          echo "md_path=diag.md" >> $GITHUB_OUTPUT
+
+      - name: Attach report to Job Summary
+        if: always()
+        run: |
+          echo "## DIAG · Read-Only Snapshot" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          cat diag.md >> $GITHUB_STEP_SUMMARY
+
+      - name: Run DIAG (JSON)
+        id: diag_json
+        run: |
+          node scripts/DIAG-P-CORE.mjs --json > diag.json
+          echo "json_path=diag.json" >> $GITHUB_OUTPUT
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: diag-readonly-${{ github.run_number }}
+          path: |
+            diag.md
+            diag.json
+          if-no-files-found: warn
+          retention-days: 14
