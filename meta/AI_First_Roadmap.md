@@ -1,37 +1,34 @@
 ---
-title: AI-First Roadmap
-version: v2.2.5
-phase: daas_factory_transition
-intent_state: confirmed
+title: AI-First Roadmap (Canonical)
+version: v2.4.4
+phase: cycle_mode
 status: active
-updated: 2025-10-22
-owner: Stephan
-rhythm: bi-weekly cadence (light)
-outputs:
-  - Roadmap notes (meta/roadmap/notes/*.md)
-  - Decision log (meta/roadmap/decisions/*.md)
-boundaries:
-  - No ticket backlog; only phases and decision gates
-linked_docs:
-  - meta/AI_First_System_Architecture.md
-  - meta/AI_First_Handbook.md
-  - meta/Human_in_the_Loop_Playbook.md
-  - docs/AI_First_Business_Case.md
+owner: Stephan (System Owner & Mentor)
+updated: 2025-10-21
+links:
+  active_cycles_report: docs/reports/business_loop_cycles_v2.4.md
+  active_reflection:    docs/reports/reflection_cycles_v2.4.md
+  automation_plan:      meta/AI_First_Loop_Automation_v2.4_plan.md
+  freeze_check:         docs/ops/freeze_candidate_check_v2.3.md
+  lessons:              docs/lessons/
+  archive_weekly:       docs/archive/weekly_v2.3/
 ---
 
-## Phases (skeleton)
-1. **Bootstrap (now)** – Core docs seeded, sanity green.
-2. **Intent Confirmation** – Flip `intent_state: confirmed` after review.
-3. **Operational Deepening (Pfad A)** – Define 1–2 mini-initiatives, no tickets.
-4. **Reflection & Simplification** – Lessons → Playbook updates.
+# Roadmap (Canonical · v2.4)
 
-## Decision Gates
-- DG-1: Core docs seeded
-- DG-2: Intent confirmed
-- DG-2 (Intent Confirmed) – All Core-Docs active and sanity green.
-- DG-3: First path accepted
----
+> **Mode:** Cycle-based (signal-driven). Weekly artefacts sind archiviert (siehe `docs/archive/weekly_v2.3/`).
 
-## Intent Confirmation Note
-Intent confirmed on 2025-10-19.  
-Bootstrap expiry triggered; system transitions to v2.1 operational phase.
+## Horizon
+- **v2.4:** Stabilisierung & leichte Automation (Drift Detection, Context Trend)
+- **v2.5:** Autonomous Loop Release (Trigger + Auto-Mitigation)
+
+## Active Milestones
+- C0: Dry-Run ✅
+- C1: Real Feedback ✅
+- C2+: Automation Learning (laufend)
+
+## Pointers
+- **Reports (Cycles):** `docs/reports/business_loop_cycles_v2.4.md`
+- **Reflection (Cycles):** `docs/reports/reflection_cycles_v2.4.md`
+- **Automation Plan:** `meta/AI_First_Loop_Automation_v2.4_plan.md`
+- **Lessons (aktiv):** `docs/lessons/`
