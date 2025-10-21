@@ -1,5 +1,8 @@
 # Core · AI-First Governance Repository
 
+> ![badge](https://img.shields.io/badge/Cycle%20Mode-v2.4-green)
+> **Start here:** `CORE_INDEX.md` → Roadmap, Reports, Runbooks & Diagnostics.
+
 ## 🧭 Current Phase
 - Version: **v2.4.x** — Cycle Mode & Automation Init
 - Target: **v2.5** — Autonomous Loop Release

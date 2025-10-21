@@ -1,30 +1,31 @@
 ---
-title: Core Documentation Index
-version: v2.2.5
-phase: daas_factory_transition
+title: CORE INDEX (Canonical Pointers)
+version: v2.4.5
 status: active
-updated: 2025-10-22
+updated: 2025-10-21
 ---
 
-# Core Documentation Index · v2.1
+# CORE INDEX · Cycle Mode (v2.4)
 
-## Intent State
-- Intent State: confirmed
-- Phase: operational (since 2025-10-19)
-- Intent: confirmed
+> **Start here:** Canonical Verweise für Betrieb & Governance.
 
-## Summary Table
-| Document | Owner | Updated | Rhythm | Notes |
-| --- | --- | --- | --- | --- |
-| meta/AI_First_System_Architecture.md | Stephan | 2025-10-19 | Monthly review | Layers, roles, interfaces. |
-| meta/AI_First_Roadmap.md | Stephan | 2025-10-19 | Bi-weekly cadence (light) | Phases & decision gates (draft intent). |
-| meta/AI_First_Handbook.md | Stephan | 2025-10-19 | Quarterly | Operating rules and prompts. |
-| meta/Human_in_the_Loop_Playbook.md | Stephan | 2025-10-19 | Weekly reflection (15 min) | Human oversight loop. |
-| docs/AI_First_Business_Case.md | Stephan | 2025-10-19 | Monthly checkpoint | Value thesis and metrics seed. |
+## Canonical
+- **Roadmap:** `meta/AI_First_Roadmap.md`
+- **Architecture:** `meta/AI_First_System_Architecture.md`
+- **HiTL Playbook:** `meta/Human_in_the_Loop_Playbook.md`
 
-## Navigation
-- Architecture: meta/AI_First_System_Architecture.md
-- Roadmap: meta/AI_First_Roadmap.md
-- Handbook: meta/AI_First_Handbook.md
-- Human-in-the-Loop: meta/Human_in_the_Loop_Playbook.md
-- Business Case: docs/AI_First_Business_Case.md
+## Cycles (Reports)
+- **Business Cycles Report:** `docs/reports/business_loop_cycles_v2.4.md`
+- **Reflection (Cycles):** `docs/reports/reflection_cycles_v2.4.md`
+
+## Operations
+- **Cycle Start Checklist:** `docs/ops/cycle_start_checklist_v2.4.md`
+- **Freeze Candidate Check:** `docs/ops/freeze_candidate_check_v2.3.md`
+
+## Automation
+- **Loop Automation Plan:** `meta/AI_First_Loop_Automation_v2.4_plan.md`
+- **Daily Diagnostics (read-only):** `.github/workflows/diag_p_core.yml`
+
+## Archive / Legacy
+- **Weekly Reports v2.3 (read-only):** `docs/archive/weekly_v2.3/`
+- **Legacy Lessons (read-only):** `artefacts/lessons/`
