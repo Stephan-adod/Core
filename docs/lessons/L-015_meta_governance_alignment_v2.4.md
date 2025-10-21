@@ -4,7 +4,7 @@ title: Meta Governance Alignment (Canonical Cleanup)
 layer: meta
 status: active
 owner: stephan-adod
-version: v2.4.4
+version: v2.4.6
 target_version: v2.4.4
 updated: 2025-10-21
 related_docs:
