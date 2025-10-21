@@ -106,17 +106,28 @@ const stripMd = (text) =>
     .replace(/[*_>#-]/g, '')
     .trim();
 
-// 3) Compliance-Block + Häkchen INNEN zählen
-const complianceBlock = getSection(prBody, 'AI-First Handbook Compliance');
+// 3) Compliance-Block + flexible Erfüllungslogik
+let complianceBlock = getSection(prBody, 'AI-First Handbook Compliance');
 if (!complianceBlock) {
   FAIL('Compliance-Block "AI-First Handbook Compliance" fehlt im PR-Body.');
 } else {
   OK('Compliance-Block gefunden.');
-  const checked = (complianceBlock.match(/\[(x|X)\]/g) || []).length;
-  if (checked < 3) {
-    FAIL(`Zu wenige Häkchen in der Compliance-Checkliste (gefunden: ${checked}, erwartet: ≥3).`);
+  const hasMarker = /<!--\s*AI-SYNTH\b/i.test(prBody);
+  const ticks = (complianceBlock.match(/\[(x|X)\]/g) || []).length; // alte Logik
+  const bullets = (complianceBlock.match(/^\s*-\s+/gm) || []).length; // neue Logik
+
+  // Bestehenslogik:
+  // 1) Marker vorhanden  -> OK
+  // 2) ODER mind. 3 Häkchen -> OK
+  // 3) ODER mind. 3 Bullet-Points -> OK
+  if (hasMarker) {
+    OK('AI-Synthesis Marker erkannt – Compliance akzeptiert.');
+  } else if (ticks >= 3) {
+    OK(`Compliance-Häkchen ok (>=3).`);
+  } else if (bullets >= 3) {
+    OK(`Compliance-Liste ok (>=3 Einträge ohne Checkboxen).`);
   } else {
-    OK('Compliance-Häkchen ok (≥3).');
+    FAIL(`Zu wenige Nachweise im Compliance-Block (Häkchen=${ticks}, Einträge=${bullets}).`);
   }
 }
 

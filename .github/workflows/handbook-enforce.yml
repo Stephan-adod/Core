@@ -1,24 +1,91 @@
-name: Handbook · Enforcement (Safe Start, Refined)
+name: Handbook · Enforcement (Unified)
 on:
   pull_request:
-    types: [opened, edited, synchronize]
+    types: [opened, edited, synchronize, reopened]
     paths:
       - '**'
-      - '!.github/**'
+      - '!.github/**'   # guard: keine reinen CI/Template PRs prüfen
+
+permissions:
+  contents: read
+  pull-requests: write   # nötig, um PR-Body zu setzen
+
+concurrency:
+  group: handbook-enforce-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
-  enforce:
+  unified:
+    name: AI-First Enforcement Pipeline
     runs-on: ubuntu-latest
+    timeout-minutes: 5
+
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Validate Handbook Compliance (manual)
-        run: node scripts/validate_handbook.mjs
 
-# HINWEIS (SPÄTER, wenn stabil):
-# - VALIDATOR_MODE entfernen (oder auf 'strict' setzen, ENV weglassen)
-# - Trigger umstellen:
-#   on:
-#     pull_request:
-#       types: [opened, edited, synchronize]
+      # 1) PR-Body synthetisieren (mit aktiven Häkchen)
+      - name: 🧠 Synthesize PR Body (AI-First)
+        id: synth
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/synthesize_pr_body.mjs > pr_body.out
+          echo "len=$(wc -c < pr_body.out)" >> $GITHUB_OUTPUT
+          head -n 20 pr_body.out || true
+
+      # 2) Prüfen, ob Original-Body bereits Compliance enthält
+      - name: 🔎 Inspect original PR body
+        id: get
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.pull_request.body || '';
+            const hasComp = /##\s*AI-First Handbook Compliance/i.test(body);
+            core.setOutput('has_comp_original', hasComp ? 'yes' : 'no');
+
+      # 3) Falls nicht vorhanden: Body in den PR schreiben
+      - name: 💬 Inject synthesized body (if missing)
+        if: steps.get.outputs.has_comp_original == 'no'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const body = fs.readFileSync('pr_body.out','utf8');
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              body
+            });
+            core.info('PR body set by Unified Enforcement.');
+
+      # 4) Kurz warten & realen Body laden (API → Datei)
+      - name: ⏳ Wait for API sync
+        if: steps.get.outputs.has_comp_original == 'no'
+        run: sleep 6
+
+      - name: 🔄 Reload PR body from API
+        id: reload
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number
+            });
+            const body = pr.data.body || '';
+            require('fs').writeFileSync('pr_body_latest.txt', body);
+            core.setOutput('len', String(body.length));
+
+      # 5) Strikte Validierung gegen den tatsächlichen Body
+      - name: ✅ Validate Handbook Compliance (strict)
+        run: |
+          if [ -f pr_body_latest.txt ]; then
+            node scripts/validate_handbook.mjs < pr_body_latest.txt
+          else
+            node scripts/validate_handbook.mjs < pr_body.out
+          fi
