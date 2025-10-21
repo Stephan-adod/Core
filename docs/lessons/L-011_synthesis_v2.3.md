@@ -5,6 +5,9 @@ status: active
 owner: stephan-adod
 version: v2.3.1
 goal: "Lessons & Synthesis zur Promotion der AI-First System Architecture v2.3.1 (inkl. L3 Context Enrichment + Decision Matrix)"
+related_docs:
+  - meta/AI_First_System_Architecture.md
+  - meta/AI_First_Roadmap.md
 links:
   blueprint: meta/AI_First_System_Architecture.md
   decision_matrix: docs/frameworks/DaaS_UseCase_Decision_Matrix_v2.3.md

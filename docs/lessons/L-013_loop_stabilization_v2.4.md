@@ -5,6 +5,9 @@ status: active
 owner: stephan-adod
 version: v2.4.0
 goal: "Stabilisierung der Loops durch Drift Detection & leichte Automation"
+related_docs:
+  - meta/AI_First_System_Architecture.md
+  - meta/AI_First_Roadmap.md
 links:
   drift_spec: docs/prompts/P-012_forecast_drift_v2.4.mjs
   automation_plan: meta/AI_First_Loop_Automation_v2.4_plan.md

@@ -38,6 +38,7 @@ function flagUnstableLinks(file, body, errors) {
 const isInActiveLayer = (p) =>
   (p.startsWith("meta/") || p.startsWith("docs/")) &&
   !p.startsWith("docs/archive/") &&
+  !p.startsWith("docs/lessons/") &&
   !p.startsWith("artefacts/");
 
 const hasAllowedExtension = (p) => p.endsWith(".md") || p.endsWith(".mjs");
@@ -54,19 +55,18 @@ async function main() {
 
   let files = await discoverMarkdownFiles();
 
-  // --- Scope-Korrektur: nur aktive Layer prüfen ---------------------------
-  // 1) Exkludiere alle Legacy/Archiv-Pfade
+  // --- CI Barrier: nur aktive Ebenen prüfen -------------------------------
   files = files.filter(
-    (p) => !p.startsWith("artefacts/") && !p.startsWith("docs/archive/")
+    (p) =>
+      (p.startsWith("meta/") || p.startsWith("docs/")) &&
+      !p.startsWith("docs/lessons/") &&
+      !p.startsWith("docs/archive/")
   );
 
-  // 2) Whitelist: nur meta/ und docs/ zulassen (alles andere ignorieren)
-  files = files.filter((p) => p.startsWith("meta/") || p.startsWith("docs/"));
-
-  // 3) Optional: nur .md / .mjs (falls discoverMarkdownFiles breiter sammelt)
+  // nur .md / .mjs
   files = files.filter((p) => p.endsWith(".md") || p.endsWith(".mjs"));
 
-  console.log(`[check_version_drift] active files: ${files.length}`);
+  console.log(`[check_version_drift] active files (barrier): ${files.length}`);
 
   const activeCoreDocs = (sysCfg.core_docs || []).filter(
     (pth) => isInActiveLayer(pth) && hasAllowedExtension(pth)

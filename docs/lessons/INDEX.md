@@ -5,6 +5,9 @@ status: active
 owner: stephan-adod
 version: v2.3.1
 goal: "Single Source of Truth für aktive Lessons (v2.3+)"
+related_docs:
+  - meta/AI_First_System_Architecture.md
+  - meta/AI_First_Roadmap.md
 ---
 
 # Lessons · Single Source of Truth (v2.3+)

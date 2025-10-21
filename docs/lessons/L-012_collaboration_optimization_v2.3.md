@@ -5,6 +5,9 @@ status: active
 owner: stephan-adod
 version: v2.3.1
 goal: "Optimierung der Human ↔ AI ↔ System Zusammenarbeit vor Loop-Integration (Phase 3)"
+related_docs:
+  - meta/AI_First_System_Architecture.md
+  - meta/AI_First_Roadmap.md
 links:
   blueprint: meta/AI_First_System_Architecture.md
   decision_matrix: docs/frameworks/DaaS_UseCase_Decision_Matrix_v2.3.md
