@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      actions: write   # nötig für actions/upload-artifact
     steps:
       - name: Checkout (read-only)
         uses: actions/checkout@v4

@@ -27,10 +27,16 @@ function extractFrontMatter(body) {
   return { meta, content };
 }
 
+async function discoverLessonFiles() {
+  const matches = await glob("{docs,artefacts}/lessons/**/*.md", { nodir: true });
+  return matches.map((p) => p.replace(/\\/g, "/"));
+}
+
 async function main() {
-  let files = await glob("artefacts/lessons/**/*.md", { nodir: true });
-  // Legacy path hard-exclude: lessons under artefacts/* are archived and not validated
-  files = files.filter((f) => !f.startsWith("artefacts/lessons/"));
+  let files = await discoverLessonFiles();
+  files = files.filter(
+    (f) => !f.startsWith("artefacts/lessons/") && !f.startsWith("docs/archive/")
+  );
   const errors = [];
 
   for (const f of files) {

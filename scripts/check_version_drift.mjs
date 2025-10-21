@@ -35,10 +35,44 @@ function flagUnstableLinks(file, body, errors) {
   }
 }
 
+const isInActiveLayer = (p) =>
+  (p.startsWith("meta/") || p.startsWith("docs/")) &&
+  !p.startsWith("docs/archive/") &&
+  !p.startsWith("artefacts/");
+
+const hasAllowedExtension = (p) => p.endsWith(".md") || p.endsWith(".mjs");
+
+async function discoverMarkdownFiles() {
+  const matches = await glob("**/*", { nodir: true, dot: false });
+  return matches
+    .map((p) => p.replace(/\\/g, "/"))
+    .filter((p) => hasAllowedExtension(p));
+}
+
 async function main() {
   const errors = [];
 
-  for (const pth of coreDocs) {
+  let files = await discoverMarkdownFiles();
+
+  // --- Scope-Korrektur: nur aktive Layer prüfen ---------------------------
+  // 1) Exkludiere alle Legacy/Archiv-Pfade
+  files = files.filter(
+    (p) => !p.startsWith("artefacts/") && !p.startsWith("docs/archive/")
+  );
+
+  // 2) Whitelist: nur meta/ und docs/ zulassen (alles andere ignorieren)
+  files = files.filter((p) => p.startsWith("meta/") || p.startsWith("docs/"));
+
+  // 3) Optional: nur .md / .mjs (falls discoverMarkdownFiles breiter sammelt)
+  files = files.filter((p) => p.endsWith(".md") || p.endsWith(".mjs"));
+
+  console.log(`[check_version_drift] active files: ${files.length}`);
+
+  const activeCoreDocs = (sysCfg.core_docs || []).filter(
+    (pth) => isInActiveLayer(pth) && hasAllowedExtension(pth)
+  );
+
+  for (const pth of activeCoreDocs) {
     if (!fs.existsSync(pth)) {
       errors.push(`Core doc missing: ${pth}`);
       continue;
@@ -54,7 +88,7 @@ async function main() {
     }
   }
 
-  const lessonFiles = await glob("artefacts/lessons/**/*.md", { nodir: true });
+  const lessonFiles = files.filter((p) => p.startsWith("docs/lessons/") && p.endsWith(".md"));
   for (const f of lessonFiles) {
     const raw = fs.readFileSync(f, "utf8");
     const fm = raw.match(/^---\n([\s\S]*?)\n---/);
