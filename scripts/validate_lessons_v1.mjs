@@ -1,59 +1,64 @@
-#!/usr/bin/env node
+// === Lessons Validator (authoritative) ===
 import fs from "fs";
 import path from "path";
 import sysver from "../meta/system_version.json" assert { type: "json" };
 
-// ==== Scope & target config (BEGIN) ====
+// 1) Zielversion bestimmen: ENV > sysver.active > fallback
+const TARGET_VERSION =
+  process.env.LESSONS_TARGET_VERSION ||
+  sysver.active ||
+  "v2.4.6";
 
-// Zielversion: wir validieren Lessons gegen die aktive Release-Version
-const TARGET_VERSION = sysver.active || "v2.4.6";
+// 2) Aktiver Scope: NUR docs/lessons/**
+const ROOTS = ["docs/lessons"];
 
-// Nur aktive Lessons im Repo prüfen
-const ACTIVE_DIRS = ["docs/lessons"];
-
-function listLessonFiles() {
-  const files = [];
-  const walk = (dir) => {
-    for (const name of fs.readdirSync(dir)) {
-      const p = path.join(dir, name);
+// Helper
+function listMdUnder(dir) {
+  const out = [];
+  const walk = (d) => {
+    for (const name of fs.readdirSync(d)) {
+      const p = path.join(d, name);
       const s = fs.statSync(p);
       if (s.isDirectory()) walk(p);
-      else if (p.endsWith(".md")) files.push(p);
+      else if (p.endsWith(".md")) out.push(p);
     }
   };
-  for (const base of ACTIVE_DIRS) if (fs.existsSync(base)) walk(base);
-  return files;
+  if (fs.existsSync(dir)) walk(dir);
+  return out;
 }
 
 function readFrontmatter(md) {
   const m = md.match(/^---\n([\s\S]*?)\n---/);
   if (!m) return {};
-  const obj = {};
+  const o = {};
   m[1].split("\n").forEach(line => {
     const i = line.indexOf(":");
     if (i < 0) return;
     const k = line.slice(0, i).trim();
     const v = line.slice(i + 1).trim();
-    if (k) obj[k] = v;
+    if (k) o[k] = v;
   });
-  return obj;
+  return o;
 }
-// ==== Scope & target config (END) ====
 
-// ==== Validation driver (REPLACE previous driver if necessary) ====
-const lessons = listLessonFiles();
+// 3) Dateien entdecken (autoritativ NUR docs/lessons)
+let files = [];
+for (const r of ROOTS) files.push(...listMdUnder(r));
+
+// 4) Debug-Banner: zeigt an, WAS geprüft wird
+console.log(`\n[lessons-validator] target=${TARGET_VERSION} roots=${ROOTS.join(", ")} files=${files.length}\n`);
+
 let errors = [];
-
-for (const fp of lessons) {
+for (const fp of files) {
   const raw = fs.readFileSync(fp, "utf8");
   const fm = readFrontmatter(raw);
-  const version = fm.version || "";
+  const v = (fm.version || "").trim();
   const status = (fm.status || "").trim();
 
-  if (!version) {
+  if (!v) {
     errors.push(`${fp}: missing version in YAML front matter (target ${TARGET_VERSION})`);
-  } else if (version !== TARGET_VERSION) {
-    errors.push(`${fp}: has version ${version} but target is ${TARGET_VERSION}`);
+  } else if (v !== TARGET_VERSION) {
+    errors.push(`${fp}: has version ${v} but target is ${TARGET_VERSION}`);
   }
 
   if (status !== "active") {
@@ -65,5 +70,4 @@ if (errors.length) {
   console.error(`Lessons validation failed (${errors.length} issues):\n` + errors.join("\n"));
   process.exit(1);
 }
-
-console.log(`✅ lessons ok (${lessons.length}) @ target ${TARGET_VERSION}`);
+console.log(`✅ lessons ok (${files.length}) @ target ${TARGET_VERSION}`);
