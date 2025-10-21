@@ -6,7 +6,7 @@ phase: daas_factory_planning
 status: active
 owner: stephan-adod
 updated: 2025-10-24
-path: meta/AI_First_System_Architecture_v2.3.md
+path: docs/archive/meta_v2.3/AI_First_System_Architecture_v2.3.md
 rhythm: quarterly architecture sync
 linked_docs:
   - meta/AI_First_Roadmap.md

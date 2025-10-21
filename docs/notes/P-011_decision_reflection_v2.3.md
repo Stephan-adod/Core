@@ -93,7 +93,7 @@ Human in the Loop – Bewusst Entscheidungen testen, nicht nur deployen.
 Meta > Mechanic – Verständnis vor Effizienz.
 
 🧭 8️⃣ Next Step / Feedback Plan
-Nächster Prompt: meta/AI_First_System_Architecture_v2.3.md → DaaS Blueprint erstellen.
+Nächster Prompt: docs/archive/meta_v2.3/AI_First_System_Architecture_v2.3.md → DaaS Blueprint erstellen.
 
 Review-Checkpoints:
 

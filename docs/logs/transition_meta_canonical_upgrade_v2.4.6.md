@@ -15,8 +15,8 @@ date: 2025-10-21
 - `meta/Prompt_Inventory.md` → v2.4.6
 
 **Archived**
-- `meta/AI_First_System_Architecture_v2.3.md`
-- `meta/validation_registry.json`
+- `docs/archive/meta_v2.3/AI_First_System_Architecture_v2.3.md`
+- `docs/archive/legacy_v2.2/validation_registry.json`
 
 **Adjusted**
 - `meta/AI_Compliance_Register_v2.4.json` → status: draft

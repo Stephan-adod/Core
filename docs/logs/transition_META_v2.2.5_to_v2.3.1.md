@@ -9,7 +9,7 @@ to: v2.3.1
 impacted_files:
   - meta/AI_First_System_Architecture.md
   - meta/snapshots/AI_First_System_Architecture_v2.2.5.md
-  - meta/AI_First_System_Architecture_v2.3.md
+  - docs/archive/meta_v2.3/AI_First_System_Architecture_v2.3.md
   - docs/frameworks/DaaS_UseCase_Decision_Matrix_v2.3.md
   - docs/diagrams/DaaS_L3_Context_Map_v2.3.mmd
 ---

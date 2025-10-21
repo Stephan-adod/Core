@@ -3,9 +3,10 @@ id: AI-FIRST-SYSTEM-ARCHITECTURE
 layer: meta
 version: v2.3.1
 status: archived
+archive_note: "Moved to archive as of v2.4.7. Canonical docs are in CORE_INDEX.md."
 owner: stephan-adod
 updated: 2025-10-21
-path: meta/AI_First_System_Architecture_v2.3.md
+path: docs/archive/meta_v2.3/AI_First_System_Architecture_v2.3.md
 rhythm: quarterly architecture sync
 linked_docs:
   - meta/AI_First_Roadmap.md
@@ -13,6 +14,8 @@ linked_docs:
   - meta/Human_in_the_Loop_Playbook.md
   - docs/frameworks/DaaS_UseCase_Decision_Matrix_v2.3.md
 ---
+
+> 🗃️ Archived (read-only). Refer to `CORE_INDEX.md` for canonical pointers.
 
 # AI-First System Architecture Blueprint (v2.3.1)
 

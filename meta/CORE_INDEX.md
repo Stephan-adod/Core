@@ -1,6 +1,6 @@
 ---
 title: CORE INDEX (Canonical Pointers)
-version: v2.4.5
+version: v2.4.7
 status: active
 updated: 2025-10-21
 ---
@@ -27,5 +27,8 @@ updated: 2025-10-21
 - **Daily Diagnostics (read-only):** `.github/workflows/diag_p_core.yml`
 
 ## Archive / Legacy
+- **Meta v2.3 (read-only):** `docs/archive/meta_v2.3/`
+- **Legacy v2.2 (read-only):** `docs/archive/legacy_v2.2/`
+- **Snapshots:** `meta/snapshots/`
 - **Weekly Reports v2.3 (read-only):** `docs/archive/weekly_v2.3/`
 - **Legacy Lessons (read-only):** `artefacts/lessons/`

@@ -21,7 +21,7 @@ Nach Promotion auf Cycle-Mode (v2.4) gab es semantischen Drift (doppelte Roadmap
 Ziel: **ein Canonical-Pfad**, klare Archive, eindeutige Operator-Navigation.
 
 ## What changed (Cleanup Scope)
-- `meta/AI_First_Roadmap.md` als **Canonical**; `meta/AI_First_Roadmap_v2.3.md` **archived**.
+- `meta/AI_First_Roadmap.md` als **Canonical**; `docs/archive/meta_v2.3/AI_First_Roadmap_v2.3.md` **archived**.
 - README auf **Cycle Mode** (v2.4) gehoben (Reports/Reflection/Diagnostics).
 - HiTL-Playbook auf v2.4 ergänzt (Cycle/Automation/Checklist-Pointer).
 

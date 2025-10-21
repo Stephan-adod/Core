@@ -19,6 +19,8 @@
 | Reports | `docs/reports/business_loop_cycles_v2.4.md` | Business Cycles Report |
 | Reflection | `docs/reports/reflection_cycles_v2.4.md` | Governance & Reflection |
 
+> ℹ️ Historische Dateien liegen in `docs/archive/`. Aktive Wahrheit: `CORE_INDEX.md`.
+
 ## 🛠 Operator & Validation
 - **Diagnostics (read-only):** Actions → *P-CORE · Daily Diagnostics*
 - Lessons Validation: `npm run validate:lessons` (docs/lessons only)
