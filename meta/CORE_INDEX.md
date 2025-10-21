@@ -3,6 +3,8 @@ title: CORE INDEX (Canonical Pointers)
 version: v2.4.6
 status: active
 updated: 2025-10-21
+layer: meta
+owner: Stephan (System Owner & Mentor)
 ---
 
 # CORE INDEX · Cycle Mode (v2.4)
@@ -27,7 +29,7 @@ updated: 2025-10-21
 - **Daily Diagnostics (read-only):** `.github/workflows/diag_p_core.yml`
 
 ## Archive / Legacy
-- **Weekly Reports v2.3 (read-only):** `docs/archive/weekly_v2.3/`
+- **Weekly Reports v2.4 (read-only):** `docs/reports/business_loop_cycles_v2.4.md`
 - **Legacy Lessons (read-only):** `artefacts/lessons/`
 
 > Drift accepted (until v2.4.8) — Grund: Weekly Reports für Cycle Mode v2.4 werden reorganisiert; bis dahin verweist das Archiv auf die stabile v2.3-Sammlung (read-only).
