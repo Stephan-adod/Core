@@ -1,13 +1,13 @@
 ---
 title: CORE INDEX (Canonical Pointers)
-version: v2.4.6
+version: v2.4.7
 status: active
-updated: 2025-10-21
+updated: 2025-10-24
 layer: meta
-owner: Stephan (System Owner & Mentor)
+owner: Stephan-adod (System Owner & Mentor)
 ---
 
-# CORE INDEX · Cycle Mode (v2.4)
+# CORE INDEX · Cycle Mode (v2.4.7)
 
 > **Start here:** Canonical Verweise für Betrieb & Governance.
 
@@ -29,7 +29,7 @@ owner: Stephan (System Owner & Mentor)
 - **Daily Diagnostics (read-only):** `.github/workflows/diag_p_core.yml`
 
 ## Archive / Legacy
-- **Weekly Reports v2.4 (read-only):** `docs/reports/business_loop_cycles_v2.4.md`
+- **Weekly Reports v2.4 (read-only):** `docs/archive/weekly_v2.4/`
 - **Legacy Lessons (read-only):** `artefacts/lessons/`
 
-> Drift accepted (until v2.4.8) — Grund: Weekly Reports für Cycle Mode v2.4 werden reorganisiert; bis dahin verweist das Archiv auf die stabile v2.3-Sammlung (read-only).
+> Drift waiver closed (v2.4.7) — Weekly Reports reorganized unter `docs/archive/weekly_v2.4/` (read-only, stabil).

@@ -1,13 +1,13 @@
 ---
 title: Human-in-the-Loop Playbook
-version: v2.4.6
+version: v2.4.7
 status: active
-updated: 2025-10-21
+updated: 2025-10-24
 layer: operations
-owner: (assign)
+owner: Stephan-adod (System Owner & Mentor)
 ---
 
-## Cycle Mode (v2.4)
+## Cycle Mode (v2.4.7)
 - **Trigger:** Signal-based (Drift Event, Adoption Change, Release)
 - **Artefakte:** 
   - Cycles Report → `docs/reports/business_loop_cycles_v2.4.md`
@@ -24,7 +24,7 @@ owner: (assign)
 ## Decision Boundaries
 - Menschlicher Operator bestätigt Freeze-Status & Promotions.
 - Automation wird nur aktiviert, wenn Lessons & Reports synchron sind.
-- Archive (`docs/reports/business_loop_cycles_v2.4.md`) bleibt read-only.
+- Archive (`docs/archive/weekly_v2.4/`) bleibt read-only.
 
 ## Linked References
 - `meta/AI_First_Roadmap.md`
@@ -33,6 +33,7 @@ owner: (assign)
 - `docs/lessons/`
 
 ## Change Log
+- 2025-10-24: Front Matter v2.4.7, Ownership & Archive-Links stabilisiert.
 - 2025-10-21: Playbook auf Cycle Mode (v2.4) angehoben; Operator Flow aktualisiert.
 
-> Drift accepted (until v2.4.8) — Grund: Weekly Archive für Cycle Mode v2.4 wird neu geschnitten; v2.3-Verweis bleibt bis zum neuen Archiv read-only bestehen.
+> Drift waiver closed (v2.4.7) — Weekly Archive stabilisiert unter `docs/archive/weekly_v2.4/` (read-only, canonical).

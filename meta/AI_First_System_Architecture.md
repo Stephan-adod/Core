@@ -1,13 +1,13 @@
 ---
 title: AI-First System Architecture
-version: v2.4.6
+version: v2.4.7
 status: active
 updated: 2025-10-24
 layer: architecture
-owner: stephan-adod
+owner: Stephan-adod (System Owner & Mentor)
 ---
 
-# AI-First System Architecture Blueprint (v2.4.6)
+# AI-First System Architecture Blueprint (v2.4.7)
 
 **Purpose:** Referenz-Blueprint für die AI-First DaaS Factory. Beschreibt die Wertflüsse, Rollen und technischen Leitplanken von Meta bis Delivery-Layer.
 
@@ -30,7 +30,7 @@ owner: stephan-adod
 > **Visualisierung:** Siehe **DaaS L3 Context Map (v2.4)** unter
 > `docs/diagrams/DaaS_L3_Context_Map_v2.4.mmd`
 
-### 🏗️ L3 — Data Value Streams (v2.4.6)
+### 🏗️ L3 — Data Value Streams (v2.4.7)
 
 **Ziel:** Bereitstellung marktfähiger Daten-Services mit klaren Schnittstellen, vertraglich definierten Schemas (Data Contracts) und Governance-Verankerung.
 
@@ -96,5 +96,5 @@ owner: stephan-adod
 3. Attribution Loop orchestriert MMM-Modelle mit Context Enrichment Feed.
 4. Prep für Validator: `node scripts/check_version_drift.mjs` (optional run vor PR).
 
-> Drift accepted (until v2.4.8) — Grund: Architektur-Diagramme (L3 Context Map) verbleiben vorerst in v2.3 bis die Diagramm-Migration abgeschlossen ist; Inhalte bleiben bis dahin read-only stabil.
+> Drift waiver closed (v2.4.7) — DaaS L3 Context Map gepflegt unter `docs/diagrams/DaaS_L3_Context_Map_v2.4.mmd` (read-only, stabil).
 
