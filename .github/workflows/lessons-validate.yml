@@ -1,14 +1,18 @@
 name: Lessons · Validate
+
 on:
   pull_request:
     paths:
       - "docs/lessons/**"
       - ".github/workflows/lessons-validate.yml"
-      - "scripts/validators/lessons_v2_4_6.mjs"
+      - "scripts/validators/lessons_v2.4.6.mjs"
       - "package.json"
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    env:
+      LESSONS_TARGET_VERSION: v2.4.6
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -17,10 +21,8 @@ jobs:
       - run: npm ci || npm i
       - name: Debug – show validator script & target
         run: |
-          node -e "console.log('validate:lessons=', require('./package.json').scripts['validate:lessons'])"
+          node -e "import fs from 'fs'; const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8')); console.log('validator:', pkg.scripts['validate:lessons']); console.log('LESSONS_TARGET_VERSION=' + (process.env.LESSONS_TARGET_VERSION || ''));"
       - name: Validate lessons (authoritative)
         run: npm run validate:lessons
-        env:
-          LESSONS_TARGET_VERSION: v2.4.6
       - name: Validate drift
         run: npm run validate:drift
