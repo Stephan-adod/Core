@@ -1,0 +1,27 @@
+name: Handbook · Enforcement (Safe Start, Refined)
+on:
+  workflow_dispatch:
+    inputs:
+      body:
+        description: "Optional: PR Body (Test ohne echtes PR-Event)"
+        required: false
+        default: ""
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate Handbook Compliance (manual)
+        env:
+          VALIDATOR_MODE: dry   # Safe Start: nur Warnungen blocken nicht
+        run: node scripts/validate_handbook.mjs
+
+# HINWEIS (SPÄTER, wenn stabil):
+# - VALIDATOR_MODE entfernen (oder auf 'strict' setzen, ENV weglassen)
+# - Trigger umstellen:
+#   on:
+#     pull_request:
+#       types: [opened, edited, synchronize]
