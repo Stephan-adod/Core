@@ -1,75 +1,35 @@
 ---
 title: Human-in-the-Loop Playbook
-version: v2.2.5
-phase: daas_factory_transition
+version: v2.4.1
+phase: cycle_mode
 status: active
-updated: 2025-10-22
-owner: Stephan
-rhythm: weekly reflection (15 min)
-outputs:
-  - Reflection notes (meta/reflection/*.md)
-  - Decisions → roadmap/decisions
-boundaries:
-  - Human decides intent state & merges
-linked_docs:
-  - meta/AI_First_System_Architecture.md
-  - meta/AI_First_Roadmap.md
-  - meta/AI_First_Handbook.md
-  - docs/AI_First_Business_Case.md
+updated: 2025-10-21
 ---
 
-## Operational Rhythm (v2.1)
-- **Weekly Reflection (Fr):**  
-  1) Prompt Inventory auf Änderungen prüfen  
-  2) 1–3 „Lesson Snippets“ erfassen (triggert P-009)  
-  3) Relevante Core-Docs minimal aktualisieren (Purpose/Boundaries bleiben schlank)
-- **Monthly Governance (1. Mo):**  
-  - Sanity-Status prüfen, Phase/Intent im CORE_INDEX abgleichen  
-  - Roadmap vs. Actuals (DG-Gates) kurz notieren  
-  - Archiv-/Policy-Änderungen aus Handbook bestätigen
+## Cycle Mode (v2.4)
+- **Trigger:** Signal-based (Drift Event, Adoption Change, Release)
+- **Artefakte:** 
+  - Cycles Report → `docs/reports/business_loop_cycles_v2.4.md`
+  - Reflection → `docs/reports/reflection_cycles_v2.4.md`
+  - Automation Plan → `meta/AI_First_Loop_Automation_v2.4_plan.md`
+  - Checklist → `docs/ops/cycle_start_checklist_v2.4.md`
 
-### Lesson Snippet Template (seed)
-| Field   | Example                                                             |
-|--------|----------------------------------------------------------------------|
-| Insight | “Micro-SaaS Use Case A zeigte Pull-Signale in Marktsegment X.”      |
-| Impact  | “Bestätigt Roadmap-Hypothese 1A; Business Case: Annahme #2 stärkt.” |
-| Next    | “In Business Case v2.2 integrieren; Pricing-Exploration anstoßen.”  |
+## Operator Flow
+1. *Diagnostics* lesen (Actions-Summary).
+2. *Cycle Start Checklist* durchgehen.
+3. Messpunkte erfassen (Context, ΔMAPE) → Findings aktualisieren.
+4. Governance Review & Lessons ergänzen.
 
-## Weekly Loop
-1. Review Prompt Inventory (changes vs. plan)
-2. Note 1–2 lessons learned
-3. Decide: keep, simplify, or drop
----
+## Decision Boundaries
+- Menschlicher Operator bestätigt Freeze-Status & Promotions.
+- Automation wird nur aktiviert, wenn Lessons & Reports synchron sind.
+- Archive (`docs/archive/weekly_v2.3/`) bleibt read-only.
 
-## Learning Rhythm Governance
+## Linked References
+- `meta/AI_First_Roadmap.md`
+- `meta/AI_First_System_Architecture.md`
+- `docs/ops/freeze_candidate_check_v2.3.md`
+- `docs/lessons/`
 
-Changelog 2025-10-19: Lesson L-004 integriert; Weekly Reflection Run 2025-W42 abgeschlossen.
-
-#### Intent-Based Learning Loop (v2.2)
-Anstatt zeitbasiert (weekly/monthly) werden Lessons nach Intents (P-00X) erzeugt.
-Nach 3–5 Lessons oder einem Governance-Change wird automatisch eine Review Synthesis (RS-001) ausgeführt.
-Ziel: Meta-Lernen und Governance-Anpassung in Echtzeit.
-
-### 🌀 Lesson Integration – L-004 · Weekly Reflection (System Stability & Focus)
-**Quelle:** OP-001 Weekly Reflection (2025-W42)
-**Phase:** v2.1 Refined
-**Status:** 🟢 active  
-**Verantwortlich:** Stephan  
-
-**Kernaussage:**  
-Stabilität entsteht durch bewusste Reduktion und fokussierte, lernfähige Feedback-Schleifen.  
-Nicht mehr Automatisierung, sondern kleinere, klarere Loops erhöhen Governance-Reife.
-
-**Handlungsimpulse:**  
-- Wöchentliche Reflection-Runs verbindlich im Teamkalender verankern.  
-- Bei neuen Automatisierungen immer „Scope-Check“ ausführen (Verhindert das Over-Engineering?).  
-- CI-Erweiterungen nur nach dokumentiertem Lerngewinn zulassen.  
-
-**Verknüpfte Dokumente:**  
-`docs/AI_First_Business_Case.md`,  
-`meta/AI_First_Handbook.md`,  
-`meta/Prompt_Inventory.md`
-
----
-
-## Loop Templates
+## Change Log
+- 2025-10-21: Playbook auf Cycle Mode (v2.4) angehoben; Operator Flow aktualisiert.

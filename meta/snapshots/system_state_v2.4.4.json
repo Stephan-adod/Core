@@ -1,0 +1,23 @@
+{
+  "phase": "v2.4.x",
+  "name": "Cycle Mode · Automation Init",
+  "status": "in_progress",
+  "lessons": 15,
+  "syntheses": 2,
+  "kpi_report": "artefacts/reports/governance_kpis.json",
+  "governance_health": "stable",
+  "meta": {
+    "created": "2025-10-21T00:00:00Z",
+    "author": "stephan-adod",
+    "origin": "DaaS Factory v2.4",
+    "pivot_target": "Autonomous Loop Release (v2.5)"
+  },
+  "pointers": {
+    "roadmap": "meta/AI_First_Roadmap.md",
+    "architecture": "meta/AI_First_System_Architecture.md",
+    "playbook_hitl": "meta/Human_in_the_Loop_Playbook.md",
+    "cycles_report": "docs/reports/business_loop_cycles_v2.4.md",
+    "reflection_report": "docs/reports/reflection_cycles_v2.4.md",
+    "diagnostics_workflow": ".github/workflows/diag_p_core.yml"
+  }
+}
