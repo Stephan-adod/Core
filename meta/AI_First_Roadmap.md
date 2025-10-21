@@ -32,3 +32,5 @@ links:
 - **Reflection (Cycles):** `docs/reports/reflection_cycles_v2.4.md`
 - **Automation Plan:** `meta/AI_First_Loop_Automation_v2.4_plan.md`
 - **Lessons (aktiv):** `docs/lessons/`
+
+> Drift accepted (until v2.4.8) — Grund: Weekly Archive für v2.4 befindet sich in Migration; v2.3-Verzeichnis bleibt bis zur neuen Struktur read-only verfügbar.
