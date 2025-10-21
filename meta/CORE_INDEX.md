@@ -20,7 +20,7 @@ updated: 2025-10-21
 
 ## Operations
 - **Cycle Start Checklist:** `docs/ops/cycle_start_checklist_v2.4.md`
-- **Freeze Candidate Check:** `docs/ops/freeze_candidate_check_v2.3.md`
+- **Freeze Candidate Check:** `docs/ops/freeze_candidate_check_v2.4.md`
 
 ## Automation
 - **Loop Automation Plan:** `meta/AI_First_Loop_Automation_v2.4_plan.md`

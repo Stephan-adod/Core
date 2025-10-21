@@ -1,6 +1,6 @@
 ---
 title: Human-in-the-Loop Playbook
-version: v2.4.1
+version: v2.4.6
 phase: cycle_mode
 status: active
 updated: 2025-10-21
@@ -28,7 +28,7 @@ updated: 2025-10-21
 ## Linked References
 - `meta/AI_First_Roadmap.md`
 - `meta/AI_First_System_Architecture.md`
-- `docs/ops/freeze_candidate_check_v2.3.md`
+- `docs/ops/freeze_candidate_check_v2.4.md`
 - `docs/lessons/`
 
 ## Change Log

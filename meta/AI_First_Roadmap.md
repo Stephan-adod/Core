@@ -1,6 +1,6 @@
 ---
 title: AI-First Roadmap (Canonical)
-version: v2.4.4
+version: v2.4.6
 phase: cycle_mode
 status: active
 owner: Stephan (System Owner & Mentor)
@@ -9,7 +9,7 @@ links:
   active_cycles_report: docs/reports/business_loop_cycles_v2.4.md
   active_reflection:    docs/reports/reflection_cycles_v2.4.md
   automation_plan:      meta/AI_First_Loop_Automation_v2.4_plan.md
-  freeze_check:         docs/ops/freeze_candidate_check_v2.3.md
+  freeze_check:         docs/ops/freeze_candidate_check_v2.4.md
   lessons:              docs/lessons/
   archive_weekly:       docs/archive/weekly_v2.3/
 ---

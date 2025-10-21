@@ -19,7 +19,7 @@ linked_docs:
 - Bounded Mini-Prompts
 - One PR = One intent
 
-> Governance Loops: Align principles with `docs/prompts/P-011_loops_v2.3.mjs`, `docs/ops/loop_runbook_v2.3.md`, and transition logs to keep loop triggers, prompts, and reviews in sync.
+> Governance Loops: Align principles with `docs/prompts/P-011_loops_v2.3.mjs`, `docs/ops/loop_runbook_v2.4.md`, and transition logs to keep loop triggers, prompts, and reviews in sync.
 
 ## Minimal CI
 - Only `sanity.yml` during bootstrap

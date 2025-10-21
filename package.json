@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "validate:lessons": "node scripts/validate_lessons_v1.mjs",
+    "validate:lessons": "node scripts/validators/lessons_v2_4_6.mjs",
     "validate:drift": "node scripts/check_version_drift.mjs",
     "validate:guardrails": "node scripts/test_guardrails_v1.mjs",
     "guard:legacy": "node scripts/guard_no_legacy_in_active.mjs"

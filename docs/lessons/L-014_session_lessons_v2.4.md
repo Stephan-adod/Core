@@ -3,7 +3,7 @@ id: L-014
 layer: meta
 status: active
 owner: stephan-adod
-version: v2.4.2
+version: v2.4.6
 goal: "Lessons Learned aus Session · Drift Detection & Cycle-Refactor"
 links:
   related_prompts:

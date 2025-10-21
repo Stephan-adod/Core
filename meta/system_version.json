@@ -1,8 +1,8 @@
 {
-  "target_version": "v2.3.1",
+  "target_version": "v2.4.6",
   "phase": "daas_factory_planning",
   "status": "active",
-  "updated": "2025-10-20",
+  "updated": "2025-10-21",
   "governance": "P-011 DaaS Factory Planning",
   "core_docs": [
     "docs/AI_First_Business_Case.md",
@@ -15,5 +15,7 @@
   ],
   "maintainer": "Stephan",
   "generated_at": "2025-10-22T00:00:00Z",
-  "factory_type": "daas"
+  "factory_type": "daas",
+  "active": "v2.4.6",
+  "previous": "v2.3.1"
 }

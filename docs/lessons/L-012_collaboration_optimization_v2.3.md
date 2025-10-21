@@ -3,7 +3,7 @@ id: L-012
 layer: meta
 status: active
 owner: stephan-adod
-version: v2.3.1
+version: v2.4.6
 goal: "Optimierung der Human ↔ AI ↔ System Zusammenarbeit vor Loop-Integration (Phase 3)"
 links:
   blueprint: meta/AI_First_System_Architecture.md

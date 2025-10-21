@@ -2,12 +2,10 @@ name: Lessons · Validate
 on:
   pull_request:
     paths:
-      - artefacts/lessons/**
-      - artefacts/prompts/**
-      - artefacts/logs/lesson_log.csv
-      - scripts/**
-      - package.json
-      - .github/workflows/lessons-validate.yml
+      - "docs/lessons/**"
+      - ".github/workflows/lessons-validate.yml"
+      - "scripts/validators/lessons_v2_4_6.mjs"
+      - "package.json"
 jobs:
   validate:
     runs-on: ubuntu-latest
@@ -17,5 +15,12 @@ jobs:
         with:
           node-version: 20
       - run: npm ci || npm i
-      - run: npm run validate:lessons
-      - run: npm run validate:drift
+      - name: Debug – show validator script & target
+        run: |
+          node -e "console.log('validate:lessons=', require('./package.json').scripts['validate:lessons'])"
+      - name: Validate lessons (authoritative)
+        run: npm run validate:lessons
+        env:
+          LESSONS_TARGET_VERSION: v2.4.6
+      - name: Validate drift
+        run: npm run validate:drift
