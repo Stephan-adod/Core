@@ -127,12 +127,14 @@ if (!complianceBlock) {
   }
 }
 
-// 4) Intent (Bounded Mini-Prompt)
-const intentBlock = getSection(prBody, 'Intent');
-if (!intentBlock) {
-  FAIL('Intent-Sektion fehlt (Überschrift "Intent").');
-} else {
-  const intentLength = stripMd(intentBlock).length;
+// 4) Intent-Section
+const intentMatch =
+  getSection(prBody, 'Intent') ||
+  getSection(prBody, '## Intent') ||
+  getSection(prBody, '### Intent');
+if (intentMatch) {
+  OK('Intent-Section gefunden.');
+  const intentLength = stripMd(intentMatch).length;
   if (intentLength > 1200) {
     FAIL(`Intent zu lang (${intentLength} Zeichen, max 1200). Bitte schärfen (Clarity over Coverage).`);
   } else if (intentLength < 50) {
@@ -140,27 +142,34 @@ if (!intentBlock) {
   } else {
     OK('Intent gebunden (<=1200 Zeichen).');
   }
+} else {
+  FAIL('Intent-Section fehlt (Überschrift „Intent“).');
 }
 
 // 5) Logging-Referenz
-if (!/artefacts\/logs\//i.test(prBody)) {
-  FAIL('Logging-Referenz fehlt (erwarte Verweis auf "artefacts/logs/…").');
+const logMatch =
+  getSection(prBody, 'Logging Reference') ||
+  getSection(prBody, '## Logging Reference') ||
+  getSection(prBody, '### Logging Reference');
+if (logMatch) {
+  OK('Logging-Referenz gefunden.');
 } else {
-  OK('Logging-Referenz vorhanden.');
+  FAIL('Logging-Referenz fehlt (erwarte Verweis auf „artefacts/logs/…“).');
 }
 
-// 6) (Soft) Ticket-Referenz
+// 6) Policy-Version
+const policyMatch = /Policy[- ]Version\s*:\s*([\w.\-]+)/i.exec(prBody);
+if (policyMatch) {
+  OK(`Policy-Version erkannt: ${policyMatch[1]}`);
+} else {
+  WARN('Policy-Version im PR-Body fehlt. Empfohlenes Feld: „Policy-Version: vX.Y.Z“.');
+}
+
+// 7) (Soft) Ticket-Referenz
 if (!/(^|\b)(AT-|GOV-|CI-|OPS-|META-)\d{1,4}\b/i.test(prBody)) {
   WARN('Keine Ticket-Referenz (AT-/GOV-/CI-/OPS-/META-####) gefunden. Empfohlen, aber nicht zwingend.');
 } else {
   OK('Ticket-Referenz gefunden.');
-}
-
-// 7) (Soft) Policy-Version
-if (!/Policy Version:\s*v\d+\.\d+\.\d+/i.test(prBody)) {
-  WARN('Policy-Version im PR-Body fehlt. Empfohlenes Feld: "Policy Version: vX.Y.Z".');
-} else {
-  OK('Policy-Version referenziert.');
 }
 
 if (process.exitCode) {
