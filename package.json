@@ -1,8 +1,10 @@
 {
   "scripts": {
-    "validate:lessons": "node scripts/validators/lessons_v2.4.7.mjs",
     "validate:drift": "node scripts/check_version_drift.mjs",
-    "validate:guardrails": "node scripts/test_guardrails_v1.mjs"
+    "validate:lessons": "node scripts/validators/lessons_v2.4.7.mjs",
+    "validate:guardrails": "node scripts/test_guardrails_v1.mjs",
+    "inventory:v2.4.7": "node scripts/meta_inventory_v2.4_audit.mjs --readonly",
+    "sanity:v2.4.7": "npm run validate:drift && npm run validate:lessons && npm run inventory:v2.4.7"
   },
   "dependencies": {
     "js-yaml": "^4.1.0",
