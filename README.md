@@ -25,3 +25,4 @@
 - Version Drift: `npm run validate:drift` (meta/, docs/, excl. archive/)
 
 > ℹ️ Weekly Reports & Legacy Lessons: `docs/archive/weekly_v2.3/` & `artefacts/lessons/` (read-only)
+
