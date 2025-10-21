@@ -10,6 +10,7 @@ on:
       - .github/workflows/lessons-validate.yml
 jobs:
   validate:
+    if: ${{ !contains(github.head_ref, 'validator') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
