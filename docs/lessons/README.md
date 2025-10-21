@@ -1,7 +1,10 @@
 ---
+title: Lessons Overview
 version: v2.4.7
 status: active
 updated: 2025-10-24
+layer: lessons
+owner: stephan-adod
 ---
 
 # docs/lessons (v2.3+)

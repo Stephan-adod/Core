@@ -1,4 +1,4 @@
-throw new Error("Deprecated: use scripts/validators/lessons_v2_4_6.mjs");
+throw new Error("Deprecated: use scripts/validators/lessons_v2_4_7.mjs");
 // === Lessons Validator (authoritative) ===
 import fs from "fs";
 import path from "path";
@@ -8,7 +8,7 @@ import sysver from "../meta/system_version.json" assert { type: "json" };
 const TARGET_VERSION =
   process.env.LESSONS_TARGET_VERSION ||
   sysver.active ||
-  "v2.4.6";
+  "v2.4.7";
 
 // 2) Aktiver Scope: NUR docs/lessons/**
 const ROOTS = ["docs/lessons"];

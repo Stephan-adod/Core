@@ -1,10 +1,11 @@
 ---
 id: L-014
-layer: meta
-status: active
-owner: stephan-adod
+title: Session Lessons
 version: v2.4.7
+status: active
 updated: 2025-10-24
+layer: lessons
+owner: stephan-adod
 goal: "Lessons Learned aus Session · Drift Detection & Cycle-Refactor"
 links:
   related_prompts:

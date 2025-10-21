@@ -1,10 +1,11 @@
 ---
 id: L-011
-layer: meta
-status: active
-owner: stephan-adod
+title: Lessons & Synthesis
 version: v2.4.7
+status: active
 updated: 2025-10-24
+layer: lessons
+owner: stephan-adod
 goal: "Lessons & Synthesis zur Promotion der AI-First System Architecture v2.3.1 (inkl. L3 Context Enrichment + Decision Matrix)"
 links:
   blueprint: meta/AI_First_System_Architecture.md
