@@ -13,4 +13,4 @@ status: active
 - **Collab:** Merge Time < 36 h, L-011/L-012 verlinkt.
 - **Harmony:** ≈ 0.95 (stabil).
 ---
-> ℹ️ Historical (Week-based) summaries were archived to `docs/archive/weekly_v2.3/`.
+> ℹ️ Historical (Week-based) summaries were archived to `docs/archive/weekly_v2.4/`.

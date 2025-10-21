@@ -17,4 +17,4 @@ status: active
 | Context Adoption | 0.83 | 0.91 | +0.08 | ✅ |
 | Model Card Validated | pending | ✅ | 🟢 |
 ---
-> ℹ️ Historical (Week-based) reports were archived to `docs/archive/weekly_v2.3/`.
+> ℹ️ Historical (Week-based) reports were archived to `docs/archive/weekly_v2.4/`.
