@@ -1,53 +1,74 @@
-name: Handbook · Enforcement (Auto-Body + Ordered)
+name: Handbook · Enforcement (Auto-Synthesis → Auto-Body → Enforce)
+
 on:
   pull_request:
     types: [opened, edited, synchronize]
     paths:
       - '**'
-      - '!.github/**'   # Guards: keine reinen .github PRs prüfen
+      - '!.github/**'  # Guard: reine .github PRs nicht prüfen
 
 permissions:
   contents: read
   pull-requests: write   # zum Aktualisieren des PR-Body
 
 jobs:
-  autobody:
-    name: Ensure PR Body (inject template if missing)
+  synthesize:
+    name: Synthesize PR Body (AI-First)
     runs-on: ubuntu-latest
+    outputs:
+      body: ${{ steps.out.outputs.body }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: '20' }
-      - name: Read current PR body
+      - name: Generate body from policy + context
+        id: out
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/synthesize_pr_body.mjs > body.out
+          echo "body<<EOF" >> $GITHUB_OUTPUT
+          cat body.out >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+  autobody:
+    name: Ensure PR Body (inject if missing)
+    runs-on: ubuntu-latest
+    needs: synthesize
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect original PR body
         id: get
         uses: actions/github-script@v7
         with:
           script: |
-            const pr = context.payload.pull_request;
-            const body = pr.body || '';
+            const body = context.payload.pull_request.body || '';
             const hasComp = /##\s*AI-First Handbook Compliance/i.test(body);
-            core.setOutput('number', pr.number);
-            core.setOutput('body', body);
             core.setOutput('has_comp_original', hasComp ? 'yes' : 'no');
-      - name: Compose body (template if missing)
-        id: compose
-        run: |
-          printf "%s" "${{ steps.get.outputs.body }}" | node scripts/generate_pr_body.mjs > body.out
-          echo "has_comp_output=$(grep -qi 'AI-First Handbook Compliance' body.out && echo yes || echo no)" >> $GITHUB_OUTPUT
-      - name: Update PR body (ONLY if original had no compliance)
+      - name: Update PR body (only if original missing compliance)
         if: steps.get.outputs.has_comp_original == 'no'
         uses: actions/github-script@v7
         with:
           script: |
-            const fs = require('fs');
-            const body = fs.readFileSync('body.out','utf8');
+            const body = `${{ toJSON(needs.synthesize.outputs.body) }}`;
             await github.rest.pulls.update({
               owner: context.repo.owner,
               repo: context.repo.repo,
               pull_number: context.payload.pull_request.number,
               body
             });
-            core.info('PR body updated with template (autobody applied).')
+            core.info('PR body set by Auto-Synthesis.');
+      - name: Comment (audit trail)
+        if: steps.get.outputs.has_comp_original == 'no'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.pull_request.number,
+              body: "🧠 Auto-Synthesis hat den PR-Body gemäß AI-First Handbook generiert."
+            });
 
   enforce:
     name: Validate Handbook Compliance
@@ -59,9 +80,7 @@ jobs:
         with: { node-version: '20' }
       - name: Wait for PR body sync
         run: |
-          echo "⏳ Waiting 8s for PR body cache to update..."
-          sleep 8
-
+          echo "⏳ waiting for PR body cache…" && sleep 8
       - name: Reload PR body from GitHub API
         id: reload
         uses: actions/github-script@v7
@@ -75,6 +94,5 @@ jobs:
             const body = pr.data.body || '';
             require('fs').writeFileSync('pr_body_latest.txt', body);
             core.info('✅ Reloaded PR body, length=' + body.length);
-
       - name: Run validator (strict) against ACTUAL body
         run: node scripts/validate_handbook.mjs < pr_body_latest.txt
