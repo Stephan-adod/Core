@@ -29,3 +29,5 @@ updated: 2025-10-21
 ## Archive / Legacy
 - **Weekly Reports v2.3 (read-only):** `docs/archive/weekly_v2.3/`
 - **Legacy Lessons (read-only):** `artefacts/lessons/`
+
+> Drift accepted (until v2.4.8) — Grund: Weekly Reports für Cycle Mode v2.4 werden reorganisiert; bis dahin verweist das Archiv auf die stabile v2.3-Sammlung (read-only).

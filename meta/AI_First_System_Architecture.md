@@ -1,21 +1,21 @@
 ---
 id: AI-FIRST-SYSTEM-ARCHITECTURE
 layer: meta
-version: v2.3.1
+version: v2.4.6
 phase: daas_factory_planning
 status: active
 owner: stephan-adod
 updated: 2025-10-24
-path: meta/AI_First_System_Architecture_v2.3.md
+path: meta/AI_First_System_Architecture.md
 rhythm: quarterly architecture sync
 linked_docs:
   - meta/AI_First_Roadmap.md
   - meta/AI_First_Handbook.md
   - meta/Human_in_the_Loop_Playbook.md
-  - docs/frameworks/DaaS_UseCase_Decision_Matrix_v2.3.md
+  - docs/frameworks/DaaS_UseCase_Decision_Matrix_v2.4.md
 ---
 
-# AI-First System Architecture Blueprint (v2.3.1)
+# AI-First System Architecture Blueprint (v2.4.6)
 
 **Purpose:** Referenz-Blueprint für die AI-First DaaS Factory. Beschreibt die Wertflüsse, Rollen und technischen Leitplanken von Meta bis Delivery-Layer.
 
@@ -35,10 +35,10 @@ linked_docs:
 | L4 | Delivery & Experience | Pricing/Attribution Apps, BI, Partner APIs | Microfrontends, External Integrations |
 | L5 | Observability & Trust | Monitoring, KPIs, Compliance Telemetry | Trust Probes, Audit Log, Policy Alerts |
 
-> **Visualisierung:** Siehe **DaaS L3 Context Map (v2.3)** unter  
+> **Visualisierung:** Siehe **DaaS L3 Context Map (v2.3)** unter
 > `docs/diagrams/DaaS_L3_Context_Map_v2.3.mmd`
 
-### 🏗️ L3 — Data Value Streams (v2.3.1)
+### 🏗️ L3 — Data Value Streams (v2.4.6)
 
 **Ziel:** Bereitstellung marktfähiger Daten-Services mit klaren Schnittstellen, vertraglich definierten Schemas (Data Contracts) und Governance-Verankerung.
 
@@ -96,11 +96,13 @@ linked_docs:
 - Core Context API wird intern aufgebaut (Governance & Versionierung ist Schlüsselkompetenz).
 - Weather Daten ggf. via Partner API (Met Service) → Contract-basiert ingestieren.
 - Attribution-Modelle können teilweise zugekauft werden (MMM-Partner) solange Contracts versioniert sind.
-- Siehe Priorisierung: docs/frameworks/DaaS_UseCase_Decision_Matrix_v2.3.md
+- Siehe Priorisierung: docs/frameworks/DaaS_UseCase_Decision_Matrix_v2.4.md
 
 ### 🚀 6️⃣ Next Steps / Handover
 1. Kontext-API Prototyp (Weather/Event) gegen Trust Probe < 7 Tage testen.
 2. Pricing Stream implementiert `context_version` Pflichtparameter.
 3. Attribution Loop orchestriert MMM-Modelle mit Context Enrichment Feed.
-4. Prep für Validator: `node scripts/sanity_validate_v2_3.mjs` (optional run vor PR).
+4. Prep für Validator: `node scripts/check_version_drift.mjs` (optional run vor PR).
+
+> Drift accepted (until v2.4.8) — Grund: Architektur-Diagramme (L3 Context Map) verbleiben vorerst in v2.3 bis die Diagramm-Migration abgeschlossen ist; Inhalte bleiben bis dahin read-only stabil.
 

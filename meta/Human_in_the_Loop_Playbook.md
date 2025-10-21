@@ -33,3 +33,5 @@ updated: 2025-10-21
 
 ## Change Log
 - 2025-10-21: Playbook auf Cycle Mode (v2.4) angehoben; Operator Flow aktualisiert.
+
+> Drift accepted (until v2.4.8) — Grund: Weekly Archive für Cycle Mode v2.4 wird neu geschnitten; v2.3-Verweis bleibt bis zum neuen Archiv read-only bestehen.
