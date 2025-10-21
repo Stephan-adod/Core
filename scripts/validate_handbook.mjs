@@ -113,13 +113,9 @@ if (!complianceBlock) {
 } else {
   OK('Compliance-Block gefunden.');
   const hasMarker = /<!--\s*AI-SYNTH\b/i.test(prBody);
-  const ticks = (complianceBlock.match(/\[(x|X)\]/g) || []).length; // alte Logik
-  const bullets = (complianceBlock.match(/^\s*-\s+/gm) || []).length; // neue Logik
+  const ticks = (complianceBlock.match(/\[(x|X)\]/g) || []).length;
+  const bullets = (complianceBlock.match(/^\s*-\s+/gm) || []).length;
 
-  // Bestehenslogik:
-  // 1) Marker vorhanden  -> OK
-  // 2) ODER mind. 3 Häkchen -> OK
-  // 3) ODER mind. 3 Bullet-Points -> OK
   if (hasMarker) {
     OK('AI-Synthesis Marker erkannt – Compliance akzeptiert.');
   } else if (ticks >= 3) {
