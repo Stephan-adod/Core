@@ -90,8 +90,9 @@ Risiko: gering (reiner Meta/Template/Validator-Flow)`;
 }
 
 function synthesizeBody({ intent, logPath }) {
+  // --- Phase 2.5b marker-based synthesis ---
   const marker = "<!-- AI-SYNTH v2.5b -->";
-  return [
+  const body = [
     `${marker}
 ## AI-First Handbook Compliance
 - One PR = One Intent
@@ -112,6 +113,7 @@ Policy Version: ${policyVersion}
 GOV-PR-${prNumber || "0000"}`,
     "",
   ].join("\n");
+  return body;
 }
 
 (async () => {
