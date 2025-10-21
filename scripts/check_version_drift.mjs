@@ -5,7 +5,7 @@ import yaml from "js-yaml";
 import { glob } from "glob";
 
 const sysCfg = JSON.parse(fs.readFileSync("meta/system_version.json", "utf8"));
-const TARGET = sysCfg.target_version || "v2.1";
+const TARGET_VERSION = sysCfg.active || sysCfg.target_version || "v2.4.6";
 const coreDocs = sysCfg.core_docs || [];
 const cachedMeta = new Map();
 
@@ -22,29 +22,25 @@ const normalizePath = (pth) => {
 
 let overrides = {};
 try {
-  const rawOverrides = JSON.parse(
-    fs.readFileSync("meta/_fixtures/version_overrides.json", "utf8"),
-  );
+  const raw = fs.readFileSync("meta/_fixtures/version_overrides.json", "utf8");
+  const parsed = JSON.parse(raw);
   overrides = Object.fromEntries(
-    Object.entries(rawOverrides).map(([key, value]) => [normalizePath(key), value]),
+    Object.entries(parsed).map(([key, value]) => [normalizePath(key), value]),
   );
 } catch {
   overrides = {};
 }
+
+const expectedVersion = (pth, target) => {
+  const normalized = normalizePath(pth);
+  return overrides[normalized]?.version || target;
+};
 
 const normalizedCoreDocs = new Set(coreDocs.map((doc) => normalizePath(doc)));
 
 function isExcluded(pth) {
   const normalized = normalizePath(pth);
   return EXCLUDES.some((prefix) => normalized.startsWith(prefix));
-}
-
-function expectedVersionFor(file, targetVersion) {
-  const normalized = normalizePath(file);
-  if (overrides[normalized]?.version) {
-    return overrides[normalized].version;
-  }
-  return targetVersion;
 }
 
 function readDocMeta(pth) {
@@ -76,7 +72,7 @@ function flagUnstableLinks(file, body, errors, expectedVersion) {
       if (isExcluded(normalizedRef)) {
         continue;
       }
-      const allowedVersion = expectedVersion || TARGET;
+      const allowedVersion = expectedVersion || TARGET_VERSION;
       const allowedPrefixMatch = allowedVersion.match(/^v(\d+\.\d+)/);
       const refVersionMatch = normalizedRef.match(/_v(\d+\.\d+)/);
       if (allowedPrefixMatch && refVersionMatch) {
@@ -105,11 +101,13 @@ async function main() {
     }
     try {
       const { meta, body } = readDocMeta(docPath);
-      const expected = expectedVersionFor(docPath, TARGET);
-      if ((meta?.version || "") !== expected) {
-        errors.push(`${pth}: version ${meta?.version || "n/a"} does not match target ${expected}`);
+      const targetVersion = expectedVersion(docPath, TARGET_VERSION);
+      if ((meta?.version || "") !== targetVersion) {
+        errors.push(
+          `${pth}: version ${meta?.version || "n/a"} does not match target ${targetVersion}`,
+        );
       }
-      flagUnstableLinks(pth, body, errors, expected);
+      flagUnstableLinks(pth, body, errors, targetVersion);
     } catch (err) {
       errors.push(`Failed to inspect ${pth}: ${err.message}`);
     }
@@ -152,9 +150,11 @@ async function main() {
       if (normalizedCoreDocs.has(normalizedPath)) {
         try {
           const { meta: docMeta } = readDocMeta(normalizedPath);
-          const expected = expectedVersionFor(normalizedPath, TARGET);
-          if ((docMeta?.version || "") !== expected) {
-            errors.push(`${f}: ${pth} has version ${docMeta?.version || "n/a"} but target is ${expected}`);
+          const targetVersion = expectedVersion(normalizedPath, TARGET_VERSION);
+          if ((docMeta?.version || "") !== targetVersion) {
+            errors.push(
+              `${f}: ${pth} has version ${docMeta?.version || "n/a"} but target is ${targetVersion}`,
+            );
           }
         } catch (err) {
           errors.push(`${f}: failed to read ${pth} → ${err.message}`);
@@ -170,7 +170,7 @@ async function main() {
     process.exit(1);
   }
 
-  console.log(`✅ Version drift check passed for ${TARGET}`);
+  console.log(`✅ Version drift check passed for ${TARGET_VERSION}`);
 }
 
 main().catch((err) => {
