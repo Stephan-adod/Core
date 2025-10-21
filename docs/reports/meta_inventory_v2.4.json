@@ -1,0 +1,207 @@
+[
+  {
+    "path": "docs/AI_First_Business_Case.md",
+    "version": "v2.2.5",
+    "status": "active",
+    "updated": null,
+    "linked_docs": [
+      "meta/AI_First_System_Architecture.md",
+      "meta/AI_First_Roadmap.md",
+      "meta/AI_First_Handbook.md",
+      "meta/Human_in_the_Loop_Playbook.md"
+    ],
+    "layer": "docs",
+    "owner": "Stephan",
+    "governance_health": "🔴"
+  },
+  {
+    "path": "docs/frameworks/DaaS_UseCase_Decision_Matrix_v2.3.md",
+    "version": "v2.3",
+    "status": "active",
+    "updated": null,
+    "linked_docs": [],
+    "layer": "meta",
+    "owner": "stephan-adod",
+    "governance_health": "🔴"
+  },
+  {
+    "path": "meta/_fixtures/ok.md",
+    "version": null,
+    "status": "unknown",
+    "updated": null,
+    "linked_docs": [],
+    "layer": "meta",
+    "owner": null,
+    "governance_health": "⚪"
+  },
+  {
+    "path": "meta/AI_Compliance_Register_v2.4.json",
+    "version": "v2.4.0",
+    "status": "unknown",
+    "updated": null,
+    "linked_docs": [],
+    "layer": "meta",
+    "owner": "stephan-adod",
+    "governance_health": "🔴"
+  },
+  {
+    "path": "meta/AI_First_Handbook.md",
+    "version": "v2.2.5",
+    "status": "active",
+    "updated": null,
+    "linked_docs": [
+      "meta/AI_First_System_Architecture.md",
+      "meta/Human_in_the_Loop_Playbook.md",
+      "meta/AI_First_Roadmap.md",
+      "docs/AI_First_Business_Case.md"
+    ],
+    "layer": "meta",
+    "owner": "Stephan",
+    "governance_health": "🔴"
+  },
+  {
+    "path": "meta/AI_First_Loop_Automation_v2.4_plan.md",
+    "version": "v2.4.0",
+    "status": "active",
+    "updated": null,
+    "linked_docs": [],
+    "layer": "meta",
+    "owner": "stephan-adod",
+    "governance_health": "🟢"
+  },
+  {
+    "path": "meta/AI_First_Roadmap_v2.3.md",
+    "version": "v2.3.1",
+    "status": "archived",
+    "updated": null,
+    "linked_docs": [],
+    "layer": "meta",
+    "owner": null,
+    "governance_health": "🔴"
+  },
+  {
+    "path": "meta/AI_First_Roadmap.md",
+    "version": "v2.4.4",
+    "status": "active",
+    "updated": null,
+    "linked_docs": [],
+    "layer": "meta",
+    "owner": "Stephan (System Owner & Mentor)",
+    "governance_health": "🟢"
+  },
+  {
+    "path": "meta/AI_First_System_Architecture_v2.3.md",
+    "version": "v2.3.1",
+    "status": "active",
+    "updated": null,
+    "linked_docs": [
+      "meta/AI_First_Roadmap.md",
+      "meta/AI_First_Handbook.md",
+      "meta/Human_in_the_Loop_Playbook.md",
+      "docs/frameworks/DaaS_UseCase_Decision_Matrix_v2.3.md"
+    ],
+    "layer": "meta",
+    "owner": "stephan-adod",
+    "governance_health": "🔴"
+  },
+  {
+    "path": "meta/AI_First_System_Architecture.md",
+    "version": "v2.3.1",
+    "status": "active",
+    "updated": null,
+    "linked_docs": [
+      "meta/AI_First_Roadmap.md",
+      "meta/AI_First_Handbook.md",
+      "meta/Human_in_the_Loop_Playbook.md",
+      "docs/frameworks/DaaS_UseCase_Decision_Matrix_v2.3.md"
+    ],
+    "layer": "meta",
+    "owner": "stephan-adod",
+    "governance_health": "🔴"
+  },
+  {
+    "path": "meta/CORE_INDEX.md",
+    "version": "v2.4.5",
+    "status": "active",
+    "updated": null,
+    "linked_docs": [],
+    "layer": "meta",
+    "owner": null,
+    "governance_health": "🟢"
+  },
+  {
+    "path": "meta/Human_in_the_Loop_Playbook.md",
+    "version": "v2.4.1",
+    "status": "active",
+    "updated": null,
+    "linked_docs": [],
+    "layer": "meta",
+    "owner": null,
+    "governance_health": "🟢"
+  },
+  {
+    "path": "meta/Prompt_Inventory.md",
+    "version": "v2.2.5",
+    "status": "unknown",
+    "updated": null,
+    "linked_docs": [],
+    "layer": "meta",
+    "owner": "Stephan",
+    "governance_health": "🔴"
+  },
+  {
+    "path": "meta/snapshots/AI_First_System_Architecture_v2.2.5.md",
+    "version": "v2.2.5",
+    "status": "active",
+    "updated": null,
+    "linked_docs": [
+      "meta/AI_First_Roadmap.md",
+      "meta/AI_First_Handbook.md",
+      "meta/Human_in_the_Loop_Playbook.md",
+      "docs/AI_First_Business_Case.md"
+    ],
+    "layer": "meta",
+    "owner": "Stephan (System Owner & Mentor)",
+    "governance_health": "🔴"
+  },
+  {
+    "path": "meta/snapshots/system_state_v2.2.5.json",
+    "version": null,
+    "status": "in_progress",
+    "updated": null,
+    "linked_docs": [],
+    "layer": "meta",
+    "owner": null,
+    "governance_health": "⚪"
+  },
+  {
+    "path": "meta/snapshots/system_state_v2.4.4.json",
+    "version": null,
+    "status": "in_progress",
+    "updated": null,
+    "linked_docs": [],
+    "layer": "meta",
+    "owner": null,
+    "governance_health": "⚪"
+  },
+  {
+    "path": "meta/system_version.json",
+    "version": null,
+    "status": "active",
+    "updated": "2025-10-20",
+    "linked_docs": [],
+    "layer": "meta",
+    "owner": null,
+    "governance_health": "⚪"
+  },
+  {
+    "path": "meta/validation_registry.json",
+    "version": "v2.2.5",
+    "status": "unknown",
+    "updated": null,
+    "linked_docs": [],
+    "layer": "meta",
+    "owner": null,
+    "governance_health": "🔴"
+  }
+]
