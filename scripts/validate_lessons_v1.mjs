@@ -2,6 +2,7 @@
 import fs from "fs";
 import yaml from "js-yaml";
 import { glob } from "glob";
+import { createRequire } from "module";
 
 const readJSON = (p) => JSON.parse(fs.readFileSync(p, "utf8"));
 const regPath = "meta/validation_registry.json";
@@ -9,13 +10,17 @@ const REG = fs.existsSync(regPath)
   ? readJSON(regPath)
   : { related_docs_allowed_prefixes: ["meta/", "docs/"] };
 
+const require = createRequire(import.meta.url);
+const sysver = require("../meta/system_version.json");
+
+// ✅ Updated target for Cycle Mode v2.4.6
+const TARGET_VERSION = sysver.active || "v2.4.6";
+
 function isAllowedRelatedDocPath(p) {
   return REG.related_docs_allowed_prefixes.some((pref) => p.startsWith(pref));
 }
 
-const sysCfg = JSON.parse(fs.readFileSync("meta/system_version.json", "utf8"));
-const TARGET = sysCfg.target_version || "v2.1";
-const coreDocs = new Set(sysCfg.core_docs || []);
+const coreDocs = new Set(sysver.core_docs || []);
 
 function extractFrontMatter(body) {
   const match = body.match(/^---\n([\s\S]*?)\n---/);
@@ -61,8 +66,10 @@ async function main() {
               continue;
             }
             const docMeta = yaml.load(docMatch[1]) || {};
-            if ((docMeta?.version || "") !== TARGET) {
-              errors.push(`${f}: ${pth} has version ${docMeta?.version || "n/a"} but target is ${TARGET}`);
+            if ((docMeta?.version || "") !== TARGET_VERSION) {
+              errors.push(
+                `${f}: ${pth} has version ${docMeta?.version || "n/a"} but target is ${TARGET_VERSION}`,
+              );
             }
           }
         } catch (err) {
@@ -79,7 +86,7 @@ async function main() {
     process.exit(1);
   }
 
-  console.log(`✅ Lessons validated for ${TARGET}`);
+  console.log(`✅ Lessons validated for ${TARGET_VERSION}`);
 }
 
 main().catch((err) => {
