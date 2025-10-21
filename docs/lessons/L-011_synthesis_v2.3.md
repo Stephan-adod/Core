@@ -3,7 +3,8 @@ id: L-011
 layer: meta
 status: active
 owner: stephan-adod
-version: v2.4.6
+version: v2.4.7
+updated: 2025-10-24
 goal: "Lessons & Synthesis zur Promotion der AI-First System Architecture v2.3.1 (inkl. L3 Context Enrichment + Decision Matrix)"
 links:
   blueprint: meta/AI_First_System_Architecture.md

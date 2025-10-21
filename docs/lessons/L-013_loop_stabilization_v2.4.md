@@ -3,7 +3,8 @@ id: L-013
 layer: meta
 status: active
 owner: stephan-adod
-version: v2.4.6
+version: v2.4.7
+updated: 2025-10-24
 goal: "Stabilisierung der Loops durch Drift Detection & leichte Automation"
 links:
   drift_spec: docs/prompts/P-012_forecast_drift_v2.4.mjs

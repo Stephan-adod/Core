@@ -4,9 +4,9 @@ title: Meta Governance Alignment (Canonical Cleanup)
 layer: meta
 status: active
 owner: stephan-adod
-version: v2.4.6
+version: v2.4.7
 target_version: v2.4.4
-updated: 2025-10-21
+updated: 2025-10-24
 related_docs:
   - meta/AI_First_Roadmap.md
   - meta/AI_First_System_Architecture.md
