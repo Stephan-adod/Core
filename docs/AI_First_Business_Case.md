@@ -1,8 +1,8 @@
 ---
 layer: meta
-version: v2.4.6
+version: v2.4.7
 status: active
-updated: 2025-10-21
+updated: 2025-10-24
 owner: stephan-adod
 linked_docs:
   - meta/AI_First_Roadmap.md

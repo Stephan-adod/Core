@@ -10,7 +10,7 @@ const coreDocs = sysCfg.core_docs || [];
 const cachedMeta = new Map();
 
 const ROOTS = ["meta", "docs"];
-const EXCLUDES = ["artefacts/", "docs/archive/"];
+const EXCLUDES = ["artefacts/", "docs/archive/", "meta/snapshots/"];
 
 const normalizePath = (pth) => {
   const normalized = path.posix
