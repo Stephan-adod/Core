@@ -1,24 +1,61 @@
-name: Handbook · Enforcement (Safe Start, Refined)
+name: Handbook · Enforcement (Auto-Body + Ordered)
 on:
   pull_request:
     types: [opened, edited, synchronize]
     paths:
       - '**'
-      - '!.github/**'
+      - '!.github/**'   # Guards: keine reinen .github PRs prüfen
+
+permissions:
+  contents: read
+  pull-requests: write   # zum Aktualisieren des PR-Body
+
 jobs:
-  enforce:
+  autobody:
+    name: Ensure PR Body (inject template if missing)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Prepare generator
+        run: |
+          test -f scripts/generate_pr_body.mjs || (echo "::error::missing generator" && exit 1)
+      - name: Read current PR body
+        id: get
+        uses: actions/github-script@v7
         with:
-          node-version: '20'
-      - name: Validate Handbook Compliance (manual)
-        run: node scripts/validate_handbook.mjs
+          script: |
+            const pr = context.payload.pull_request;
+            return { number: pr.number, body: pr.body || '' };
+      - name: Compose body (only if missing compliance)
+        id: compose
+        run: |
+          echo "${{ steps.get.outputs.body }}" | node scripts/generate_pr_body.mjs > body.out
+          echo "has_comp=$(grep -qi 'AI-First Handbook Compliance' body.out && echo yes || echo no)" >> $GITHUB_OUTPUT
+      - name: Update PR body (if needed)
+        if: steps.compose.outputs.has_comp == 'no'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const core = require('@actions/core');
+            const body = fs.readFileSync('body.out','utf8');
+            await github.rest.pulls.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.payload.pull_request.number,
+              body
+            });
+            core.info('PR body updated with template.')
 
-# HINWEIS (SPÄTER, wenn stabil):
-# - VALIDATOR_MODE entfernen (oder auf 'strict' setzen, ENV weglassen)
-# - Trigger umstellen:
-#   on:
-#     pull_request:
-#       types: [opened, edited, synchronize]
+  enforce:
+    name: Validate Handbook Compliance
+    runs-on: ubuntu-latest
+    needs: autobody
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Run validator (strict)
+        run: node scripts/validate_handbook.mjs
