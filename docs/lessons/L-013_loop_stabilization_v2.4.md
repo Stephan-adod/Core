@@ -1,10 +1,11 @@
 ---
 id: L-013
-layer: meta
-status: active
-owner: stephan-adod
+title: Loop System Stabilization
 version: v2.4.7
+status: active
 updated: 2025-10-24
+layer: lessons
+owner: stephan-adod
 goal: "Stabilisierung der Loops durch Drift Detection & leichte Automation"
 links:
   drift_spec: docs/prompts/P-012_forecast_drift_v2.4.mjs

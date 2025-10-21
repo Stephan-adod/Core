@@ -1,10 +1,11 @@
 ---
 id: lessons-index-v2_3
-layer: meta
-status: active
-owner: stephan-adod
+title: Lessons · Single Source of Truth
 version: v2.4.7
+status: active
 updated: 2025-10-24
+layer: lessons
+owner: stephan-adod
 goal: "Single Source of Truth für aktive Lessons (v2.3+)"
 ---
 

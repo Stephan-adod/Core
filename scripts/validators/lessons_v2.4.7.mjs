@@ -1,8 +1,8 @@
-// === Lessons Validator v2.4.6 ===
+// === Lessons Validator v2.4.7 ===
 import fs from "fs";
 import path from "path";
 
-const TARGET = process.env.LESSONS_TARGET_VERSION || "v2.4.6";
+const TARGET = process.env.LESSONS_TARGET_VERSION || "v2.4.7";
 const ROOTS = ["docs/lessons"];
 
 const listMarkdown = (dir) => {

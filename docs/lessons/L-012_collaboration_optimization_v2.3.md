@@ -1,10 +1,11 @@
 ---
 id: L-012
-layer: meta
-status: active
-owner: stephan-adod
+title: Collaboration Optimization
 version: v2.4.7
+status: active
 updated: 2025-10-24
+layer: lessons
+owner: stephan-adod
 goal: "Optimierung der Human ↔ AI ↔ System Zusammenarbeit vor Loop-Integration (Phase 3)"
 links:
   blueprint: meta/AI_First_System_Architecture.md
