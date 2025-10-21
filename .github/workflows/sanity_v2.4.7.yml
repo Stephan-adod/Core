@@ -12,6 +12,10 @@ on:
 jobs:
   sanity:
     runs-on: ubuntu-latest
+    env:
+      # Sorgt dafür, dass der Lessons-Validator garantiert das v2.4.7-Target nutzt,
+      # unabhängig von Fallbacks im Script/Repo.
+      LESSONS_TARGET_VERSION: v2.4.7
     permissions:
       contents: read
     steps:
@@ -19,7 +23,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
+      - name: Install dependencies
+        run: npm install
       - name: Validate drift
         run: npm run validate:drift
       - name: Validate lessons (v2.4.7)
