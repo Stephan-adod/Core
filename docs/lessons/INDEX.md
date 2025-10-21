@@ -3,7 +3,8 @@ id: lessons-index-v2_3
 layer: meta
 status: active
 owner: stephan-adod
-version: v2.4.6
+version: v2.4.7
+updated: 2025-10-24
 goal: "Single Source of Truth für aktive Lessons (v2.3+)"
 ---
 

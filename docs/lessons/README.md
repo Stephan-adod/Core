@@ -1,7 +1,7 @@
 ---
-version: v2.4.6
+version: v2.4.7
 status: active
-updated: 2025-10-21
+updated: 2025-10-24
 ---
 
 # docs/lessons (v2.3+)
