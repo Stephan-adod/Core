@@ -1,0 +1,25 @@
+name: Handbook · Validate (Safe Mode)
+on:
+  workflow_dispatch: {}
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check presence + anchors
+        run: |
+          test -f meta/AI_First_Handbook.md || (echo "::error::Handbook missing" && exit 1)
+          test -f meta/system_version.json || (echo "::error::system_version.json missing" && exit 1)
+          node -e "
+            const fs=require('fs');
+            const sv=JSON.parse(fs.readFileSync('meta/system_version.json','utf8'));
+            if(sv.policy_source!=='meta/AI_First_Handbook.md'){
+              process.exitCode=1; 
+              console.log('::error::policy_source not anchored');
+            } else {
+              console.log('policy_source anchored ✅');
+            }
+          "
+      - name: Context Pack config presence (no build)
+        run: |
+          test -f config/context_pack.yaml && echo "config present ✅" || echo "::warning::no context_pack config yet"

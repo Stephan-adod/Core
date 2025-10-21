@@ -1,0 +1,23 @@
+version: 1
+priority_files:
+  - "meta/AI_First_Handbook.md"
+  - "meta/system_version.json"
+targets:
+  - name: meta
+    globs: ["meta/**/*.md", "meta/**/*.json"]
+  - name: docs
+    globs: ["docs/**/*.md"]
+  - name: scripts
+    globs: ["scripts/**/*.mjs", "scripts/**/*.js"]
+  - name: workflows
+    globs: [".github/workflows/**/*.yml"]
+exclude:
+  - "archive/**"
+  - "snapshots/**"
+budget:
+  max_files: 200
+  max_bytes: 2097152
+output:
+  dir: "artefacts/context"
+  pack_prefix: "context_pack"
+safe_mode: true
