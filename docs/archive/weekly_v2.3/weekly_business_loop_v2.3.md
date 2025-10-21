@@ -1,4 +1,5 @@
-🟨 **Deprecated:** Week-based reporting is superseded by cycle-based reporting → see `docs/reports/business_loop_cycles_v2.4.md`.
+> 🗃️ **Archived (v2.3):** Week-based report. Active cycle-based reports live in  
+> `docs/reports/business_loop_cycles_v2.4.md` and `docs/reports/reflection_cycles_v2.4.md`.
 
 ---
 id: report-business-loop-week1
@@ -6,9 +7,14 @@ layer: meta
 version: v2.3.1
 week: 1
 owner: stephan-adod
-status: active
+status: archived
 date: 2025-10-20
+archive_bucket: weekly_v2.3
 ---
+
+🟨 **Deprecated:** Week-based reporting is superseded by cycle-based reporting → see `docs/reports/business_loop_cycles_v2.4.md`.
+
+
 
 # Weekly Business Loop · Week 1 (Real Cycle)
 
