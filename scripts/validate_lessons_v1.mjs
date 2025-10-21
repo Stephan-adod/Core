@@ -1,10 +1,14 @@
 #!/usr/bin/env node
 import fs from "fs";
 import path from "path";
-import sysver from "../meta/system_version.json" with { type: "json" };
+import sysver from "../meta/system_version.json" assert { type: "json" };
 
-const ROOT = path.resolve(process.cwd());
+// ==== Scope & target config (BEGIN) ====
+
+// Zielversion: wir validieren Lessons gegen die aktive Release-Version
 const TARGET_VERSION = sysver.active || "v2.4.6";
+
+// Nur aktive Lessons im Repo prüfen
 const ACTIVE_DIRS = ["docs/lessons"];
 
 function listLessonFiles() {
@@ -13,46 +17,38 @@ function listLessonFiles() {
     for (const name of fs.readdirSync(dir)) {
       const p = path.join(dir, name);
       const s = fs.statSync(p);
-      if (s.isDirectory()) {
-        walk(p);
-      } else if (p.endsWith(".md")) {
-        files.push(path.relative(ROOT, p).replace(/\\/g, "/"));
-      }
+      if (s.isDirectory()) walk(p);
+      else if (p.endsWith(".md")) files.push(p);
     }
   };
-
-  for (const d of ACTIVE_DIRS) {
-    const abs = path.join(ROOT, d);
-    if (fs.existsSync(abs)) walk(abs);
-  }
-
-  return files.sort();
+  for (const base of ACTIVE_DIRS) if (fs.existsSync(base)) walk(base);
+  return files;
 }
 
-function readFrontmatter(markdown) {
-  const match = markdown.match(/^---\n([\s\S]*?)\n---/);
-  if (!match) return {};
-  const data = {};
-  match[1].split("\n").forEach((line) => {
-    if (!line.includes(":")) return;
-    const [key, ...rest] = line.split(":");
-    const value = rest.join(":").trim();
-    const cleanKey = key.trim();
-    if (cleanKey) {
-      data[cleanKey] = value;
-    }
+function readFrontmatter(md) {
+  const m = md.match(/^---\n([\s\S]*?)\n---/);
+  if (!m) return {};
+  const obj = {};
+  m[1].split("\n").forEach(line => {
+    const i = line.indexOf(":");
+    if (i < 0) return;
+    const k = line.slice(0, i).trim();
+    const v = line.slice(i + 1).trim();
+    if (k) obj[k] = v;
   });
-  return data;
+  return obj;
 }
+// ==== Scope & target config (END) ====
 
+// ==== Validation driver (REPLACE previous driver if necessary) ====
 const lessons = listLessonFiles();
-const errors = [];
+let errors = [];
 
 for (const fp of lessons) {
-  const raw = fs.readFileSync(path.join(ROOT, fp), "utf8");
-  const frontmatter = readFrontmatter(raw);
-  const version = frontmatter.version || "";
-  const status = (frontmatter.status || "").trim();
+  const raw = fs.readFileSync(fp, "utf8");
+  const fm = readFrontmatter(raw);
+  const version = fm.version || "";
+  const status = (fm.status || "").trim();
 
   if (!version) {
     errors.push(`${fp}: missing version in YAML front matter (target ${TARGET_VERSION})`);
