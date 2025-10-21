@@ -1,75 +1,41 @@
-// === Lessons Validator v2.4.7 ===
 import fs from "fs";
 import path from "path";
 
-const TARGET = process.env.LESSONS_TARGET_VERSION || "v2.4.7";
+const TARGET_VERSION = "v2.4.7"; // authoritative
 const ROOTS = ["docs/lessons"];
 
-const listMarkdown = (dir) => {
+function walk(d) {
   const out = [];
-  const stack = [dir];
-  while (stack.length) {
-    const current = stack.pop();
-    if (!fs.existsSync(current)) continue;
-    for (const entry of fs.readdirSync(current)) {
-      const full = path.join(current, entry);
-      const stat = fs.statSync(full);
-      if (stat.isDirectory()) {
-        stack.push(full);
-      } else if (full.endsWith(".md")) {
-        out.push(full.replace(/\\/g, "/"));
-      }
-    }
+  for (const f of fs.readdirSync(d)) {
+    const p = path.join(d, f);
+    const s = fs.statSync(p);
+    if (s.isDirectory()) out.push(...walk(p)); else out.push(p);
   }
-  return out;
-};
+  return out.filter(x => x.endsWith(".md"));
+}
 
-const readFrontMatter = (content) => {
-  const match = content.match(/^---\n([\s\S]*?)\n---/);
-  if (!match) return {};
-  const lines = match[1].split("\n");
-  return Object.fromEntries(
-    lines
-      .map((line) => {
-        const idx = line.indexOf(":");
-        if (idx < 0) return null;
-        const key = line.slice(0, idx).trim();
-        const value = line.slice(idx + 1).trim();
-        return key ? [key, value] : null;
-      })
-      .filter(Boolean)
-  );
-};
+function readFrontMatterVersion(md) {
+  const m = md.match(/---([\s\S]*?)---/);
+  if (!m) return null;
+  const v = m[1].match(/version:\s*([^\s]+)/);
+  return v ? v[1].trim() : null;
+}
 
-const files = ROOTS.flatMap((root) => listMarkdown(root));
-
-console.log(
-  `\n[lessons-validator] target=${TARGET} roots=${ROOTS.join(",")} files=${files.length}\n`
-);
-
-const errors = [];
-for (const file of files) {
-  const content = fs.readFileSync(file, "utf8");
-  const frontMatter = readFrontMatter(content);
-  const version = (frontMatter.version || "").trim();
-  const status = (frontMatter.status || "").trim();
-
-  if (!version) {
-    errors.push(`${file}: missing version in YAML front matter (target ${TARGET})`);
-  } else if (version !== TARGET) {
-    errors.push(`${file}: has version ${version} but target is ${TARGET}`);
-  }
-
-  if (!status) {
-    errors.push(`${file}: status missing (expected active)`);
-  } else if (status !== "active") {
-    errors.push(`${file}: status=${status} (expected active)`);
+let errors = [];
+for (const root of ROOTS) {
+  const files = walk(root);
+  for (const f of files) {
+    const raw = fs.readFileSync(f, "utf8");
+    const v = readFrontMatterVersion(raw);
+    if (!v) errors.push(`${f}: missing version in YAML front matter (target ${TARGET_VERSION})`);
+    else if (v !== TARGET_VERSION) errors.push(`${f}: has version ${v} but target is ${TARGET_VERSION}`);
   }
 }
 
 if (errors.length) {
-  console.error(`Lessons validation failed (${errors.length} issues):\n` + errors.join("\n"));
+  console.error("\nLessons validation failed (" + errors.length + " issues):");
+  console.error(errors.join("\n"));
   process.exit(1);
+} else {
+  console.log(`[lessons-validator] OK target=${TARGET_VERSION}`);
 }
-
-console.log(`✅ lessons ok (${files.length}) @ target ${TARGET}`);

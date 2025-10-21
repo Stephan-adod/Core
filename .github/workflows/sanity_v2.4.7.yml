@@ -1,0 +1,35 @@
+name: Sanity v2.4.7
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "meta/**"
+      - "docs/**"
+      - "scripts/**"
+      - "package.json"
+
+jobs:
+  sanity:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - name: Validate drift
+        run: npm run validate:drift
+      - name: Validate lessons (v2.4.7)
+        run: npm run validate:lessons
+      - name: Build inventory (read-only)
+        run: npm run inventory:v2.4.7
+      - name: Upload inventory artefacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: meta-inventory-v2.4
+          path: |
+            docs/reports/meta_inventory_v2.4.json
+            docs/reports/meta_inventory_v2.4.md
