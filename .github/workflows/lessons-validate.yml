@@ -12,7 +12,7 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     env:
-      LESSONS_TARGET_VERSION: v2.4.6
+      LESSONS_TARGET_VERSION: v2.4.7
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
