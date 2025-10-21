@@ -1,15 +1,15 @@
 ---
 title: AI-First Roadmap
-version: v2.4.6
+version: v2.4.7
 status: active
-updated: 2025-10-21
+updated: 2025-10-24
 layer: strategy
-owner: Stephan (System Owner & Mentor)
+owner: Stephan-adod (System Owner & Mentor)
 ---
 
-# Roadmap (Canonical · v2.4)
+# Roadmap (Canonical · v2.4.7)
 
-> **Mode:** Cycle-based (signal-driven). Weekly artefacts sind archiviert (siehe `docs/reports/business_loop_cycles_v2.4.md`).
+> **Mode:** Cycle-based (signal-driven). Weekly Artefakte sind unter `docs/archive/weekly_v2.4/` archiviert (read-only).
 
 ## Horizon
 - **v2.4:** Stabilisierung & leichte Automation (Drift Detection, Context Trend)
@@ -26,4 +26,4 @@ owner: Stephan (System Owner & Mentor)
 - **Automation Plan:** `meta/AI_First_Loop_Automation_v2.4_plan.md`
 - **Lessons (aktiv):** `docs/lessons/`
 
-> Drift accepted (until v2.4.8) — Grund: Weekly Archive für v2.4 befindet sich in Migration; v2.3-Verzeichnis bleibt bis zur neuen Struktur read-only verfügbar.
+> Drift waiver closed (v2.4.7) — Weekly Archive stabilisiert unter `docs/archive/weekly_v2.4/` (read-only, canonical).
