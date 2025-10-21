@@ -1,6 +1,6 @@
 {
   "report": "meta_inventory_v2.4",
-  "generated_at": "2025-10-24",
+  "generated_at": "2025-10-21",
   "scope": [
     "meta/CORE_INDEX.md",
     "meta/AI_First_Roadmap.md",
@@ -14,40 +14,37 @@
       "version": "v2.4.6",
       "status": "active",
       "updated": "2025-10-21",
-      "layer": null,
-      "owner": null,
-      "health": "mismatch",
+      "layer": "meta",
+      "owner": "Stephan (System Owner & Mentor)",
+      "health": "paused",
       "issues": [
-        "Missing front matter field: layer",
-        "Missing front matter field: owner",
-        "Canonical link references legacy version: docs/archive/weekly_v2.3/"
+        "Drift waiver references v2.3 archive text; replace with v2.4 archive once migration completes."
       ]
     },
     {
       "path": "meta/AI_First_Roadmap.md",
-      "title": "AI-First Roadmap (Canonical)",
+      "title": "AI-First Roadmap",
       "version": "v2.4.6",
       "status": "active",
       "updated": "2025-10-21",
-      "layer": null,
+      "layer": "strategy",
       "owner": "Stephan (System Owner & Mentor)",
-      "health": "mismatch",
+      "health": "paused",
       "issues": [
-        "Missing front matter field: layer",
-        "Canonical link references legacy version: docs/archive/weekly_v2.3/"
+        "Drift waiver references v2.3 archive text; replace with v2.4 archive once migration completes."
       ]
     },
     {
       "path": "meta/AI_First_System_Architecture.md",
-      "title": "AI-First System Architecture Blueprint",
+      "title": "AI-First System Architecture",
       "version": "v2.4.6",
       "status": "active",
       "updated": "2025-10-24",
-      "layer": "meta",
+      "layer": "architecture",
       "owner": "stephan-adod",
-      "health": "mismatch",
+      "health": "paused",
       "issues": [
-        "Canonical link references legacy version: docs/diagrams/DaaS_L3_Context_Map_v2.3.mmd"
+        "Drift waiver notes L3 diagram remains at v2.3; upgrade diagram to v2.4 to close the waiver."
       ]
     },
     {
@@ -56,13 +53,12 @@
       "version": "v2.4.6",
       "status": "active",
       "updated": "2025-10-21",
-      "layer": null,
-      "owner": null,
+      "layer": "operations",
+      "owner": "(assign)",
       "health": "mismatch",
       "issues": [
-        "Missing front matter field: layer",
-        "Missing front matter field: owner",
-        "Canonical link references legacy version: docs/archive/weekly_v2.3/"
+        "Owner field is a placeholder ('(assign)') and needs an accountable assignee.",
+        "Drift waiver references v2.3 archive text; replace with v2.4 archive once migration completes."
       ]
     }
   ]

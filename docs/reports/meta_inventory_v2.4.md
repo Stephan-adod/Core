@@ -9,35 +9,33 @@
 
 | path | version | status | updated | health |
 | --- | --- | --- | --- | --- |
-| `meta/CORE_INDEX.md` | v2.4.6 | active | 2025-10-21 | 🔴 mismatch (missing `layer`/`owner`, contains `v2.3` link) |
-| `meta/AI_First_Roadmap.md` | v2.4.6 | active | 2025-10-21 | 🔴 mismatch (missing `layer`, contains `v2.3` link) |
-| `meta/AI_First_System_Architecture.md` | v2.4.6 | active | 2025-10-24 | 🔴 mismatch (`v2.3` diagram reference) |
-| `meta/Human_in_the_Loop_Playbook.md` | v2.4.6 | active | 2025-10-21 | 🔴 mismatch (missing `layer`/`owner`, contains `v2.3` link) |
+| `meta/CORE_INDEX.md` | v2.4.6 | active | 2025-10-21 | 🟡 paused (drift waiver references v2.3 archive) |
+| `meta/AI_First_Roadmap.md` | v2.4.6 | active | 2025-10-21 | 🟡 paused (drift waiver references v2.3 archive) |
+| `meta/AI_First_System_Architecture.md` | v2.4.6 | active | 2025-10-24 | 🟡 paused (drift waiver notes diagram still at v2.3) |
+| `meta/Human_in_the_Loop_Playbook.md` | v2.4.6 | active | 2025-10-21 | 🔴 mismatch (owner placeholder `(assign)`) |
 
 ## Findings
 
 ### `meta/CORE_INDEX.md`
-- Front matter lacks the required `layer` and `owner` fields.
-- Canonical section points to `docs/archive/weekly_v2.3/`, violating the `v2.4.6` stability requirement.
+- Front matter complete (title/version/status/updated/layer/owner).
+- Drift waiver still references the legacy v2.3 archive while migration to the v2.4 archive is pending.
 
 ### `meta/AI_First_Roadmap.md`
-- Front matter is missing a `layer` field to place the roadmap in the architecture stack.
-- Canonical links still reference `docs/archive/weekly_v2.3/`.
+- Front matter complete.
+- Drift waiver still references the legacy v2.3 archive text; replace once the v2.4 archive goes live.
 
 ### `meta/AI_First_System_Architecture.md`
-- Front matter is complete, but the canonical blueprint references `docs/diagrams/DaaS_L3_Context_Map_v2.3.mmd` (legacy version).
+- Front matter complete with owner `stephan-adod`.
+- Drift waiver documents that the L3 diagram remains on the v2.3 asset until migration wraps; upgrade to v2.4 to close the waiver.
 
 ### `meta/Human_in_the_Loop_Playbook.md`
-- Front matter is missing both `layer` and `owner` fields.
-- Canonical references still rely on `docs/archive/weekly_v2.3/`.
+- Owner field is a placeholder (`(assign)`), so accountability is not yet recorded.
+- Drift waiver still references the legacy v2.3 archive text; remove after the archive migration.
 
 ## Top Fixes
-- `meta/CORE_INDEX.md` — Set layer → meta
-- `meta/CORE_INDEX.md` — Set owner → Stephan (System Owner & Mentor)
-- `meta/CORE_INDEX.md` — Replace unstable link → docs/archive/weekly_v2.4/
-- `meta/AI_First_Roadmap.md` — Set layer → strategy
-- `meta/AI_First_Roadmap.md` — Replace unstable link → docs/archive/weekly_v2.4/
-- `meta/AI_First_System_Architecture.md` — Replace unstable link → docs/diagrams/DaaS_L3_Context_Map_v2.4.mmd
-- `meta/Human_in_the_Loop_Playbook.md` — Set layer → operations
-- `meta/Human_in_the_Loop_Playbook.md` — Set owner → assign accountable operator
-- `meta/Human_in_the_Loop_Playbook.md` — Replace unstable link → docs/archive/weekly_v2.4/
+- `meta/Human_in_the_Loop_Playbook.md` — Set owner → Stephan (System Owner & Mentor)
+- `meta/Human_in_the_Loop_Playbook.md` — Update `updated` → 2025-10-24 after owner assignment
+- `meta/Human_in_the_Loop_Playbook.md` — Retire drift waiver → remove v2.3 archive mention when migration completes
+- `meta/CORE_INDEX.md` — Retire drift waiver → replace v2.3 archive note with v2.4 canonical reference
+- `meta/AI_First_Roadmap.md` — Retire drift waiver → replace v2.3 archive note with v2.4 canonical reference
+- `meta/AI_First_System_Architecture.md` — Retire drift waiver → confirm diagrams upgraded to v2.4 asset
