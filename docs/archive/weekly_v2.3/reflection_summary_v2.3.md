@@ -1,13 +1,19 @@
-🟨 **Deprecated:** Use `docs/reports/reflection_cycles_v2.4.md` for cycle-based summaries.
+> 🗃️ **Archived (v2.3):** Week-based report. Active cycle-based reports live in  
+> `docs/reports/business_loop_cycles_v2.4.md` and `docs/reports/reflection_cycles_v2.4.md`.
 
 ---
 id: reflection-summary-v2_3
 layer: meta
 version: v2.3.1
 week: 1
-status: active
+status: archived
 owner: stephan-adod
+archive_bucket: weekly_v2.3
 ---
+
+🟨 **Deprecated:** Use `docs/reports/reflection_cycles_v2.4.md` for cycle-based summaries.
+
+
 
 # Reflection Summary · Week 1 (Real Cycle)
 

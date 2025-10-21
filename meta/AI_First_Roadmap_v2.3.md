@@ -83,5 +83,6 @@ kpis:
 - 2025-10-20: Cycle 0 Dry-Run dokumentiert (Business & Reflection Reports); Freeze-Check Datei erstellt.
 - 2025-10-20: v2.4 Init gestartet (P-012 Forecast Drift & Automation). Siehe: `meta/AI_First_Loop_Automation_v2.4_plan.md`.
 - {{today}}: Reporting auf **Cycle-based** umgestellt (P-012-b). Weekly-Reports als deprecated markiert.
+- {{today}}: Weekly v2.3 Reports archiviert → `docs/archive/weekly_v2.3/` (Cycle-basiertes Reporting ist aktiv).
 
 > ℹ️ **Governance Note:** Strukturelle Änderungen nur via **Mini-Prompt + PR**; dokumentiert im Transition-Log.
