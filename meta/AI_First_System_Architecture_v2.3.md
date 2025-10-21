@@ -2,9 +2,9 @@
 id: AI-FIRST-SYSTEM-ARCHITECTURE
 layer: meta
 version: v2.3.1
-status: active
+status: archived
 owner: stephan-adod
-updated: 2025-10-24
+updated: 2025-10-21
 path: meta/AI_First_System_Architecture_v2.3.md
 rhythm: quarterly architecture sync
 linked_docs:

@@ -1,22 +1,19 @@
 ---
-title: AI-First Business Case
-version: v2.2.5
-phase: daas_factory_transition
+layer: meta
+version: v2.4.6
 status: active
-updated: 2025-10-22
-owner: Stephan
-rhythm: monthly checkpoint
-outputs:
-  - Value log (docs/value_log.csv)
-  - Assumption updates (docs/assumptions.md)
-boundaries:
-  - Avoid premature precision; track deltas not absolutes
+updated: 2025-10-21
+owner: stephan-adod
 linked_docs:
-  - meta/AI_First_System_Architecture.md
   - meta/AI_First_Roadmap.md
-  - meta/AI_First_Handbook.md
   - meta/Human_in_the_Loop_Playbook.md
+  - meta/AI_First_System_Architecture.md
+  - docs/AI_First_Business_Case.md
 ---
+
+# AI-First Business Case
+
+**Cycle:** Data Product Factory Cycle
 
 ## Value Hypothesis
 - Reduce coordination & maintenance overhead
