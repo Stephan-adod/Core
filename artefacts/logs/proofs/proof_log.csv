@@ -1,1 +1,2 @@
 id,type,path,owner,status,coverage_note,timestamp
+PR-ENF-2.6,enforcement,artefacts/logs/enforcement_v2_6_bundle,stephan-adod,verified,Lean run succeeded; diagnostics matched; ready for v2.7 strict,2025-10-22T12:20:44.580Z
