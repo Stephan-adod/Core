@@ -1,0 +1,26 @@
+name: Append Lesson Reflection
+on:
+  workflow_dispatch:
+    inputs:
+      phase:
+        description: 'Phase Title'
+        required: true
+      note:
+        description: 'Short Summary'
+        required: false
+
+jobs:
+  append:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/append_phase_reflection.mjs "${{ github.event.inputs.phase }}" "${{ github.event.inputs.note }}"
+      - run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "action@github.com"
+          git add artefacts/logs/lessons/L-016_adaptive_baseline.md
+          git commit -m "docs(lessons): append reflection for ${{ github.event.inputs.phase }}"
+          git push
