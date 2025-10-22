@@ -1,11 +1,18 @@
-name: Unified Enforcement v2.7 (Strict)
+name: Unified Enforcement v2.7 (Strict w/ Toggle)
 on:
   pull_request:
-    types: [opened, edited, reopened, synchronize]
+    types: [opened, edited, reopened, synchronize, labeled, unlabeled]
   workflow_dispatch:
+    inputs:
+      mode:
+        description: 'override enforcement mode'
+        type: choice
+        options: [strict, lean]
+        default: strict
 
 permissions:
   contents: read
+  actions: write
 
 jobs:
   enforce:
@@ -13,15 +20,57 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with:
-          node-version: 20
+        with: { node-version: 20 }
 
-      - name: Validate PR Handbook Compliance (strict)
-        run: node scripts/validate_handbook_v2_7.mjs
+      - name: Resolve enforcement mode
+        id: mode
+        run: node scripts/enforce_mode_resolver.mjs
+        env:
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+          GITHUB_OUTPUT: ${{ github.output }}
+          INPUT_MODE: ${{ github.event.inputs.mode || '' }}
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+          GITHUB_HEAD_REF: ${{ github.head_ref }}
 
-      - name: Validate Logs & Matrix (strict)
-        run: node scripts/validate_logs_v2_7.mjs
+      - name: Announce mode + Quickref
+        run: |
+          echo "::notice::Enforcement mode = ${{ steps.mode.outputs.mode }} (${{ steps.mode.outputs.reason }})"
+          echo "::notice::Quickref: docs/ops/enforcement_toggle_v2.7.md"
+
+      - name: Validate PR Handbook (strict/lean)
+        run: |
+          if [ "${{ steps.mode.outputs.mode }}" = "lean" ]; then
+            echo "::warning::LEAN mode – allowing validation warnings"
+            node scripts/validate_handbook_v2_7.mjs || true
+          else
+            node scripts/validate_handbook_v2_7.mjs
+          fi
+
+      - name: Validate Logs & Matrix (strict/lean)
+        run: |
+          if [ "${{ steps.mode.outputs.mode }}" = "lean" ]; then
+            echo "::warning::LEAN mode – allowing validation warnings"
+            node scripts/validate_logs_v2_7.mjs || true
+          else
+            node scripts/validate_logs_v2_7.mjs
+          fi
 
       - name: Emit enforcement report
         run: |
-          echo "v2.7 strict enforcement completed" > artefacts/logs/enforce_report_v2_7.md
+          mkdir -p artefacts/logs
+          ts=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          {
+            echo "timestamp: $ts"
+            echo "actor: ${{ github.actor }}"
+            echo "mode: ${{ steps.mode.outputs.mode }}"
+            echo "reason: ${{ steps.mode.outputs.reason }}"
+            echo "run_id: ${{ github.run_id }}"
+            echo "pr: ${{ github.event.pull_request.number || 'n/a' }}"
+          } > artefacts/logs/enforce_report_v2_7.md
+
+      - name: Upload enforcement bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: enforcement_v2_7_bundle
+          path: artefacts/logs/enforce_report_v2_7.md
+          if-no-files-found: warn

@@ -1,0 +1,33 @@
+name: Toggle Smoke Test v2.7
+on:
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mode: [strict, lean]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+
+      - name: Resolve mode (matrix)
+        id: mode
+        run: |
+          node scripts/enforce_mode_resolver.mjs
+        env:
+          INPUT_MODE: ${{ matrix.mode }}
+          GITHUB_OUTPUT: ${{ github.output }}
+
+      - name: Run validators (matrix strict/lean)
+        run: |
+          if [ "${{ steps.mode.outputs.mode }}" = "lean" ]; then
+            echo "::warning::LEAN matrix run – allowing warnings"
+            node scripts/validate_handbook_v2_7.mjs || true
+            node scripts/validate_logs_v2_7.mjs || true
+          else
+            node scripts/validate_handbook_v2_7.mjs
+            node scripts/validate_logs_v2_7.mjs
+          fi
