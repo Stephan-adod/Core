@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "system_version_valid": true,
+    "missing_meta_keys": []
+  },
+  "workflows": {
+    "count": 12,
+    "sanity_issues": []
+  },
+  "backlog": {
+    "matrices": 1
+  },
+  "docs": {
+    "readme_present": true,
+    "docs_dir_present": true
+  },
+  "logs": {
+    "lessons_log_present": true,
+    "proof_log_present": true
+  },
+  "_generated_at": "2025-10-22T13:09:46.511Z"
+}
