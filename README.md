@@ -26,3 +26,6 @@
 
 > ℹ️ Weekly Reports & Legacy Lessons: `docs/archive/weekly_v2.3/` & `artefacts/lessons/` (read-only)
 
+
+<!-- v2.6 phase marker -->
+> _Note_: Phase **v2.6** ist abgeschlossen; **v2.7 Strict** ist aktiv. Siehe: `artefacts/logs/transition_v2.6_done.md`.
