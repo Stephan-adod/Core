@@ -1,0 +1,40 @@
+name: Unified Enforcement v2.6 (Lean · Warn-Only)
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+
+      - name: Version drift (warn-only)
+        run: node scripts/check_version_drift.mjs || true
+
+      - name: Lessons validate (warn-only)
+        run: node scripts/validate_lessons_v1.mjs || true
+
+      - name: Handbook validate (warn-only)
+        run: node scripts/validate_handbook.mjs || true
+
+      - name: Core diagnostic (warn-only)
+        run: node scripts/diag_p_core.mjs || true
+
+      - name: Upload bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: enforcement_v2_6_bundle
+          path: |
+            artefacts/logs/diagnostic_report_v2_6.md
+            artefacts/logs/meta_sync_status_v2_6.json
+            artefacts/logs/lessons_log.csv
+            artefacts/logs/proofs/proof_log.csv
+            artefacts/logs/backlog_matrix_v2.6.md
+          if-no-files-found: warn
