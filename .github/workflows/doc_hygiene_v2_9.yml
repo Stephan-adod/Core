@@ -1,0 +1,19 @@
+name: Doc Hygiene v2.9
+on: { workflow_dispatch: {} }
+
+jobs:
+  hygiene:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node scripts/doc_hygiene_v2_9.mjs
+      - run: node scripts/diagnose_repo_state_v2_9.mjs
+      - name: Commit reports
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "action@github.com"
+          git add artefacts/logs/doc_hygiene_report_v2_9.* artefacts/logs/diagnostic_report_v2_9.md artefacts/logs/meta_sync_status_v2_9.json
+          git commit -m "chore(docs): v2.9 doc hygiene + diagnostic snapshot" || echo "no changes"
+          git push || true
