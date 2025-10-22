@@ -16,3 +16,6 @@ logs:
 policy:
   source: meta/AI_First_Handbook.md
   version: v2.4.7
+
+completed: true
+lessons: ["L-015"]
