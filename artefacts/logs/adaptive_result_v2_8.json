@@ -1,0 +1,16 @@
+{
+  "timestamp": "2025-10-22T13:56:43.467Z",
+  "score": 100,
+  "decision": "pass",
+  "triggered_rules": [],
+  "context": {
+    "timestamp": "2025-10-22T13:56:43.299Z",
+    "branch": "work",
+    "changed_files": 1,
+    "additions": 0,
+    "deletions": 0,
+    "labels": [],
+    "actor": "local-run",
+    "source": "manual"
+  }
+}

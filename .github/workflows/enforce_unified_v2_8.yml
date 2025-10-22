@@ -1,0 +1,35 @@
+name: Unified Enforcement v2.8 (Adaptive)
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  adaptive:
+    runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Extract Context
+        run: node scripts/extract_context_features.mjs
+
+      - name: Adaptive Validation
+        run: node scripts/validate_adaptive_v2_8.mjs
+
+      - name: Upload Adaptive Artefacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: adaptive_v2_8_bundle
+          path: artefacts/logs/
+          if-no-files-found: warn
