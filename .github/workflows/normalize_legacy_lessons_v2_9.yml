@@ -1,0 +1,17 @@
+name: Normalize Legacy Lessons (v2.9)
+on: { workflow_dispatch: {} }
+jobs:
+  normalize:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node scripts/normalize_legacy_lessons_v2_9.mjs
+      - name: Commit normalized lessons
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "action@github.com"
+          git add artefacts/logs/lessons/**/*.md artefacts/logs/legacy_lessons_normalize_report_v2_9.json
+          git commit -m "chore(lessons): add frontmatter to legacy lessons (v2.9 hygiene)" || echo "no changes"
+          git push || true

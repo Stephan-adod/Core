@@ -1,16 +1,11 @@
 ---
 id: LESSONS-Phase2.6-Unified-Enforcement
-layer: meta
-version: v2.6.0
+title: phase2 6 unified enforcement
+version: v2.4.7
+phase: v2.6
 date: 2025-10-21
-status: logged
 owner: stephan-adod
-related:
-  - ".github/workflows/handbook-enforce.yml"
-  - "scripts/synthesize_pr_body.mjs"
-  - "scripts/validate_handbook.mjs"
 ---
-
 ## Key Lessons
 - **Single-Runner Pipelines** sparen >60 % CI-Minuten ggü. Mehrjob-Designs.
 - **API-Reload vor Validate** eliminiert Event-Cache-Race Conditions.

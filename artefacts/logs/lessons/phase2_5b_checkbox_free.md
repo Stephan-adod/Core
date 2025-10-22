@@ -1,15 +1,11 @@
 ---
 id: LESSONS-Phase2.5b-CheckboxFree
-layer: meta
-version: v2.5b
+title: phase2 5b checkbox free
+version: v2.4.7
+phase: v2.5b
 date: 2025-10-22
-status: logged
 owner: stephan-adod
-related:
-  - "scripts/synthesize_pr_body.mjs"
-  - "scripts/validate_handbook.mjs"
 ---
-
 ## Key Lessons
 - Workflow-Änderungen wirken erst nach Merge in `main`; Script-Patches greifen sofort.
 - Checkboxen sind semantisch optional, Marker-basierte Erkennung stabiler.
