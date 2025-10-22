@@ -7,7 +7,9 @@
  * - Logging-References quick-validate
  * - Ergebnis: artefacts/logs/doc_hygiene_report_v2_9.json + .md
  */
-import fs from "fs"; import path from "path";
+import fs from "fs";
+import path from "path";
+import { pathToFileURL } from "url";
 
 const ROOTS = [
   "artefacts/logs/lessons",
@@ -48,25 +50,79 @@ function collectMd(files){
   });
 }
 
-function readCsv(p){
-  if (!exists(p)) return { header:[], rows:[] };
-  const lines = read(p).trim().split("\n");
-  const header = (lines.shift()||"").split(",");
-  const rows = lines.map(l=>l.split(","));
+// --- robust CSV line parser (handles quotes and escaped quotes)
+export function parseCsvLine(line) {
+  const out = [];
+  let cur = "";
+  let inQuotes = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (inQuotes) {
+      if (ch === '"') {
+        if (line[i + 1] === '"') { // escaped quote
+          cur += '"';
+          i++;
+        } else {
+          inQuotes = false;
+        }
+      } else {
+        cur += ch;
+      }
+    } else {
+      if (ch === '"') {
+        inQuotes = true;
+      } else if (ch === ",") {
+        out.push(cur);
+        cur = "";
+      } else {
+        cur += ch;
+      }
+    }
+  }
+  out.push(cur);
+  return out;
+}
+
+function readCsv(p) {
+  if (!exists(p)) return { header: [], rows: [] };
+  const raw = read(p).replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+  const lines = raw.split("\n").filter(Boolean);
+  if (lines.length === 0) return { header: [], rows: [] };
+
+  const header = parseCsvLine(lines[0]);
+  const rows = lines.slice(1).map(parseCsvLine);
   return { header, rows };
 }
 
-(function main(){
+function main(){
   const lessons = collectMd(ls("artefacts/logs/lessons"));
   const snippets = collectMd(ls("artefacts/logs/lessons/snippets"));
   const csv = readCsv(LOGCSV);
   const missingRoots = ROOTS.filter(dir => !exists(dir));
 
   // cross-check CSV paths
-  const csvPaths = new Set(csv.rows.map(r => (r[5]||"").replace(/^"|"$/g,"")));
-  const allPaths = new Set([...lessons, ...snippets].map(x=>x.file));
-  const csvMissingFiles = [...csvPaths].filter(p=>p && !exists(p));
-  const filesNotInCsv = [...allPaths].filter(p => p.includes("/snippets/") && !csvPaths.has(p));
+  // resolve 'source' column index by header name (safer than fixed index)
+  let sourceIdx = (csv.header || []).findIndex(h => h.trim().toLowerCase() === "source");
+  if (sourceIdx < 0)
+    sourceIdx = (csv.header || []).findIndex(h => h.trim().toLowerCase() === "path");
+
+  // build set of CSV paths robustly
+  const csvPaths = new Set(
+    csv.rows
+      .map(r => (sourceIdx >= 0 ? (r[sourceIdx] || "").trim() : ""))
+      .filter(Boolean)
+  );
+
+  // alle vorhandenen Lesson-/Snippet-Dateien
+  const allPaths = new Set([...lessons, ...snippets].map(x => x.file));
+
+  // CSV referenziert, Datei fehlt
+  const csvMissingFiles = [...csvPaths].filter(p => p && !exists(p));
+
+  // Datei existiert, aber fehlt in CSV
+  const filesNotInCsv = [...allPaths].filter(
+    p => p.includes("/snippets/") && !csvPaths.has(p)
+  );
 
   const problems = {
     lessons_missing_front: lessons.filter(x=>!x.okFront),
@@ -92,6 +148,15 @@ function readCsv(p){
   };
 
   fs.writeFileSync(OUTJSON, JSON.stringify(summary,null,2));
-  fs.writeFileSync(OUTMD, `# Doc Hygiene Report v2.9\n\n```json\n${JSON.stringify(summary,null,2)}\n```\n`);
+  fs.writeFileSync(
+    OUTMD,
+    '# Doc Hygiene Report v2.9\n\n```json\n' +
+    JSON.stringify(summary,null,2) +
+    '\n```\n'
+  );
   console.log("✅ Doc hygiene report written →", OUTJSON);
-})();
+}
+
+if (import.meta.url === pathToFileURL(process.argv[1] || "").href) {
+  main();
+}
