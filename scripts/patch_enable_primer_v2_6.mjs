@@ -29,12 +29,12 @@ function prependHeaderIfMissing(filePath, header){
 }
 
 (function main(){
-  // 1) META normalize
+  // 1) META normalize (required keys)
   const nowIso = new Date().toISOString();
   const meta = readJson(metaFile) || {};
   if (!meta.version) meta.version = meta.active || "v2.6.0";
   if (!meta.freeze)  meta.freeze  = "none";
-  meta.updated_at = nowIso;                      // audit signal
+  meta.updated_at = nowIso; // audit signal
   writeJson(metaFile, meta);
   console.log(`patched ${metaFile}`);
 
@@ -45,7 +45,7 @@ function prependHeaderIfMissing(filePath, header){
   prependHeaderIfMissing(lessonsCsv, lessonsHeader);
   prependHeaderIfMissing(proofsCsv,  proofsHeader);
 
-  // 3) Backlog matrix v2.6 (only if none exists in live logs dir)
+  // 3) Backlog matrix v2.6 (create only if none in live logs dir)
   const hasAnyMatrix = exists(logsDir) && fs.readdirSync(logsDir)
     .some(f => /^backlog_matrix_v[\d.]+\.md$/.test(f));
   if (!hasAnyMatrix) {
