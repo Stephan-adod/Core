@@ -74,3 +74,52 @@ jobs:
           name: enforcement_v2_7_bundle
           path: artefacts/logs/enforce_report_v2_7.md
           if-no-files-found: warn
+
+      - name: Auto-comment on Lean mode
+        if: ${{ steps.mode.outputs.mode == 'lean' && github.event.pull_request.number }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ts=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          pr_number=${{ github.event.pull_request.number }}
+          actor=${{ github.actor }}
+          mode=${{ steps.mode.outputs.mode }}
+          reason=${{ steps.mode.outputs.reason }}
+
+          body=$(cat <<'EOF'
+🟡 **Lean Enforcement Mode Triggered**
+
+- **Mode:** %MODE%
+- **Reason:** %REASON%
+- **Actor:** @%ACTOR%
+- **Timestamp (UTC):** %TS%
+
+📘 Quickref: `docs/ops/enforcement_toggle_v2.7.md`
+
+> Dieser Run wurde im *Warn-Only (Lean)*-Modus ausgeführt.  
+> Validierungswarnungen wurden geloggt, aber nicht als Fehler behandelt.  
+> Stelle sicher, dass der Downgrade konform mit den Leitplanken ist.
+EOF
+)
+
+          # Platzhalter ersetzen
+          body="${body//%MODE%/$mode}"
+          body="${body//%REASON%/$reason}"
+          body="${body//%ACTOR%/$actor}"
+          body="${body//%TS%/$ts}"
+
+          echo "$body" | gh api repos/${{ github.repository }}/issues/$pr_number/comments -f body=-
+
+      - name: Append Lean note to audit report
+        if: ${{ steps.mode.outputs.mode == 'lean' }}
+        run: |
+          ts=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          {
+            echo ""
+            echo "lean_comment:"
+            echo "  timestamp: $ts"
+            echo "  actor: ${{ github.actor }}"
+            echo "  reason: ${{ steps.mode.outputs.reason }}"
+            echo "  pr: ${{ github.event.pull_request.number || 'n/a' }}"
+            echo "  run_id: ${{ github.run_id }}"
+          } >> artefacts/logs/enforce_report_v2_7.md
