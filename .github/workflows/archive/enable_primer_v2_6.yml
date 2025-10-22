@@ -1,5 +1,9 @@
+# NOTE: Archived workflow. Manual runs only.
+# Moved by scripts/archive_non_unified_workflows_v2_9.mjs
+# Original file name: enable_primer_v2_6.yml
 name: Enable Primer v2.6 (Non-Destructive)
-on: { workflow_dispatch: {} }
+on:
+  workflow_dispatch: {}
 jobs:
   primer:
     runs-on: ubuntu-latest

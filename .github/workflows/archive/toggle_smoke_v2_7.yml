@@ -1,7 +1,9 @@
+# NOTE: Archived workflow. Manual runs only.
+# Moved by scripts/archive_non_unified_workflows_v2_9.mjs
+# Original file name: toggle_smoke_v2_7.yml
 name: Toggle Smoke Test v2.7
 on:
-  workflow_dispatch:
-
+  workflow_dispatch: {}
 jobs:
   smoke:
     runs-on: ubuntu-latest

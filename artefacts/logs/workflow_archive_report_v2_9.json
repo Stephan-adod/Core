@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-10-22T18:21:59.547Z",
+  "keep_list": [
+    "enforce_unified_v2_7.yml",
+    "audit_phase_2_9.yml"
+  ],
+  "archived": [
+    "append_reflection.yml",
+    "confidence_calibrate_v2_9.yml",
+    "diag_p_core.yml",
+    "diag_v2_6.yml",
+    "doc_hygiene_v2_9.yml",
+    "enable_primer_v2_6.yml",
+    "enforce_confidence_v2_9.yml",
+    "enforce_unified_v2_6.yml",
+    "enforce_unified_v2_8.yml",
+    "handbook-enforce.yml",
+    "handbook-validate.yml",
+    "lessons-validate.yml",
+    "normalize_legacy_lessons_v2_9.yml",
+    "pre_strict_v2_7.yml",
+    "sanity.yml",
+    "sanity_v2.4.7.yml",
+    "softfail_autolog_v2_9.yml",
+    "toggle_smoke_v2_7.yml"
+  ],
+  "kept": [
+    "enforce_unified_v2_7.yml"
+  ]
+}

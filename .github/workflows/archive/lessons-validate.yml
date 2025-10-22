@@ -1,13 +1,10 @@
+# NOTE: Archived workflow. Manual runs only.
+# Moved by scripts/archive_non_unified_workflows_v2_9.mjs
+# Original file name: lessons-validate.yml
 name: Lessons · Validate
 
 on:
-  pull_request:
-    paths:
-      - "docs/lessons/**"
-      - ".github/workflows/lessons-validate.yml"
-      - "scripts/validators/lessons_v2.4.6.mjs"
-      - "package.json"
-
+  workflow_dispatch: {}
 jobs:
   validate:
     runs-on: ubuntu-latest

@@ -1,9 +1,9 @@
+# NOTE: Archived workflow. Manual runs only.
+# Moved by scripts/archive_non_unified_workflows_v2_9.mjs
+# Original file name: enforce_confidence_v2_9.yml
 name: Unified Enforcement v2.9 (Predictive Confidence)
 on:
-  pull_request:
-    types: [opened, synchronize, reopened, labeled]
-  workflow_dispatch:
-
+  workflow_dispatch: {}
 permissions:
   contents: read
   actions: write

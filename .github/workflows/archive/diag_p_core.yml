@@ -1,10 +1,10 @@
+# NOTE: Archived workflow. Manual runs only.
+# Moved by scripts/archive_non_unified_workflows_v2_9.mjs
+# Original file name: diag_p_core.yml
 name: diag_p_core (read-only)
 
 on:
   workflow_dispatch: {}
-  # optional: schedule:
-  #   - cron: "15 6 * * 1-5"
-
 permissions:
   contents: read
 

@@ -1,14 +1,9 @@
+# NOTE: Archived workflow. Manual runs only.
+# Moved by scripts/archive_non_unified_workflows_v2_9.mjs
+# Original file name: append_reflection.yml
 name: Append Lesson Reflection
 on:
-  workflow_dispatch:
-    inputs:
-      phase:
-        description: 'Phase Title'
-        required: true
-      note:
-        description: 'Short Summary'
-        required: false
-
+  workflow_dispatch: {}
 jobs:
   append:
     runs-on: ubuntu-latest

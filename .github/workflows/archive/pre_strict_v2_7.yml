@@ -1,7 +1,9 @@
+# NOTE: Archived workflow. Manual runs only.
+# Moved by scripts/archive_non_unified_workflows_v2_9.mjs
+# Original file name: pre_strict_v2_7.yml
 name: Pre-Strict Diagnostic v2.7 (Read-Only)
 on:
-  workflow_dispatch:
-
+  workflow_dispatch: {}
 jobs:
   pre_strict:
     runs-on: ubuntu-latest

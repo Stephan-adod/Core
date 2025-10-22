@@ -11,8 +11,12 @@ on:
         default: strict
 
 permissions:
-  contents: read
-  actions: write
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   enforce:
@@ -76,39 +80,28 @@ jobs:
           if-no-files-found: warn
 
       - name: Auto-comment on Lean mode
-        if: ${{ steps.mode.outputs.mode == 'lean' && github.event.pull_request.number }}
+        if: ${{ steps.mode.outputs.mode == 'lean' && github.event_name == 'pull_request' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          ts=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-          pr_number=${{ github.event.pull_request.number }}
-          actor=${{ github.actor }}
-          mode=${{ steps.mode.outputs.mode }}
-          reason=${{ steps.mode.outputs.reason }}
+          set -euo pipefail
+          ts="$(date -u +'%Y-%m-%dT%H:%M:%SZ')"
+          pr="${{ github.event.pull_request.number }}"
+          actor="${{ github.actor }}"
+          mode="${{ steps.mode.outputs.mode }}"
+          reason="${{ steps.mode.outputs.reason }}"
 
-          body=$(cat <<'EOF'
-🟡 **Lean Enforcement Mode Triggered**
+          body=$'**Lean Enforcement Mode Triggered**\n\n'\
+$'**Mode:** '"$mode"$'\n'\
+$'**Reason:** '"$reason"$'\n'\
+$'**Actor:** @'"$actor"$'\n'\
+$'**Timestamp (UTC):** '"$ts"$'\n\n'\
+$'🔎 Quickref: `docs/ops/enforcement_toggle_v2.7.md`\n\n'\
+$'> Dieser Run wurde im "Warn-Only (Lean)"-Modus ausgeführt.\n'\
+$'> Validierungswarnungen wurden geloggt, aber nicht als Fehler behandelt.\n'\
+$'> Stelle sicher, dass der Downgrade konform mit den Leitplanken ist.'
 
-- **Mode:** %MODE%
-- **Reason:** %REASON%
-- **Actor:** @%ACTOR%
-- **Timestamp (UTC):** %TS%
-
-📘 Quickref: `docs/ops/enforcement_toggle_v2.7.md`
-
-> Dieser Run wurde im *Warn-Only (Lean)*-Modus ausgeführt.  
-> Validierungswarnungen wurden geloggt, aber nicht als Fehler behandelt.  
-> Stelle sicher, dass der Downgrade konform mit den Leitplanken ist.
-EOF
-)
-
-          # Platzhalter ersetzen
-          body="${body//%MODE%/$mode}"
-          body="${body//%REASON%/$reason}"
-          body="${body//%ACTOR%/$actor}"
-          body="${body//%TS%/$ts}"
-
-          echo "$body" | gh api repos/${{ github.repository }}/issues/$pr_number/comments -f body=-
+          gh api repos/${{ github.repository }}/issues/"$pr"/comments -f body="$body"
 
       - name: Append Lean note to audit report
         if: ${{ steps.mode.outputs.mode == 'lean' }}

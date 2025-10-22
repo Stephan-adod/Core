@@ -1,11 +1,9 @@
+# NOTE: Archived workflow. Manual runs only.
+# Moved by scripts/archive_non_unified_workflows_v2_9.mjs
+# Original file name: handbook-enforce.yml
 name: Handbook · Enforcement (Unified)
 on:
-  pull_request:
-    types: [opened, edited, synchronize, reopened]
-    paths:
-      - '**'
-      - '!.github/**'   # guard: keine reinen CI/Template PRs prüfen
-
+  workflow_dispatch: {}
 permissions:
   contents: read
   pull-requests: write   # nötig, um PR-Body zu setzen

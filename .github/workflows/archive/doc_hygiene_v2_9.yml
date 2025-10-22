@@ -1,6 +1,9 @@
+# NOTE: Archived workflow. Manual runs only.
+# Moved by scripts/archive_non_unified_workflows_v2_9.mjs
+# Original file name: doc_hygiene_v2_9.yml
 name: Doc Hygiene v2.9
-on: { workflow_dispatch: {} }
-
+on:
+  workflow_dispatch: {}
 jobs:
   hygiene:
     runs-on: ubuntu-22.04

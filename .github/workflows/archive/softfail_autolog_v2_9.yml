@@ -1,7 +1,9 @@
+# NOTE: Archived workflow. Manual runs only.
+# Moved by scripts/archive_non_unified_workflows_v2_9.mjs
+# Original file name: softfail_autolog_v2_9.yml
 name: Soft-Fail Auto-Log (v2.9)
 on:
-  workflow_dispatch:
-
+  workflow_dispatch: {}
 jobs:
   autolog:
     runs-on: ubuntu-22.04

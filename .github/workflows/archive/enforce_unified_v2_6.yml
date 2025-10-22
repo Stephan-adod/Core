@@ -1,9 +1,9 @@
+# NOTE: Archived workflow. Manual runs only.
+# Moved by scripts/archive_non_unified_workflows_v2_9.mjs
+# Original file name: enforce_unified_v2_6.yml
 name: Unified Enforcement v2.6 (Lean · Warn-Only)
 on:
-  workflow_dispatch:
-  pull_request:
-    branches: [ "main" ]
-
+  workflow_dispatch: {}
 jobs:
   enforce:
     runs-on: ubuntu-latest

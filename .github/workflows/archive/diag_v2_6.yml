@@ -1,11 +1,10 @@
+# NOTE: Archived workflow. Manual runs only.
+# Moved by scripts/archive_non_unified_workflows_v2_9.mjs
+# Original file name: diag_v2_6.yml
 name: Diagnostic v2.6 (Read-Only)
 
 on:
-  workflow_dispatch:
-  # optional:
-  # push:
-  #   branches: [ "diag-v2-6" ]
-
+  workflow_dispatch: {}
 jobs:
   diag:
     runs-on: ubuntu-latest

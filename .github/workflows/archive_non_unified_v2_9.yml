@@ -1,0 +1,19 @@
+name: Archive non-unified workflows (v2.9)
+on:
+  workflow_dispatch: {}
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: node scripts/archive_non_unified_workflows_v2_9.mjs
+      - name: Commit archive changes
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "action@github.com"
+          git add .github/workflows/archive/*.yml .github/workflows/*.yml artefacts/logs/workflow_archive_report_v2_9.json
+          git commit -m "chore(ci): archive non-unified workflows (manual-only)" || echo "no changes"
+          git push || true

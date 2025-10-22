@@ -1,3 +1,6 @@
+# NOTE: Archived workflow. Manual runs only.
+# Moved by scripts/archive_non_unified_workflows_v2_9.mjs
+# Original file name: handbook-validate.yml
 name: Handbook · Validate (Safe Mode)
 on:
   workflow_dispatch: {}
