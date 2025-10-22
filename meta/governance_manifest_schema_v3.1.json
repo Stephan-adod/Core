@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Governance Manifest Schema v3.1",
+  "description": "Declarative state definition for the Core Governance Ecosystem (v3.1, full Core integration)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "target_version",
+    "phase",
+    "policy_sources",
+    "validators",
+    "telemetry_sources",
+    "owners",
+    "registries",
+    "gates",
+    "core_links"
+  ],
+
+  "properties": {
+    "target_version": { "type": "string", "pattern": "^v[0-9]+\\.[0-9]+(\\.[0-9]+)?$" },
+    "phase": { "type": "string", "enum": ["Recovery", "Stabilization", "Continuous"] },
+    "policy_sources": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^meta/.*\\.md$" },
+      "minItems": 1
+    },
+    "validators": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-zA-Z0-9_-]+\\.m?js$" }
+    },
+    "telemetry_sources": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^(logs|artefacts)/.*" }
+    },
+    "owners": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+
+    "core_links": {
+      "type": "object",
+      "description": "Full linkage to all Core Documents in AI-First Ecosystem",
+      "additionalProperties": false,
+      "required": [
+        "ai_first_handbook",
+        "ai_first_roadmap",
+        "ai_first_system_architecture",
+        "human_in_the_loop_playbook",
+        "prompt_inventory",
+        "ai_first_business_case"
+      ],
+      "properties": {
+        "ai_first_handbook": { "type": "string", "pattern": "^meta/AI_First_Handbook\\.md$" },
+        "ai_first_roadmap": { "type": "string", "pattern": "^meta/AI_First_Roadmap\\.md$" },
+        "ai_first_system_architecture": { "type": "string", "pattern": "^meta/AI_First_System_Architecture\\.md$" },
+        "human_in_the_loop_playbook": { "type": "string", "pattern": "^meta/Human_in_the_Loop_Playbook\\.md$" },
+        "prompt_inventory": { "type": "string", "pattern": "^meta/Prompt_Inventory\\.md$" },
+        "ai_first_business_case": { "type": "string", "pattern": "^meta/AI_First_Business_Case\\.md$" }
+      }
+    },
+
+    "registries": {
+      "type": "object",
+      "required": ["validators", "workflows"],
+      "properties": {
+        "validators": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "policy_refs", "scope", "owner", "target_version"],
+            "properties": {
+              "id": { "type": "string" },
+              "policy_refs": {
+                "type": "array",
+                "items": { "type": "string", "pattern": "^meta/.*\\.md(#.*)?$" }
+              },
+              "scope": { "type": "string" },
+              "owner": { "type": "string" },
+              "target_version": { "type": "string" },
+              "deprecation_date": { "type": "string", "format": "date" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "workflows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "triggers", "validators", "owner"],
+            "properties": {
+              "id": { "type": "string" },
+              "triggers": { "type": "array", "items": { "type": "string" } },
+              "validators": { "type": "array", "items": { "type": "string" } },
+              "owner": { "type": "string" },
+              "status": { "type": "string", "enum": ["active", "deprecated"] }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "edges": {
+      "type": "object",
+      "description": "Ecosystem integration edges (L3 Value, L5 Trust)",
+      "additionalProperties": false,
+      "properties": {
+        "value_loop_L3": {
+          "type": "object",
+          "required": ["context_version", "metrics"],
+          "properties": {
+            "context_version": { "type": "string" },
+            "metrics": {
+              "type": "object",
+              "properties": {
+                "delta_mape": { "type": "number", "minimum": -1, "maximum": 1 },
+                "uplift": { "type": "number", "minimum": -1, "maximum": 1 },
+                "mroi": { "type": "number" }
+              },
+              "required": ["delta_mape", "uplift"],
+              "additionalProperties": false
+            },
+            "last_updated": { "type": "string", "format": "date-time" },
+            "signal_id": { "type": "string" },
+            "feedback_channel": {
+              "type": "string",
+              "enum": ["pull_request", "api_signal", "ai_suggestion", "manual_review"]
+            }
+          },
+          "additionalProperties": false
+        },
+        "trust_loop_L5": {
+          "type": "object",
+          "required": ["context_age_days", "health_threshold"],
+          "properties": {
+            "context_age_days": { "type": "integer", "minimum": 0 },
+            "sla_freshness_hours": { "type": "integer", "minimum": 0 },
+            "health_threshold": { "type": "number", "minimum": 0, "maximum": 1 },
+            "last_updated": { "type": "string", "format": "date-time" },
+            "signal_id": { "type": "string" },
+            "feedback_channel": {
+              "type": "string",
+              "enum": ["alert", "ci_block", "trust_dashboard"]
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+
+    "gates": {
+      "type": "object",
+      "description": "Operational gates for Governance Loops A/B/C",
+      "required": ["scope_gate", "health_gate", "ecosystem_gate"],
+      "properties": {
+        "scope_gate": {
+          "type": "object",
+          "properties": {
+            "required_fields": {
+              "type": "array",
+              "items": { "type": "string" },
+              "default": ["owner", "status", "review_due"]
+            },
+            "version_match": { "type": "boolean" },
+            "registries_complete": { "type": "boolean" }
+          },
+          "additionalProperties": false
+        },
+        "health_gate": {
+          "type": "object",
+          "properties": {
+            "min_health_score": { "type": "number", "minimum": 0, "maximum": 1, "default": 0.8 },
+            "max_drift_events": { "type": "integer", "default": 3 },
+            "critical_drift": { "type": "boolean" },
+            "trust_probe_green": { "type": "boolean" },
+            "value_kpi_positive": { "type": "boolean" }
+          },
+          "additionalProperties": false
+        },
+        "ecosystem_gate": {
+          "type": "object",
+          "properties": {
+            "context_version_required": { "type": "boolean", "default": true },
+            "playbook_signoff_required": { "type": "boolean", "default": true }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "migrations": {
+      "type": "object",
+      "properties": {
+        "legacy_validators": { "type": "array", "items": { "type": "string" } },
+        "allowed_drift_window_days": { "type": "integer", "default": 14 },
+        "deprecation_policy": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+
+    "health_index": {
+      "type": "object",
+      "properties": {
+        "version_sync_rate": { "type": "number", "minimum": 0, "maximum": 1 },
+        "validator_coverage": { "type": "number", "minimum": 0, "maximum": 1 },
+        "confidence_score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "drift_events_week": { "type": "integer", "minimum": 0 }
+      },
+      "required": ["version_sync_rate", "validator_coverage", "confidence_score"],
+      "additionalProperties": false
+    },
+
+    "lessons_ref": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "type"],
+        "properties": {
+          "path": { "type": "string", "pattern": "^docs/lessons/.*\\.md$" },
+          "type": { "type": "string", "enum": ["governance", "ecosystem", "technical"] },
+          "impact": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+
+    "review_due": { "type": "string", "format": "date" }
+  }
+}
