@@ -1,0 +1,40 @@
+name: Unified Enforcement v2.9 (Predictive Confidence)
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  confidence:
+    runs-on: ubuntu-22.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+
+      - name: Extract Context
+        run: node scripts/extract_context_features.mjs
+
+      - name: Validate Confidence
+        run: node scripts/validate_confidence_v2_9.mjs
+
+      - name: Optional Summary
+        if: always()
+        run: node scripts/summarize_confidence_v2_9.mjs || true
+
+      - name: Upload Confidence Artefacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: confidence_v2_9_bundle
+          path: |
+            artefacts/logs/confidence_result_v2_9.json
+            artefacts/logs/confidence_trend_v2_9.csv
+            artefacts/logs/confidence_summary_v2_9.md
+          if-no-files-found: warn

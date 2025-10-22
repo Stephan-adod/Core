@@ -1,0 +1,21 @@
+{
+  "weights": {
+    "label.experimental": -0.25,
+    "files.large": -0.15,
+    "diff.heavy": -0.10,
+    "branch.hotfix": 0.10,
+    "review.approved": 0.20,
+    "tests.modified": 0.15
+  },
+  "signals": {
+    "files.large.threshold": 25,
+    "diff.heavy.additions": 800,
+    "diff.heavy.deletions": 800
+  },
+  "thresholds": {
+    "high": 0.80,
+    "medium": 0.60,
+    "low": 0.40
+  },
+  "meta": { "version": "v2.9", "source": "validate_confidence_v2_9.mjs" }
+}
