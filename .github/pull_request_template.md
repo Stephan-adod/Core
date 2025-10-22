@@ -1,27 +1,20 @@
-## Checks
-- [ ] Rebrief aktualisiert (Ticket-Key + Ziel/Impact)
-- [ ] Transition-Log verlinkt (artefacts/logs/transition_*.md)
-- [ ] CI grün (Freeze-Validator + Diagnose)
+# AI-First Handbook Compliance
+- One PR = One Intent
+- Clarity over Coverage
+- Logged (artefacts/logs/…)
+- Bounded Mini-Prompt
 
-## Scope
-- Motivation
-- Risiken/Rollback
-- Akzeptanzkriterien
+## Intent
+<!-- Kurzer Zweck dieses PRs (1–3 Sätze) -->
 
-## AI-First Handbook Compliance
-- [ ] One PR = One Intent
-- [ ] Clarity over Coverage
-- [ ] Logged (artefacts/logs/**)
-- [ ] Bounded Mini-Prompt
+## Logging Reference
+<!-- Pfad zu einem Log in artefacts/logs/, z. B. artefacts/logs/transition_YYYY-MM-DD.md -->
 
-### Intent
-(Kurz & präzise, max. ~1200 Zeichen. Warum? Was genau wird geändert? Loop-Bezug? Risiken?)
+## Policy Source
+meta/AI_First_Handbook.md
 
-### Logging Reference
-(Link/Pfad, z. B. artefacts/logs/transition_2025-10-21.md)
+## Policy Version
+v2.4.7
 
-Policy Source: meta/AI_First_Handbook.md
-Policy Version: v2.4.7
-
-### Ticket (empfohlen)
-AT-#### / GOV-#### / CI-#### / OPS-#### / META-####
+## Ticket
+<!-- AT-/GOV-/CI-/OPS-/META-#### -->

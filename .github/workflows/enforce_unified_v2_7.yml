@@ -1,0 +1,27 @@
+name: Unified Enforcement v2.7 (Strict)
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  enforce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate PR Handbook Compliance (strict)
+        run: node scripts/validate_handbook_v2_7.mjs
+
+      - name: Validate Logs & Matrix (strict)
+        run: node scripts/validate_logs_v2_7.mjs
+
+      - name: Emit enforcement report
+        run: |
+          echo "v2.7 strict enforcement completed" > artefacts/logs/enforce_report_v2_7.md
