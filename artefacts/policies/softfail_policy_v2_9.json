@@ -1,0 +1,9 @@
+{
+  "log_levels": ["low", "medium"],
+  "min_score": 0.75,
+  "min_triggers": 1,
+  "dedup_window_days": 2,
+  "owner": "stephan-adod",
+  "version": "v2.9",
+  "tags": ["governance", "soft-fail", "adaptive", "confidence"]
+}
