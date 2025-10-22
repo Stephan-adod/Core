@@ -1,0 +1,29 @@
+{
+  "timestamp": "2025-10-22T07:08:34.590Z",
+  "meta": {
+    "system_version_exists": true,
+    "system_version_valid": true,
+    "missing_meta_keys": [
+      "version",
+      "freeze",
+      "updated_at"
+    ]
+  },
+  "workflows": {
+    "count": 6,
+    "sanity_issues": [],
+    "missing_script_files": []
+  },
+  "backlog": {
+    "matrices": [],
+    "header_drifts": []
+  },
+  "docs": {
+    "readme_present": true,
+    "docs_dir_present": true
+  },
+  "logs": {
+    "lessons_log_present": false,
+    "proof_log_present": false
+  }
+}

@@ -1,0 +1,34 @@
+name: Diagnostic v2.6 (Read-Only)
+
+on:
+  workflow_dispatch:
+  # optional:
+  # push:
+  #   branches: [ "diag-v2-6" ]
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run diagnostic (never fail)
+        run: |
+          node scripts/diagnose_repo_state_v2_6.mjs || true
+
+      - name: Upload report artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostic_v2_6
+          path: |
+            artefacts/logs/diagnostic_report_v2_6.md
+            artefacts/logs/meta_sync_status_v2_6.json
+          if-no-files-found: warn
