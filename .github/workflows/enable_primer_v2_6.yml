@@ -1,0 +1,24 @@
+name: Enable Primer v2.6 (Non-Destructive)
+on: { workflow_dispatch: {} }
+jobs:
+  primer:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: Run primer (never fail)
+        run: node scripts/patch_enable_primer_v2_6.mjs || true
+      - name: Upload outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: enable_primer_v2_6_outputs
+          path: |
+            meta/system_version.json
+            artefacts/logs/lessons_log.csv
+            artefacts/logs/proofs/proof_log.csv
+            artefacts/logs/backlog_matrix_v2.6.md
+          if-no-files-found: warn
