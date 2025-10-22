@@ -1,6 +1,20 @@
+---
+id: L-015
+title: Strict Activation (v2.7)
+version: v2.4.7
+phase: v2.7
+date: 2025-10-22T12:46:08Z
+owner: stephan-adod
+source: artefacts/logs/transition_v2.7_strict_activation.md
+tags:
+  - governance
+  - enforcement
+  - policy-as-code
+---
+
 # Lesson L-015 · Strict Activation (v2.7)
 
-**Datum:** 2025-10-22T12:39:22Z  
+**Datum:** 2025-10-22T12:46:08Z  
 **Owner:** stephan-adod  
 **Quelle:** artefacts/logs/transition_v2.7_strict_activation.md
 
