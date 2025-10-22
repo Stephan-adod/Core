@@ -18,5 +18,8 @@
     "context_pack": false,
     "pr_synthesizer": false,
     "drift_sentry": false
-  }
+  },
+  "version": "v2.4.7",
+  "freeze": "none",
+  "updated_at": "2025-10-22T08:07:10.038Z"
 }
