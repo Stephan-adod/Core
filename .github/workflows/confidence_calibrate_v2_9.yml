@@ -1,0 +1,22 @@
+name: Confidence Calibration v2.9
+on:
+  workflow_dispatch:
+
+jobs:
+  calibrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Run calibration
+        run: node scripts/calibrate_confidence_weights_v2_9.mjs
+      - name: Commit proposal (if changed)
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "action@github.com"
+          if [ -f artefacts/policies/confidence_rules_v2_9.calibrated.json ]; then
+            git add artefacts/policies/confidence_rules_v2_9.calibrated.json
+            git commit -m "chore(confidence): add calibrated weights proposal (v2.9)" || echo "no changes"
+            git push || true
+          fi
