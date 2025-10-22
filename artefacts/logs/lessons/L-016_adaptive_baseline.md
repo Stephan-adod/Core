@@ -1,3 +1,11 @@
+---
+id: LEGACY-L-016_adaptive_baseline
+title: L-016 adaptive baseline
+version: v2.4.7
+phase: v2.9
+date: 2025-10-22
+owner: stephan-adod
+---
 # L-016 · Adaptive Baseline (Continuous Lesson)
 📅 Created: 2025-10-22  
 👤 Owner: stephan-adod  

@@ -1,16 +1,11 @@
 ---
 id: LESSONS-Phase1-Handbook-Activation
-layer: meta
-version: v2.4.8
+title: phase1 handbook activation
+version: v2.4.7
+phase: v2.1
 date: 2025-10-21
-status: logged
 owner: stephan-adod
-related:
-  - "meta/AI_First_Handbook.md"
-  - "meta/system_version.json"
-  - ".github/workflows/handbook-validate.yml"
 ---
-
 ## Key Lessons
 - **Machine-readability wins:** Front-Matter im Handbook macht Policies für Tools nutzbar.
 - **Safe Mode verhindert Seiteneffekte:** Keine Auto-CI, nur workflow_dispatch → stabiler Übergang.

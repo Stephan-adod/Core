@@ -1,0 +1,51 @@
+{
+  "timestamp": "2025-10-22T18:02:08.202Z",
+  "normalized": [
+    {
+      "file": "artefacts/logs/lessons/L-016_adaptive_baseline.md",
+      "changed": true,
+      "missing": [
+        "id",
+        "phase",
+        "date",
+        "owner",
+        "version"
+      ]
+    },
+    {
+      "file": "artefacts/logs/lessons/phase1_handbook_activation.md",
+      "changed": true,
+      "missing": [
+        "phase"
+      ]
+    },
+    {
+      "file": "artefacts/logs/lessons/phase2_5b_checkbox_free.md",
+      "changed": true,
+      "missing": [
+        "phase"
+      ]
+    },
+    {
+      "file": "artefacts/logs/lessons/phase2_5c_alignment.md",
+      "changed": true,
+      "missing": [
+        "phase"
+      ]
+    },
+    {
+      "file": "artefacts/logs/lessons/phase2_6_unified_enforcement.md",
+      "changed": true,
+      "missing": [
+        "phase"
+      ]
+    },
+    {
+      "file": "artefacts/logs/lessons/phase2_handbook_enforcement.md",
+      "changed": true,
+      "missing": [
+        "phase"
+      ]
+    }
+  ]
+}

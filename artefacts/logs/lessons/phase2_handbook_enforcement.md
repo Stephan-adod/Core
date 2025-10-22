@@ -1,16 +1,11 @@
 ---
 id: LESSONS-Phase2-Handbook-Enforcement
-layer: meta
-version: v2.5.0
+title: phase2 handbook enforcement
+version: v2.4.7
+phase: v2.2
 date: 2025-10-21
-status: logged
 owner: stephan-adod
-related:
-  - ".github/workflows/handbook-enforce.yml"
-  - "scripts/validate_handbook.mjs"
-  - ".github/pull_request_template.md"
 ---
-
 ## Key Lessons
 - **Template-first**: PRs müssen das Compliance-Template nutzen, sonst blockt der Validator.
 - **Guards zahlen sich aus**: `.github/**` vom Enforcement auszunehmen verhindert Bootstrapping-Deadlocks.
