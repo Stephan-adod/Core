@@ -1,0 +1,20 @@
+name: Soft-Fail Auto-Log (v2.9)
+on:
+  workflow_dispatch:
+
+jobs:
+  autolog:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Run auto logger
+        run: node scripts/auto_log_softfail_v2_9.mjs
+      - name: Commit & Push (if changed)
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "action@github.com"
+          git add artefacts/logs/lessons/snippets/ artefacts/logs/lessons/L-016_adaptive_baseline.md artefacts/logs/lessons_log.csv artefacts/logs/softfail_summary_v2_9.md artefacts/logs/softfail_dedup_index_v2_9.json || true
+          git commit -m "docs(lessons): auto-log soft-fail snapshot (v2.9)" || echo "no changes"
+          git push || true
