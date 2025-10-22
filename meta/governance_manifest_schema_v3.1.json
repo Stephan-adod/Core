@@ -109,7 +109,7 @@
       "properties": {
         "value_loop_L3": {
           "type": "object",
-          "required": ["context_version", "metrics"],
+          "required": ["context_version", "metrics", "feedback_channel"],
           "properties": {
             "context_version": { "type": "string" },
             "metrics": {
