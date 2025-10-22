@@ -1,8 +1,8 @@
 {
-  "target_version": "v2.4.7",
-  "active": "v2.4.7",
-  "phase": "Strict Activation",
-  "updated": "2025-10-22T12:27:37.579Z",
+  "target_version": "v2.9",
+  "active": "v2.9",
+  "phase": "Predictive Confidence",
+  "updated": "2025-10-22T15:17:44Z",
   "pointers": {
     "core_docs": [
       "docs/AI_First_Business_Case.md",
@@ -16,10 +16,10 @@
   "policy_source": "meta/AI_First_Handbook.md",
   "features": {
     "context_pack": false,
-    "pr_synthesizer": true,
-    "drift_sentry": true
+    "pr_synthesizer": false,
+    "drift_sentry": false
   },
-  "version": "v2.4.7",
-  "freeze": "strict",
-  "updated_at": "2025-10-22T12:27:37.579Z"
+  "version": "v2.9",
+  "freeze": "hard",
+  "updated_at": "2025-10-22T15:17:44Z"
 }
