@@ -4,9 +4,9 @@
 > **Start here:** `CORE_INDEX.md` → Roadmap, Reports, Runbooks & Diagnostics.
 
 ## 🧭 Current Phase
-- Version: **v2.4.x** — Cycle Mode & Automation Init
-- Target: **v2.5** — Autonomous Loop Release
-- Governance Health: 🟢 Stable
+- **Version:** v2.7.x — Strict Mode Enforcement Active
+- **Target:** v2.8 — Adaptive Governance Preparation
+- **Status:** ✅ Strict Enforcement (Fail-on-Error)
 - Daily Snapshot: GitHub Actions → *P-CORE · Daily Diagnostics (read-only)*
 
 ## 🧱 Core Docs
