@@ -1,0 +1,27 @@
+name: Pre-Strict Diagnostic v2.7 (Read-Only)
+on:
+  workflow_dispatch:
+
+jobs:
+  pre_strict:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run pre-strict diagnostic (never fail)
+        run: node scripts/pre_strict_diagnostic_v2_7.mjs || true
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: pre_strict_v2_7_outputs
+          path: |
+            artefacts/logs/pre_strict_diagnostic_report_v2_7.md
+            artefacts/logs/pre_strict_sync_status_v2_7.json
+          if-no-files-found: warn
