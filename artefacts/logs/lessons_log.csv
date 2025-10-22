@@ -1,3 +1,4 @@
 timestamp,id,scope,phase,lesson,source,owner
-2025-10-22T12:20:44.580Z,L-2.6-DONE,governance,v2.6,Phase 2.6 abgeschlossen: Primer+Diagnose grün, Enforcement (Lean) aktiv, Pre-Strict v2.7 durchgeführt,artefacts/logs/transition_v2.6_done.md,stephan-adod
+2025-10-22T12:20:44.580Z,L-2.6-DONE,governance,v2.6,"Phase 2.6 abgeschlossen: Primer+Diagnose grün, Enforcement (Lean) aktiv, Pre-Strict v2.7 durchgeführt",artefacts/logs/transition_v2.6_done.md,stephan-adod
 2025-10-22T12:39:33.897Z,L-015,governance,v2.7,"Strict Mode aktiviert: Policy as Code (Fail-on-Error), Lean als kontrollierte Ausnahme, Auto-Comment & Audit etabliert",docs/lessons/L-015_strict_activation_v2.7.md,stephan-adod
+2025-10-22T15:55:00.000Z,L-017,governance,v2.9,"CSV Hygiene Parser Fix",artefacts/logs/lessons/snippets/L-017-CSV-Hygiene-Parser-Fix.md,stephan-adod

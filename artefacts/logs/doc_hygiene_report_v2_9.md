@@ -1,0 +1,208 @@
+# Doc Hygiene Report v2.9
+
+```json
+{
+  "timestamp": "2025-10-22T15:52:34.549Z",
+  "counts": {
+    "lessons": 6,
+    "snippets": 1,
+    "csv_rows": 3
+  },
+  "problems": {
+    "lessons_missing_front": [
+      {
+        "file": "artefacts/logs/lessons/L-016_adaptive_baseline.md",
+        "okFront": false,
+        "missing": [
+          "id",
+          "phase",
+          "date",
+          "owner",
+          "version"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase1_handbook_activation.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase2_5b_checkbox_free.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase2_5c_alignment.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase2_6_unified_enforcement.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase2_handbook_enforcement.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      }
+    ],
+    "snippets_missing_front": [],
+    "lessons_wrong_policy": [
+      {
+        "file": "artefacts/logs/lessons/L-016_adaptive_baseline.md",
+        "okFront": false,
+        "missing": [
+          "id",
+          "phase",
+          "date",
+          "owner",
+          "version"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase1_handbook_activation.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase2_5b_checkbox_free.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase2_5c_alignment.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase2_6_unified_enforcement.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase2_handbook_enforcement.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      }
+    ],
+    "snippets_wrong_policy": [],
+    "lessons_wrong_phase": [
+      {
+        "file": "artefacts/logs/lessons/L-016_adaptive_baseline.md",
+        "okFront": false,
+        "missing": [
+          "id",
+          "phase",
+          "date",
+          "owner",
+          "version"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase1_handbook_activation.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase2_5b_checkbox_free.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase2_5c_alignment.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase2_6_unified_enforcement.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      },
+      {
+        "file": "artefacts/logs/lessons/phase2_handbook_enforcement.md",
+        "okFront": false,
+        "missing": [
+          "phase"
+        ],
+        "hasPolicy": false,
+        "hasPhase": false
+      }
+    ],
+    "snippets_wrong_phase": [],
+    "csv_missing_files": [],
+    "snippets_not_in_csv": [],
+    "missing_roots": []
+  },
+  "roots": {
+    "checked": [
+      "artefacts/logs/lessons",
+      "artefacts/logs/lessons/snippets",
+      "artefacts/logs"
+    ],
+    "missing": []
+  }
+}
+```
