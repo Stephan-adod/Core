@@ -92,6 +92,20 @@ const row = [
 ].join(",") + "\n";
 fs.appendFileSync(trendCsv, row);
 
+// --- Events/Triggers CSV (for calibration diagnostics)
+const eventsCsv = "artefacts/logs/confidence_events_v2_9.csv";
+if (!fs.existsSync(eventsCsv)) {
+  fs.writeFileSync(eventsCsv, "timestamp,branch,level,score,triggers\n");
+}
+const erow = [
+  result.timestamp,
+  JSON.stringify(result.context.branch||""),
+  result.confidence_level,
+  result.confidence_score,
+  JSON.stringify(triggers.join("|"))
+].join(",") + "\n";
+fs.appendFileSync(eventsCsv, erow);
+
 console.log(`🔍 Confidence: ${result.confidence_score} (${result.confidence_level})`);
 if (level === "low") {
   console.warn("::warning::Low confidence → Soft-Fail (warn-only).");
