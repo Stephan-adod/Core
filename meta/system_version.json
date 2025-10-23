@@ -1,9 +1,22 @@
 {
-  "target_version": "v2.9",
-  "active": "v2.9",
-  "phase": "Predictive Confidence",
-  "updated": "2025-10-22T15:17:44Z",
+  "version": "v3.1",
+  "target_version": "v3.1",
+  "active": "v3.1",
+  "phase": "Recovery",
+  "freeze": "soft",
+  "updated": "2026-02-01T00:00:00Z",
+  "updated_at": "2026-02-01T00:00:00Z",
+
+  "policy_source": "meta/AI_First_Handbook.md",
+
   "pointers": {
+    "manifest": "meta/governance_manifest_v3.1.json",
+    "schema": "meta/governance_manifest_schema_v3.1.json",
+    "bootstrap": "meta/governance_recovery_bootstrap_v3.1.md",
+    "roadmap": "meta/AI_First_Roadmap.md",
+    "health_index": "artefacts/governance_health_index.json",
+    "transition_log": "meta/transition_governance_v3.1.md",
+    "lessons_dir": "docs/lessons/",
     "core_docs": [
       "docs/AI_First_Business_Case.md",
       "meta/AI_First_Handbook.md",
@@ -13,13 +26,10 @@
       "meta/CORE_INDEX.md"
     ]
   },
-  "policy_source": "meta/AI_First_Handbook.md",
+
   "features": {
     "context_pack": false,
     "pr_synthesizer": false,
     "drift_sentry": false
-  },
-  "version": "v2.9",
-  "freeze": "hard",
-  "updated_at": "2025-10-22T15:17:44Z"
+  }
 }
