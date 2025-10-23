@@ -56,7 +56,7 @@
         "ai_first_system_architecture": { "type": "string", "pattern": "^meta/AI_First_System_Architecture\\.md$" },
         "human_in_the_loop_playbook": { "type": "string", "pattern": "^meta/Human_in_the_Loop_Playbook\\.md$" },
         "prompt_inventory": { "type": "string", "pattern": "^meta/Prompt_Inventory\\.md$" },
-        "ai_first_business_case": { "type": "string", "pattern": "^meta/AI_First_Business_Case\\.md$" }
+        "ai_first_business_case": { "type": "string", "pattern": "^docs/AI_First_Business_Case\\.md$" }
       }
     },
 
